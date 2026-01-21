@@ -587,22 +587,40 @@
             color: var(--white);
         }
 
-        /* ===== PHOTOGRAPHY CREDIT ===== */
-        .photography-credit {
-            text-align: center;
-            margin: 40px 0;
-            padding: 20px;
-            color: var(--gray-500);
-            font-size: 14px;
-            border-top: 1px solid var(--gray-medium);
-            border-bottom: 1px solid var(--gray-medium);
-            animation: fadeInUp 0.8s both;
-        }
+  /* ===== PHOTOGRAPHY CREDIT ===== */
+.photography-credit {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    color: var(--gray-500);
+    font-size: 14px;
+    border-top: 1px solid var(--gray-medium);
+    border-bottom: 1px solid var(--gray-medium);
+    animation: fadeInUp 0.8s both;
+}
 
-        .photography-credit strong {
-            color: var(--primary-black);
-            font-weight: 600;
-        }
+.photo-display {
+    margin-bottom: 20px;
+}
+
+.photo-display img {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    max-height: 800px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.photo-info {
+    margin-top: 15px;
+}
+
+.photography-credit strong {
+    color: var(--primary-black);
+    font-weight: 600;
+}
 
         /* ===== BIOGRAPHY MODAL ===== */
         .bio-modal {
@@ -1065,13 +1083,16 @@
                     <p class="scroll-animate">Ia meyakini bahwa pendidikan ideal bukan sekadar menyiapkan tenaga kerja, tetapi membentuk individu yang memiliki kapasitas berpikir global, sensitivitas sosial, dan tanggung jawab etis dalam menghadapi tantangan zaman.</p>
                 </div>
 
-                <!-- Photography Credit -->
-                <div class="photography-credit scroll-animate">
-                    <i class="fas fa-camera"></i> Foto oleh: <strong>The Kadio</strong>
-                </div>
-            </div>
-        </div>
-    </section>
+             <!-- Photography Credit -->
+<div class="photography-credit scroll-animate">
+    <div class="photo-display">
+        <img src="foto-marcus.png" alt="Marcus Adrian Tjoa - Diplomat Australia" width="1200" height="800" 
+             onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80'">
+    </div>
+    <div class="photo-info">
+        <i class="fas fa-camera"></i> Foto oleh: <strong>The Kadio</strong>
+    </div>
+</div>
 
     <!-- Speaker Section -->
     <section class="speaker-section" id="speaker">
@@ -1111,12 +1132,10 @@
             </div>
             
             <div class="bio-content">
-                <p>Marcus Adrian Tjoa, yang akrab disapa Marcus, adalah seorang diplomat Australia yang telah bertugas dalam berbagai posisi strategis di kawasan Asia Pasifik. Dengan spesialisasi dalam hubungan pendidikan dan kebudayaan internasional, ia telah menjadi pengamat aktif terhadap perkembangan sistem pendidikan di berbagai negara, termasuk Indonesia.</p>
+                <p>Marcus Adrian Tjoa, yang akrab disapa Marcus, adalah seorang diplomat Australia-Indonesia. Dengan spesialisasi dalam hak asasi manusia dan hubungan humanitarian, ia telah menjadi pengamat aktif terhadap perkembangan sistem pendidikan di berbagai negara, termasuk Indonesia.</p>
                 
                 <p>Sebagai diplomat yang berfokus pada hubungan bilateral Australia-Indonesia, Marcus memiliki pemahaman mendalam tentang sistem pendidikan kedua negara dan tantangan yang dihadapi dalam era globalisasi. Ia aktif terlibat dalam berbagai program pertukaran akademik dan menjadi mediator dalam dialog kebijakan pendidikan antara kedua negara.</p>
-                
-                <p>Latar belakang pendidikan Marcus mencakup gelar Master dalam Hubungan Internasional dari Australian National University dan gelar Sarjana dalam Ilmu Politik dari University of Melbourne. Kemampuan bahasanya yang fasih dalam Bahasa Indonesia memungkinkannya untuk terlibat langsung dengan berbagai pemangku kepentingan pendidikan di Indonesia.</p>
-                
+                   
                 <p>Dalam berbagai forum pendidikan internasional, Marcus dikenal sebagai pembicara yang vokal menyoroti pentingnya pendidikan yang membangun kemampuan berpikir kritis dan adaptif terhadap perubahan global. Ia percaya bahwa pendidikan masa depan harus mampu menyeimbangkan kemajuan teknologi dengan pengembangan karakter dan kemampuan analitis.</p>
                 
                 <p>Melalui wawancara eksklusif dengan Tim Kaboom ini, Marcus berbagi pengamatannya yang mendalam tentang tantangan pendidikan kontemporer dan visinya untuk sistem pendidikan yang lebih manusiawi, kritis, dan efektif dalam membentuk generasi masa depan.</p>
@@ -1155,7 +1174,7 @@
             
             <div class="footer-bottom scroll-animate">
                 <p>&copy; 2026 The Kaboom! Under The Kachoo. All rights reserved.</p>
-                <p class="disclaimer">Artikel ini merupakan hasil wawancara eksklusif dengan Marcus Adrian Tjoa dan mewakili pandangan pribadi pembicara. Semua foto hak cipta milik The Kadio.</p>
+                <p class="disclaimer">Artikel ini merupakan hasil wawancara eksklusif dengan Marcus Adrian Tjoa dan mewakili pandangan pribadi pembicara. Semua foto hanya untuk keperluan Roleplay.</p>
             </div>
         </div>
     </footer>
