@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplomat Australia Marcus: Pendidikan Terlalu Sibuk Mengejar Angka, Kehilangan Nalar | KABOOM!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            
+            --primary-black: #000000;
+            --secondary-black: #1a1a1a;
+            --accent-black: #333333;
+            --light-black: #444444;
+            --white: #ffffff;
+            --off-white: #f8f8f8;
+            --gray-light: #f0f0f0;
+            --gray-medium: #e0e0e0;
+            
+            --accent: var(--primary-black);
+            --primary: var(--primary-black);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-medium);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideDown {
+            from { 
+                transform: translateY(-100%); 
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0); 
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo-kaboom {
+            animation: kaboomEffect 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes kaboomEffect {
+            0% { 
+                transform: scale(1) rotate(0deg); 
+                filter: brightness(1);
+            }
+            25% { 
+                transform: scale(1.2) rotate(-5deg); 
+                filter: brightness(1.2);
+            }
+            50% { 
+                transform: scale(1.3) rotate(5deg); 
+                filter: brightness(1.3);
+            }
+            75% { 
+                transform: scale(1.2) rotate(-3deg); 
+                filter: brightness(1.2);
+            }
+            100% { 
+                transform: scale(1) rotate(0deg); 
+                filter: brightness(1);
+            }
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 20px;
+            animation: pulseCategory 2s infinite alternate;
+        }
+
+        @keyframes pulseCategory {
+            0% {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .navigation {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid var(--primary-black);
+            color: var(--primary-black);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+            transition: left 0.7s;
+        }
+
+        .nav-btn:hover:before {
+            left: 100%;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== ARTICLE HERO ===== */
+        .article-hero-section {
+            margin-top: 120px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInHero 1.2s ease-out;
+        }
+
+        @keyframes fadeInHero {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .article-hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.03));
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            33% { 
+                transform: translateY(-30px) rotate(120deg); 
+            }
+            66% { 
+                transform: translateY(20px) rotate(240deg); 
+            }
+        }
+
+        .article-hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .article-date {
+            font-size: 14px;
+            color: var(--primary-black);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+            animation: fadeInUp 0.8s 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-title {
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1.5px;
+            position: relative;
+            display: inline-block;
+            color: var(--secondary-black);
+            animation: fadeInUp 0.8s 0.4s both;
+        }
+
+        .article-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+            animation: expandLine 1s 1s both;
+        }
+
+        @keyframes expandLine {
+            from { width: 0; opacity: 0; }
+            to { width: 120px; opacity: 1; }
+        }
+
+        .article-subtitle {
+            font-size: clamp(20px, 2vw, 24px);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s 0.6s both;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            animation: fadeInUp 0.8s 0.8s both;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+
+        .meta-item i {
+            color: var(--primary-black);
+        }
+
+        .location-badge {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--primary-black);
+            z-index: 2;
+            border: 1px solid var(--gray-medium);
+            animation: fadeInUp 0.8s 1s both;
+        }
+
+        .location-badge i {
+            color: #e63946;
+        }
+
+        /* ===== ARTICLE CONTENT ===== */
+        .article-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-lead {
+            font-size: 22px;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--gray-medium);
+            font-weight: 500;
+            animation: fadeInUp 0.8s both;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray-800);
+        }
+
+        .article-body p {
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s both;
+        }
+
+        .article-body h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 80px 0 30px;
+            color: var(--secondary-black);
+            position: relative;
+            padding-bottom: 15px;
+            animation: fadeInUp 0.8s both;
+        }
+
+        .article-body h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .quote-block {
+            margin: 50px 0;
+            padding: 40px;
+            border-left: 4px solid var(--primary-black);
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+            animation: fadeInUp 0.8s both;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--secondary-black);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            font-size: 16px;
+            color: var(--primary-black);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quote-author:before {
+            content: '—';
+        }
+
+        /* ===== SPEAKER SECTION ===== */
+        .speaker-section {
+            background: linear-gradient(135deg, var(--white), var(--off-white));
+            padding: 80px 0;
+            margin: 60px 0 0;
+            border-top: 1px solid var(--gray-medium);
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .speaker-section-title {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--secondary-black);
+            animation: fadeInUp 0.8s both;
+        }
+
+        .speaker-container {
+            display: flex;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            max-width: 400px;
+            width: 100%;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--gray-medium);
+            animation: fadeInUp 0.8s 0.4s both;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--primary-black), var(--accent-black));
+        }
+
+        .speaker-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .speaker-card:hover .speaker-avatar {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .speaker-name {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--secondary-black);
+        }
+
+        .speaker-role {
+            font-size: 16px;
+            color: var(--primary-black);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .speaker-btn {
+            background: transparent;
+            border: 2px solid var(--gray-medium);
+            color: var(--primary-black);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .speaker-card:hover .speaker-btn {
+            border-color: var(--primary-black);
+            background: var(--primary-black);
+            color: var(--white);
+        }
+
+        /* ===== PHOTOGRAPHY CREDIT ===== */
+        .photography-credit {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            color: var(--gray-500);
+            font-size: 14px;
+            border-top: 1px solid var(--gray-medium);
+            border-bottom: 1px solid var(--gray-medium);
+            animation: fadeInUp 0.8s both;
+        }
+
+        .photography-credit strong {
+            color: var(--primary-black);
+            font-weight: 600;
+        }
+
+        /* ===== BIOGRAPHY MODAL ===== */
+        .bio-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .bio-modal.active {
+            display: flex;
+        }
+
+        .bio-modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .bio-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-400);
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bio-close:hover {
+            color: var(--primary-black);
+            background: var(--off-white);
+        }
+
+        .bio-header {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .bio-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid var(--gray-medium);
+        }
+
+        .bio-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bio-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .bio-subtitle {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.4;
+        }
+
+        .bio-content {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-700);
+        }
+
+        .bio-content p {
+            margin-bottom: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--gray-medium);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .company-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .company-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .company-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--gray-700);
+        }
+
+        .company-info i {
+            width: 20px;
+            color: var(--primary-black);
+            font-size: 18px;
+        }
+
+        .footer-about h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .footer-about p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-medium);
+            color: var(--primary-black);
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-style: italic;
+            color: var(--primary-black);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .article-hero-section {
+                margin-top: 100px;
+                padding: 80px 0;
+            }
+            
+            .article-title {
+                font-size: 48px;
+            }
+            
+            .speaker-section {
+                padding: 60px 0;
+            }
+            
+            .location-badge {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: 0 auto 40px;
+                width: fit-content;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .article-category {
+                order: 2;
+            }
+            
+            .navigation {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .article-hero-section {
+                margin-top: 130px;
+                padding: 60px 0;
+            }
+            
+            .bio-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .bio-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 28px;
+            }
+            
+            .speaker-section-title {
+                font-size: 32px;
+            }
+            
+            .speaker-card {
+                padding: 30px;
+            }
+            
+            .quote-text {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .article-title {
+                font-size: 36px;
+            }
+            
+            .article-subtitle {
+                font-size: 18px;
+            }
+            
+            .company-card {
+                padding: 30px;
+            }
+            
+            .article-body h2 {
+                font-size: 28px;
+                margin: 60px 0 30px;
+            }
+            
+            .speaker-section-title {
+                font-size: 28px;
+            }
+            
+            .speaker-name {
+                font-size: 22px;
+            }
+            
+            .article-lead {
+                font-size: 18px;
+            }
+            
+            .location-badge {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM! Logo" id="logo">
+                    <div class="article-category">EDUKASI</div>
+                </div>
+                
+                <div class="navigation">
+                    <a href="kaboom.html" class="nav-btn">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <button class="nav-btn" onclick="window.location.href='#speaker'">
+                        <i class="fas fa-users"></i> Pembicara
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Hero -->
+    <section class="article-hero-section">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="container">
+            <div class="location-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Jakarta</span>
+            </div>
+            
+            <div class="article-hero">
+                <span class="article-date">22 Januari 2026</span>
+                <h1 class="article-title">Diplomat Australia Marcus: Pendidikan Terlalu Sibuk Mengejar Angka, Kehilangan Nalar</h1>
+                <p class="article-subtitle">Pendidikan modern dinilai semakin menjauh dari esensi pembentukan nalar dan kesadaran manusia</p>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>6 menit baca</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-folder"></i>
+                        <span>Pendidikan & Analisis</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-eye"></i>
+                        <span>Wawancara Eksklusif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-lead scroll-animate">
+                    Diplomat Australia Marcus menilai pendidikan saat ini semakin menjauh dari esensi pembentukan nalar dan kesadaran manusia. Dalam wawancara bersama Tim Kaboom, Marcus menegaskan bahwa pendidikan tidak boleh dipahami sekadar sebagai proses akademik.
+                </div>
+
+                <div class="article-body">
+                    <p class="scroll-animate">"Pendidikan adalah proses membentuk cara seseorang memahami dunia dan dirinya sendiri di dalam dunia itu," kata Marcus. Menurutnya, pendidikan bukan hanya soal pengetahuan, melainkan pembentukan sikap berpikir. "Pendidikan bukan sekadar tentang menguasai pengetahuan, melainkan tentang membangun nalar, kepekaan, dan keberanian untuk mengambil posisi."</p>
+
+                    <div class="quote-block scroll-animate">
+                        <div class="quote-text">"Pendidikan adalah proses membentuk cara seseorang memahami dunia dan dirinya sendiri di dalam dunia itu."</div>
+                        <div class="quote-author">Marcus Adrian Tjoa, Diplomat Australia</div>
+                    </div>
+
+                    <p class="scroll-animate">Marcus menambahkan, orang yang benar-benar terdidik bukanlah mereka yang hanya menerima informasi. "Orang yang terdidik seharusnya tidak hanya tahu banyak hal, tetapi mampu memilah, meragukan, dan mempertanyakan apa yang ia terima," ujarnya.</p>
+
+                    <p class="scroll-animate">Ia mengingatkan bahwa tanpa kesadaran etis, pendidikan berisiko kehilangan maknanya. "Pendidikan yang baik melatih seseorang untuk hidup dengan kesadaran, sadar akan konteks sosialnya, sadar akan dampak dari setiap keputusan, dan sadar bahwa pengetahuan selalu membawa tanggung jawab," kata Marcus. Ia menegaskan, "Tanpa dimensi ini, pendidikan mudah berubah menjadi rutinitas administratif yang kehilangan jiwa."</p>
+
+                    <h2 class="scroll-animate">Kemajuan Teknologi vs Esensi Pendidikan</h2>
+
+                    <p class="scroll-animate">Terkait kondisi pendidikan saat ini, Marcus mengakui adanya kemajuan dari sisi teknologi dan akses. Namun, ia menilai kemajuan tersebut sering kali menyesatkan. "Secara struktural dan teknologi, pendidikan hari ini jelas terlihat lebih maju," ujarnya. Meski demikian, ia mengkritik cara kemajuan tersebut dimaknai. "Kita terlalu mudah menyamakan kemajuan dengan kecepatan, dan kualitas dengan angka."</p>
+
+                    <div class="quote-block scroll-animate">
+                        <div class="quote-text">"Kita terlalu mudah menyamakan kemajuan dengan kecepatan, dan kualitas dengan angka."</div>
+                        <div class="quote-author">Marcus Adrian Tjoa</div>
+                    </div>
+
+                    <p class="scroll-animate">Marcus mempertanyakan arah pendidikan modern yang menurutnya kurang mendorong kemandirian berpikir. "Pertanyaan yang jarang kita ajukan adalah: apakah pendidikan hari ini membuat manusia lebih mampu berpikir mandiri? Atau justru semakin terbiasa mengikuti sistem tanpa bertanya?" katanya. Ia menambahkan, "Ketika pendidikan terlalu sibuk mengejar target, akreditasi, dan peringkat, ada risiko besar bahwa proses berpikir kritis justru terpinggirkan."</p>
+
+                    <h2 class="scroll-animate">Tantangan Sistem Pendidikan Indonesia</h2>
+
+                    <p class="scroll-animate">Dalam konteks Indonesia, Marcus menilai sistem pendidikan masih terjebak dalam keseragaman. "Sistem pendidikan Indonesia masih sangat terikat pada logika keseragaman," ujarnya. Menurutnya, meski bertujuan untuk pemerataan, pendekatan tersebut sering kali berdampak sebaliknya. "Niat awalnya baik, pemerataan dan standarisasi, tetapi dalam praktiknya sering kali mematikan konteks."</p>
+
+                    <p class="scroll-animate">Ia menilai keragaman Indonesia seharusnya menjadi kekuatan pendidikan. "Indonesia adalah negara dengan keragaman sosial, budaya, dan ekonomi yang sangat kompleks," kata Marcus. Namun, ia melihat banyak institusi justru terjebak pada urusan administratif. "Banyak institusi pendidikan lebih fokus memenuhi tuntutan administratif daripada membangun ruang intelektual yang hidup."</p>
+
+                    <h2 class="scroll-animate">Peran Dosen dan Proses Belajar Sejati</h2>
+
+                    <p class="scroll-animate">Marcus juga menyoroti peran dosen dalam menciptakan pengalaman belajar yang bermakna. "Mahasiswa tidak membutuhkan dosen yang sempurna, tetapi dosen yang jujur secara intelektual," ujarnya. Ia menekankan pentingnya dialog di ruang kelas. "Dosen yang tidak hanya menguasai materi, tetapi juga bersedia berdialog, mendengar, dan menerima perbedaan pendapat."</p>
+
+                    <div class="quote-block scroll-animate">
+                        <div class="quote-text">"Mahasiswa tidak membutuhkan dosen yang sempurna, tetapi dosen yang jujur secara intelektual."</div>
+                        <div class="quote-author">Marcus Adrian Tjoa</div>
+                    </div>
+
+                    <p class="scroll-animate">Menurut Marcus, proses belajar sejati terjadi ketika hierarki dilebur. "Ketika dosen berani mengatakan 'saya tidak tahu' dan mengajak mahasiswa mencari jawabannya bersama, di situlah proses belajar yang sesungguhnya terjadi," katanya. Ia menegaskan, "Mahasiswa akan senang belajar ketika mereka merasa diperlakukan sebagai subjek berpikir, bukan sekadar objek penilaian."</p>
+
+                    <h2 class="scroll-animate">Visi Pendidikan Masa Depan</h2>
+
+                    <p class="scroll-animate">Ke depan, Marcus membayangkan model pendidikan yang terhubung dengan realitas global. "Saya membayangkan program pendidikan yang berani keluar dari batas ruang kelas dan menjembatani pengetahuan dengan realitas global," ujarnya. Ia menekankan bahwa pendidikan harus melatih manusia menghadapi kompleksitas dunia. "Pendidikan menjadi ruang latihan untuk memahami kompleksitas dunia, bukan dengan jawaban tunggal, melainkan dengan dialog dan negosiasi makna."</p>
+
+                    <p class="scroll-animate">Ia meyakini bahwa pendidikan ideal bukan sekadar menyiapkan tenaga kerja, tetapi membentuk individu yang memiliki kapasitas berpikir global, sensitivitas sosial, dan tanggung jawab etis dalam menghadapi tantangan zaman.</p>
+                </div>
+
+                <!-- Photography Credit -->
+                <div class="photography-credit scroll-animate">
+                    <i class="fas fa-camera"></i> Foto oleh: <strong>The Kadio</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Section -->
+    <section class="speaker-section" id="speaker">
+        <div class="container">
+            <h2 class="speaker-section-title scroll-animate">Pembicara</h2>
+            
+            <div class="speaker-container">
+                <div class="speaker-card scroll-animate" onclick="openBio('marcus')">
+                    <div class="speaker-avatar">
+                        <img src="marcus.png" alt="Marcus Adrian Tjoa">
+                    </div>
+                    <h3 class="speaker-name">Marcus Adrian Tjoa</h3>
+                    <p class="speaker-role">Diplomat Australia<br>Pemerhati Pendidikan Global</p>
+                    <button class="speaker-btn">
+                        <i class="fas fa-user-circle"></i> Lihat Profil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Modal -->
+    <div class="bio-modal" id="marcusBio">
+        <div class="bio-modal-content">
+            <button class="bio-close" onclick="closeBio('marcus')">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="bio-header">
+                <div class="bio-avatar">
+                    <img src="marcus.png" alt="Marcus Adrian Tjoa">
+                </div>
+                <div>
+                    <h2 class="bio-title">Marcus Adrian Tjoa</h2>
+                    <p class="bio-subtitle">Diplomat Australia • Pemerhati Pendidikan Global</p>
+                </div>
+            </div>
+            
+            <div class="bio-content">
+                <p>Marcus Adrian Tjoa, yang akrab disapa Marcus, adalah seorang diplomat Australia yang telah bertugas dalam berbagai posisi strategis di kawasan Asia Pasifik. Dengan spesialisasi dalam hubungan pendidikan dan kebudayaan internasional, ia telah menjadi pengamat aktif terhadap perkembangan sistem pendidikan di berbagai negara, termasuk Indonesia.</p>
+                
+                <p>Sebagai diplomat yang berfokus pada hubungan bilateral Australia-Indonesia, Marcus memiliki pemahaman mendalam tentang sistem pendidikan kedua negara dan tantangan yang dihadapi dalam era globalisasi. Ia aktif terlibat dalam berbagai program pertukaran akademik dan menjadi mediator dalam dialog kebijakan pendidikan antara kedua negara.</p>
+                
+                <p>Latar belakang pendidikan Marcus mencakup gelar Master dalam Hubungan Internasional dari Australian National University dan gelar Sarjana dalam Ilmu Politik dari University of Melbourne. Kemampuan bahasanya yang fasih dalam Bahasa Indonesia memungkinkannya untuk terlibat langsung dengan berbagai pemangku kepentingan pendidikan di Indonesia.</p>
+                
+                <p>Dalam berbagai forum pendidikan internasional, Marcus dikenal sebagai pembicara yang vokal menyoroti pentingnya pendidikan yang membangun kemampuan berpikir kritis dan adaptif terhadap perubahan global. Ia percaya bahwa pendidikan masa depan harus mampu menyeimbangkan kemajuan teknologi dengan pengembangan karakter dan kemampuan analitis.</p>
+                
+                <p>Melalui wawancara eksklusif dengan Tim Kaboom ini, Marcus berbagi pengamatannya yang mendalam tentang tantangan pendidikan kontemporer dan visinya untuk sistem pendidikan yang lebih manusiawi, kritis, dan efektif dalam membentuk generasi masa depan.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card scroll-animate">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter: @TheKachoo</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jenderal Sudirman Avenue, Lots 61–62, South Jakarta 12930, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-about scroll-animate">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang berkomitmen menyajikan analisis mendalam dan perspektif kritis tentang isu-isu pendidikan, kebudayaan, dan perkembangan sosial. Kami percaya pada kekuatan informasi yang berkualitas untuk membentuk masyarakat yang lebih kritis dan berwawasan.</p>
+                    <p>Artikel ini merupakan bagian dari liputan khusus kami tentang pendidikan dan masa depan sistem pembelajaran di Indonesia dan global, berdasarkan wawancara eksklusif dengan para ahli dan praktisi.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom scroll-animate">
+                <p>&copy; 2026 The Kaboom! Under The Kachoo. All rights reserved.</p>
+                <p class="disclaimer">Artikel ini merupakan hasil wawancara eksklusif dengan Marcus Adrian Tjoa dan mewakili pandangan pribadi pembicara. Semua foto hak cipta milik The Kadio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Logo animation
+        const logo = document.getElementById('logo');
+        
+        if (logo) {
+            logo.addEventListener('click', function() {
+                this.classList.remove('logo-kaboom');
+                void this.offsetWidth;
+                this.classList.add('logo-kaboom');
+            });
+        }
+        
+        // Biography Modal Functions
+        function openBio(person) {
+            const modal = document.getElementById(person + 'Bio');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeBio(person) {
+            const modal = document.getElementById(person + 'Bio');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Close modal when clicking outside
+        document.querySelectorAll('.bio-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Enhanced scroll animations
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+        
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+        
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+        
+        const hideScrollElement = (element) => {
+            element.classList.remove('visible');
+        };
+        
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.2)) {
+                    displayScrollElement(el);
+                } else {
+                    hideScrollElement(el);
+                }
+            });
+        };
+        
+        // Add scroll listener with throttling
+        let scrolling = false;
+        window.addEventListener('scroll', () => {
+            if (!scrolling) {
+                scrolling = true;
+                setTimeout(() => {
+                    handleScrollAnimation();
+                    scrolling = false;
+                }, 100);
+            }
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Floating elements animation
+        const floatingElements = document.querySelectorAll('.floating-element');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            floatingElements.forEach((el, index) => {
+                const speed = 0.5 + (index * 0.1);
+                el.style.transform = `translateY(${scrolled * speed * 0.05}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            handleScrollAnimation();
+            
+            // Add logo click animation
+            if (logo) {
+                setTimeout(() => {
+                    logo.classList.add('logo-kaboom');
+                }, 1500);
+            }
+            
+            // Add initial animation to hero elements
+            const heroElements = document.querySelectorAll('.article-date, .article-title, .article-subtitle, .article-meta, .location-badge');
+            heroElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
