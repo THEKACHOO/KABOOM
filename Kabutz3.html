@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarissa Rayakan Ulang Tahun Sekaligus Debut Balet di Indonesia | KABOOM!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-red: #8B0000;
+            --deep-red: #660000;
+            --light-red: #A52A2A;
+            --white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --gray-light: #E0E0E0;
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-red);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(102, 0, 0, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gold);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--gold);
+            color: var(--deep-red);
+            padding: 6px 15px;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .navigation {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: var(--deep-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* HERO SECTION */
+        .article-hero-section {
+            margin-top: 120px;
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--deep-red) 0%, var(--dark-red) 100%);
+            z-index: -1;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        .article-hero {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .article-date {
+            font-size: 14px;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .article-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 3px;
+            background: var(--gold);
+            margin: 25px auto;
+        }
+
+        .article-subtitle {
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--gray-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        .meta-item i {
+            font-size: 16px;
+        }
+
+        /* PHOTO DISPLAY */
+        .photo-display-section {
+            padding: 60px 0;
+            background: var(--deep-red);
+        }
+
+        .photo-display-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .photo-display {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--dark-red), var(--deep-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            position: relative;
+        }
+
+        .photo-placeholder::before {
+            content: 'PHOTO WILL BE PLACED HERE';
+            position: absolute;
+            font-weight: 600;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        .photo-info {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gold);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-content {
+            padding: 60px 0;
+            background: var(--dark-red);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .article-body p {
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 800;
+            margin: 60px 0 30px;
+            color: var(--gold);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .quote-block {
+            margin: 50px 0;
+            padding: 40px;
+            border-left: 4px solid var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--white);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quote-author::before {
+            content: '—';
+        }
+
+        /* SPEAKER SECTION */
+        .speaker-section {
+            padding: 80px 0;
+            background: var(--deep-red);
+            margin-top: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .speaker-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--gold);
+        }
+
+        .speaker-container {
+            display: flex;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .speaker-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid var(--gold);
+            background: linear-gradient(135deg, var(--dark-red), var(--deep-red));
+            position: relative;
+        }
+
+        .speaker-avatar::after {
+            content: 'PHOTO';
+            position: absolute;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .speaker-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .speaker-role {
+            font-size: 16px;
+            color: var(--gold);
+            margin-bottom: 25px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .speaker-tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--gold);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep-red);
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .company-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .company-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-light);
+            font-size: 14px;
+        }
+
+        .company-info i {
+            color: var(--gold);
+            width: 20px;
+        }
+
+        .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .footer-about p {
+            color: var(--gray-light);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gray-light);
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-style: italic;
+            color: var(--gold);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .article-category {
+                order: 2;
+            }
+            
+            .navigation {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .article-hero-section {
+                margin-top: 140px;
+                padding: 60px 0 30px;
+            }
+            
+            .speaker-section-title {
+                font-size: 32px;
+            }
+            
+            .speaker-card {
+                padding: 30px 20px;
+            }
+            
+            .quote-text {
+                font-size: 20px;
+            }
+            
+            .article-body h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .article-title {
+                font-size: 36px;
+            }
+            
+            .article-subtitle {
+                font-size: 18px;
+            }
+            
+            .company-card {
+                padding: 20px;
+            }
+            
+            .speaker-section-title {
+                font-size: 28px;
+            }
+            
+            .speaker-name {
+                font-size: 24px;
+            }
+            
+            .photo-placeholder {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM! Logo" id="logo">
+                    <div class="article-category">KABUTZ</div>
+                </div>
+                
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="#speaker" class="nav-btn">
+                        <i class="fas fa-user"></i> Pembicara
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Hero -->
+    <section class="article-hero-section">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="article-hero">
+                <span class="article-date">25 Januari 2026</span>
+                <h1 class="article-title">Tarissa Rayakan Ulang Tahun Sekaligus Debut Balet di Indonesia Lewat "Tarissa Birthday Party"</h1>
+                <p class="article-subtitle">Tarissa kembali ke panggung tanah kelahiran setelah satu dekade dengan penampilan penuh makna dan emosi</p>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Luo Tarissa</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakarta, Indonesia</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span>#chapterRissa29</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Display -->
+    <section class="photo-display-section">
+        <div class="container">
+            <div class="photo-display-container">
+                <div class="photo-display">
+                    <div class="photo-placeholder">
+                        <!-- Photo akan ditempatkan di sini -->
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <i class="fas fa-camera"></i> Photo Placeholder - Upload PNG image here
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p>Kaboom mewawancarai Tarissa menjelang acara spesial bertajuk Tarissa Birthday Party, yang menjadi perayaan ulang tahunnya sekaligus penampilan perdananya kembali di panggung Indonesia setelah satu dekade.</p>
+
+                    <p>Dalam wawancara eksklusif bersama Kaboom, Tarissa mengungkapkan bahwa ia akan membawakan karya balet legendaris The Dying Swan, sebuah tarian klasik yang pertama kali dipentaskan oleh Anna Pavlova pada 22 Desember 1905, diciptakan oleh koreografer ternama Michel Fokine, dan diiringi komposisi The Swan karya Camille Saint-Saëns.</p>
+
+                    <div class="quote-block">
+                        <div class="quote-text">"Saya membawakan The Dying Swan, dan tarian ini menceritakan tentang bagaimana perasaan seekor angsa yang sekarat. Menggambarkan betapa rapuh dan tidak berdaya makhluk hidup ini. Dia berjuang melawan kematian hingga akhirnya tewas,"</div>
+                        <div class="quote-author">Luo Tarissa</div>
+                    </div>
+
+                    <p>Meski acara ini disebut sebagai debut baletnya di Indonesia, Tarissa menjelaskan bahwa ini bukanlah debut pertamanya di dunia balet.</p>
+
+                    <p>"Sebetulnya penampilan saya di sini bukan debut, atau bisa dibilang ini adalah ketiga kalinya tampil di panggung besar. Di Shanghai, nama panggung saya, Luo Tari, sudah cukup masyhur dan terkenal di kalangan sana," jelasnya.</p>
+
+                    <p>Namun, kembalinya Tarissa ke panggung Indonesia memiliki makna emosional yang mendalam.</p>
+
+                    <p>"Untuk pertama kalinya saya kembali ke sini setelah 10 tahun saya tidak berani berdiri di panggung tempat kelahiran saya. Dulu saya hanya berani tampil di panggung kecil atau saat ada acara keluarga saja, dan itu sangat banyak sekali rintangan," katanya.</p>
+
+                    <p>Ia juga menegaskan bahwa persiapannya kali ini dilakukan dengan matang, baik secara fisik maupun mental.</p>
+
+                    <p>"Dengan persiapan yang matang, dari segi fisik dan mental saya, panggung, serta crew yang membantu menyiapkan, semuanya aman dan stabil. Saya bisa tampil kembali dengan rasa percaya diri," tambahnya.</p>
+
+                    <h2>Perjalanan Sebagai Balerina</h2>
+
+                    <p>Dalam proses perjalanannya sebagai balerina, Tarissa mengungkapkan berbagai suka dan duka yang ia alami selama latihan.</p>
+
+                    <p>"Latihan balet itu tidak mudah. Tubuh yang kaku harus dipaksakan menjadi lentur. Banyak latihan dan gerakan yang bisa membuat kita cedera. Saya juga sering masuk rumah sakit dan jadi langganan dokter ortopedi karena cedera di masa awal," ungkapnya jujur.</p>
+
+                    <p>Namun di balik itu, ia juga merasakan sisi positif dari dunia balet.</p>
+
+                    <p>"Sukanya, kamu bisa punya banyak teman dan relasi dari semua kalangan. Kamu bisa lebih banyak bertemu teman ataupun partner lain di sini," lanjut Tarissa.</p>
+
+                    <p>Lebih dalam, Tarissa memaknai balerina bukan sekadar profesi, melainkan bagian dari hidupnya.</p>
+
+                    <div class="quote-block">
+                        <div class="quote-text">"Untukku arti ballerina itu seperti belahan jiwa. Sepuluh tahun lalu saya pernah mengalami kecelakaan dan koma selama tiga bulan. Saat sadar, kaki saya tidak bisa digerakkan karena kecelakaan parah. Hampir lumpuh,"</div>
+                        <div class="quote-author">Luo Tarissa</div>
+                    </div>
+
+                    <p>Trauma fisik dan mental membuatnya sempat meninggalkan balet, terlebih setelah kehilangan sosok yang ia sayangi.</p>
+
+                    <p>"Saya terpukul saat itu. Saya tidak bisa lagi berlatih balet," katanya.</p>
+
+                    <p>Hingga akhirnya di tahun 2021, ia bangkit kembali.</p>
+
+                    <p>"Di Shanghai, di tempat suami saya membawa saya, saya berlatih balet lagi dan melepaskan semua belenggu yang mengikat saya. Berkat suami saya juga, saya bisa di tahap ini," ungkap Tarissa.</p>
+
+                    <h2>Chapter Baru dalam Hidup</h2>
+
+                    <p>Melalui acara ulang tahun ini, Tarissa juga memperkenalkan tagar #chapterRissa29, yang menjadi simbol fase baru dalam hidupnya.</p>
+
+                    <p>"Makna dari #chapterRissa29 ini, di umur saya yang ke-29, saya memberanikan diri kembali ke Indonesia untuk tampil di sini, di panggung yang saya buat. Saya kembali mengepakkan sayap saya di tanah kelahiran saya. Ini adalah jalan saya untuk bersinar di Indonesia," tutupnya.</p>
+
+                    <p>Acara Tarissa Birthday Party bukan sekadar perayaan ulang tahun, tetapi menjadi simbol kebangkitan, perjalanan batin, dan kembalinya seorang balerina ke panggung tanah kelahirannya — sebuah debut emosional yang sarat makna dan sejarah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Section -->
+    <section class="speaker-section" id="speaker">
+        <div class="container">
+            <h2 class="speaker-section-title">Pembicara</h2>
+            
+            <div class="speaker-container">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">
+                        <!-- Photo akan ditempatkan di sini -->
+                    </div>
+                    <h3 class="speaker-name">Luo Tarissa</h3>
+                    <p class="speaker-role">Balerina Profesional</p>
+                    <div class="speaker-tag">Kabutz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter: @TheKachoo</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jenderal Sudirman Avenue, Jakarta 12930</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-about">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif dalam kategori Kabutz tentang seni, budaya, dan kehidupan selebriti. Kami berkomitmen untuk menyajikan cerita-cerita inspiratif dengan sudut pandang yang mendalam.</p>
+                    <p>Artikel ini merupakan bagian dari liputan khusus Kabutz yang fokus pada dunia seni pertunjukan dan kehidupan para seniman Indonesia di kancah internasional.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Kaboom! Under The Kachoo. All rights reserved.</p>
+                <p class="disclaimer">Artikel ini berdasarkan wawancara eksklusif dengan Luo Tarissa. Semua foto hanya untuk keperluan roleplay.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(102, 0, 0, 0.98)';
+            } else {
+                header.style.background = 'rgba(102, 0, 0, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
