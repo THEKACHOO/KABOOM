@@ -284,11 +284,9 @@
         }
 
         .quote-block {
-            margin: 50px 0;
-            padding: 40px;
-            border-left: 4px solid var(--accent);
-            background: linear-gradient(135deg, var(--light-peach), rgba(255, 232, 224, 0.3));
-            border-radius: 0 10px 10px 0;
+    background: linear-gradient(135deg, 
+        var(--gradient-start), 
+        var(--light-accent));
         }
 
         .quote-text {
@@ -315,13 +313,11 @@
 
         /* SPEAKER SECTION */
         .speaker-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--white) 0%, var(--light-peach) 100%);
-            margin-top: 40px;
-            border-top: 1px solid var(--medium-peach);
-            border-bottom: 1px solid var(--medium-peach);
-        }
-
+    background: linear-gradient(135deg, 
+        var(--gradient-start) 0%, 
+        var(--gradient-end) 100%);
+            }
+        
         .speaker-section-title {
             font-family: 'Playfair Display', serif;
             font-size: 36px;
