@@ -1,16 +1,15 @@
-This is a complete HTML news article page about Gideon's "GI:DEOM" World Tour. It presents the information as a KABOOM! feature, with a clean, modern layout that includes the tour details, speaker information with a clickable X (Twitter) link, and all the visual elements you requested.
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gideon Umumkan Tur Dunia "GI:DEOM" – Wawancara Eksklusif Tim Kaboom | KABOOM!</title>
+    <title>Gideon Umumkan "GI:DEOM" World Tour | KABOOM! Eksklusif</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts Inter -->
+    <!-- Google Fonts Inter + space for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
+        /* ----- VARIABLES MODERN ----- */
         * {
             margin: 0;
             padding: 0;
@@ -18,464 +17,486 @@ This is a complete HTML news article page about Gideon's "GI:DEOM" World Tour. I
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            color: #111111;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
         }
 
-        /* HEADER */
+        /* ----- HEADER ELEVATED ----- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #e0e0e0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: all 0.2s;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
-            min-height: 75px;
+            padding: 14px 0;
+            min-height: 72px;
         }
 
-        .logo-container {
+        .logo-group {
             display: flex;
             align-items: center;
             gap: 18px;
             cursor: pointer;
-            transition: transform 0.3s ease;
         }
-        .logo-container:hover { transform: scale(1.02); }
 
-        #logo {
-            height: 38px;
-            width: auto;
+        .kaboom-mark {
             background: #000;
-            color: #fff;
+            color: white;
             font-weight: 900;
-            font-size: 24px;
-            padding: 0 8px;
-            border-radius: 6px;
-            line-height: 38px;
-            text-align: center;
-            display: inline-block;
+            font-size: 26px;
+            letter-spacing: -0.5px;
+            padding: 6px 16px 6px 14px;
+            border-radius: 40px;
+            line-height: 1;
+            box-shadow: 0 8px 16px -8px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
         }
-        /* fallback text-logo if image missing */
-        #logo:after {
-            content: "KABOOM!";
-        }
+        .kaboom-mark:hover { transform: scale(1.02); }
 
-        .article-category {
+        .category-badge {
             font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            background: #000;
-            color: #fff;
+            font-weight: 700;
+            background: #f0f0f0;
+            color: #000;
             padding: 6px 16px;
-            border-radius: 30px;
-            text-transform: uppercase;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
-        .navigation {
+        .nav-right {
             display: flex;
             gap: 12px;
         }
-        .nav-btn {
+        .nav-pill {
             background: transparent;
-            border: 2px solid #000;
-            color: #000;
-            padding: 8px 20px;
-            border-radius: 30px;
+            border: 1.5px solid #111;
+            color: #111;
+            padding: 8px 22px;
+            border-radius: 40px;
             font-weight: 600;
             font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            transition: 0.2s;
             text-decoration: none;
-        }
-        .nav-btn:hover {
-            background: #000;
-            color: #fff;
-        }
-
-        /* HERO */
-        .article-hero-section {
-            margin-top: 100px;
-            padding: 80px 0 40px;
-            background: #f8f8f8;
-            position: relative;
-            overflow: hidden;
-        }
-        .floating-element {
-            position: absolute;
-            background: rgba(0,0,0,0.02);
-            border-radius: 50%;
-            animation: float 14s infinite ease-in-out;
-        }
-        .floating-element:nth-child(1) { width: 150px; height: 150px; top: 10%; left: 5%; }
-        .floating-element:nth-child(2) { width: 100px; height: 100px; bottom: 15%; right: 8%; }
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(8deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-
-        .location-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: #fff;
-            padding: 12px 25px;
-            border-radius: 40px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-            font-weight: 600;
-            margin-bottom: 30px;
+            gap: 8px;
+        }
+        .nav-pill:hover {
+            background: #111;
+            color: #fff;
+            border-color: #111;
         }
 
-        .article-hero { text-align: center; max-width: 900px; margin: 0 auto; }
-        .article-date {
-            font-size: 14px;
-            font-weight: 600;
-            color: #404040;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            display: block;
+        /* ----- HERO SECTION (clean, airy) ----- */
+        .hero-section {
+            margin-top: 96px;
+            padding: 70px 0 50px;
+            background: #fafafa;
+            position: relative;
         }
+
+        .floating-bg {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.02), transparent 70%);
+            border-radius: 50%;
+            top: -50px;
+            right: -80px;
+            z-index: 0;
+        }
+        .floating-bg2 {
+            left: -60px;
+            bottom: -30px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(0,0,0,0.02), transparent);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .dateline {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px 24px;
+            border-radius: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            font-weight: 500;
+            gap: 12px;
+            border: 1px solid #eaeaea;
+            margin-bottom: 40px;
+        }
+
         .article-title {
-            font-size: clamp(42px, 7vw, 68px);
+            font-size: clamp(44px, 9vw, 80px);
             font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 25px;
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
         }
-        .article-title span {
+        .title-accent {
             background: #000;
             color: #fff;
-            padding: 0 12px;
+            padding: 0 16px 4px 16px;
             display: inline-block;
-            transform: skew(-4deg);
+            transform: skew(-3deg) scale(1.02);
+            border-radius: 12px 4px 12px 4px;
         }
-        .article-subtitle {
+        .article-sub {
             font-size: 22px;
             color: #404040;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 20px auto 30px;
         }
-        .article-meta {
+        .meta-line {
             display: flex;
             justify-content: center;
             gap: 30px;
-            color: #525252;
-            font-size: 15px;
+            color: #5a5a5a;
+            font-weight: 400;
             flex-wrap: wrap;
         }
-        .meta-item i { color: #000; margin-right: 6px; }
+        .meta-line i { color: #000; margin-right: 6px; }
 
-        /* CONTENT */
-        .article-content { padding: 70px 0; background: #fff; }
-        .content-container { max-width: 800px; margin: 0 auto; }
-        .article-lead {
+        /* ----- ARTICLE CONTENT (refined) ----- */
+        .article-main {
+            padding: 80px 0;
+        }
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .lead-paragraph {
             font-size: 22px;
             line-height: 1.7;
-            color: #1a1a1a;
-            border-left: 6px solid #000;
+            color: #1e1e1e;
             padding-left: 30px;
-            margin-bottom: 50px;
-            font-weight: 500;
+            border-left: 5px solid #000;
+            margin-bottom: 60px;
+            font-weight: 450;
         }
-        .article-body p {
+        .body-text p {
             font-size: 18px;
-            margin-bottom: 28px;
-            color: #262626;
+            margin-bottom: 30px;
+            color: #2a2a2a;
         }
-        .article-body h2 {
+        .body-text h2 {
             font-size: 32px;
             font-weight: 800;
-            margin: 70px 0 25px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 12px;
-            display: inline-block;
+            margin: 70px 0 20px;
+            letter-spacing: -0.02em;
         }
-        .quote-block {
+        .body-text h2:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #000;
+            margin-top: 10px;
+        }
+
+        .quote-card {
             background: #f4f4f4;
-            padding: 40px;
-            border-radius: 16px;
+            padding: 40px 40px 30px 40px;
+            border-radius: 24px;
             margin: 50px 0;
-            border-left: 6px solid #000;
+        }
+        .quote-card i {
+            font-size: 42px;
+            opacity: 0.3;
+            margin-bottom: 10px;
+            display: inline-block;
         }
         .quote-text {
             font-size: 24px;
-            font-style: italic;
-            font-weight: 500;
-            color: #0a0a0a;
-            margin-bottom: 15px;
+            font-weight: 450;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
         .quote-author {
-            font-weight: 700;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .quote-author i { color: #000; }
 
-        /* TOUR TABLE */
-        .tour-schedule {
-            margin: 60px 0;
-            border: 1px solid #ddd;
-            border-radius: 24px;
+        /* ----- TOUR CARD (modern grid) ----- */
+        .tour-wrap {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            margin: 60px 0 40px;
+            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.06);
         }
         .tour-header {
-            background: #000;
+            background: #111;
             color: #fff;
-            padding: 20px 25px;
-            font-size: 20px;
+            padding: 20px 30px;
+            font-size: 22px;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
+        }
+        .tour-grid {
+            display: flex;
+            flex-direction: column;
         }
         .tour-row {
             display: flex;
-            padding: 16px 25px;
-            border-bottom: 1px solid #eee;
-            transition: 0.2s;
+            align-items: center;
+            padding: 18px 30px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.15s;
         }
-        .tour-row:last-child { border-bottom: none; }
-        .tour-row:hover { background: #fafafa; }
-        .tour-city { flex: 2; font-weight: 600; }
-        .tour-venue { flex: 3; color: #2e2e2e; }
-        .tour-date { flex: 2; font-weight: 500; color: #000; }
-        .tour-cancel {
-            color: #a00;
-            font-weight: 600;
-            text-decoration: line-through 2px rgba(170,0,0,0.3);
+        .tour-row:hover { background: #fbfbfb; }
+        .tour-city { flex: 2; font-weight: 700; color: #000; }
+        .tour-venue { flex: 3; color: #3a3a3a; }
+        .tour-date { flex: 2; font-weight: 500; color: #000; display: flex; align-items: center; gap: 8px; }
+        .cancelled {
+            color: #b00020;
+            text-decoration: line-through 2px rgba(176,0,32,0.3);
+        }
+        @media (max-width: 640px) {
+            .tour-row { flex-direction: column; align-items: start; gap: 6px; padding: 16px 20px; }
         }
 
-        /* SPEAKER CARD (GIDEON) */
-        .speaker-section {
-            background: #f8f8f8;
-            padding: 80px 0;
+        /* ----- SPEAKER CARD (GIDEON) ----- */
+        .speaker-zone {
+            background: #f6f6f6;
+            padding: 90px 0;
         }
-        .speaker-section-title {
-            font-size: 36px;
+        .section-title {
+            font-size: 42px;
             font-weight: 800;
             text-align: center;
             margin-bottom: 50px;
         }
-        .speaker-container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
         .speaker-card {
+            max-width: 540px;
+            margin: 0 auto;
             background: #fff;
-            border-radius: 40px;
-            padding: 40px 30px;
+            border-radius: 48px;
+            padding: 50px 40px 40px;
             text-align: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            border: 1px solid #eaeaea;
-            transition: transform 0.3s;
+            box-shadow: 0 25px 40px -18px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+            transition: all 0.3s;
         }
-        .speaker-card:hover { transform: translateY(-6px); }
-        .speaker-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #d0d0d0;
+        .speaker-card:hover { transform: scale(1.01) translateY(-4px); }
+        .avatar-circle {
+            width: 140px;
+            height: 140px;
             margin: 0 auto 20px;
+            background: linear-gradient(135deg, #232323, #3d3d3d);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
+            font-size: 66px;
             font-weight: 800;
-            color: #fff;
-            background: linear-gradient(145deg, #1e1e1e, #3a3a3a);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .speaker-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
+            color: white;
+            box-shadow: 0 15px 30px -8px rgba(0,0,0,0.4);
         }
         .speaker-name {
-            font-size: 32px;
+            font-size: 44px;
             font-weight: 900;
-            letter-spacing: -0.5px;
-            margin-bottom: 5px;
+            line-height: 1.1;
+            margin-bottom: 12px;
         }
-        .speaker-handle {
-            font-size: 18px;
-            background: #eef;
+        .x-handle {
             display: inline-block;
-            padding: 8px 22px;
-            border-radius: 40px;
-            margin: 15px 0 20px;
-            border: 1px solid #000;
-            transition: 0.2s;
+            background: #eff3ff;
+            border-radius: 60px;
+            padding: 10px 28px;
+            border: 1px solid #111;
+            margin: 20px 0 16px;
+            transition: 0.15s;
         }
-        .speaker-handle a {
+        .x-handle a {
             color: #000;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 20px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
-        .speaker-handle a i { font-size: 20px; }
-        .speaker-handle:hover {
+        .x-handle:hover {
             background: #000;
             border-color: #000;
         }
-        .speaker-handle:hover a { color: #fff; }
+        .x-handle:hover a { color: #fff; }
         .speaker-role {
-            color: #404040;
             font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            color: #404040;
+            margin: 15px 0 25px;
         }
-        .speaker-btn {
+        .profile-btn {
             background: transparent;
-            border: 2px solid #000;
-            border-radius: 40px;
-            padding: 12px 30px;
-            font-weight: 600;
+            border: 2px solid #111;
+            border-radius: 60px;
+            padding: 14px 36px;
+            font-weight: 700;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
-        .speaker-btn:hover {
-            background: #000;
+        .profile-btn:hover {
+            background: #111;
             color: #fff;
         }
 
-        /* FOOTER */
+        /* ----- FOOTER CLEAN ----- */
         footer {
-            background: #111;
+            background: #0b0b0b;
             color: #f0f0f0;
-            padding: 60px 0 30px;
+            padding: 70px 0 30px;
         }
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 50px;
         }
-        .company-card h3, .footer-about h3 {
+        .footer-company h3, .footer-about h3 {
             color: #fff;
-            font-weight: 800;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #fff;
-            padding-bottom: 8px;
-            display: inline-block;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        .company-info div {
-            margin-bottom: 15px;
+        .company-details div {
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
+            color: #bbb;
         }
         .footer-about p {
-            color: #bbb;
+            color: #aaa;
             line-height: 1.7;
         }
         .footer-bottom {
-            text-align: center;
-            border-top: 1px solid #333;
+            border-top: 1px solid #222;
             padding-top: 30px;
-            color: #aaa;
+            text-align: center;
+            color: #888;
             font-size: 14px;
         }
-        .disclaimer { font-style: italic; margin-top: 12px; color: #888; }
+        .disclaimer-note {
+            font-style: italic;
+            color: #666;
+            margin-top: 15px;
+        }
 
-        /* MODAL */
-        .bio-modal {
+        /* ----- MODAL GIDEON TEAM ----- */
+        .modal {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.85);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 3000;
+            z-index: 2000;
             padding: 20px;
         }
-        .bio-modal.active { display: flex; }
-        .bio-modal-content {
+        .modal.active { display: flex; }
+        .modal-card {
             background: #fff;
-            border-radius: 40px;
             max-width: 600px;
             width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
+            border-radius: 40px;
             padding: 40px;
             position: relative;
-            animation: modalSlide 0.4s;
+            max-height: 85vh;
+            overflow-y: auto;
+            animation: modalFade 0.3s;
         }
-        @keyframes modalSlide {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
         }
-        .bio-close {
+        .modal-close {
             position: absolute;
-            top: 20px; right: 20px;
-            font-size: 28px;
+            top: 25px; right: 30px;
+            font-size: 30px;
             background: none;
             border: none;
             cursor: pointer;
-            color: #666;
+            color: #777;
         }
-        .bio-close:hover { color: #000; }
-        .bio-header {
+        .modal-close:hover { color: #000; }
+        .modal-header {
             display: flex;
             gap: 20px;
             align-items: center;
             margin-bottom: 30px;
         }
-        .bio-avatar {
+        .modal-avatar {
             width: 80px; height: 80px;
             border-radius: 50%;
-            background: #2e2e2e;
+            background: #222;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: 44px;
             font-weight: 800;
         }
-        .bio-title { font-size: 28px; font-weight: 800; }
-        .bio-subtitle { color: #404040; }
-        .bio-content p { margin-bottom: 20px; line-height: 1.7; }
+        .modal-name { font-size: 28px; font-weight: 800; }
+        .modal-role { color: #404040; }
+        .modal-body p { margin-bottom: 20px; line-height: 1.7; }
 
-        /* ANIMATIONS */
-        .scroll-animate {
+        /* ----- ANIMATIONS SCROLL ----- */
+        .fade-up {
             opacity: 0;
             transform: translateY(25px);
-            transition: all 0.7s cubic-bezier(0.2, 0.9, 0.3, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.2, 1);
         }
-        .scroll-animate.visible {
+        .fade-up.revealed {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* responsive tweaks */
         @media (max-width: 700px) {
-            .tour-row { flex-direction: column; gap: 5px; }
-            .footer-content { grid-template-columns: 1fr; }
-            .header-content { flex-wrap: wrap; }
+            .header-content { flex-wrap: wrap; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .tour-header { font-size: 18px; }
         }
     </style>
 </head>
@@ -484,127 +505,128 @@ This is a complete HTML news article page about Gideon's "GI:DEOM" World Tour. I
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo-container" onclick="window.location='#'">
-                    <div id="logo" style="background:#000; color:white; font-weight:900; font-size:28px; padding:0 12px;">K!</div>
-                    <div class="article-category">KADUSIC</div>
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
+                    <div class="article-category">KABUTZ</div>
                 </div>
+                
                 <div class="navigation">
-                    <a href="#" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-                    <a href="#speaker-gideon" class="nav-btn"><i class="fas fa-microphone"></i> Gideon</a>
-                </div>
+                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
             </div>
         </div>
     </header>
 
     <!-- Hero -->
-    <section class="article-hero-section">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
+    <section class="hero-section">
+        <div class="floating-bg"></div>
+        <div class="floating-bg2"></div>
+        <div class="container hero-content">
+            <div class="dateline">
+                <i class="fas fa-calendar-alt"></i> 29 Februari 2026 · Eksklusif
+            </div>
+            <h1 class="article-title">
+                <span class="title-accent">GI:DEOM</span> WORLD TOUR
+            </h1>
+            <p class="article-sub">Gideon mengumumkan tur global, simbol ikatan dengan Gidom — dan seluruh pertunjukan gratis.</p>
+            <div class="meta-line">
+                <span><i class="fas fa-pen"></i> Tim Kaboom</span>
+                <span><i class="fas fa-headphones"></i> Wawancara dengan Team Gideon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article main content -->
+    <section class="article-main">
+        <div class="article-container">
+            <div class="lead-paragraph fade-up revealed">
+                Tim Kaboom baru-baru ini duduk bersama Team Gideon untuk membahas tur dunia berskala besar "GI:DEOM" World Tour – sebuah seri konser internasional yang menandai kembalinya solois ini ke panggung global.
+            </div>
+
+            <div class="body-text">
+                <h2 class="fade-up">Identitas dan Koneksi</h2>
+                <p class="fade-up">Menurut <strong>Team Gideon</strong>, judul "GI:DEOM" menggabungkan nama artis dengan fandom-nya, Gidom, melambangkan identitas bersama antara performer dan penonton. Tur ini juga merayakan perilisan single keempatnya, <em>I'll Never Love Again</em>, sebuah duet dengan Celine Amora yang menandai arah musik lebih emosional. Era baru ini mengikuti album full Korea <em>Novus</em>, hasil kolaborasi dengan banyak produser internasional.</p>
+
+                <h2 class="fade-up">Jadwal Internasional</h2>
+                <p class="fade-up">Dirancang sebagai pengalaman global, bukan promosi regional, tur ini meliputi Asia, Australia, dan Amerika Utara, ditutup di Korea Selatan.</p>
+
+                <!-- Tour table modern -->
+                <div class="tour-wrap fade-up">
+                    <div class="tour-header"><i class="fas fa-globe"></i> GI:DEOM WORLD TOUR 2025–2026</div>
+                    <div class="tour-grid">
+                        <div class="tour-row"><span class="tour-city">Seoul</span><span class="tour-venue">KSPO Dome</span><span class="tour-date">23 Nov 2025</span></div>
+                        <div class="tour-row"><span class="tour-city">Tokyo</span><span class="tour-venue">Yoyogi National Gymnasium</span><span class="tour-date">6 Des 2025</span></div>
+                        <div class="tour-row"><span class="tour-city">Singapura</span><span class="tour-venue">Singapore Indoor Stadium</span><span class="tour-date">19 Des 2025</span></div>
+                        <div class="tour-row"><span class="tour-city">Jakarta</span><span class="tour-venue">ICE BSD</span><span class="tour-date">27 Des 2025</span></div>
+                        <div class="tour-row"><span class="tour-city">Sydney</span><span class="tour-venue">Qudos Bank Arena</span><span class="tour-date">10 Jan 2026</span></div>
+                        <div class="tour-row"><span class="tour-city">London</span><span class="tour-venue">The O2 Arena</span><span class="tour-date cancelled"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
+                        <div class="tour-row"><span class="tour-city">Paris</span><span class="tour-venue">Accor Arena</span><span class="tour-date cancelled"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
+                        <div class="tour-row"><span class="tour-city">New York</span><span class="tour-venue">Barclays Center</span><span class="tour-date">21 Feb 2026</span></div>
+                        <div class="tour-row"><span class="tour-city">Busan</span><span class="tour-venue">BEXCO Auditorium</span><span class="tour-date">6 Mar 2026 (Final)</span></div>
+                    </div>
+                </div>
+
+                <p class="fade-up">Meskipun pemberhentian Eropa dibatalkan, konser lain terus menarik antusiasme penggemar.</p>
+
+                <h2 class="fade-up">Akses Terbuka & Tanpa Merch</h2>
+                <p class="fade-up">Dalam langkah yang tidak biasa, <strong>Team Gideon</strong> mengonfirmasi bahwa semua pertunjukan <strong>gratis untuk dihadiri</strong>. Keputusan ini untuk menghilangkan hambatan ekonomi dan memungkinkan penonton "berada dalam atmosfer emosional yang sama." Tidak ada merchandise resmi, fokus pada imersi musik.</p>
+
+                <div class="quote-card fade-up">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="quote-text">“Kami ingin semua orang bisa hadir dan bernyanyi bersama, tanpa sekat ekonomi.”</div>
+                    <div class="quote-author">— Team Gideon</div>
+                </div>
+
+                <h2 class="fade-up">Kolaborasi Internasional</h2>
+                <p class="fade-up">Album <em>Novus</em> melibatkan Red Flames (<em>Bump Bump</em>), EROR FOUR (<em>Busted, Touché</em>), dan duet dengan Resadena (<em>POOL</em>). Single <em>I'll Never Love Again</em> melibatkan Celine Amora dalam penulisan lirik dan produksi, memperkuat narasi pribadi.</p>
+
+                <!-- photo credit line -->
+                <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid #ddd; display:flex; gap:16px; align-items:center;">
+                    <i class="fas fa-camera" style="background:#000; color:white; padding:12px; border-radius:50%;"></i>
+                    <span>Foto oleh <strong>The Kadio</strong> / KABOOM! studio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKER : GIDEON dengan X link -->
+    <section class="speaker-zone" id="speaker">
         <div class="container">
-            <div class="location-badge">
-                <i class="fas fa-globe-asia"></i> <span>Liputan Eksklusif Global</span>
-            </div>
-            <div class="article-hero">
-                <span class="article-date">29 FEBRUARI 2026</span>
-                <h1 class="article-title"><span>GI:DEOM</span> WORLD TOUR</h1>
-                <p class="article-subtitle">Gideon umumkan tur dunia besar-besaran, simbolkan identitas bersama dengan penggemar</p>
-                <div class="article-meta">
-                    <span class="meta-item"><i class="fas fa-user"></i> Tim Kaboom</span>
-                    <span class="meta-item"><i class="fas fa-headphones"></i> wawancara eksklusif</span>
+            <h2 class="section-title fade-up">▸ wawancara bersama ◂</h2>
+            <div class="speaker-card fade-up">
+                <div class="avatar-circle">G</div>
+                <div class="speaker-name">GIDEON</div>
+                <!-- X link persis @RockerGideon -->
+                <div class="x-handle">
+                    <a href="https://x.com/RockerGideon" target="_blank" rel="noopener">
+                        <i class="fab fa-x-twitter"></i> @RockerGideon
+                    </a>
                 </div>
+                <div class="speaker-role">Solois · Produser · #GI:DEOM</div>
+                <button class="profile-btn" onclick="openModal()">
+                    <i class="fas fa-address-card"></i> profil tim
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Artikel konten utama (berita) -->
-    <section class="article-content">
-        <div class="container content-container">
-            <div class="article-lead scroll-animate visible">
-                Tim Kaboom baru-baru ini duduk bersama Team Gideon untuk membahas tur dunia berskala besar yang sangat dinantikan, "GI:DEOM" World Tour – sebuah seri konser internasional yang menandai kembalinya solois ini ke panggung global.
-            </div>
-            <div class="article-body">
-
-                <h2 class="scroll-animate">Tur yang Dibangun di Atas Identitas dan Koneksi</h2>
-                <p class="scroll-animate">Menurut <strong>Team Gideon</strong>, judul "GI:DEOM" menggabungkan nama artis dengan fandom-nya, Gidom, melambangkan identitas bersama antara performer dan penonton. Tur ini juga merayakan perilisan single keempatnya, <em>I'll Never Love Again</em>, sebuah duet dengan Celine Amora yang menonjolkan arah musik yang lebih emosional. Era musik terbaru Gideon mengikuti peluncuran album full Korea <em>Novus</em>, yang memperluas palet soniknya melalui kolaborasi dengan banyak produser internasional.</p>
-
-                <h2 class="scroll-animate">Jadwal Tur Internasional</h2>
-                <p class="scroll-animate">Dirancang sebagai pengalaman global, bukan promosi regional, tur ini membentang di Asia, Australia, dan Amerika Utara, dan akan ditutup di Korea Selatan.</p>
-
-                <div class="tour-schedule scroll-animate">
-                    <div class="tour-header"><i class="fas fa-calendar-alt"></i> GI:DEOM WORLD TOUR 2025–2026</div>
-                    <div class="tour-row"><span class="tour-city">Seoul</span><span class="tour-venue">KSPO Dome</span><span class="tour-date">23 November 2025</span></div>
-                    <div class="tour-row"><span class="tour-city">Tokyo</span><span class="tour-venue">Yoyogi National Gymnasium</span><span class="tour-date">6 Desember 2025</span></div>
-                    <div class="tour-row"><span class="tour-city">Singapura</span><span class="tour-venue">Singapore Indoor Stadium</span><span class="tour-date">19 Desember 2025</span></div>
-                    <div class="tour-row"><span class="tour-city">Jakarta</span><span class="tour-venue">ICE BSD</span><span class="tour-date">27 Desember 2025</span></div>
-                    <div class="tour-row"><span class="tour-city">Sydney</span><span class="tour-venue">Qudos Bank Arena</span><span class="tour-date">10 Januari 2026</span></div>
-                    <div class="tour-row"><span class="tour-city">London</span><span class="tour-venue">The O2 Arena</span><span class="tour-date tour-cancel"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
-                    <div class="tour-row"><span class="tour-city">Paris</span><span class="tour-venue">Accor Arena</span><span class="tour-date tour-cancel"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
-                    <div class="tour-row"><span class="tour-city">New York City</span><span class="tour-venue">Barclays Center</span><span class="tour-date">21 Februari 2026</span></div>
-                    <div class="tour-row"><span class="tour-city">Busan</span><span class="tour-venue">BEXCO Auditorium</span><span class="tour-date">6 Maret 2026 (Final)</span></div>
-                </div>
-                <p class="scroll-animate">Meskipun pemberhentian Eropa di London dan Paris pada akhirnya dibatalkan, konser yang tersisa terus menarik antusiasme penggemar di berbagai benua.</p>
-
-                <h2 class="scroll-animate">Pengalaman Konser Akses Terbuka yang Langka</h2>
-                <p class="scroll-animate">Dalam langkah yang tidak biasa, <strong>Team Gideon</strong> mengonfirmasi bahwa semua pertunjukan <strong>gratis untuk dihadiri</strong>. Keputusan ini diambil untuk menghilangkan hambatan ekonomi dan memungkinkan penonton "berada dalam atmosfer emosional yang sama dan bernyanyi bersama", memperkuat makna kebersamaan di balik nama tur. Tidak ada merchandise resmi atau item promosi tambahan yang direncanakan, karena produksi bertujuan fokus sepenuhnya pada imersi musik langsung, bukan pada keuntungan komersial.</p>
-
-                <h2 class="scroll-animate">Produksi Kolaboratif di Balik Era Ini</h2>
-                <p class="scroll-animate">Album <em>Novus</em> dan proyek-proyek di sekitarnya melibatkan jejaring kreatif internasional. Kontributor termasuk tim produksi seperti Red Flames, yang menggarap trek <em>Bump Bump</em>, dan EROR FOUR, yang anggotanya berpartisipasi dalam beberapa lagu termasuk <em>Busted</em> dan <em>Touché</em>. Kolaborasi tambahan, termasuk duet dengan Resadena pada <em>POOL</em>, semakin membentuk karakter lintas genre album.</p>
-                <p class="scroll-animate">Untuk single <em>I'll Never Love Again</em>, Celine Amora terlibat langsung dalam penulisan lirik dan produksi, memperkuat narasi pribadi lagu tersebut dan menjadikannya pusat dari tur ini.</p>
-
-                <!-- photo credit sesuai contoh "foto oleh: The Kadio" tapi diganti konteks -->
-                <div class="photography-credit" style="margin: 50px 0 20px; border-top:1px solid #ddd; padding-top:25px; font-size:14px; color:#444; display:flex; align-items:center; gap:12px;">
-                    <i class="fas fa-camera" style="background:#000; color:#fff; padding:10px; border-radius:50%;"></i>
-                    <span>Foto dokumentasi oleh: <strong>The Kadio / KABOOM! studio</strong></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPEAKER : GIDEON (dengan username X) -->
-    <section class="speaker-section" id="speaker-gideon">
-        <div class="container">
-            <h2 class="speaker-section-title scroll-animate">▸ wawancara bersama ◂</h2>
-            <div class="speaker-container scroll-animate">
-                <div class="speaker-card">
-                    <div class="speaker-avatar">
-                        <!-- inisial G sebagai avatar jika gambar tidak ada -->
-                        <span style="font-size:60px;">G</span>
-                        <!-- jika ada gambar: <img src="gideon.jpg" alt="Gideon"> -->
-                    </div>
-                    <div class="speaker-name">GIDEON</div>
-                    <!-- X link persis seperti diminta: username @RockerGideon, jika diklik pindah ke akun X -->
-                    <div class="speaker-handle">
-                        <a href="https://x.com/RockerGideon" target="_blank" rel="noopener">
-                            <i class="fab fa-x-twitter"></i> @RockerGideon
-                        </a>
-                    </div>
-                    <div class="speaker-role">
-                        Solois · Produser · <br> #GI:DEOM
-                    </div>
-                    <button class="speaker-btn" onclick="openBio('gideon')">
-                        <i class="fas fa-address-card"></i> profil tim
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal Biography Gideon (sebagai perwakilan Team Gideon) -->
-    <div class="bio-modal" id="gideonBio">
-        <div class="bio-modal-content">
-            <button class="bio-close" onclick="closeBio('gideon')"><i class="fas fa-times"></i></button>
-            <div class="bio-header">
-                <div class="bio-avatar">G</div>
+    <!-- Modal Team Gideon -->
+    <div class="modal" id="teamModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-avatar">G</div>
                 <div>
-                    <h2 class="bio-title">Team Gideon</h2>
-                    <p class="bio-subtitle">perwakilan resmi · manajemen kreatif</p>
+                    <div class="modal-name">Team Gideon</div>
+                    <div class="modal-role">manajemen & kreatif</div>
                 </div>
             </div>
-            <div class="bio-content">
-                <p><strong>Team Gideon</strong> adalah kolektif di balik kebangkitan global Gideon. Mereka berbicara kepada KABOOM! tentang filosofi “GI:DEOM” – perpaduan identitas artis dan penggemar (Gidom). Tur dunia ini dirancang sebagai ruang bersama tanpa sekat komersial.</p>
-                <p>“Kami ingin menghilangkan hambatan, sehingga siapapun bisa hadir dan merasakan koneksi emosional yang sama,” ujar perwakilan tim. Tentang pembatalan London dan Paris, mereka menyatakan: “Keputusan berat, tetapi fokus kami tetap pada kualitas pertunjukan di kota lain.”</p>
-                <p>Kolaborasi dengan Celine Amora di single <em>I'll Never Love Again</em> menjadi pusat narasi tur. Album <em>Novus</em> sendiri melibatkan produser dari Red Flames, EROR FOUR, dan Resadena.</p>
-                <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/RockerGideon" target="_blank" style="color:#000; font-weight:600; text-decoration:underline;">@RockerGideon</a> (akun resmi Gideon, dikelola tim)</p>
+            <div class="modal-body">
+                <p><strong>Team Gideon</strong> adalah kolektif di balik kebangkitan global Gideon. Dalam wawancara dengan KABOOM!, mereka menjelaskan filosofi “GI:DEOM” – perpaduan identitas artis (GI) dan fandom (DEOM). Tur dunia ini dirancang sebagai perayaan bersama tanpa batasan komersial.</p>
+                <p>“Kami menghapus tiket berbayar agar atmosfer kebersamaan terasa murni,” ujar perwakilan tim. Pembatalan London dan Paris merupakan keputusan berat, namun fokus tetap pada kualitas pertunjukan.</p>
+                <p>Kolaborasi dengan Celine Amora di <em>I'll Never Love Again</em> menjadi pusat tur, sementara album <em>Novus</em> menghadirkan produser Red Flames, EROR FOUR, dan Resadena.</p>
+                <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/RockerGideon" target="_blank" style="color:#000; font-weight:600;">@RockerGideon</a> (dikelola tim)</p>
             </div>
         </div>
     </div>
@@ -612,68 +634,43 @@ This is a complete HTML news article page about Gideon's "GI:DEOM" World Tour. I
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="company-card scroll-animate">
+            <div class="footer-grid">
+                <div class="footer-company">
                     <h3>The Kachoo</h3>
-                    <div class="company-info">
+                    <div class="company-details">
                         <div><i class="fas fa-envelope"></i> ohkachoo@gmail.com</div>
                         <div><i class="fab fa-twitter"></i> @TheKachoo</div>
-                        <div><i class="fas fa-map-pin"></i> Jenderal Sudirman, Jakarta</div>
+                        <div><i class="fas fa-map-pin"></i> Sudirman, Jakarta</div>
                     </div>
                 </div>
-                <div class="footer-about scroll-animate">
+                <div class="footer-about">
                     <h3>Tentang KABOOM!</h3>
-                    <p>KABOOM! adalah kanal berita dari The Kachoo, menghadirkan wawancara eksklusif dan liputan mendalam seputar musik, pendidikan, dan budaya pop. Percakapan dengan Team Gideon ini adalah bagian dari seri Kadusic.</p>
+                    <p>KABOOM! adalah kanal berita The Kachoo, menghadirkan wawancara eksklusif dan liputan mendalam seputar musik, pendidikan, dan budaya pop. Percakapan dengan Team Gideon ini adalah bagian dari seri Kadusic.</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 The Kaboom! di bawah The Kachoo. All rights reserved.</p>
-                <p class="disclaimer">Seluruh isi wawancara merupakan pernyataan resmi Team Gideon. Akun X @RockerGideon dikelola oleh manajemen. Foto hanya ilustrasi/roleplay.</p>
+                <p class="disclaimer-note">Isi wawancara merupakan pernyataan resmi Team Gideon. Akun X @RockerGideon dikelola manajemen. Foto ilustrasi/roleplay.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // animasi scroll
-        const scrollElements = document.querySelectorAll('.scroll-animate');
-        const observer = new IntersectionObserver((entries) => {
+        // fade-up scroll observer
+        const faders = document.querySelectorAll('.fade-up');
+        const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -30px 0px' };
+        const appearObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
             });
-        }, { threshold: 0.2, rootMargin: "0px 0px -20px 0px" });
-        scrollElements.forEach(el => observer.observe(el));
+        }, appearOptions);
+        faders.forEach(el => appearObserver.observe(el));
 
-        // modal functions
-        function openBio(person) {
-            document.getElementById(person + 'Bio').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeBio(person) {
-            document.getElementById(person + 'Bio').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        // close jika klik background
-        document.querySelectorAll('.bio-modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        });
-
-        // floating movement
-        window.addEventListener('scroll', () => {
-            let scrollY = window.scrollY;
-            document.querySelectorAll('.floating-element').forEach((el, i) => {
-                let speed = 0.05 + (i * 0.02);
-                el.style.transform = `translateY(${scrollY * speed}px) rotate(${scrollY * 0.02}deg)`;
-            });
-        });
-
-        // pastikan visible pada elemen awal
-        window.dispatchEvent(new Event('scroll'));
+        // modal
+        const modal = document.getElementById('teamModal');
+        function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
+        window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     </script>
 </body>
 </html>
-```
