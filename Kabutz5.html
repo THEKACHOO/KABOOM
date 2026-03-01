@@ -1,84 +1,84 @@
-Here's the repaired header with proper structure and styling that matches your design system:
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gideon Umumkan "GI:DEOM" World Tour | KABOOM! Eksklusif</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Gideon Umumkan "GI:DEOM" World Tour</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts Inter + space for clean typography -->
+    <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
-        /* ----- VARIABLES MODERN ----- */
+        /* ----- RESET & VARIABLES ----- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --pure-black: #111111;
+            --off-white: #fafafa;
+            --gray-border: rgba(0,0,0,0.08);
+            --card-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            --transition: all 0.25s ease;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #ffffff;
-            color: #111111;
-            line-height: 1.6;
+            color: var(--pure-black);
+            line-height: 1.5;
             overflow-x: hidden;
         }
 
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 28px;
+            padding: 0 24px;
+            width: 100%;
         }
 
-        /* ----- HEADER ELEVATED (REPAIRED) ----- */
+        /* ----- HEADER (PRESERVED LOGO + FLEX FIX) ----- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--gray-border);
             z-index: 1000;
-            transition: all 0.2s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .header-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
-            min-height: 70px;
+            justify-content: space-between;
+            padding: 10px 0;
+            min-height: 68px;
+            gap: 16px;
+            flex-wrap: nowrap;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 16px;
+            flex-shrink: 0;
             cursor: pointer;
-            text-decoration: none;
         }
 
         #logo {
-            height: 42px;
+            height: 44px;
             width: auto;
-            background: #000;
-            color: white;
-            font-weight: 900;
-            font-size: 24px;
-            padding: 0 18px 0 16px;
-            border-radius: 40px;
-            line-height: 42px;
-            letter-spacing: -0.5px;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-        #logo:hover {
-            transform: scale(1.02);
+            max-width: 140px;
+            object-fit: contain;
+            display: block;
+            border-radius: 30px;
+            background: #000; /* fallback if image missing */
         }
 
         .article-category {
@@ -88,15 +88,17 @@ Here's the repaired header with proper structure and styling that matches your d
             color: #000;
             padding: 6px 18px;
             border-radius: 40px;
-            letter-spacing: 0.3px;
             border: 1px solid rgba(0,0,0,0.1);
-            text-transform: uppercase;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
         }
 
         .navigation {
             display: flex;
-            gap: 10px;
+            gap: 12px;
+            flex-shrink: 0;
         }
+
         .nav-btn {
             background: transparent;
             border: 1.5px solid #111;
@@ -105,21 +107,69 @@ Here's the repaired header with proper structure and styling that matches your d
             border-radius: 40px;
             font-weight: 600;
             font-size: 14px;
-            transition: all 0.2s;
+            transition: var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            white-space: nowrap;
         }
+
         .nav-btn:hover {
             background: #111;
             color: #fff;
-            border-color: #111;
         }
 
-        /* ----- HERO SECTION ----- */
+        /* ----- MOBILE HEADER (RAPI BANGET) ----- */
+        @media (max-width: 600px) {
+            .header-content {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                padding: 8px 0;
+            }
+
+            .logo-container {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            #logo {
+                height: 40px;
+            }
+
+            .article-category {
+                font-size: 12px;
+                padding: 5px 16px;
+            }
+
+            .navigation {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 380px) {
+            .nav-btn {
+                padding: 6px 16px;
+                font-size: 13px;
+            }
+            .article-category {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+        }
+
+        /* ----- HERO (tetap elegan) ----- */
         .hero-section {
-            margin-top: 94px;
+            margin-top: 88px;
             padding: 70px 0 50px;
             background: #fafafa;
             position: relative;
@@ -167,10 +217,10 @@ Here's the repaired header with proper structure and styling that matches your d
         }
 
         .article-title {
-            font-size: clamp(44px, 9vw, 80px);
+            font-size: clamp(40px, 9vw, 80px);
             font-weight: 900;
-            line-height: 1.0;
-            letter-spacing: -0.03em;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
             margin-bottom: 20px;
         }
         .title-accent {
@@ -182,48 +232,50 @@ Here's the repaired header with proper structure and styling that matches your d
             border-radius: 12px 4px 12px 4px;
         }
         .article-sub {
-            font-size: 22px;
+            font-size: clamp(18px, 4vw, 22px);
             color: #404040;
             max-width: 700px;
             margin: 20px auto 30px;
+            padding: 0 16px;
         }
         .meta-line {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: clamp(16px, 4vw, 30px);
             color: #5a5a5a;
             font-weight: 400;
             flex-wrap: wrap;
+            padding: 0 12px;
         }
         .meta-line i { color: #000; margin-right: 6px; }
 
-        /* ----- ARTICLE CONTENT (refined) ----- */
+        /* ----- ARTICLE CONTENT (mobile friendly) ----- */
         .article-main {
-            padding: 80px 0;
+            padding: 70px 0;
         }
         .article-container {
             max-width: 760px;
             margin: 0 auto;
         }
         .lead-paragraph {
-            font-size: 22px;
-            line-height: 1.7;
+            font-size: clamp(18px, 4vw, 22px);
+            line-height: 1.6;
             color: #1e1e1e;
-            padding-left: 30px;
+            padding-left: 24px;
             border-left: 5px solid #000;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             font-weight: 450;
         }
         .body-text p {
-            font-size: 18px;
-            margin-bottom: 30px;
+            font-size: 17px;
+            margin-bottom: 28px;
             color: #2a2a2a;
         }
         .body-text h2 {
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
             font-weight: 800;
-            margin: 70px 0 20px;
-            letter-spacing: -0.02em;
+            margin: 60px 0 20px;
+            letter-spacing: -0.01em;
         }
         .body-text h2:after {
             content: '';
@@ -236,47 +288,36 @@ Here's the repaired header with proper structure and styling that matches your d
 
         .quote-card {
             background: #f4f4f4;
-            padding: 40px 40px 30px 40px;
+            padding: 30px 24px;
             border-radius: 24px;
             margin: 50px 0;
         }
-        .quote-card i {
-            font-size: 42px;
-            opacity: 0.3;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
         .quote-text {
-            font-size: 24px;
+            font-size: clamp(20px, 4vw, 24px);
             font-weight: 450;
             line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .quote-author {
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin-bottom: 16px;
         }
 
-        /* ----- TOUR CARD (modern grid) ----- */
+        /* ----- TOUR CARD (mobile optimized) ----- */
         .tour-wrap {
             background: #fff;
             border: 1px solid #e0e0e0;
-            border-radius: 32px;
+            border-radius: 28px;
             overflow: hidden;
-            margin: 60px 0 40px;
+            margin: 50px 0 40px;
             box-shadow: 0 10px 25px -10px rgba(0,0,0,0.06);
         }
         .tour-header {
             background: #111;
             color: #fff;
-            padding: 20px 30px;
-            font-size: 22px;
+            padding: 18px 24px;
+            font-size: 20px;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
         .tour-grid {
             display: flex;
@@ -285,79 +326,89 @@ Here's the repaired header with proper structure and styling that matches your d
         .tour-row {
             display: flex;
             align-items: center;
-            padding: 18px 30px;
+            padding: 16px 24px;
             border-bottom: 1px solid #f0f0f0;
-            transition: background 0.15s;
+            flex-wrap: wrap;
+            gap: 8px 12px;
         }
-        .tour-row:hover { background: #fbfbfb; }
-        .tour-city { flex: 2; font-weight: 700; color: #000; }
-        .tour-venue { flex: 3; color: #3a3a3a; }
-        .tour-date { flex: 2; font-weight: 500; color: #000; display: flex; align-items: center; gap: 8px; }
+        .tour-city { font-weight: 700; color: #000; min-width: 100px; }
+        .tour-venue { color: #3a3a3a; flex: 1; min-width: 160px; }
+        .tour-date { font-weight: 500; color: #000; display: flex; align-items: center; gap: 6px; }
         .cancelled {
             color: #b00020;
             text-decoration: line-through 2px rgba(176,0,32,0.3);
         }
-        @media (max-width: 640px) {
-            .tour-row { flex-direction: column; align-items: start; gap: 6px; padding: 16px 20px; }
+
+        /* Mobile tour row */
+        @media (max-width: 600px) {
+            .tour-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px 20px;
+            }
+            .tour-city, .tour-venue, .tour-date {
+                width: 100%;
+            }
+            .tour-header {
+                font-size: 18px;
+                padding: 16px 20px;
+            }
         }
 
-        /* ----- SPEAKER CARD (GIDEON) ----- */
+        /* ----- SPEAKER CARD (rapi di mobile) ----- */
         .speaker-zone {
             background: #f6f6f6;
-            padding: 90px 0;
+            padding: 70px 0;
         }
         .section-title {
-            font-size: 42px;
+            font-size: clamp(32px, 6vw, 42px);
             font-weight: 800;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
+            padding: 0 16px;
         }
         .speaker-card {
             max-width: 540px;
             margin: 0 auto;
             background: #fff;
             border-radius: 48px;
-            padding: 50px 40px 40px;
+            padding: 40px 24px 36px;
             text-align: center;
-            box-shadow: 0 25px 40px -18px rgba(0,0,0,0.2);
+            box-shadow: var(--card-shadow);
             border: 1px solid #ddd;
-            transition: all 0.3s;
         }
-        .speaker-card:hover { transform: scale(1.01) translateY(-4px); }
         .avatar-circle {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px;
             background: linear-gradient(135deg, #232323, #3d3d3d);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 66px;
+            font-size: 56px;
             font-weight: 800;
             color: white;
-            box-shadow: 0 15px 30px -8px rgba(0,0,0,0.4);
         }
         .speaker-name {
-            font-size: 44px;
+            font-size: 40px;
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         .x-handle {
             display: inline-block;
             background: #eff3ff;
             border-radius: 60px;
-            padding: 10px 28px;
+            padding: 10px 26px;
             border: 1px solid #111;
-            margin: 20px 0 16px;
-            transition: 0.15s;
+            margin: 16px 0 16px;
         }
         .x-handle a {
             color: #000;
             text-decoration: none;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 19px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -368,19 +419,19 @@ Here's the repaired header with proper structure and styling that matches your d
         }
         .x-handle:hover a { color: #fff; }
         .speaker-role {
-            font-size: 18px;
+            font-size: 17px;
             color: #404040;
-            margin: 15px 0 25px;
+            margin: 10px 0 20px;
         }
         .profile-btn {
             background: transparent;
             border: 2px solid #111;
             border-radius: 60px;
-            padding: 14px 36px;
+            padding: 12px 32px;
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: var(--transition);
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -390,22 +441,22 @@ Here's the repaired header with proper structure and styling that matches your d
             color: #fff;
         }
 
-        /* ----- FOOTER CLEAN ----- */
+        /* ----- FOOTER (mobile grid fix) ----- */
         footer {
             background: #0b0b0b;
             color: #f0f0f0;
-            padding: 70px 0 30px;
+            padding: 60px 0 30px;
         }
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            margin-bottom: 50px;
+            gap: 40px;
+            margin-bottom: 45px;
         }
         .footer-company h3, .footer-about h3 {
             color: #fff;
             font-weight: 700;
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 20px;
         }
         .company-details div {
@@ -414,6 +465,7 @@ Here's the repaired header with proper structure and styling that matches your d
             align-items: center;
             gap: 12px;
             color: #bbb;
+            flex-wrap: wrap;
         }
         .footer-about p {
             color: #aaa;
@@ -421,7 +473,7 @@ Here's the repaired header with proper structure and styling that matches your d
         }
         .footer-bottom {
             border-top: 1px solid #222;
-            padding-top: 30px;
+            padding-top: 25px;
             text-align: center;
             color: #888;
             font-size: 14px;
@@ -429,10 +481,17 @@ Here's the repaired header with proper structure and styling that matches your d
         .disclaimer-note {
             font-style: italic;
             color: #666;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
-        /* ----- MODAL GIDEON TEAM ----- */
+        @media (max-width: 700px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        /* ----- MODAL (tetap) ----- */
         .modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -449,103 +508,60 @@ Here's the repaired header with proper structure and styling that matches your d
             max-width: 600px;
             width: 100%;
             border-radius: 40px;
-            padding: 40px;
+            padding: 35px;
             position: relative;
             max-height: 85vh;
             overflow-y: auto;
-            animation: modalFade 0.3s;
-        }
-        @keyframes modalFade {
-            from { opacity: 0; transform: scale(0.96); }
-            to { opacity: 1; transform: scale(1); }
         }
         .modal-close {
             position: absolute;
-            top: 25px; right: 30px;
-            font-size: 30px;
+            top: 20px; right: 25px;
+            font-size: 28px;
             background: none;
             border: none;
             cursor: pointer;
             color: #777;
         }
-        .modal-close:hover { color: #000; }
         .modal-header {
             display: flex;
             gap: 20px;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
         .modal-avatar {
-            width: 80px; height: 80px;
+            width: 70px; height: 70px;
             border-radius: 50%;
             background: #222;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 44px;
+            font-size: 38px;
             font-weight: 800;
         }
-        .modal-name { font-size: 28px; font-weight: 800; }
+        .modal-name { font-size: 26px; font-weight: 800; }
         .modal-role { color: #404040; }
-        .modal-body p { margin-bottom: 20px; line-height: 1.7; }
 
-        /* ----- ANIMATIONS SCROLL ----- */
+        /* ----- FADE ANIMATION ----- */
         .fade-up {
             opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.2, 1);
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.2, 0.9, 0.3, 1);
         }
         .fade-up.revealed {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* responsive tweaks */
-        @media (max-width: 700px) {
-            .header-content { 
-                flex-wrap: wrap; 
-                gap: 10px;
-                padding: 10px 0;
-            }
-            .logo-container {
-                flex: 1;
-                min-width: 200px;
-            }
-            .navigation {
-                justify-content: flex-end;
-            }
-            .footer-grid { grid-template-columns: 1fr; }
-            .tour-header { font-size: 18px; }
-        }
-        @media (max-width: 480px) {
-            .logo-container {
-                gap: 10px;
-            }
-            #logo {
-                font-size: 20px;
-                padding: 0 14px;
-                line-height: 38px;
-                height: 38px;
-            }
-            .article-category {
-                font-size: 11px;
-                padding: 4px 12px;
-            }
-            .nav-btn {
-                padding: 6px 16px;
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Header (REPAIRED) -->
+    <!-- Header with kaboom-logo.png (JANGAN DIGANTI) -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
-                    <div id="logo">K!</div>
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%2244%22%20viewBox%3D%220%200%20120%2044%22%3E%3Crect%20width%3D%22120%22%20height%3D%2244%22%20rx%3D%2222%22%20fill%3D%22%23000%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2232%22%20font-family%3D%22Inter%22%20font-size%3D%2226%22%20font-weight%3D%22900%22%20fill%3D%22%23fff%22%3EK!%3C%2Ftext%3E%3C%2Fsvg%3E');">
                     <div class="article-category">KABUTZ</div>
                 </div>
                 
@@ -591,7 +607,7 @@ Here's the repaired header with proper structure and styling that matches your d
                 <h2 class="fade-up">Jadwal Internasional</h2>
                 <p class="fade-up">Dirancang sebagai pengalaman global, bukan promosi regional, tur ini meliputi Asia, Australia, dan Amerika Utara, ditutup di Korea Selatan.</p>
 
-                <!-- Tour table modern -->
+                <!-- Tour table modern & mobile friendly -->
                 <div class="tour-wrap fade-up">
                     <div class="tour-header"><i class="fas fa-globe"></i> GI:DEOM WORLD TOUR 2025–2026</div>
                     <div class="tour-grid">
@@ -613,7 +629,7 @@ Here's the repaired header with proper structure and styling that matches your d
                 <p class="fade-up">Dalam langkah yang tidak biasa, <strong>Team Gideon</strong> mengonfirmasi bahwa semua pertunjukan <strong>gratis untuk dihadiri</strong>. Keputusan ini untuk menghilangkan hambatan ekonomi dan memungkinkan penonton "berada dalam atmosfer emosional yang sama." Tidak ada merchandise resmi, fokus pada imersi musik.</p>
 
                 <div class="quote-card fade-up">
-                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
                     <div class="quote-text">“Kami ingin semua orang bisa hadir dan bernyanyi bersama, tanpa sekat ekonomi.”</div>
                     <div class="quote-author">— Team Gideon</div>
                 </div>
@@ -622,7 +638,7 @@ Here's the repaired header with proper structure and styling that matches your d
                 <p class="fade-up">Album <em>Novus</em> melibatkan Red Flames (<em>Bump Bump</em>), EROR FOUR (<em>Busted, Touché</em>), dan duet dengan Resadena (<em>POOL</em>). Single <em>I'll Never Love Again</em> melibatkan Celine Amora dalam penulisan lirik dan produksi, memperkuat narasi pribadi.</p>
 
                 <!-- photo credit line -->
-                <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid #ddd; display:flex; gap:16px; align-items:center;">
+                <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid #ddd; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
                     <i class="fas fa-camera" style="background:#000; color:white; padding:12px; border-radius:50%;"></i>
                     <span>Foto oleh <strong>The Kadio</strong> / KABOOM! studio</span>
                 </div>
@@ -664,6 +680,7 @@ Here's the repaired header with proper structure and styling that matches your d
             </div>
             <div class="modal-body">
                 <p><strong>Team Gideon</strong> adalah kolektif di balik kebangkitan global Gideon. Dalam wawancara dengan KABOOM!, mereka menjelaskan filosofi “GI:DEOM” – perpaduan identitas artis (GI) dan fandom (DEOM). Tur dunia ini dirancang sebagai perayaan bersama tanpa batasan komersial.</p>
+                <p>“Kami menghapus tiket berbayar agar atmosfer kebersamaan terasa murni,” ujar perwakilan tim. Pembatalan London dan Paris merupakan keputusan berat, namun fokus tetap pada kualitas pertunjukan.</p>
                 <p>Kolaborasi dengan Celine Amora di <em>I'll Never Love Again</em> menjadi pusat tur, sementara album <em>Novus</em> menghadirkan produser Red Flames, EROR FOUR, dan Resadena.</p>
                 <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/RockerGideon" target="_blank" style="color:#000; font-weight:600;">@RockerGideon</a> (dikelola tim)</p>
             </div>
@@ -697,12 +714,11 @@ Here's the repaired header with proper structure and styling that matches your d
     <script>
         // fade-up scroll observer
         const faders = document.querySelectorAll('.fade-up');
-        const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -30px 0px' };
         const appearObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('revealed');
             });
-        }, appearOptions);
+        }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
         faders.forEach(el => appearObserver.observe(el));
 
         // modal
@@ -713,4 +729,3 @@ Here's the repaired header with proper structure and styling that matches your d
     </script>
 </body>
 </html>
-```
