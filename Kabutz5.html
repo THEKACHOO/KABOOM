@@ -1,3 +1,5 @@
+Here's the repaired header with proper structure and styling that matches your design system:
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -30,13 +32,13 @@
             padding: 0 28px;
         }
 
-        /* ----- HEADER ELEVATED ----- */
+        /* ----- HEADER ELEVATED (REPAIRED) ----- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -48,47 +50,54 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 0;
-            min-height: 72px;
+            padding: 12px 0;
+            min-height: 70px;
         }
 
-        .logo-group {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
             cursor: pointer;
+            text-decoration: none;
         }
 
-        .kaboom-mark {
+        #logo {
+            height: 42px;
+            width: auto;
             background: #000;
             color: white;
             font-weight: 900;
-            font-size: 26px;
-            letter-spacing: -0.5px;
-            padding: 6px 16px 6px 14px;
+            font-size: 24px;
+            padding: 0 18px 0 16px;
             border-radius: 40px;
-            line-height: 1;
-            box-shadow: 0 8px 16px -8px rgba(0,0,0,0.15);
+            line-height: 42px;
+            letter-spacing: -0.5px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
             transition: transform 0.2s;
+            display: inline-block;
         }
-        .kaboom-mark:hover { transform: scale(1.02); }
+        #logo:hover {
+            transform: scale(1.02);
+        }
 
-        .category-badge {
-            font-size: 12px;
+        .article-category {
+            font-size: 13px;
             font-weight: 700;
             background: #f0f0f0;
             color: #000;
-            padding: 6px 16px;
+            padding: 6px 18px;
             border-radius: 40px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             border: 1px solid rgba(0,0,0,0.1);
+            text-transform: uppercase;
         }
 
-        .nav-right {
+        .navigation {
             display: flex;
-            gap: 12px;
+            gap: 10px;
         }
-        .nav-pill {
+        .nav-btn {
             background: transparent;
             border: 1.5px solid #111;
             color: #111;
@@ -96,21 +105,21 @@
             border-radius: 40px;
             font-weight: 600;
             font-size: 14px;
-            transition: 0.2s;
+            transition: all 0.2s;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
         }
-        .nav-pill:hover {
+        .nav-btn:hover {
             background: #111;
             color: #fff;
             border-color: #111;
         }
 
-        /* ----- HERO SECTION (clean, airy) ----- */
+        /* ----- HERO SECTION ----- */
         .hero-section {
-            margin-top: 96px;
+            margin-top: 94px;
             padding: 70px 0 50px;
             background: #fafafa;
             position: relative;
@@ -494,27 +503,57 @@
 
         /* responsive tweaks */
         @media (max-width: 700px) {
-            .header-content { flex-wrap: wrap; gap: 12px; }
+            .header-content { 
+                flex-wrap: wrap; 
+                gap: 10px;
+                padding: 10px 0;
+            }
+            .logo-container {
+                flex: 1;
+                min-width: 200px;
+            }
+            .navigation {
+                justify-content: flex-end;
+            }
             .footer-grid { grid-template-columns: 1fr; }
             .tour-header { font-size: 18px; }
+        }
+        @media (max-width: 480px) {
+            .logo-container {
+                gap: 10px;
+            }
+            #logo {
+                font-size: 20px;
+                padding: 0 14px;
+                line-height: 38px;
+                height: 38px;
+            }
+            .article-category {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+            .nav-btn {
+                padding: 6px 16px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header (REPAIRED) -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
-                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
+                    <div id="logo">K!</div>
                     <div class="article-category">KABUTZ</div>
                 </div>
-            </div>
                 
                 <div class="navigation">
                     <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn">
                         <i class="fas fa-home"></i> Beranda
                     </a>
+                </div>
             </div>
         </div>
     </header>
@@ -625,7 +664,6 @@
             </div>
             <div class="modal-body">
                 <p><strong>Team Gideon</strong> adalah kolektif di balik kebangkitan global Gideon. Dalam wawancara dengan KABOOM!, mereka menjelaskan filosofi “GI:DEOM” – perpaduan identitas artis (GI) dan fandom (DEOM). Tur dunia ini dirancang sebagai perayaan bersama tanpa batasan komersial.</p>
-                <p>“Kami menghapus tiket berbayar agar atmosfer kebersamaan terasa murni,” ujar perwakilan tim. Pembatalan London dan Paris merupakan keputusan berat, namun fokus tetap pada kualitas pertunjukan.</p>
                 <p>Kolaborasi dengan Celine Amora di <em>I'll Never Love Again</em> menjadi pusat tur, sementara album <em>Novus</em> menghadirkan produser Red Flames, EROR FOUR, dan Resadena.</p>
                 <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/RockerGideon" target="_blank" style="color:#000; font-weight:600;">@RockerGideon</a> (dikelola tim)</p>
             </div>
@@ -675,3 +713,4 @@
     </script>
 </body>
 </html>
+```
