@@ -3,124 +3,878 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Gideon Umumkan "GI:DEOM" World Tour</title>
-    <!-- Font Awesome 6 (free) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Gideon Umumkan "GI:DEOM" World Tour | KABOOM! Eksklusif</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* ----- RESET & VARIABLES ----- */
+        /* ===== VARIABLES & RESET ===== (diadaptasi dari HTML pertama) */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d3;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            
+            --primary-black: #000000;
+            --secondary-black: #1a1a1a;
+            --accent-black: #333333;
+            --light-black: #444444;
+            --off-white: #f8f8f8;
+            --gray-light: #f0f0f0;
+            --gray-medium: #e0e0e0;
+            
+            --accent: var(--primary-black);
+            --primary: var(--primary-black);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --pure-black: #111111;
-            --off-white: #fafafa;
-            --gray-border: rgba(0,0,0,0.08);
-            --card-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
-            --transition: all 0.25s ease;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
-            color: var(--pure-black);
-            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--primary-black);
+            line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
             width: 100%;
         }
 
-        /* ----- HEADER (PRESERVED LOGO + FLEX FIX) ----- */
+        /* ===== HEADER (diadaptasi dari HTML pertama) ===== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--gray-border);
+            background: rgba(255, 255, 255, 0.98);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border-bottom: 1px solid var(--gray-medium);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideDown {
+            from { 
+                transform: translateY(-100%); 
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0); 
+                opacity: 1;
+            }
         }
 
         .header-content {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 10px 0;
-            min-height: 68px;
-            gap: 16px;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
             flex-wrap: nowrap;
+            gap: 16px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
+            gap: 15px;
             cursor: pointer;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
         }
 
         #logo {
-            height: 44px;
+            height: 40px;
             width: auto;
+            transition: var(--transition);
             max-width: 140px;
             object-fit: contain;
             display: block;
-            border-radius: 30px;
-            background: #000; /* fallback if image missing */
         }
 
         .article-category {
-            font-size: 13px;
-            font-weight: 700;
-            background: #f0f0f0;
-            color: #000;
-            padding: 6px 18px;
-            border-radius: 40px;
-            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 20px;
             white-space: nowrap;
-            letter-spacing: 0.2px;
         }
 
         .navigation {
             display: flex;
-            gap: 12px;
+            gap: 15px;
+            align-items: center;
             flex-shrink: 0;
         }
 
         .nav-btn {
             background: transparent;
-            border: 1.5px solid #111;
-            color: #111;
-            padding: 8px 22px;
-            border-radius: 40px;
+            border: 2px solid var(--primary-black);
+            color: var(--primary-black);
+            padding: 10px 22px;
+            border-radius: 30px;
             font-weight: 600;
             font-size: 14px;
+            cursor: pointer;
             transition: var(--transition);
-            text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
             white-space: nowrap;
         }
 
-        .nav-btn:hover {
-            background: #111;
-            color: #fff;
+        .nav-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+            transition: left 0.7s;
         }
 
-        /* ----- MOBILE HEADER (RAPI BANGET) ----- */
+        .nav-btn:hover:before {
+            left: 100%;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== HERO SECTION (diadaptasi dari HTML pertama) ===== */
+        .hero-section {
+            margin-top: 120px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInHero 1.2s ease-out;
+        }
+
+        @keyframes fadeInHero {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.03));
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            33% { 
+                transform: translateY(-30px) rotate(120deg); 
+            }
+            66% { 
+                transform: translateY(20px) rotate(240deg); 
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: var(--primary-black);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--white);
+            padding: 10px 24px;
+            border-radius: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eaeaea;
+        }
+
+        .hero-title {
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1.5px;
+            position: relative;
+            display: inline-block;
+            color: var(--secondary-black);
+        }
+
+        .title-accent {
+            background: #000;
+            color: #fff;
+            padding: 0 16px 4px 16px;
+            display: inline-block;
+            transform: skew(-3deg) scale(1.02);
+            border-radius: 12px 4px 12px 4px;
+        }
+
+        .hero-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+            animation: expandLine 1s 1s both;
+        }
+
+        @keyframes expandLine {
+            from { width: 0; opacity: 0; }
+            to { width: 120px; opacity: 1; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(20px, 2vw, 24px);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .meta-line {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            color: var(--gray-600);
+            font-weight: 400;
+            flex-wrap: wrap;
+        }
+
+        .meta-line i { 
+            color: var(--primary-black); 
+            margin-right: 6px; 
+        }
+
+        /* ===== ARTICLE MAIN ===== */
+        .article-main {
+            padding: 80px 0;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .lead-paragraph {
+            font-size: clamp(18px, 4vw, 22px);
+            line-height: 1.6;
+            color: #1e1e1e;
+            padding-left: 24px;
+            border-left: 5px solid var(--primary-black);
+            margin-bottom: 50px;
+            font-weight: 450;
+        }
+
+        .body-text p {
+            font-size: 17px;
+            margin-bottom: 28px;
+            color: var(--gray-700);
+        }
+
+        .body-text h2 {
+            font-size: clamp(26px, 5vw, 32px);
+            font-weight: 800;
+            margin: 60px 0 20px;
+            letter-spacing: -0.01em;
+            color: var(--secondary-black);
+        }
+
+        .body-text h2:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--primary-black);
+            margin-top: 10px;
+        }
+
+        .quote-card {
+            background: var(--off-white);
+            padding: 30px 24px;
+            border-radius: 24px;
+            margin: 50px 0;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .quote-text {
+            font-size: clamp(20px, 4vw, 24px);
+            font-weight: 450;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            color: var(--secondary-black);
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        /* ===== TOUR CARD (diadaptasi dengan gaya dari HTML pertama) ===== */
+        .tour-wrap {
+            background: var(--white);
+            border: 1px solid var(--gray-medium);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 50px 0 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .tour-header {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 18px 24px;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tour-grid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tour-row {
+            display: flex;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            transition: var(--transition);
+        }
+
+        .tour-row:hover {
+            background: var(--off-white);
+        }
+
+        .tour-row:last-child {
+            border-bottom: none;
+        }
+
+        .tour-city { 
+            font-weight: 700; 
+            color: var(--primary-black); 
+            min-width: 100px; 
+        }
+
+        .tour-venue { 
+            color: var(--gray-600); 
+            flex: 1; 
+            min-width: 160px; 
+        }
+
+        .tour-date { 
+            font-weight: 500; 
+            color: var(--primary-black); 
+            display: flex; 
+            align-items: center; 
+            gap: 6px; 
+        }
+
+        .cancelled {
+            color: #b00020;
+            text-decoration: line-through 2px rgba(176,0,32,0.3);
+        }
+
+        /* ===== SPEAKER SECTION (diadaptasi dengan gaya card dari HTML pertama) ===== */
+        .speaker-zone {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-zone:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 6vw, 42px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 45px;
+            color: var(--secondary-black);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .speaker-card {
+            max-width: 540px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 24px 36px;
+            text-align: center;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .speaker-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .speaker-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, var(--primary-black), var(--accent-black));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .speaker-card:hover .avatar-circle {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .speaker-name {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            color: var(--secondary-black);
+        }
+
+        .x-handle {
+            display: inline-block;
+            background: var(--off-white);
+            border-radius: 60px;
+            padding: 10px 26px;
+            border: 1px solid var(--primary-black);
+            margin: 16px 0 16px;
+            transition: var(--transition);
+        }
+
+        .x-handle a {
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .x-handle:hover {
+            background: var(--primary-black);
+            border-color: var(--primary-black);
+        }
+
+        .x-handle:hover a { 
+            color: var(--white); 
+        }
+
+        .speaker-role {
+            font-size: 17px;
+            color: var(--gray-600);
+            margin: 10px 0 20px;
+        }
+
+        .profile-btn {
+            background: transparent;
+            border: 2px solid var(--primary-black);
+            border-radius: 30px;
+            padding: 12px 32px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-black);
+        }
+
+        .profile-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.active { display: flex; }
+
+        .modal-card {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 25px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-500);
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            background: var(--off-white);
+            color: var(--primary-black);
+        }
+
+        .modal-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .modal-avatar {
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-black), var(--accent-black));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        .modal-name { 
+            font-size: 26px; 
+            font-weight: 800; 
+            color: var(--secondary-black);
+        }
+
+        .modal-role { 
+            color: var(--gray-600); 
+        }
+
+        .modal-body p {
+            margin-bottom: 16px;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .modal-body a {
+            color: var(--primary-black);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-black);
+        }
+
+        /* ===== FOOTER (diadaptasi dari HTML pertama) ===== */
+        footer {
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--gray-medium);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .company-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .company-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .company-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--gray-700);
+        }
+
+        .company-info i {
+            width: 20px;
+            color: var(--primary-black);
+            font-size: 18px;
+        }
+
+        .footer-about h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .footer-about p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-medium);
+            color: var(--primary-black);
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-style: italic;
+            color: var(--primary-black);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE (diadaptasi dari HTML pertama) ===== */
+        @media (max-width: 992px) {
+            .hero-section {
+                margin-top: 100px;
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .article-category {
+                order: 2;
+            }
+            
+            .navigation {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .hero-section {
+                margin-top: 130px;
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
         @media (max-width: 600px) {
             .header-content {
                 flex-wrap: wrap;
@@ -153,9 +907,45 @@
                 padding: 8px 20px;
                 font-size: 14px;
             }
+
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .tour-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px 20px;
+            }
+            
+            .tour-city, .tour-venue, .tour-date {
+                width: 100%;
+            }
+            
+            .tour-header {
+                font-size: 18px;
+                padding: 16px 20px;
+            }
+
+            .meta-line {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .company-card {
+                padding: 30px;
+            }
         }
 
-        /* Extra small devices */
         @media (max-width: 380px) {
             .nav-btn {
                 padding: 6px 16px;
@@ -167,388 +957,13 @@
             }
         }
 
-        /* ----- HERO (tetap elegan) ----- */
-        .hero-section {
-            margin-top: 88px;
-            padding: 70px 0 50px;
-            background: #fafafa;
-            position: relative;
-        }
-
-        .floating-bg {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.02), transparent 70%);
-            border-radius: 50%;
-            top: -50px;
-            right: -80px;
-            z-index: 0;
-        }
-        .floating-bg2 {
-            left: -60px;
-            bottom: -30px;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, rgba(0,0,0,0.02), transparent);
-            position: absolute;
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .dateline {
-            display: inline-flex;
-            align-items: center;
-            background: #fff;
-            padding: 10px 24px;
-            border-radius: 60px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            font-weight: 500;
-            gap: 12px;
-            border: 1px solid #eaeaea;
-            margin-bottom: 40px;
-        }
-
-        .article-title {
-            font-size: clamp(40px, 9vw, 80px);
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
-        .title-accent {
-            background: #000;
-            color: #fff;
-            padding: 0 16px 4px 16px;
-            display: inline-block;
-            transform: skew(-3deg) scale(1.02);
-            border-radius: 12px 4px 12px 4px;
-        }
-        .article-sub {
-            font-size: clamp(18px, 4vw, 22px);
-            color: #404040;
-            max-width: 700px;
-            margin: 20px auto 30px;
-            padding: 0 16px;
-        }
-        .meta-line {
-            display: flex;
-            justify-content: center;
-            gap: clamp(16px, 4vw, 30px);
-            color: #5a5a5a;
-            font-weight: 400;
-            flex-wrap: wrap;
-            padding: 0 12px;
-        }
-        .meta-line i { color: #000; margin-right: 6px; }
-
-        /* ----- ARTICLE CONTENT (mobile friendly) ----- */
-        .article-main {
-            padding: 70px 0;
-        }
-        .article-container {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-        .lead-paragraph {
-            font-size: clamp(18px, 4vw, 22px);
-            line-height: 1.6;
-            color: #1e1e1e;
-            padding-left: 24px;
-            border-left: 5px solid #000;
-            margin-bottom: 50px;
-            font-weight: 450;
-        }
-        .body-text p {
-            font-size: 17px;
-            margin-bottom: 28px;
-            color: #2a2a2a;
-        }
-        .body-text h2 {
-            font-size: clamp(26px, 5vw, 32px);
-            font-weight: 800;
-            margin: 60px 0 20px;
-            letter-spacing: -0.01em;
-        }
-        .body-text h2:after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 3px;
-            background: #000;
-            margin-top: 10px;
-        }
-
-        .quote-card {
-            background: #f4f4f4;
-            padding: 30px 24px;
-            border-radius: 24px;
-            margin: 50px 0;
-        }
-        .quote-text {
-            font-size: clamp(20px, 4vw, 24px);
-            font-weight: 450;
-            line-height: 1.5;
-            margin-bottom: 16px;
-        }
-
-        /* ----- TOUR CARD (mobile optimized) ----- */
-        .tour-wrap {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 28px;
-            overflow: hidden;
-            margin: 50px 0 40px;
-            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.06);
-        }
-        .tour-header {
-            background: #111;
-            color: #fff;
-            padding: 18px 24px;
-            font-size: 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .tour-grid {
-            display: flex;
-            flex-direction: column;
-        }
-        .tour-row {
-            display: flex;
-            align-items: center;
-            padding: 16px 24px;
-            border-bottom: 1px solid #f0f0f0;
-            flex-wrap: wrap;
-            gap: 8px 12px;
-        }
-        .tour-city { font-weight: 700; color: #000; min-width: 100px; }
-        .tour-venue { color: #3a3a3a; flex: 1; min-width: 160px; }
-        .tour-date { font-weight: 500; color: #000; display: flex; align-items: center; gap: 6px; }
-        .cancelled {
-            color: #b00020;
-            text-decoration: line-through 2px rgba(176,0,32,0.3);
-        }
-
-        /* Mobile tour row */
-        @media (max-width: 600px) {
-            .tour-row {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 14px 20px;
-            }
-            .tour-city, .tour-venue, .tour-date {
-                width: 100%;
-            }
-            .tour-header {
-                font-size: 18px;
-                padding: 16px 20px;
-            }
-        }
-
-        /* ----- SPEAKER CARD (rapi di mobile) ----- */
-        .speaker-zone {
-            background: #f6f6f6;
-            padding: 70px 0;
-        }
-        .section-title {
-            font-size: clamp(32px, 6vw, 42px);
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 45px;
-            padding: 0 16px;
-        }
-        .speaker-card {
-            max-width: 540px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 48px;
-            padding: 40px 24px 36px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            border: 1px solid #ddd;
-        }
-        .avatar-circle {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 16px;
-            background: linear-gradient(135deg, #232323, #3d3d3d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 56px;
-            font-weight: 800;
-            color: white;
-        }
-        .speaker-name {
-            font-size: 40px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 8px;
-        }
-        .x-handle {
-            display: inline-block;
-            background: #eff3ff;
-            border-radius: 60px;
-            padding: 10px 26px;
-            border: 1px solid #111;
-            margin: 16px 0 16px;
-        }
-        .x-handle a {
-            color: #000;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 19px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .x-handle:hover {
-            background: #000;
-            border-color: #000;
-        }
-        .x-handle:hover a { color: #fff; }
-        .speaker-role {
-            font-size: 17px;
-            color: #404040;
-            margin: 10px 0 20px;
-        }
-        .profile-btn {
-            background: transparent;
-            border: 2px solid #111;
-            border-radius: 60px;
-            padding: 12px 32px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .profile-btn:hover {
-            background: #111;
-            color: #fff;
-        }
-
-        /* ----- FOOTER (mobile grid fix) ----- */
-        footer {
-            background: #0b0b0b;
-            color: #f0f0f0;
-            padding: 60px 0 30px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            margin-bottom: 45px;
-        }
-        .footer-company h3, .footer-about h3 {
-            color: #fff;
-            font-weight: 700;
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-        .company-details div {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #bbb;
-            flex-wrap: wrap;
-        }
-        .footer-about p {
-            color: #aaa;
-            line-height: 1.7;
-        }
-        .footer-bottom {
-            border-top: 1px solid #222;
-            padding-top: 25px;
-            text-align: center;
-            color: #888;
-            font-size: 14px;
-        }
-        .disclaimer-note {
-            font-style: italic;
-            color: #666;
-            margin-top: 12px;
-        }
-
-        @media (max-width: 700px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 36px;
-            }
-        }
-
-        /* ----- MODAL (tetap) ----- */
-        .modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-        .modal.active { display: flex; }
-        .modal-card {
-            background: #fff;
-            max-width: 600px;
-            width: 100%;
-            border-radius: 40px;
-            padding: 35px;
-            position: relative;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
-        .modal-close {
-            position: absolute;
-            top: 20px; right: 25px;
-            font-size: 28px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #777;
-        }
-        .modal-header {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        .modal-avatar {
-            width: 70px; height: 70px;
-            border-radius: 50%;
-            background: #222;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-            font-weight: 800;
-        }
-        .modal-name { font-size: 26px; font-weight: 800; }
-        .modal-role { color: #404040; }
-
-        /* ----- FADE ANIMATION ----- */
+        /* ===== ANIMATIONS (dari HTML pertama) ===== */
         .fade-up {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.7s cubic-bezier(0.2, 0.9, 0.3, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+
         .fade-up.revealed {
             opacity: 1;
             transform: translateY(0);
@@ -556,7 +971,7 @@
     </style>
 </head>
 <body>
-    <!-- Header with kaboom-logo.png (JANGAN DIGANTI) -->
+    <!-- Header dengan kaboom-logo.png (SESUAI PERMINTAAN) -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -574,79 +989,85 @@
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section dengan floating elements -->
     <section class="hero-section">
-        <div class="floating-bg"></div>
-        <div class="floating-bg2"></div>
-        <div class="container hero-content">
-            <div class="dateline">
-                <i class="fas fa-calendar-alt"></i> 29 Februari 2026 · Eksklusif
-            </div>
-            <h1 class="article-title">
-                <span class="title-accent">GI:DEOM</span> WORLD TOUR
-            </h1>
-            <p class="article-sub">Gideon mengumumkan tur global, simbol ikatan dengan Gidom — dan seluruh pertunjukan gratis.</p>
-            <div class="meta-line">
-                <span><i class="fas fa-pen"></i> Tim Kaboom</span>
-                <span><i class="fas fa-headphones"></i> Wawancara dengan Team Gideon</span>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-date">
+                    <i class="fas fa-calendar-alt"></i> 29 Februari 2026 · Eksklusif
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-accent">GI:DEOM</span> WORLD TOUR
+                </h1>
+                <p class="hero-subtitle">Gideon mengumumkan tur global, simbol ikatan dengan Gidom — dan seluruh pertunjukan gratis.</p>
+                <div class="meta-line">
+                    <span><i class="fas fa-pen"></i> Tim Kaboom</span>
+                    <span><i class="fas fa-headphones"></i> Wawancara dengan Team Gideon</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Article main content -->
     <section class="article-main">
-        <div class="article-container">
-            <div class="lead-paragraph fade-up revealed">
-                Tim Kaboom baru-baru ini duduk bersama Team Gideon untuk membahas tur dunia berskala besar "GI:DEOM" World Tour – sebuah seri konser internasional yang menandai kembalinya solois ini ke panggung global.
-            </div>
+        <div class="container">
+            <div class="article-container">
+                <div class="lead-paragraph fade-up revealed">
+                    Tim Kaboom baru-baru ini duduk bersama Team Gideon untuk membahas tur dunia berskala besar "GI:DEOM" World Tour – sebuah seri konser internasional yang menandai kembalinya solois ini ke panggung global.
+                </div>
 
-            <div class="body-text">
-                <h2 class="fade-up">Identitas dan Koneksi</h2>
-                <p class="fade-up">Menurut <strong>Team Gideon</strong>, judul "GI:DEOM" menggabungkan nama artis dengan fandom-nya, Gidom, melambangkan identitas bersama antara performer dan penonton. Tur ini juga merayakan perilisan single keempatnya, <em>I'll Never Love Again</em>, sebuah duet dengan Celine Amora yang menandai arah musik lebih emosional. Era baru ini mengikuti album full Korea <em>Novus</em>, hasil kolaborasi dengan banyak produser internasional.</p>
+                <div class="body-text">
+                    <h2 class="fade-up">Identitas dan Koneksi</h2>
+                    <p class="fade-up">Menurut <strong>Team Gideon</strong>, judul "GI:DEOM" menggabungkan nama artis dengan fandom-nya, Gidom, melambangkan identitas bersama antara performer dan penonton. Tur ini juga merayakan perilisan single keempatnya, <em>I'll Never Love Again</em>, sebuah duet dengan Celine Amora yang menandai arah musik lebih emosional. Era baru ini mengikuti album full Korea <em>Novus</em>, hasil kolaborasi dengan banyak produser internasional.</p>
 
-                <h2 class="fade-up">Jadwal Internasional</h2>
-                <p class="fade-up">Dirancang sebagai pengalaman global, bukan promosi regional, tur ini meliputi Asia, Australia, dan Amerika Utara, ditutup di Korea Selatan.</p>
+                    <h2 class="fade-up">Jadwal Internasional</h2>
+                    <p class="fade-up">Dirancang sebagai pengalaman global, bukan promosi regional, tur ini meliputi Asia, Australia, dan Amerika Utara, ditutup di Korea Selatan.</p>
 
-                <!-- Tour table modern & mobile friendly -->
-                <div class="tour-wrap fade-up">
-                    <div class="tour-header"><i class="fas fa-globe"></i> GI:DEOM WORLD TOUR 2025–2026</div>
-                    <div class="tour-grid">
-                        <div class="tour-row"><span class="tour-city">Seoul</span><span class="tour-venue">KSPO Dome</span><span class="tour-date">23 Nov 2025</span></div>
-                        <div class="tour-row"><span class="tour-city">Tokyo</span><span class="tour-venue">Yoyogi National Gymnasium</span><span class="tour-date">6 Des 2025</span></div>
-                        <div class="tour-row"><span class="tour-city">Singapura</span><span class="tour-venue">Singapore Indoor Stadium</span><span class="tour-date">19 Des 2025</span></div>
-                        <div class="tour-row"><span class="tour-city">Jakarta</span><span class="tour-venue">ICE BSD</span><span class="tour-date">27 Des 2025</span></div>
-                        <div class="tour-row"><span class="tour-city">Sydney</span><span class="tour-venue">Qudos Bank Arena</span><span class="tour-date">10 Jan 2026</span></div>
-                        <div class="tour-row"><span class="tour-city">London</span><span class="tour-venue">The O2 Arena</span><span class="tour-date cancelled"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
-                        <div class="tour-row"><span class="tour-city">Paris</span><span class="tour-venue">Accor Arena</span><span class="tour-date cancelled"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
-                        <div class="tour-row"><span class="tour-city">New York</span><span class="tour-venue">Barclays Center</span><span class="tour-date">21 Feb 2026</span></div>
-                        <div class="tour-row"><span class="tour-city">Busan</span><span class="tour-venue">BEXCO Auditorium</span><span class="tour-date">6 Mar 2026 (Final)</span></div>
+                    <!-- Tour table dengan gaya card -->
+                    <div class="tour-wrap fade-up">
+                        <div class="tour-header"><i class="fas fa-globe"></i> GI:DEOM WORLD TOUR 2025–2026</div>
+                        <div class="tour-grid">
+                            <div class="tour-row"><span class="tour-city">Seoul</span><span class="tour-venue">KSPO Dome</span><span class="tour-date">23 Nov 2025</span></div>
+                            <div class="tour-row"><span class="tour-city">Tokyo</span><span class="tour-venue">Yoyogi National Gymnasium</span><span class="tour-date">6 Des 2025</span></div>
+                            <div class="tour-row"><span class="tour-city">Singapura</span><span class="tour-venue">Singapore Indoor Stadium</span><span class="tour-date">19 Des 2025</span></div>
+                            <div class="tour-row"><span class="tour-city">Jakarta</span><span class="tour-venue">ICE BSD</span><span class="tour-date">27 Des 2025</span></div>
+                            <div class="tour-row"><span class="tour-city">Sydney</span><span class="tour-venue">Qudos Bank Arena</span><span class="tour-date">10 Jan 2026</span></div>
+                            <div class="tour-row"><span class="tour-city">London</span><span class="tour-venue">The O2 Arena</span><span class="tour-date cancelled"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
+                            <div class="tour-row"><span class="tour-city">Paris</span><span class="tour-venue">Accor Arena</span><span class="tour-date cancelled"><i class="fas fa-times-circle"></i> Dibatalkan</span></div>
+                            <div class="tour-row"><span class="tour-city">New York</span><span class="tour-venue">Barclays Center</span><span class="tour-date">21 Feb 2026</span></div>
+                            <div class="tour-row"><span class="tour-city">Busan</span><span class="tour-venue">BEXCO Auditorium</span><span class="tour-date">6 Mar 2026 (Final)</span></div>
+                        </div>
                     </div>
-                </div>
 
-                <p class="fade-up">Meskipun pemberhentian Eropa dibatalkan, konser lain terus menarik antusiasme penggemar.</p>
+                    <p class="fade-up">Meskipun pemberhentian Eropa dibatalkan, konser lain terus menarik antusiasme penggemar.</p>
 
-                <h2 class="fade-up">Akses Terbuka & Tanpa Merch</h2>
-                <p class="fade-up">Dalam langkah yang tidak biasa, <strong>Team Gideon</strong> mengonfirmasi bahwa semua pertunjukan <strong>gratis untuk dihadiri</strong>. Keputusan ini untuk menghilangkan hambatan ekonomi dan memungkinkan penonton "berada dalam atmosfer emosional yang sama." Tidak ada merchandise resmi, fokus pada imersi musik.</p>
+                    <h2 class="fade-up">Akses Terbuka & Tanpa Merch</h2>
+                    <p class="fade-up">Dalam langkah yang tidak biasa, <strong>Team Gideon</strong> mengonfirmasi bahwa semua pertunjukan <strong>gratis untuk dihadiri</strong>. Keputusan ini untuk menghilangkan hambatan ekonomi dan memungkinkan penonton "berada dalam atmosfer emosional yang sama." Tidak ada merchandise resmi, fokus pada imersi musik.</p>
 
-                <div class="quote-card fade-up">
-                    <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
-                    <div class="quote-text">“Kami ingin semua orang bisa hadir dan bernyanyi bersama, tanpa sekat ekonomi.”</div>
-                    <div class="quote-author">— Team Gideon</div>
-                </div>
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Kami ingin semua orang bisa hadir dan bernyanyi bersama, tanpa sekat ekonomi.”</div>
+                        <div class="quote-author">— Team Gideon</div>
+                    </div>
 
-                <h2 class="fade-up">Kolaborasi Internasional</h2>
-                <p class="fade-up">Album <em>Novus</em> melibatkan Red Flames (<em>Bump Bump</em>), EROR FOUR (<em>Busted, Touché</em>), dan duet dengan Resadena (<em>POOL</em>). Single <em>I'll Never Love Again</em> melibatkan Celine Amora dalam penulisan lirik dan produksi, memperkuat narasi pribadi.</p>
+                    <h2 class="fade-up">Kolaborasi Internasional</h2>
+                    <p class="fade-up">Album <em>Novus</em> melibatkan Red Flames (<em>Bump Bump</em>), EROR FOUR (<em>Busted, Touché</em>), dan duet dengan Resadena (<em>POOL</em>). Single <em>I'll Never Love Again</em> melibatkan Celine Amora dalam penulisan lirik dan produksi, memperkuat narasi pribadi.</p>
 
-                <!-- photo credit line -->
-                <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid #ddd; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
-                    <i class="fas fa-camera" style="background:#000; color:white; padding:12px; border-radius:50%;"></i>
-                    <span>Foto oleh <strong>The Kadio</strong> / KABOOM! studio</span>
+                    <!-- photo credit line -->
+                    <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid var(--gray-medium); display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+                        <i class="fas fa-camera" style="background:var(--primary-black); color:white; padding:12px; border-radius:50%;"></i>
+                        <span>Foto oleh <strong>The Kadio</strong> / KABOOM! studio</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SPEAKER : GIDEON dengan X link -->
+    <!-- SPEAKER SECTION : GIDEON dengan X link -->
     <section class="speaker-zone" id="speaker">
         <div class="container">
             <h2 class="section-title fade-up">▸ wawancara bersama ◂</h2>
@@ -687,32 +1108,50 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer dengan struktur dari HTML pertama -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-company">
+            <div class="footer-content">
+                <div class="company-card fade-up">
                     <h3>The Kachoo</h3>
-                    <div class="company-details">
-                        <div><i class="fas fa-envelope"></i> ohkachoo@gmail.com</div>
-                        <div><i class="fab fa-twitter"></i> @TheKachoo</div>
-                        <div><i class="fas fa-map-pin"></i> Sudirman, Jakarta</div>
+                    <div class="company-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>@TheKachoo</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Jenderal Sudirman No. 61-62, Jakarta Selatan</span>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-about">
+                <div class="footer-about fade-up">
                     <h3>Tentang KABOOM!</h3>
                     <p>KABOOM! adalah kanal berita The Kachoo, menghadirkan wawancara eksklusif dan liputan mendalam seputar musik, pendidikan, dan budaya pop. Percakapan dengan Team Gideon ini adalah bagian dari seri Kadusic.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 The Kaboom! di bawah The Kachoo. All rights reserved.</p>
-                <p class="disclaimer-note">Isi wawancara merupakan pernyataan resmi Team Gideon. Akun X @RockerGideon dikelola manajemen. Foto ilustrasi/roleplay.</p>
+            <div class="footer-bottom fade-up">
+                <p>&copy; 2026 KABOOM! di bawah The Kachoo. All rights reserved.</p>
+                <p class="disclaimer">Isi wawancara merupakan pernyataan resmi Team Gideon. Akun X @RockerGideon dikelola manajemen. Foto ilustrasi/roleplay.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // fade-up scroll observer
+        // Logo animation (diadaptasi dari HTML pertama)
+        const logo = document.getElementById('logo');
+        if (logo) {
+            logo.addEventListener('click', function() {
+                this.classList.add('logo-kachoo');
+                setTimeout(() => this.classList.remove('logo-kachoo'), 800);
+            });
+        }
+
+        // Fade-up scroll observer
         const faders = document.querySelectorAll('.fade-up');
         const appearObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -721,11 +1160,30 @@
         }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
         faders.forEach(el => appearObserver.observe(el));
 
-        // modal
+        // Modal functions
         const modal = document.getElementById('teamModal');
-        function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
-        window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        function openModal() { 
+            modal.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeModal() { 
+            modal.classList.remove('active'); 
+            document.body.style.overflow = ''; 
+        }
+        window.addEventListener('click', (e) => { 
+            if (e.target === modal) closeModal(); 
+        });
+
+        // Smooth scroll untuk anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
