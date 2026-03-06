@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Wawancara Eksklusif | KABOOM x KAZINE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-300: #d4d4d4;
+      --gray-400: #a3a3a3;
+      --gray-500: #737373;
+      --gray-600: #525252;
+      --gray-700: #404040;
+      --gray-800: #262626;
+      --gray-900: #171717;
+      --primary-black: #000;
+      --secondary-black: #1a1a1a;
+      --accent-black: #333;
+      --light-black: #444;
+      --off-white: #f8f8f8;
+      --gray-light: #f0f0f0;
+      --gray-medium: #e0e0e0;
+      --transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--white);
+      color: var(--primary-black);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+    /* header & navigasi persis seperti template */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,.98);
+      z-index: 1000;
+      border-bottom: 1px solid var(--gray-medium);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.05);
+      animation: slideDown .8s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      min-height: 80px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      flex-wrap: wrap;
+    }
+    .logo-container:hover { transform: translateY(-2px); }
+    #logo { height: 40px; width: auto; transition: var(--transition); }
+    .logo-kachoo {
+      animation: kachooEffect .8s cubic-bezier(.34,1.56,.64,1) forwards;
+    }
+    @keyframes kachooEffect {
+      0% { transform: scale(1) rotate(0); filter: brightness(1); }
+      25% { transform: scale(1.2) rotate(-5deg); filter: brightness(1.2); }
+      50% { transform: scale(1.3) rotate(5deg); filter: brightness(1.3); }
+      75% { transform: scale(1.2) rotate(-3deg); filter: brightness(1.2); }
+      to { transform: scale(1) rotate(0); filter: brightness(1); }
+    }
+    .article-category {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--primary-black);
+      color: var(--white);
+      padding: 6px 15px;
+      border-radius: 20px;
+      animation: pulseCategory 2s infinite alternate;
+      white-space: nowrap;
+    }
+    @keyframes pulseCategory {
+      0% { box-shadow: 0 4px 15px rgba(0,0,0,.2); }
+      to { box-shadow: 0 4px 20px rgba(0,0,0,.4); }
+    }
+    .navigation {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-btn {
+      background: 0 0;
+      border: 2px solid var(--primary-black);
+      color: var(--primary-black);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .nav-btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,.1), transparent);
+      transition: left .7s;
+    }
+    .nav-btn:hover:before { left: 100%; }
+    .nav-btn:hover {
+      background: var(--primary-black);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0,0,0,.3);
+    }
+    /* hero artikel */
+    .article-hero {
+      margin-top: 120px;
+      padding: 80px 0 40px;
+      background: linear-gradient(135deg, var(--white) 0, var(--off-white) 100%);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInHero 1.2s ease-out;
+    }
+    @keyframes fadeInHero {
+      0% { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .article-hero:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; width: 40%; height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(0,0,0,.03));
+      z-index: 0;
+    }
+    .floating-element {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0,0,0,.05);
+      animation: float 20s infinite ease-in-out;
+      pointer-events: none;
+    }
+    .floating-element:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; }
+    .floating-element:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: -5s; }
+    .floating-element:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: -10s; }
+    @keyframes float {
+      0%, to { transform: translateY(0) rotate(0); }
+      33% { transform: translateY(-30px) rotate(120deg); }
+      66% { transform: translateY(20px) rotate(240deg); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-date {
+      font-size: 14px;
+      color: var(--primary-black);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: block;
+      animation: fadeInUp .8s .2s both;
+    }
+    .hero-title {
+      font-size: clamp(36px, 7vw, 58px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      letter-spacing: -1px;
+      color: var(--secondary-black);
+      animation: fadeInUp .8s .4s both;
+    }
+    .hero-title:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+      border-radius: 2px;
+      animation: expandLine 1s 1s both;
+    }
+    @keyframes expandLine {
+      0% { width: 0; opacity: 0; }
+      to { width: 120px; opacity: 1; }
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--gray-600);
+      max-width: 650px;
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1.6;
+      animation: fadeInUp .8s .6s both;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* konten artikel */
+    .article-body { padding: 60px 0; }
+    .interview-section { margin-bottom: 70px; }
+    .interview-section p {
+      margin-bottom: 1.5rem;
+      font-size: 17px;
+      color: var(--gray-800);
+    }
+    .section-name {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--black);
+      display: inline-block;
+    }
+    /* image container single & slider */
+    .img-container {
+      margin: 40px 0;
+      background: var(--gray-100);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .img-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .img-container:hover img { transform: scale(1.02); }
+    .slider-container {
+      position: relative;
+      margin: 40px 0;
+      background: var(--gray-100);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+    .slider-wrapper img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      max-height: 500px;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--black);
+      color: white;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    .slider-btn:hover { opacity: 1; background: var(--gray-900); }
+    .slider-prev { left: 15px; }
+    .slider-next { right: 15px; }
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 15px 0;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--gray-400);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .dot.active { background: var(--black); transform: scale(1.3); }
+    /* profil pewawancara (persis Kabutz3) */
+    .interviewers {
+      background: var(--off-white);
+      padding: 60px 0;
+      border-top: 1px solid var(--gray-medium);
+      border-bottom: 1px solid var(--gray-medium);
+    }
+    .interviewers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .interviewer-card {
+      background: var(--white);
+      padding: 30px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--gray-medium);
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+      transition: var(--transition);
+      text-align: center;
+    }
+    .interviewer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(0,0,0,.1);
+    }
+    .interviewer-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--gray-light), var(--off-white));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+      color: var(--primary-black);
+      border: 2px solid var(--black);
+    }
+    .interviewer-card h4 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .interviewer-role {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-600);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .interviewer-desc {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    /* scroll animation */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    footer {
+      background: linear-gradient(135deg, var(--off-white), var(--white));
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--gray-medium);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      color: var(--primary-black);
+      font-size: 14px;
+    }
+    .disclaimer {
+      max-width: 700px;
+      margin: 10px auto 0;
+      font-style: italic;
+      opacity: 0.8;
+    }
+    @media (max-width: 768px) {
+      .article-hero { margin-top: 140px; }
+      .slider-btn { width: 35px; height: 35px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Ctext x='0' y='25' font-family='Inter' font-weight='900' font-size='28' fill='%23000'%3EKABOOM%3C/text%3E%3C/svg%3E" alt="KABOOM Logo" id="logo">
+          <div class="article-category">WAWANCARA</div>
+        </div>
+        <div class="navigation">
+          <a href="#" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+          <a href="#interviewers" class="nav-btn"><i class="fas fa-users"></i> Pewawancara</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-date">Maret 2026 • Wawancara Eksklusif</span>
+        <h1 class="hero-title">Nawang Wulan, Beatrix Cecilia, Prudence Claire: Tiga Perspektif dalam Satu Ruang</h1>
+        <p class="hero-subtitle">Tim Kaboom dan Kazine duduk bersama membahas kreativitas, perjalanan, dan visi mereka di dunia fashion serta jurnalisme.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="article-body container">
+    <!-- dua paragraf awal -->
+    <div class="scroll-animate">
+      <p>Dalam edisi khusus ini, tim redaksi KABOOM dan KAZINE berkesempatan untuk berbincang langsung dengan tiga sosok inspiratif: Nawang Wulan, Beatrix Cecilia, dan Prudence Claire. Percakapan berlangsung hangat di studio KACHOO, Jakarta, membahas perjalanan karier, proses kreatif, serta pandangan mereka tentang industri media dan fashion tanah air.</p>
+      <p>Ketiganya hadir dengan energi yang berbeda. Nawang Wulan yang dikenal dengan pendekatan minimalis, Beatrix Cecilia dengan gaya eksperimentalnya, dan Prudence Claire yang membawa perspektif segar tentang keberlanjutan. Wawancara ini merupakan kolaborasi perdana antara KABOOM dan KAZINE, menyatukan dua sisi mata uang: berita dan gaya hidup.</p>
+    </div>
+
+    <!-- satu foto -->
+    <div class="img-container scroll-animate">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23eeeeee'/%3E%3Ctext x='50' y='300' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EFoto bersama ketiga narasumber%3C/text%3E%3C/svg%3E" alt="foto bersama Nawang Wulan, Beatrix Cecilia, Prudence Claire">
+    </div>
+
+    <!-- Bagian Nawang Wulan -->
+    <section class="interview-section">
+      <h2 class="section-name scroll-animate">Nawang Wulan</h2>
+      <div class="scroll-animate">
+        <p>Nawang Wulan membuka sesi dengan cerita tentang transisinya dari dunia arsitektur ke fashion. “Awalnya saya hanya membuat pola dari sisa kain, lalu mulai dikenali teman-teman. Saya ingin pakaian yang berbicara pelan tapi berisi,” ujarnya. Selama wawancara ia banyak menekankan pentingnya kejujuran material dan bentuk.</p>
+        <p>Karya-karya Nawang sering menggunakan palet monokrom dengan potongan arsitektural. Menurutnya, fashion adalah medium untuk membingkai tubuh tanpa kehilangan esensi pemakainya. Ia juga mengaku terinspirasi oleh ruang kosong dan sunyi di Yogyakarta, tempat ia menghabiskan masa kecil.</p>
+        <p>Kolaborasi dengan KAZINE direncanakan untuk edisi mendatang. “Saya senang diajak ngobrol panjang lebar soal proses. Biasanya orang cuma lihat hasil akhir, padahal di balik layar ada riset dan risau yang tidak terhitung.”</p>
+        <p>Nawang juga menyentuh soal peran media dalam mempromosikan desainer lokal. Menurutnya, platform seperti KABOOM dan KAZINE bisa menjadi jembatan antara publik dan kreator. “Kita butuh liputan yang tidak hanya glamor, tapi juga jujur.”</p>
+      </div>
+      <!-- slider 2 foto -->
+      <div class="slider-container scroll-animate" id="slider-wulan">
+        <div class="slider-wrapper" id="wrapper-wulan">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23cccccc'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='36' font-weight='700' fill='%23333'%3EWulan koleksi 1%3C/text%3E%3C/svg%3E" alt="koleksi Nawang Wulan 1">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23bbbbbb'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='36' font-weight='700' fill='%23333'%3EWulan koleksi 2%3C/text%3E%3C/svg%3E" alt="koleksi Nawang Wulan 2">
+        </div>
+        <button class="slider-btn slider-prev" onclick="slide('wulan', -1)">‹</button>
+        <button class="slider-btn slider-next" onclick="slide('wulan', 1)">›</button>
+        <div class="slider-dots" id="dots-wulan">
+          <span class="dot active" onclick="gotoSlide('wulan',0)"></span>
+          <span class="dot" onclick="gotoSlide('wulan',1)"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beatrix Cecilia -->
+    <section class="interview-section">
+      <h2 class="section-name scroll-animate">Beatrix Cecilia</h2>
+      <div class="scroll-animate">
+        <p>Beatrix Cecilia datang dengan gaya sporty-chic yang menjadi ciri khasnya. Ia bercerita tentang awal mula merintis brand “Beta” dari kamar kos. “Dulu saya jahit sendiri, foto pakai hp, upload ke Instagram. Lama-lama orang percaya,” kenangnya sambil tertawa.</p>
+        <p>Diskusi beralih ke pentingnya adaptasi digital. Beatrix percaya bahwa masa depan fashion ada pada kolaborasi dengan media. “Wawancara seperti ini membuat saya mengerti arah pasar. KABOOM memberitakan secara jujur, itu yang saya suka.”</p>
+        <p>Ia juga mengkritisi tren fast fashion. Menurutnya, konsumen sekarang harus lebih cerdas. “Belilah karena suka, bukan karena viral.” Pernyataan ini diamini oleh Prudence yang duduk di sampingnya.</p>
+        <p>Proyek terbaru Beatrix adalah koleksi daur ulang dari limbah tekstil. Rencananya akan diluncurkan bersamaan dengan liputan khusus di KAZINE edisi Mei. “Saya mau orang lihat bahwa mode bertanggung jawab itu bisa tetap keren.”</p>
+      </div>
+      <!-- slider 2 foto -->
+      <div class="slider-container scroll-animate" id="slider-beatrix">
+        <div class="slider-wrapper" id="wrapper-beatrix">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23aaaaaa'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='36' font-weight='700' fill='%23333'%3EBeatrix koleksi 1%3C/text%3E%3C/svg%3E" alt="koleksi Beatrix 1">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23999999'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='36' font-weight='700' fill='%23333'%3EBeatrix koleksi 2%3C/text%3E%3C/svg%3E" alt="koleksi Beatrix 2">
+        </div>
+        <button class="slider-btn slider-prev" onclick="slide('beatrix', -1)">‹</button>
+        <button class="slider-btn slider-next" onclick="slide('beatrix', 1)">›</button>
+        <div class="slider-dots" id="dots-beatrix">
+          <span class="dot active" onclick="gotoSlide('beatrix',0)"></span>
+          <span class="dot" onclick="gotoSlide('beatrix',1)"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prudence Claire -->
+    <section class="interview-section">
+      <h2 class="section-name scroll-animate">Prudence Claire</h2>
+      <div class="scroll-animate">
+        <p>Prudence Claire adalah nama yang belakangan sering disebut di industri kreatif. Berbekal latar belakang jurnalistik, ia membawa pendekatan naratif dalam setiap koleksinya. “Saya suka bercerita lewat tekstil. Setiap kain punya sejarah,” katanya.</p>
+        <p>Dalam wawancara ini, Prudence banyak berbicara soal peran perempuan dalam industri. Ia merasa media seperti KABOOM penting untuk memberikan ruang yang setara. “Ketika saya diwawancarai, saya ingin kisah saya menginspirasi, bukan sekadar gaya.”</p>
+        <p>Ia juga memamerkan beberapa sketsa kolaborasi dengan KAZINE untuk edisi mendatang. Konsepnya mengangkat tenun Nusantara dengan sentuhan futuristik. “Saya senang KAZINE memberi kebebasan berekspresi.”</p>
+        <p>Menutup sesi, Prudence berpesan agar anak muda tidak takut memulai. “Saya dulu hanya menulis blog, lalu merancang baju. Sekarang saya bisa duduk di sini. Terima kasih KABOOM dan KAZINE.”</p>
+      </div>
+      <!-- slider 2 foto -->
+      <div class="slider-container scroll-animate" id="slider-prudence">
+        <div class="slider-wrapper" id="wrapper-prudence">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23888888'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='36' font-weight='700' fill='%23333'%3EPrudence koleksi 1%3C/text%3E%3C/svg%3E" alt="koleksi Prudence 1">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23777777'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='36' font-weight='700' fill='%23333'%3EPrudence koleksi 2%3C/text%3E%3C/svg%3E" alt="koleksi Prudence 2">
+        </div>
+        <button class="slider-btn slider-prev" onclick="slide('prudence', -1)">‹</button>
+        <button class="slider-btn slider-next" onclick="slide('prudence', 1)">›</button>
+        <div class="slider-dots" id="dots-prudence">
+          <span class="dot active" onclick="gotoSlide('prudence',0)"></span>
+          <span class="dot" onclick="gotoSlide('prudence',1)"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Profil pewawancara (persis Kabutz3) -->
+  <section class="interviewers" id="interviewers">
+    <div class="container">
+      <h2 class="section-title scroll-animate" style="text-align: center;">Redaktur Pewawancara</h2>
+      <p class="section-subtitle scroll-animate" style="text-align: center;">Tim KABOOM dan KAZINE yang memandu diskusi hangat ini.</p>
+      <div class="interviewers-grid">
+        <div class="interviewer-card scroll-animate">
+          <div class="interviewer-icon"><i class="fas fa-pen-fancy"></i></div>
+          <h4>Aruna Putri</h4>
+          <div class="interviewer-role">Editor in Chief KABOOM</div>
+          <p class="interviewer-desc">Memimpin jalannya wawancara dengan pertanyaan tajam seputar latar belakang jurnalistik para narasumber.</p>
+        </div>
+        <div class="interviewer-card scroll-animate">
+          <div class="interviewer-icon"><i class="fas fa-tshirt"></i></div>
+          <h4>Dimas Arya</h4>
+          <div class="interviewer-role">Creative Director KAZINE</div>
+          <p class="interviewer-desc">Menggali proses kreatif dan filosofi desain Nawang, Beatrix, dan Prudence.</p>
+        </div>
+        <div class="interviewer-card scroll-animate">
+          <div class="interviewer-icon"><i class="fas fa-microphone-alt"></i></div>
+          <h4>Clara Santi</h4>
+          <div class="interviewer-role">Jurnalis & Anchor KABOOM</div>
+          <p class="interviewer-desc">Memastikan setiap cerita mengalir dan terdokumentasi dengan baik, dari studio hingga publikasi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom scroll-animate">
+        <p>© 2026 THE KACHOO / KABOOM x KAZINE. Untuk keperluan roleplay.</p>
+        <p class="disclaimer">Seluruh konten wawancara adalah fiksi untuk kebutuhan kreatif.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // animasi scroll
+      const scrollElements = document.querySelectorAll('.scroll-animate');
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+      };
+      const displayScrollElement = (element) => { element.classList.add('visible'); };
+      const hideScrollElement = (element) => { element.classList.remove('visible'); };
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) displayScrollElement(el);
+          else hideScrollElement(el);
+        });
+      };
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          ticking = true;
+          setTimeout(() => { handleScrollAnimation(); ticking = false; }, 80);
+        }
+      });
+      handleScrollAnimation();
+
+      // logo click animation
+      const logo = document.getElementById('logo');
+      if(logo) {
+        logo.addEventListener('click', function(){
+          this.classList.remove('logo-kachoo');
+          void this.offsetWidth;
+          this.classList.add('logo-kachoo');
+        });
+        setTimeout(() => logo.classList.add('logo-kachoo'), 1500);
+      }
+
+      // slider functions (global)
+      window.slide = function(sliderId, direction) {
+        const wrapper = document.getElementById('wrapper-'+sliderId);
+        const dots = document.querySelectorAll('#dots-'+sliderId+' .dot');
+        if(!wrapper) return;
+        const total = wrapper.children.length;
+        let currentIndex = Array.from(dots).findIndex(d => d.classList.contains('active'));
+        let newIndex = (currentIndex + direction + total) % total;
+        gotoSlide(sliderId, newIndex);
+      };
+      window.gotoSlide = function(sliderId, index) {
+        const wrapper = document.getElementById('wrapper-'+sliderId);
+        const dots = document.querySelectorAll('#dots-'+sliderId+' .dot');
+        if(!wrapper || !dots.length) return;
+        const total = wrapper.children.length;
+        if(index < 0 || index >= total) return;
+        wrapper.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[index].classList.add('active');
+      };
+    })();
+  </script>
+</body>
+  </html>
