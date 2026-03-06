@@ -272,7 +272,7 @@
             color: var(--black);
         }
 
-        /* PHOTO DISPLAY */
+        /* PHOTO DISPLAY & SLIDER */
         .photo-display-section {
             padding: 40px 0;
             background: var(--white);
@@ -283,21 +283,88 @@
             margin: 0 auto;
         }
 
-        .photo-display {
-            overflow: hidden;
+        /* Slider styles */
+        .slider {
             position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
         }
 
-        .photo-display img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
+        .slides {
+            display: flex;
             transition: transform 0.5s ease;
         }
 
-        .photo-display img:hover {
-            transform: scale(1.01);
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            color: var(--black);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,.1);
+            z-index: 10;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0,0,0,.05);
+        }
+
+        .slider-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,.15);
+        }
+
+        .slider-btn.prev {
+            left: 20px;
+        }
+
+        .slider-btn.next {
+            right: 20px;
+        }
+
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gray-400);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .dot.active {
+            background: var(--black);
+            transform: scale(1.2);
         }
 
         /* ARTICLE CONTENT */
@@ -371,7 +438,7 @@
             content: '—';
         }
 
-        /* SPEAKER SECTION (profil pembicara seperti Kabutz3) */
+        /* SPEAKER SECTION (profil pembicara lebih panjang) */
         .speaker-section {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
@@ -391,9 +458,9 @@
 
         .speaker-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -429,7 +496,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(15%);
         }
 
         .speaker-name {
@@ -444,8 +510,15 @@
             font-size: 15px;
             color: var(--gray-700);
             margin-bottom: 15px;
-            line-height: 1.5;
             font-weight: 500;
+        }
+
+        /* deskripsi lebih panjang */
+        .speaker-desc {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 20px;
             max-width: 280px;
             margin-left: auto;
             margin-right: auto;
@@ -629,9 +702,10 @@
                 font-size: 28px;
             }
 
-            .speaker-avatar {
-                width: 130px;
-                height: 130px;
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
             }
         }
 
@@ -703,97 +777,125 @@
         </div>
     </section>
 
-    <!-- Photo Display (1 foto) -->
+    <!-- 1 foto utama (slide awal) -->
     <section class="photo-display-section">
         <div class="container">
             <div class="photo-display-container">
                 <div class="photo-display scroll-animate">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23e9e9e9'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='34' font-weight='700' fill='%23333'%3EWawancara bersama tiga narasumber%3C/text%3E%3C/svg%3E" alt="Wawancara bersama Nawang Wulan, Beatrix Cecilia, Prudence Claire">
+                    <div class="slider" id="mainSlider">
+                        <div class="slides" id="mainSlides">
+                            <div class="slide"><img src="Kabutz6.png" alt="Wawancara utama"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Article Content -->
+    <!-- Article Content dengan tambahan slider per narasumber -->
     <section class="article-content">
         <div class="container">
             <div class="content-container">
                 <div class="article-body">
-                    <!-- Opening paragraphs -->
-                    <p class="scroll-animate">Dalam rangka memperingati Hari Perempuan Internasional, Tim Kaboom berbincang dengan tokoh inspiratif mengenai sudut pandang mereka tentang makna di balik setiap peran profesional. Melalui perspektif yang berbeda dari dunia kreatif, bisnis, hingga kehidupan sosial, muncul cerita tentang bagaimana perempuan memaknai tanggung jawab, kepemimpinan, serta perjalanan karier yang tidak hanya mengejar kesuksesan, tetapi juga dampak yang berarti.</p>
+                    <!-- Opening paragraphs (sesuai teks baru) -->
+                    <p class="scroll-animate">Dalam rangka memperingati <strong>Hari Perempuan Internasional</strong>, Tim Kaboom berbincang dengan sejumlah perempuan inspiratif mengenai sudut pandang mereka tentang makna di balik setiap peran profesional. Melalui perspektif yang berbeda—dari budaya, dunia kreatif, hingga kehidupan sosial—muncul berbagai refleksi mengenai bagaimana perempuan memaknai tanggung jawab, kepemimpinan, dan perjalanan karier yang tidak hanya mengejar kesuksesan, tetapi juga dampak yang bermakna.</p>
 
-                    <p class="scroll-animate">Dalam edisi ini, Kaboom menghadirkan pandangan dari Nawang Wulan, Beatrix Cecilia Atmadja, dan Prudence Claire, tiga sosok perempuan yang aktif di bidangnya masing-masing dan memiliki cara tersendiri dalam memaknai profesionalitas.</p>
+                    <p class="scroll-animate">Bersama <strong>Nawang Wulan</strong>, <strong>Beatrix Cecilia Atmadja</strong>, dan <strong>Prudence Claire</strong>, Kaboom mencoba melihat bagaimana nilai-nilai yang membentuk seseorang sejak awal kehidupan dapat memengaruhi cara mereka memimpin, bekerja, dan berinteraksi dengan dunia di sekitarnya.</p>
 
-                    <!-- Beatrix Cecilia Atmadja (BECE) section -->
-                    <h2 class="scroll-animate">Beatrix Cecilia Atmadja: Menyeimbangkan Kreativitas dan Profesionalitas</h2>
+                    <!-- Bagian Nawang Wulan + foto slider -->
+                    <h2 class="scroll-animate">Nawang Wulan: Budaya sebagai Fondasi Profesionalitas</h2>
                     
-                    <p class="scroll-animate">Salah satu tantangan yang sering muncul dalam dunia kreatif adalah bagaimana menjaga keseimbangan antara ide dan tuntutan profesional. Menurut Beatrix Cecilia Atmadja, atau yang akrab dipanggil Bece, hal tersebut bukanlah perkara sederhana. Ia menjelaskan bahwa tantangan terbesar terletak pada bagaimana membagi fokus antara kreativitas dan kebutuhan operasional secara seimbang. Baginya, energi yang diberikan pada proses kreatif harus tetap sama besarnya dengan energi yang digunakan untuk memenuhi target objektif perusahaan dan menjaga efisiensi kerja.</p>
-
-                    <p class="scroll-animate">Dengan kata lain, menjaga kualitas eksekusi kreatif sambil tetap memenuhi tuntutan profesional merupakan proses yang membutuhkan kedisiplinan dan kesadaran penuh terhadap dua dunia yang berjalan bersamaan.</p>
-
-                    <p class="scroll-animate">Selain tuntutan internal pekerjaan, dunia hiburan juga sering kali membawa tekanan dari ekspektasi publik. Bece mengakui bahwa ekspektasi tersebut bisa terasa berat. Di satu sisi, harapan publik dapat menjadi motivasi yang mendorong seseorang untuk berkembang. Namun di sisi lain, ekspektasi yang terlalu tinggi juga dapat berubah menjadi beban.</p>
-
-                    <p class="scroll-animate">Untuk menyikapinya, ia memilih untuk tetap fokus pada profesionalitas dan standar industri yang berlaku. Alih-alih terus mengejar validasi dari luar, Bece lebih memilih menaruh perhatian pada pengembangan kualitas diri dan kualitas karya secara internal. Menurutnya, pendekatan ini membantu menjaga keseimbangan mental sekaligus mempertahankan integritas dalam berkarya.</p>
-
-                    <div class="quote-block scroll-animate">
-                        <div class="quote-text">"Kita tidak perlu terus mengejar validasi dari luar. Fokus pada pengembangan kualitas diri dan karya secara internal."</div>
-                        <div class="quote-author">Beatrix Cecilia Atmadja</div>
+                    <!-- slider foto untuk Wulan (2 slide) -->
+                    <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
+                        <div class="slider" id="wulanSlider">
+                            <div class="slides" id="wulanSlides">
+                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23b8a28b'/%3E%3Ctext x='120' y='225' font-family='Inter' font-size='34' fill='%23222'%3EWulan : Lingkungan Keraton%3C/text%3E%3C/svg%3E" alt="Wulan budaya"></div>
+                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23a58e77'/%3E%3Ctext x='140' y='225' font-family='Inter' font-size='34' fill='%23222'%3EWulan : Kepemimpinan%3C/text%3E%3C/svg%3E" alt="Wulan kepemimpinan"></div>
+                            </div>
+                            <button class="slider-btn prev" onclick="moveSlide('wulan', -1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-btn next" onclick="moveSlide('wulan', 1)"><i class="fas fa-chevron-right"></i></button>
+                            <div class="dots-container" id="wulanDots"></div>
+                        </div>
                     </div>
 
-                    <p class="scroll-animate">Dalam perannya sebagai pemimpin di lingkungan kreatif, Bece juga menekankan pentingnya nilai kepemimpinan yang berpusat pada empati dan komunikasi dua arah. Ia percaya bahwa tim kreatif terdiri dari individu-individu yang memiliki pandangan dan ego artistik masing-masing. Oleh karena itu, seorang pemimpin tidak cukup hanya memberikan instruksi.</p>
+                    <p class="scroll-animate">Bagi <strong>Nawang Wulan</strong>, atau yang akrab dipanggil Wulan, budaya memiliki pengaruh yang sangat besar ketika seseorang memasuki dunia kerja. Ia menceritakan bahwa sejak kecil dirinya tumbuh di lingkungan keraton yang sangat menekankan tata krama, tanggung jawab, serta cara membawa diri di hadapan banyak orang. Lingkungan tersebut secara tidak langsung membentuk bekal yang ia bawa hingga sekarang dalam berinteraksi dengan orang lain, terutama di lingkungan profesional.</p>
 
-                    <p class="scroll-animate">Baginya, menciptakan ruang bagi anggota tim untuk bereksplorasi dan menyampaikan ide mereka merupakan bagian penting dari proses kreatif. Ia juga berusaha memastikan bahwa tim tidak bekerja semata-mata karena perintah, tetapi karena memiliki visi yang sama terhadap apa yang sedang dibangun bersama.</p>
+                    <p class="scroll-animate">Menurut Wulan, interaksi yang baik dalam dunia kerja bukan hanya sekadar proses serah-terima pekerjaan atau penyelesaian tugas. Lebih dari itu, interaksi juga menyangkut bagaimana seseorang saling menghargai, menjaga adab, serta menunjukkan sopan santun dalam berkomunikasi. Baginya, sikap tersebut tidak hanya menunjukkan penghormatan terhadap orang lain, tetapi juga menjadi bentuk penghargaan terhadap diri sendiri.</p>
 
-                    <p class="scroll-animate">Dalam perjalanan membangun perusahaan, keberanian mengambil risiko juga menjadi bagian yang tidak terpisahkan. Bece melihat bahwa perempuan yang berada dalam posisi kepemimpinan sering kali didorong untuk bermain aman. Namun menurutnya, perkembangan tidak akan terjadi jika seseorang terlalu takut untuk melangkah.</p>
+                    <p class="scroll-animate">Nilai budaya yang mengakar sejak kecil juga menjadi semacam kompas dalam menghadapi berbagai situasi profesional. Ketika seseorang harus mengambil keputusan atau menghadapi tantangan dalam pekerjaan, nilai-nilai yang dibawa dari keluarga sering kali menjadi dasar pertimbangan yang tidak terlihat namun sangat kuat.</p>
 
-                    <p class="scroll-animate">Ia memandang risiko sebagai bagian alami dari perjalanan hidup dan profesional. Dengan perhitungan yang matang serta kombinasi antara analisis dan insting, risiko dapat menjadi jalan menuju pertumbuhan. Bagi Bece, keberhasilan maupun kegagalan sama-sama memiliki nilai. Jika berhasil, itu menjadi pencapaian. Jika gagal, itu menjadi pembelajaran yang memperkaya pengalaman.</p>
-
-                    <p class="scroll-animate">Lebih jauh lagi, ia juga menyoroti pentingnya memastikan bahwa perjalanan karier tidak hanya berorientasi pada keberhasilan komersial. Menurutnya, makna sejati dari kesuksesan terletak pada dampak yang bisa diberikan kepada orang lain.</p>
-
-                    <p class="scroll-animate">Ia berusaha memastikan bahwa setiap karya atau perusahaan yang dibangunnya mampu memberikan kontribusi positif, baik melalui seni yang menginspirasi maupun melalui kesempatan kerja yang tercipta dari bisnis yang berkembang. Bagi Bece, profitabilitas dan nilai kemanusiaan harus berjalan beriringan. Tanpa integritas dan kejujuran, kesuksesan hanya akan menjadi pencapaian yang terasa kosong.</p>
-
-                    <!-- Prudence Claire section -->
-                    <h2 class="scroll-animate">Prudence Claire: Disiplin, Reputasi, dan Empati</h2>
-                    
-                    <p class="scroll-animate">Sementara itu, Prudence Claire melihat peran profesional perempuan dari perspektif kehidupan sosial dan karakter pribadi yang dibangun dalam interaksi sehari-hari. Menurutnya, disiplin dan tanggung jawab merupakan fondasi penting dalam menjalani kehidupan, baik secara profesional maupun sosial.</p>
-
-                    <p class="scroll-animate">Ia memandang disiplin sebagai bentuk penghormatan terhadap diri sendiri dan orang lain. Dalam industri kreatif dan fashion yang bergerak cepat, komitmen menjadi dasar utama kepercayaan. Disiplin membantu menjaga standar kerja, sementara tanggung jawab memastikan bahwa setiap keputusan yang diambil dilakukan dengan kesadaran penuh terhadap dampaknya.</p>
-
-                    <p class="scroll-animate">Prudence juga menekankan bahwa hal yang sama berlaku dalam kehidupan sosial. Kebiasaan sederhana seperti hadir tepat waktu, menepati janji, dan menjaga sikap merupakan bentuk penghargaan terhadap relasi yang dibangun dengan orang lain. Baginya, integritas adalah salah satu cerminan utama dari sosok perempuan hebat.</p>
+                    <p class="scroll-animate">Bagi Wulan, budaya yang diwariskan dalam keluarga—terutama yang berkaitan dengan profesionalitas—membentuk fondasi karakter yang membantu seseorang menjalani kehidupan kerja dengan lebih matang. Ia juga menyoroti bahwa budaya tidak hanya berhenti pada tradisi, tetapi membentuk berbagai kebiasaan yang memengaruhi cara seseorang berpikir dan bertindak. Budaya dapat memengaruhi cara seseorang berkomunikasi, cara memimpin, cara bertanggung jawab, hingga cara bersosialisasi dengan orang lain.</p>
 
                     <div class="quote-block scroll-animate">
-                        <div class="quote-text">"Disiplin adalah bentuk penghormatan terhadap diri sendiri dan orang lain. Integritas adalah cerminan utama perempuan hebat."</div>
-                        <div class="quote-author">Prudence Claire</div>
+                        <div class="quote-text">"Kepemimpinan bukan hanya soal memberikan arahan, tetapi juga tentang menciptakan ruang yang nyaman, di mana setiap orang merasa dihargai."</div>
+                        <div class="quote-author">Nawang Wulan</div>
                     </div>
 
-                    <p class="scroll-animate">Selain itu, ia menilai bahwa reputasi pribadi memegang peranan penting dalam kehidupan sosial modern. Di era yang semakin transparan, batas antara identitas pribadi dan profesional sering kali menjadi semakin tipis.</p>
+                    <p class="scroll-animate">Sebagai contoh, seseorang yang tumbuh dalam budaya yang menekankan kepemimpinan dengan rasa hormat dan kebersamaan akan cenderung menjadi pemimpin yang mengayomi. Ia lebih terbuka untuk berdiskusi, mendengarkan, mempertimbangkan perasaan orang lain, serta menjaga keharmonisan tim. Sebaliknya, seseorang yang tumbuh dalam budaya yang menekankan ketegasan dan kecepatan dalam mengambil keputusan akan menunjukkan gaya kepemimpinan yang lebih tegas dan langsung.</p>
 
-                    <p class="scroll-animate">Menurut Prudence, reputasi pada dasarnya adalah refleksi dari nilai yang kita pegang. Oleh karena itu, menjaga reputasi berarti menjaga konsistensi karakter dan tetap autentik dalam berbagai situasi. Ia selalu berusaha memastikan bahwa apa yang ditampilkan di ruang publik selaras dengan siapa dirinya di ruang privat.</p>
+                    <p class="scroll-animate">Namun bagi Wulan, kedua pendekatan tersebut tidak dapat dikatakan benar atau salah selama tetap dilandasi dengan rasa saling menghargai antara pemimpin dan tim. Karena pada akhirnya, kepemimpinan bukan hanya soal memberikan arahan, tetapi juga tentang menciptakan ruang yang nyaman, ruang di mana setiap orang merasa dihargai, serta ruang kolaborasi yang sehat.</p>
 
-                    <p class="scroll-animate">Kepercayaan sosial, menurutnya, juga lahir dari konsistensi antara kata dan tindakan. Dalam setiap kerja sama atau kolaborasi, orang tidak hanya mendengarkan apa yang diucapkan, tetapi juga memperhatikan bagaimana seseorang bertindak.</p>
+                    <p class="scroll-animate">Pengaruh budaya terhadap karakter kepemimpinan, menurut Wulan, bisa sangat luas dan mendalam. Kebiasaan yang dimiliki seorang pemimpin secara tidak sadar akan menular kepada orang-orang di sekitarnya, termasuk rekan kerja dalam tim. Dari situ, nilai-nilai tersebut perlahan menyebar dan membentuk lingkungan kerja yang lebih besar. Semua itu kembali lagi pada satu hal yang sama: fondasi karakter.</p>
 
-                    <p class="scroll-animate">Ketika ucapan dan tindakan berjalan seiring, kepercayaan akan tumbuh secara alami. Sebaliknya, ketidaksesuaian sekecil apa pun dapat menciptakan jarak dalam hubungan profesional maupun sosial. Oleh karena itu, Prudence berpegang pada prinsip sederhana: tidak menjanjikan lebih dari yang dapat diberikan, dan selalu memberikan yang terbaik ketika sudah berkomitmen.</p>
+                    <!-- Lanjutan Wulan -->
+                    <p class="scroll-animate">Di tengah perkembangan zaman yang bergerak sangat cepat dan serba instan, Wulan juga melihat bahwa menjaga keseimbangan antara peran sosial dan profesional menjadi tantangan tersendiri. Ia menjelaskan bahwa dirinya tumbuh dalam keluarga dengan tradisi yang kuat, di mana adat dan nilai budaya menjadi bagian penting dari kehidupan sehari-hari. Namun di saat yang sama, Wulan juga hidup di era modern yang menuntut profesionalitas, kemampuan beradaptasi, serta keterbukaan terhadap berbagai perubahan.</p>
 
-                    <p class="scroll-animate">Dalam membangun interaksi profesional yang sehat, ia juga melihat empati sebagai salah satu unsur yang sangat penting. Profesionalitas, menurutnya, tidak hanya berbicara tentang efisiensi dan hasil, tetapi juga tentang memahami manusia di balik setiap peran.</p>
+                    <!-- Beatrix Cecilia (Bece) section + slider -->
+                    <h2 class="scroll-animate">Beatrix Cecilia Atmadja: Kreativitas, Bisnis, dan Kepemimpinan</h2>
+                    
+                    <!-- slider foto Bece (2 slide) -->
+                    <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
+                        <div class="slider" id="beceSlider">
+                            <div class="slides" id="beceSlides">
+                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%239a8c7a'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EBece : Kreativitas%3C/text%3E%3C/svg%3E" alt="Bece kreatif"></div>
+                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%238a7c6a'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EBece : Kepemimpinan%3C/text%3E%3C/svg%3E" alt="Bece bisnis"></div>
+                            </div>
+                            <button class="slider-btn prev" onclick="moveSlide('bece', -1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-btn next" onclick="moveSlide('bece', 1)"><i class="fas fa-chevron-right"></i></button>
+                            <div class="dots-container" id="beceDots"></div>
+                        </div>
+                    </div>
 
-                    <p class="scroll-animate">Tim yang solid tidak hanya terbentuk dari kemampuan teknis semata, tetapi juga dari rasa saling memahami. Empati memungkinkan seseorang untuk mendengar lebih dalam, membaca situasi dengan lebih sensitif, dan mengambil keputusan yang lebih bijaksana. Ia percaya bahwa perempuan sering kali memiliki kepekaan alami terhadap dinamika emosional di sekitarnya, dan jika dikelola dengan baik, hal tersebut justru menjadi kekuatan dalam kepemimpinan.</p>
+                    <p class="scroll-animate">Sementara itu, tantangan yang berbeda datang dari dunia kreatif dan bisnis yang dijalani oleh <strong>Beatrix Cecilia Atmadja</strong>, atau yang akrab dipanggil Bece. Dalam perjalanannya, ia sering kali harus menyeimbangkan kreativitas dengan tuntutan profesional yang tidak kalah besar. Menurutnya, tantangan utama terletak pada bagaimana membagi fokus antara proses kreatif dan kebutuhan operasional perusahaan. Energi yang diberikan untuk menjaga kualitas ide harus tetap seimbang dengan energi yang dibutuhkan untuk memenuhi target objektif serta efisiensi kerja.</p>
 
-                    <p class="scroll-animate">Dalam praktiknya, Prudence juga menyoroti pentingnya menyeimbangkan ketegasan dan empati dalam berinteraksi dengan orang lain. Menurutnya, kedua hal tersebut bukanlah dua sisi yang saling bertentangan.</p>
+                    <p class="scroll-animate">Di sisi lain, dunia hiburan juga membawa ekspektasi publik yang tidak selalu mudah dihadapi. Bagi Bece, harapan publik bisa menjadi motivasi, tetapi juga dapat menjadi beban jika tidak disikapi dengan tepat. Oleh karena itu, ia memilih untuk tetap bekerja secara profesional sesuai standar industri dan lebih berfokus pada pengembangan kualitas internal daripada mengejar validasi eksternal.</p>
 
-                    <p class="scroll-animate">Ketegasan memberikan arah dan kejelasan, sementara empati memberikan kedalaman dalam memahami situasi dan perspektif orang lain. Ia percaya bahwa perempuan tidak perlu memilih antara menjadi kuat atau menjadi lembut. Keduanya dapat hadir dalam satu karakter yang utuh.</p>
+                    <p class="scroll-animate">Dalam memimpin tim kreatif, Bece membawa nilai kepemimpinan yang berpusat pada empati dan komunikasi dua arah. Ia percaya bahwa setiap anggota tim memiliki pandangan serta ego artistik masing-masing. Karena itu, seorang pemimpin perlu menyediakan ruang bagi mereka untuk bereksplorasi dan menyampaikan ide. Baginya, tim tidak seharusnya bekerja hanya karena perintah, tetapi karena memiliki visi yang sama terhadap apa yang sedang dibangun bersama.</p>
 
-                    <p class="scroll-animate">Dalam situasi profesional, ia berusaha menyampaikan pendapat dengan jelas, namun tetap menghargai sudut pandang orang lain. Baginya, di situlah makna perempuan hebat: tidak hanya mampu mencapai keberhasilan dalam peran profesional, tetapi juga tetap menjaga kehangatan dalam setiap interaksi yang dibangun.</p>
+                    <p class="scroll-animate">Keberanian mengambil risiko juga menjadi bagian penting dalam perjalanan profesionalnya. Bece percaya bahwa perempuan yang memimpin sering kali didorong untuk bermain aman. Namun menurutnya, perkembangan tidak akan terjadi jika seseorang terlalu takut untuk melangkah. Dengan pertimbangan yang matang serta kombinasi antara perhitungan dan insting, risiko dapat menjadi jalan menuju pembelajaran dan pertumbuhan.</p>
 
-                    <!-- Closing paragraph -->
-                    <p class="scroll-animate">Melalui pandangan Wulan, Bece, dan Prudence, terlihat bahwa makna menjadi perempuan profesional tidak hanya berkaitan dengan pencapaian karier. Lebih dari itu, perjalanan tersebut juga mencakup nilai-nilai seperti integritas, empati, keberanian mengambil risiko, serta kemampuan membangun relasi yang sehat.</p>
+                    <!-- Prudence Claire section + slider -->
+                    <h2 class="scroll-animate">Prudence Claire: Disiplin, Reputasi, dan Empati dalam Kehidupan Sosial</h2>
+                    
+                    <!-- slider foto Prudence (2 slide) -->
+                    <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
+                        <div class="slider" id="prudenceSlider">
+                            <div class="slides" id="prudenceSlides">
+                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23bcb09b'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EPrudence : Disiplin%3C/text%3E%3C/svg%3E" alt="Prudence disiplin"></div>
+                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23aba08b'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EPrudence : Empati%3C/text%3E%3C/svg%3E" alt="Prudence sosial"></div>
+                            </div>
+                            <button class="slider-btn prev" onclick="moveSlide('prudence', -1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-btn next" onclick="moveSlide('prudence', 1)"><i class="fas fa-chevron-right"></i></button>
+                            <div class="dots-container" id="prudenceDots"></div>
+                        </div>
+                    </div>
 
-                    <p class="scroll-animate">Di tengah berbagai tantangan yang ada, ketiganya menunjukkan bahwa kekuatan perempuan tidak hanya terletak pada kemampuan untuk bertahan, tetapi juga pada kemampuan untuk memimpin, menginspirasi, dan membawa dampak positif bagi lingkungan sekitarnya.</p>
+                    <p class="scroll-animate">Pandangan lain datang dari <strong>Prudence Claire</strong>, yang melihat profesionalitas perempuan dari sisi karakter dalam kehidupan sosial. Menurutnya, disiplin dan tanggung jawab merupakan bentuk penghormatan terhadap diri sendiri sekaligus terhadap orang-orang di sekitar kita. Dalam industri kreatif dan fashion yang bergerak cepat, komitmen menjadi fondasi utama dari kepercayaan. Disiplin membantu menjaga standar kerja, sementara tanggung jawab memastikan bahwa setiap keputusan diambil dengan kesadaran penuh terhadap dampaknya.</p>
+
+                    <p class="scroll-animate">Prudence juga menilai bahwa reputasi pribadi memegang peranan penting dalam kehidupan sosial modern. Di era yang semakin transparan, identitas pribadi dan profesional sering kali berjalan berdampingan. Oleh karena itu, menjaga reputasi berarti menjaga konsistensi karakter serta tetap autentik dalam berbagai situasi. Ia percaya bahwa kepercayaan sosial lahir dari keselarasan antara kata dan tindakan. Orang tidak hanya mendengarkan apa yang diucapkan, tetapi juga memperhatikan bagaimana seseorang bertindak. Ketika keduanya berjalan seiring, kepercayaan akan tumbuh secara alami.</p>
+
+                    <p class="scroll-animate">Empati juga menjadi unsur penting dalam membangun interaksi profesional yang sehat. Bagi Prudence, profesionalitas tidak hanya berkaitan dengan efisiensi atau hasil kerja, tetapi juga dengan kemampuan memahami manusia di balik setiap peran. Dalam praktiknya, ia berusaha menyeimbangkan ketegasan dan empati dalam setiap interaksi. Ketegasan memberikan arah, sementara empati memberikan kedalaman dalam memahami perspektif orang lain. Menurutnya, perempuan tidak perlu memilih antara menjadi kuat atau menjadi lembut—keduanya dapat hadir dalam satu karakter yang utuh.</p>
+
+                    <!-- Closing -->
+                    <p class="scroll-animate">Melalui pandangan <strong>Nawang Wulan, Beatrix Cecilia Atmadja, dan Prudence Claire</strong>, terlihat bahwa makna menjadi perempuan profesional tidak hanya terletak pada pencapaian karier semata. Lebih dari itu, perjalanan tersebut juga berkaitan dengan nilai-nilai yang membentuk karakter: budaya, integritas, empati, keberanian, serta kemampuan membangun hubungan yang sehat dengan orang lain.</p>
+
+                    <p class="scroll-animate">Di tengah dunia yang terus berubah, ketiganya menunjukkan bahwa kekuatan perempuan tidak hanya berada pada kemampuan untuk bertahan, tetapi juga pada kemampuan untuk memimpin, menginspirasi, dan membawa dampak positif bagi lingkungan sekitarnya.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Speaker Section (3 Narasumber) dengan format persis Kabutz3, tanpa deskripsi panjang -->
+    <!-- Speaker Section (profil pembicara lebih panjang, pakai png sesuai nama) -->
     <section class="speaker-section" id="speakers">
         <div class="container">
             <h2 class="speaker-section-title scroll-animate">Pembicara</h2>
@@ -802,31 +904,31 @@
                 <!-- Nawang Wulan -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e0e0e0'/%3E%3Ctext x='35' y='120' font-family='Inter' font-size='40' font-weight='700' fill='%23333'%3ENW%3C/text%3E%3C/svg%3E" alt="Nawang Wulan">
+                        <img src="Wulan.png" alt="Nawang Wulan" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3ENW%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Nawang Wulan</h3>
-                    <p class="speaker-role">aktif dalam bidang budaya</p>
-                    <div class="speaker-tag">KABUTZ</div>
+                    <p class="speaker-role">Pegiat Budaya</p>
+                    <p class="speaker-desc">Tumbuh di lingkungan keraton, Nawang Wulan aktif melestarikan nilai-nilai budaya dalam dunia profesional. Ia percaya bahwa tata krama, tanggung jawab, dan kepemimpinan yang mengayomi adalah fondasi perempuan masa kini.</p>
                 </div>
 
                 <!-- Beatrix Cecilia Atmadja -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23d6d6d6'/%3E%3Ctext x='35' y='120' font-family='Inter' font-size='40' font-weight='700' fill='%23333'%3EBC%3C/text%3E%3C/svg%3E" alt="Beatrix Cecilia Atmadja">
+                        <img src="Bece.png" alt="Beatrix Cecilia Atmadja" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%239a8c7a\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3EBE%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Beatrix C. Atmadja</h3>
-                    <p class="speaker-role">CEO Cadence.</p>
-                    <div class="speaker-tag">KABUTZ</div>
+                    <p class="speaker-role">CEO & Pendiri Agensi Cadence</p>
+                    <p class="speaker-desc">Memimpin dengan empati dan keberanian mengambil risiko. Bece percaya bahwa kreativitas harus berjalan seiring profesionalitas, dan kesuksesan sejati adalah ketika bisa memberi dampak positif.</p>
                 </div>
 
                 <!-- Prudence Claire -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23cccccc'/%3E%3Ctext x='35' y='120' font-family='Inter' font-size='40' font-weight='700' fill='%23333'%3EPC%3C/text%3E%3C/svg%3E" alt="Prudence Claire">
+                        <img src="Prudence.png" alt="Prudence Claire" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23bcb09b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3EPC%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Prudence Claire</h3>
-                    <p class="speaker-role">aktif dalam Charity for The Pawsie</p>
-                    <div class="speaker-tag">KABUTZ</div>
+                    <p class="speaker-role">Aktif dalam kegiatan amal di The Pawsie</p>
+                    <p class="speaker-desc">Menjunjung tinggi disiplin dan integritas, Prudence aktif dalam kegiatan sosial dan fashion. Ia meyakini bahwa reputasi dan empati adalah kunci membangun kepercayaan di era transparan.</p>
                 </div>
             </div>
         </div>
@@ -934,21 +1036,60 @@
                     }
                 });
             });
-
-            // Logo animation
-            const logo = document.getElementById('logo');
-            if (logo) {
-                logo.addEventListener('click', function() {
-                    this.classList.remove('logo-kachoo');
-                    void this.offsetWidth;
-                    this.classList.add('logo-kachoo');
-                });
-                
-                setTimeout(() => {
-                    logo.classList.add('logo-kachoo');
-                }, 1500);
-            }
         })();
+
+        // Slider functions
+        let slideIndices = {
+            wulan: 0,
+            bece: 0,
+            prudence: 0
+        };
+
+        function moveSlide(sliderId, direction) {
+            const slides = document.getElementById(sliderId + 'Slides');
+            if (!slides) return;
+            
+            const totalSlides = slides.children.length;
+            slideIndices[sliderId] = (slideIndices[sliderId] + direction + totalSlides) % totalSlides;
+            
+            slides.style.transform = `translateX(-${slideIndices[sliderId] * 100}%)`;
+            
+            // Update dots
+            const dotsContainer = document.getElementById(sliderId + 'Dots');
+            if (dotsContainer) {
+                Array.from(dotsContainer.children).forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === slideIndices[sliderId]);
+                });
+            }
+        }
+
+        function initSliders() {
+            ['wulan', 'bece', 'prudence'].forEach(id => {
+                const slides = document.getElementById(id + 'Slides');
+                const dotsContainer = document.getElementById(id + 'Dots');
+                if (!slides || !dotsContainer) return;
+                
+                slideIndices[id] = 0;
+                slides.style.transform = 'translateX(0)';
+                
+                // Create dots
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < slides.children.length; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = 'dot' + (i === 0 ? ' active' : '');
+                    dot.onclick = () => {
+                        slideIndices[id] = i;
+                        slides.style.transform = `translateX(-${i * 100}%)`;
+                        Array.from(dotsContainer.children).forEach((d, idx) => {
+                            d.classList.toggle('active', idx === i);
+                        });
+                    };
+                    dotsContainer.appendChild(dot);
+                }
+            });
+        }
+
+        window.onload = initSliders;
     </script>
 </body>
     </html>
