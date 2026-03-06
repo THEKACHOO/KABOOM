@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Wawancara Eksklusif: Nawang Wulan, Beatrix, Prudence | KABOOM! x KAZINE</title>
+    <title>Perempuan Hebat | KABOOM!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -57,7 +57,7 @@
             width: 100%;
         }
 
-        /* HEADER - gaya dari template */
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
@@ -323,7 +323,7 @@
 
         .article-body h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 800;
             margin: 60px 0 30px;
             color: var(--black);
@@ -371,7 +371,7 @@
             content: '—';
         }
 
-        /* SPEAKER SECTION (3 narasumber) */
+        /* SPEAKER SECTION (profil pembicara seperti Kabutz3) */
         .speaker-section {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
@@ -391,7 +391,7 @@
 
         .speaker-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             max-width: 1000px;
             margin: 0 auto;
@@ -400,7 +400,7 @@
         .speaker-card {
             text-align: center;
             background: var(--white);
-            padding: 40px 20px;
+            padding: 30px 20px 25px;
             border-radius: 15px;
             border: 1px solid var(--gray-medium);
             box-shadow: 0 10px 30px rgba(0,0,0,.05);
@@ -408,15 +408,15 @@
         }
 
         .speaker-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,.1);
         }
 
         .speaker-avatar {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -429,34 +429,35 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(20%);
+            filter: grayscale(15%);
         }
 
         .speaker-name {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--black);
         }
 
         .speaker-role {
-            font-size: 16px;
-            color: var(--gray-600);
-            margin-bottom: 25px;
-            line-height: 1.4;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 15px;
+            color: var(--gray-700);
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-weight: 500;
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .speaker-tag {
             display: inline-block;
             background: var(--gray-100);
             color: var(--black);
-            padding: 8px 20px;
+            padding: 6px 18px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             border: 1px solid var(--gray-medium);
         }
@@ -627,6 +628,11 @@
             .article-body h2 {
                 font-size: 28px;
             }
+
+            .speaker-avatar {
+                width: 130px;
+                height: 130px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -638,21 +644,12 @@
                 font-size: 18px;
             }
             
-            .company-card {
-                padding: 25px 20px;
-            }
-            
             .speaker-section-title {
                 font-size: 28px;
             }
             
             .speaker-name {
                 font-size: 24px;
-            }
-            
-            .speaker-avatar {
-                width: 140px;
-                height: 140px;
             }
         }
     </style>
@@ -663,7 +660,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Ctext x='0' y='25' font-family='Inter' font-weight='900' font-size='28' fill='%23000'%3EKABOOM%3C/text%3E%3C/svg%3E" alt="KABOOM Logo" id="logo">
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
                     <div class="article-category">KABUTZ</div>
                 </div>
                 
@@ -672,7 +669,7 @@
                         <i class="fas fa-home"></i> Beranda
                     </a>
                     <a href="#speakers" class="nav-btn">
-                        <i class="fas fa-user"></i> Narasumber
+                        <i class="fas fa-user"></i> Pembicara
                     </a>
                 </div>
             </div>
@@ -684,22 +681,22 @@
         <div class="hero-pattern"></div>
         <div class="container">
             <div class="article-hero">
-                <span class="article-date">Maret 2026 • Wawancara Eksklusif</span>
-                <h1 class="article-title">Nawang Wulan, Beatrix Cecilia, Prudence Claire: Tiga Perspektif dalam Satu Ruang</h1>
-                <p class="article-subtitle">Tim Kaboom dan Kazine duduk bersama membahas kreativitas, perjalanan, dan visi mereka di dunia fashion serta jurnalisme.</p>
+                <span class="article-date">Maret 2026</span>
+                <h1 class="article-title">Perempuan Hebat: Makna di Balik Setiap Peran Profesional</h1>
+                <p class="article-subtitle">Tim Kaboom berbincang dengan Nawang Wulan, Beatrix Cecilia Atmadja, dan Prudence Claire tentang profesionalitas, kepemimpinan, dan dampak yang berarti.</p>
                 
                 <div class="article-meta">
                     <div class="meta-item">
-                        <i class="fas fa-pen-fancy"></i>
-                        <span>Tim KABOOM & KAZINE</span>
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>8 Maret 2026</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Jakarta, Indonesia</span>
+                        <span>Jakarta</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-tag"></i>
-                        <span>#WawancaraEksklusif</span>
+                        <span>#HariPerempuan</span>
                     </div>
                 </div>
             </div>
@@ -711,7 +708,7 @@
         <div class="container">
             <div class="photo-display-container">
                 <div class="photo-display scroll-animate">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23eeeeee'/%3E%3Ctext x='50' y='300' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EFoto bersama ketiga narasumber%3C/text%3E%3C/svg%3E" alt="Nawang Wulan, Beatrix Cecilia, Prudence Claire">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23e9e9e9'/%3E%3Ctext x='80' y='300' font-family='Inter' font-size='34' font-weight='700' fill='%23333'%3EWawancara bersama tiga narasumber%3C/text%3E%3C/svg%3E" alt="Wawancara bersama Nawang Wulan, Beatrix Cecilia, Prudence Claire">
                 </div>
             </div>
         </div>
@@ -722,99 +719,236 @@
         <div class="container">
             <div class="content-container">
                 <div class="article-body">
-                    <!-- Dua paragraf awal -->
-                    <p class="scroll-animate">Dalam edisi khusus ini, tim redaksi KABOOM dan KAZINE berkesempatan untuk berbincang langsung dengan tiga sosok inspiratif: Nawang Wulan, Beatrix Cecilia, dan Prudence Claire. Percakapan berlangsung hangat di studio KACHOO, Jakarta, membahas perjalanan karier, proses kreatif, serta pandangan mereka tentang industri media dan fashion tanah air.</p>
+                    <!-- Opening paragraphs -->
+                    <p class="scroll-animate">Dalam rangka memperingati Hari Perempuan Internasional, Tim Kaboom berbincang dengan tokoh inspiratif mengenai sudut pandang mereka tentang makna di balik setiap peran profesional. Melalui perspektif yang berbeda dari dunia kreatif, bisnis, hingga kehidupan sosial, muncul cerita tentang bagaimana perempuan memaknai tanggung jawab, kepemimpinan, serta perjalanan karier yang tidak hanya mengejar kesuksesan, tetapi juga dampak yang berarti.</p>
 
-                    <p class="scroll-animate">Ketiganya hadir dengan energi yang berbeda. Nawang Wulan yang dikenal dengan pendekatan minimalis, Beatrix Cecilia dengan gaya eksperimentalnya, dan Prudence Claire yang membawa perspektif segar tentang keberlanjutan. Wawancara ini merupakan kolaborasi perdana antara KABOOM dan KAZINE, menyatukan dua sisi mata uang: berita dan gaya hidup.</p>
+                    <p class="scroll-animate">Dalam edisi ini, Kaboom menghadirkan pandangan dari Nawang Wulan, Beatrix Cecilia Atmadja, dan Prudence Claire, tiga sosok perempuan yang aktif di bidangnya masing-masing dan memiliki cara tersendiri dalam memaknai profesionalitas.</p>
 
-                    <!-- Bagian Nawang Wulan -->
-                    <h2 class="scroll-animate">Nawang Wulan</h2>
-                    <p class="scroll-animate">Nawang Wulan membuka sesi dengan cerita tentang transisinya dari dunia arsitektur ke fashion. "Awalnya saya hanya membuat pola dari sisa kain, lalu mulai dikenali teman-teman. Saya ingin pakaian yang berbicara pelan tapi berisi," ujarnya. Selama wawancara ia banyak menekankan pentingnya kejujuran material dan bentuk.</p>
+                    <!-- Beatrix Cecilia Atmadja (BECE) section -->
+                    <h2 class="scroll-animate">Beatrix Cecilia Atmadja: Menyeimbangkan Kreativitas dan Profesionalitas</h2>
+                    
+                    <p class="scroll-animate">Salah satu tantangan yang sering muncul dalam dunia kreatif adalah bagaimana menjaga keseimbangan antara ide dan tuntutan profesional. Menurut Beatrix Cecilia Atmadja, atau yang akrab dipanggil Bece, hal tersebut bukanlah perkara sederhana. Ia menjelaskan bahwa tantangan terbesar terletak pada bagaimana membagi fokus antara kreativitas dan kebutuhan operasional secara seimbang. Baginya, energi yang diberikan pada proses kreatif harus tetap sama besarnya dengan energi yang digunakan untuk memenuhi target objektif perusahaan dan menjaga efisiensi kerja.</p>
 
-                    <p class="scroll-animate">Karya-karya Nawang sering menggunakan palet monokrom dengan potongan arsitektural. Menurutnya, fashion adalah medium untuk membingkai tubuh tanpa kehilangan esensi pemakainya. Ia juga mengaku terinspirasi oleh ruang kosong dan sunyi di Yogyakarta, tempat ia menghabiskan masa kecil.</p>
+                    <p class="scroll-animate">Dengan kata lain, menjaga kualitas eksekusi kreatif sambil tetap memenuhi tuntutan profesional merupakan proses yang membutuhkan kedisiplinan dan kesadaran penuh terhadap dua dunia yang berjalan bersamaan.</p>
 
-                    <p class="scroll-animate">Kolaborasi dengan KAZINE direncanakan untuk edisi mendatang. "Saya senang diajak ngobrol panjang lebar soal proses. Biasanya orang cuma lihat hasil akhir, padahal di balik layar ada riset dan risau yang tidak terhitung."</p>
+                    <p class="scroll-animate">Selain tuntutan internal pekerjaan, dunia hiburan juga sering kali membawa tekanan dari ekspektasi publik. Bece mengakui bahwa ekspektasi tersebut bisa terasa berat. Di satu sisi, harapan publik dapat menjadi motivasi yang mendorong seseorang untuk berkembang. Namun di sisi lain, ekspektasi yang terlalu tinggi juga dapat berubah menjadi beban.</p>
 
-                    <p class="scroll-animate">Nawang juga menyentuh soal peran media dalam mempromosikan desainer lokal. Menurutnya, platform seperti KABOOM dan KAZINE bisa menjadi jembatan antara publik dan kreator. "Kita butuh liputan yang tidak hanya glamor, tapi juga jujur."</p>
+                    <p class="scroll-animate">Untuk menyikapinya, ia memilih untuk tetap fokus pada profesionalitas dan standar industri yang berlaku. Alih-alih terus mengejar validasi dari luar, Bece lebih memilih menaruh perhatian pada pengembangan kualitas diri dan kualitas karya secara internal. Menurutnya, pendekatan ini membantu menjaga keseimbangan mental sekaligus mempertahankan integritas dalam berkarya.</p>
 
-                    <!-- Quote Nawang -->
                     <div class="quote-block scroll-animate">
-                        <div class="quote-text">"Saya ingin pakaian yang berbicara pelan tapi berisi. Di balik layar ada riset dan risau yang tidak terhitung."</div>
-                        <div class="quote-author">Nawang Wulan</div>
+                        <div class="quote-text">"Kita tidak perlu terus mengejar validasi dari luar. Fokus pada pengembangan kualitas diri dan karya secara internal."</div>
+                        <div class="quote-author">Beatrix Cecilia Atmadja</div>
                     </div>
 
-                    <!-- Slider 2 foto untuk Nawang Wulan -->
-                    <div class="photo-display-container" style="margin: 40px 0;">
-                        <div class="photo-display scroll-animate">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='500' viewBox='0 0 1000 500'%3E%3Crect width='1000' height='500' fill='%23dddddd'/%3E%3Ctext x='50' y='250' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EKoleksi Nawang Wulan 1%3C/text%3E%3C/svg%3E" alt="Koleksi Nawang Wulan 1" style="margin-bottom: 5px;">
-                        </div>
-                        <div class="photo-display scroll-animate" style="margin-top: 5px;">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='500' viewBox='0 0 1000 500'%3E%3Crect width='1000' height='500' fill='%23cccccc'/%3E%3Ctext x='50' y='250' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EKoleksi Nawang Wulan 2%3C/text%3E%3C/svg%3E" alt="Koleksi Nawang Wulan 2">
-                        </div>
-                    </div>
+                    <p class="scroll-animate">Dalam perannya sebagai pemimpin di lingkungan kreatif, Bece juga menekankan pentingnya nilai kepemimpinan yang berpusat pada empati dan komunikasi dua arah. Ia percaya bahwa tim kreatif terdiri dari individu-individu yang memiliki pandangan dan ego artistik masing-masing. Oleh karena itu, seorang pemimpin tidak cukup hanya memberikan instruksi.</p>
 
-                    <!-- Bagian Beatrix Cecilia -->
-                    <h2 class="scroll-animate">Beatrix Cecilia</h2>
-                    <p class="scroll-animate">Beatrix Cecilia datang dengan gaya sporty-chic yang menjadi ciri khasnya. Ia bercerita tentang awal mula merintis brand "Beta" dari kamar kos. "Dulu saya jahit sendiri, foto pakai hp, upload ke Instagram. Lama-lama orang percaya," kenangnya sambil tertawa.</p>
+                    <p class="scroll-animate">Baginya, menciptakan ruang bagi anggota tim untuk bereksplorasi dan menyampaikan ide mereka merupakan bagian penting dari proses kreatif. Ia juga berusaha memastikan bahwa tim tidak bekerja semata-mata karena perintah, tetapi karena memiliki visi yang sama terhadap apa yang sedang dibangun bersama.</p>
 
-                    <p class="scroll-animate">Diskusi beralih ke pentingnya adaptasi digital. Beatrix percaya bahwa masa depan fashion ada pada kolaborasi dengan media. "Wawancara seperti ini membuat saya mengerti arah pasar. KABOOM memberitakan secara jujur, itu yang saya suka."</p>
+                    <p class="scroll-animate">Dalam perjalanan membangun perusahaan, keberanian mengambil risiko juga menjadi bagian yang tidak terpisahkan. Bece melihat bahwa perempuan yang berada dalam posisi kepemimpinan sering kali didorong untuk bermain aman. Namun menurutnya, perkembangan tidak akan terjadi jika seseorang terlalu takut untuk melangkah.</p>
 
-                    <p class="scroll-animate">Ia juga mengkritisi tren fast fashion. Menurutnya, konsumen sekarang harus lebih cerdas. "Belilah karena suka, bukan karena viral." Pernyataan ini diamini oleh Prudence yang duduk di sampingnya.</p>
+                    <p class="scroll-animate">Ia memandang risiko sebagai bagian alami dari perjalanan hidup dan profesional. Dengan perhitungan yang matang serta kombinasi antara analisis dan insting, risiko dapat menjadi jalan menuju pertumbuhan. Bagi Bece, keberhasilan maupun kegagalan sama-sama memiliki nilai. Jika berhasil, itu menjadi pencapaian. Jika gagal, itu menjadi pembelajaran yang memperkaya pengalaman.</p>
 
-                    <p class="scroll-animate">Proyek terbaru Beatrix adalah koleksi daur ulang dari limbah tekstil. Rencananya akan diluncurkan bersamaan dengan liputan khusus di KAZINE edisi Mei. "Saya mau orang lihat bahwa mode bertanggung jawab itu bisa tetap keren."</p>
+                    <p class="scroll-animate">Lebih jauh lagi, ia juga menyoroti pentingnya memastikan bahwa perjalanan karier tidak hanya berorientasi pada keberhasilan komersial. Menurutnya, makna sejati dari kesuksesan terletak pada dampak yang bisa diberikan kepada orang lain.</p>
 
-                    <!-- Quote Beatrix -->
+                    <p class="scroll-animate">Ia berusaha memastikan bahwa setiap karya atau perusahaan yang dibangunnya mampu memberikan kontribusi positif, baik melalui seni yang menginspirasi maupun melalui kesempatan kerja yang tercipta dari bisnis yang berkembang. Bagi Bece, profitabilitas dan nilai kemanusiaan harus berjalan beriringan. Tanpa integritas dan kejujuran, kesuksesan hanya akan menjadi pencapaian yang terasa kosong.</p>
+
+                    <!-- Prudence Claire section -->
+                    <h2 class="scroll-animate">Prudence Claire: Disiplin, Reputasi, dan Empati</h2>
+                    
+                    <p class="scroll-animate">Sementara itu, Prudence Claire melihat peran profesional perempuan dari perspektif kehidupan sosial dan karakter pribadi yang dibangun dalam interaksi sehari-hari. Menurutnya, disiplin dan tanggung jawab merupakan fondasi penting dalam menjalani kehidupan, baik secara profesional maupun sosial.</p>
+
+                    <p class="scroll-animate">Ia memandang disiplin sebagai bentuk penghormatan terhadap diri sendiri dan orang lain. Dalam industri kreatif dan fashion yang bergerak cepat, komitmen menjadi dasar utama kepercayaan. Disiplin membantu menjaga standar kerja, sementara tanggung jawab memastikan bahwa setiap keputusan yang diambil dilakukan dengan kesadaran penuh terhadap dampaknya.</p>
+
+                    <p class="scroll-animate">Prudence juga menekankan bahwa hal yang sama berlaku dalam kehidupan sosial. Kebiasaan sederhana seperti hadir tepat waktu, menepati janji, dan menjaga sikap merupakan bentuk penghargaan terhadap relasi yang dibangun dengan orang lain. Baginya, integritas adalah salah satu cerminan utama dari sosok perempuan hebat.</p>
+
                     <div class="quote-block scroll-animate">
-                        <div class="quote-text">"Belilah karena suka, bukan karena viral. Mode bertanggung jawab itu bisa tetap keren."</div>
-                        <div class="quote-author">Beatrix Cecilia</div>
-                    </div>
-
-                    <!-- Slider 2 foto Beatrix -->
-                    <div class="photo-display-container" style="margin: 40px 0;">
-                        <div class="photo-display scroll-animate">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='500' viewBox='0 0 1000 500'%3E%3Crect width='1000' height='500' fill='%23bbbbbb'/%3E%3Ctext x='50' y='250' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EKoleksi Beatrix 1%3C/text%3E%3C/svg%3E" alt="Koleksi Beatrix 1">
-                        </div>
-                        <div class="photo-display scroll-animate" style="margin-top: 5px;">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='500' viewBox='0 0 1000 500'%3E%3Crect width='1000' height='500' fill='%23aaaaaa'/%3E%3Ctext x='50' y='250' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EKoleksi Beatrix 2%3C/text%3E%3C/svg%3E" alt="Koleksi Beatrix 2">
-                        </div>
-                    </div>
-
-                    <!-- Bagian Prudence Claire -->
-                    <h2 class="scroll-animate">Prudence Claire</h2>
-                    <p class="scroll-animate">Prudence Claire adalah nama yang belakangan sering disebut di industri kreatif. Berbekal latar belakang jurnalistik, ia membawa pendekatan naratif dalam setiap koleksinya. "Saya suka bercerita lewat tekstil. Setiap kain punya sejarah," katanya.</p>
-
-                    <p class="scroll-animate">Dalam wawancara ini, Prudence banyak berbicara soal peran perempuan dalam industri. Ia merasa media seperti KABOOM penting untuk memberikan ruang yang setara. "Ketika saya diwawancarai, saya ingin kisah saya menginspirasi, bukan sekadar gaya."</p>
-
-                    <p class="scroll-animate">Ia juga memamerkan beberapa sketsa kolaborasi dengan KAZINE untuk edisi mendatang. Konsepnya mengangkat tenun Nusantara dengan sentuhan futuristik. "Saya senang KAZINE memberi kebebasan berekspresi."</p>
-
-                    <p class="scroll-animate">Menutup sesi, Prudence berpesan agar anak muda tidak takut memulai. "Saya dulu hanya menulis blog, lalu merancang baju. Sekarang saya bisa duduk di sini. Terima kasih KABOOM dan KAZINE."</p>
-
-                    <!-- Quote Prudence -->
-                    <div class="quote-block scroll-animate">
-                        <div class="quote-text">"Saya suka bercerita lewat tekstil. Setiap kain punya sejarah. Saya ingin kisah saya menginspirasi."</div>
+                        <div class="quote-text">"Disiplin adalah bentuk penghormatan terhadap diri sendiri dan orang lain. Integritas adalah cerminan utama perempuan hebat."</div>
                         <div class="quote-author">Prudence Claire</div>
                     </div>
 
-                    <!-- Slider 2 foto Prudence -->
-                    <div class="photo-display-container" style="margin: 40px 0;">
-                        <div class="photo-display scroll-animate">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='500' viewBox='0 0 1000 500'%3E%3Crect width='1000' height='500' fill='%23999999'/%3E%3Ctext x='50' y='250' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EKoleksi Prudence 1%3C/text%3E%3C/svg%3E" alt="Koleksi Prudence 1">
-                        </div>
-                        <div class="photo-display scroll-animate" style="margin-top: 5px;">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='500' viewBox='0 0 1000 500'%3E%3Crect width='1000' height='500' fill='%23888888'/%3E%3Ctext x='50' y='250' font-family='Inter' font-size='32' font-weight='700' fill='%23333'%3EKoleksi Prudence 2%3C/text%3E%3C/svg%3E" alt="Koleksi Prudence 2">
-                        </div>
-                    </div>
+                    <p class="scroll-animate">Selain itu, ia menilai bahwa reputasi pribadi memegang peranan penting dalam kehidupan sosial modern. Di era yang semakin transparan, batas antara identitas pribadi dan profesional sering kali menjadi semakin tipis.</p>
+
+                    <p class="scroll-animate">Menurut Prudence, reputasi pada dasarnya adalah refleksi dari nilai yang kita pegang. Oleh karena itu, menjaga reputasi berarti menjaga konsistensi karakter dan tetap autentik dalam berbagai situasi. Ia selalu berusaha memastikan bahwa apa yang ditampilkan di ruang publik selaras dengan siapa dirinya di ruang privat.</p>
+
+                    <p class="scroll-animate">Kepercayaan sosial, menurutnya, juga lahir dari konsistensi antara kata dan tindakan. Dalam setiap kerja sama atau kolaborasi, orang tidak hanya mendengarkan apa yang diucapkan, tetapi juga memperhatikan bagaimana seseorang bertindak.</p>
+
+                    <p class="scroll-animate">Ketika ucapan dan tindakan berjalan seiring, kepercayaan akan tumbuh secara alami. Sebaliknya, ketidaksesuaian sekecil apa pun dapat menciptakan jarak dalam hubungan profesional maupun sosial. Oleh karena itu, Prudence berpegang pada prinsip sederhana: tidak menjanjikan lebih dari yang dapat diberikan, dan selalu memberikan yang terbaik ketika sudah berkomitmen.</p>
+
+                    <p class="scroll-animate">Dalam membangun interaksi profesional yang sehat, ia juga melihat empati sebagai salah satu unsur yang sangat penting. Profesionalitas, menurutnya, tidak hanya berbicara tentang efisiensi dan hasil, tetapi juga tentang memahami manusia di balik setiap peran.</p>
+
+                    <p class="scroll-animate">Tim yang solid tidak hanya terbentuk dari kemampuan teknis semata, tetapi juga dari rasa saling memahami. Empati memungkinkan seseorang untuk mendengar lebih dalam, membaca situasi dengan lebih sensitif, dan mengambil keputusan yang lebih bijaksana. Ia percaya bahwa perempuan sering kali memiliki kepekaan alami terhadap dinamika emosional di sekitarnya, dan jika dikelola dengan baik, hal tersebut justru menjadi kekuatan dalam kepemimpinan.</p>
+
+                    <p class="scroll-animate">Dalam praktiknya, Prudence juga menyoroti pentingnya menyeimbangkan ketegasan dan empati dalam berinteraksi dengan orang lain. Menurutnya, kedua hal tersebut bukanlah dua sisi yang saling bertentangan.</p>
+
+                    <p class="scroll-animate">Ketegasan memberikan arah dan kejelasan, sementara empati memberikan kedalaman dalam memahami situasi dan perspektif orang lain. Ia percaya bahwa perempuan tidak perlu memilih antara menjadi kuat atau menjadi lembut. Keduanya dapat hadir dalam satu karakter yang utuh.</p>
+
+                    <p class="scroll-animate">Dalam situasi profesional, ia berusaha menyampaikan pendapat dengan jelas, namun tetap menghargai sudut pandang orang lain. Baginya, di situlah makna perempuan hebat: tidak hanya mampu mencapai keberhasilan dalam peran profesional, tetapi juga tetap menjaga kehangatan dalam setiap interaksi yang dibangun.</p>
+
+                    <!-- Closing paragraph -->
+                    <p class="scroll-animate">Melalui pandangan Wulan, Bece, dan Prudence, terlihat bahwa makna menjadi perempuan profesional tidak hanya berkaitan dengan pencapaian karier. Lebih dari itu, perjalanan tersebut juga mencakup nilai-nilai seperti integritas, empati, keberanian mengambil risiko, serta kemampuan membangun relasi yang sehat.</p>
+
+                    <p class="scroll-animate">Di tengah berbagai tantangan yang ada, ketiganya menunjukkan bahwa kekuatan perempuan tidak hanya terletak pada kemampuan untuk bertahan, tetapi juga pada kemampuan untuk memimpin, menginspirasi, dan membawa dampak positif bagi lingkungan sekitarnya.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Speaker Section (3 Narasumber) -->
+    <!-- Speaker Section (3 Narasumber) dengan format persis Kabutz3, tanpa deskripsi panjang -->
     <section class="speaker-section" id="speakers">
         <div class="container">
-            <h2 class="speaker-section-title scroll-animate">Narasumber</h2>
+            <h2 class="speaker-section-title scroll-animate">Pembicara</h2>
             
             <div class="speaker-grid">
+                <!-- Nawang Wulan -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e0e0e0'/%3E
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e0e0e0'/%3E%3Ctext x='35' y='120' font-family='Inter' font-size='40' font-weight='700' fill='%23333'%3ENW%3C/text%3E%3C/svg%3E" alt="Nawang Wulan">
+                    </div>
+                    <h3 class="speaker-name">Nawang Wulan</h3>
+                    <p class="speaker-role">aktif dalam bidang budaya</p>
+                    <div class="speaker-tag">KABUTZ</div>
+                </div>
+
+                <!-- Beatrix Cecilia Atmadja -->
+                <div class="speaker-card scroll-animate">
+                    <div class="speaker-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23d6d6d6'/%3E%3Ctext x='35' y='120' font-family='Inter' font-size='40' font-weight='700' fill='%23333'%3EBC%3C/text%3E%3C/svg%3E" alt="Beatrix Cecilia Atmadja">
+                    </div>
+                    <h3 class="speaker-name">Beatrix C. Atmadja</h3>
+                    <p class="speaker-role">CEO Cadence.</p>
+                    <div class="speaker-tag">KABUTZ</div>
+                </div>
+
+                <!-- Prudence Claire -->
+                <div class="speaker-card scroll-animate">
+                    <div class="speaker-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23cccccc'/%3E%3Ctext x='35' y='120' font-family='Inter' font-size='40' font-weight='700' fill='%23333'%3EPC%3C/text%3E%3C/svg%3E" alt="Prudence Claire">
+                    </div>
+                    <h3 class="speaker-name">Prudence Claire</h3>
+                    <p class="speaker-role">aktif dalam Charity for The Pawsie</p>
+                    <div class="speaker-tag">KABUTZ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card scroll-animate">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>@TheKachoo @HaiKachoo</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-about scroll-animate">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif dalam kategori Kabutz. Edisi ini merupakan wawancara khusus Hari Perempuan Internasional bersama tiga tokoh inspiratif.</p>
+                    <p>Mengedepankan perspektif jujur dan mendalam dari dunia kreatif, bisnis, dan sosial.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom scroll-animate">
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten wawancara adalah untuk keperluan roleplay.</p>
+                <p class="disclaimer">Tidak dipungut biaya. Informasi dapat berubah sesuai kebutuhan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Scroll animation
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+
+            const hideScrollElement = (element) => {
+                element.classList.remove('visible');
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    } else {
+                        hideScrollElement(el);
+                    }
+                });
+            };
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    setTimeout(() => {
+                        handleScrollAnimation();
+                        ticking = false;
+                    }, 80);
+                }
+            });
+
+            handleScrollAnimation();
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.background = 'rgba(255, 255, 255, 0.99)';
+                    header.style.boxShadow = '0 4px 25px rgba(0,0,0,.1)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,.05)';
+                }
+            });
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Logo animation
+            const logo = document.getElementById('logo');
+            if (logo) {
+                logo.addEventListener('click', function() {
+                    this.classList.remove('logo-kachoo');
+                    void this.offsetWidth;
+                    this.classList.add('logo-kachoo');
+                });
+                
+                setTimeout(() => {
+                    logo.classList.add('logo-kachoo');
+                }, 1500);
+            }
+        })();
+    </script>
+</body>
+    </html>
