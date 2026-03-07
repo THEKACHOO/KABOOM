@@ -272,7 +272,7 @@
             color: var(--black);
         }
 
-        /* PHOTO DISPLAY & SLIDER */
+        /* PHOTO DISPLAY */
         .photo-display-section {
             padding: 40px 0;
             background: var(--white);
@@ -283,88 +283,18 @@
             margin: 0 auto;
         }
 
-        /* Slider styles */
-        .slider {
-            position: relative;
-            overflow: hidden;
+        .single-photo {
             border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,.1);
         }
 
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .slide img {
+        .single-photo img {
             width: 100%;
             height: auto;
             display: block;
             aspect-ratio: 16/9;
             object-fit: cover;
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.8);
-            color: var(--black);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,.1);
-            z-index: 10;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(0,0,0,.05);
-        }
-
-        .slider-btn:hover {
-            background: white;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,.15);
-        }
-
-        .slider-btn.prev {
-            left: 20px;
-        }
-
-        .slider-btn.next {
-            right: 20px;
-        }
-
-        .dots-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 16px;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--gray-400);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-        }
-
-        .dot.active {
-            background: var(--black);
-            transform: scale(1.2);
         }
 
         /* ARTICLE CONTENT */
@@ -438,7 +368,7 @@
             content: '—';
         }
 
-        /* SPEAKER SECTION (profil pembicara lebih panjang) */
+        /* SPEAKER SECTION */
         .speaker-section {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
@@ -513,7 +443,6 @@
             font-weight: 500;
         }
 
-        /* deskripsi lebih panjang */
         .speaker-desc {
             font-size: 15px;
             color: var(--gray-600);
@@ -701,12 +630,6 @@
             .article-body h2 {
                 font-size: 28px;
             }
-
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 16px;
-            }
         }
 
         @media (max-width: 576px) {
@@ -777,48 +700,40 @@
         </div>
     </section>
 
-    <!-- 1 foto utama (slide awal) -->
+    <!-- 1 Foto Utama -->
     <section class="photo-display-section">
         <div class="container">
             <div class="photo-display-container">
                 <div class="photo-display scroll-animate">
-                    <div class="slider" id="mainSlider">
-                        <div class="slides" id="mainSlides">
-                            <div class="slide"><img src="Kabutz6.png" alt="Wawancara utama"></div>
-                        </div>
+                    <div class="single-photo">
+                        <img src="Kabutz6.png" alt="Wawancara utama">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Article Content dengan tambahan slider per narasumber -->
+    <!-- Article Content -->
     <section class="article-content">
         <div class="container">
             <div class="content-container">
                 <div class="article-body">
-                    <!-- Opening paragraphs (sesuai teks baru) -->
+                    <!-- Opening paragraphs -->
                     <p class="scroll-animate">Dalam rangka memperingati <strong>Hari Perempuan Internasional</strong>, Tim Kaboom berbincang dengan sejumlah perempuan inspiratif mengenai sudut pandang mereka tentang makna di balik setiap peran profesional. Melalui perspektif yang berbeda—dari budaya, dunia kreatif, hingga kehidupan sosial—muncul berbagai refleksi mengenai bagaimana perempuan memaknai tanggung jawab, kepemimpinan, dan perjalanan karier yang tidak hanya mengejar kesuksesan, tetapi juga dampak yang bermakna.</p>
 
                     <p class="scroll-animate">Bersama <strong>Nawang Wulan</strong>, <strong>Beatrix Cecilia Atmadja</strong>, dan <strong>Prudence Claire</strong>, Kaboom mencoba melihat bagaimana nilai-nilai yang membentuk seseorang sejak awal kehidupan dapat memengaruhi cara mereka memimpin, bekerja, dan berinteraksi dengan dunia di sekitarnya.</p>
 
-                    <!-- Bagian Nawang Wulan + foto slider -->
-                    <h2 class="scroll-animate">Nawang Wulan: Budaya sebagai Fondasi Profesionalitas</h2>
+                    <!-- Nawang Wulan Section -->
+                    <h2 class="scroll-animate">R.A Nawang Wulan: Budaya sebagai Fondasi Profesionalitas</h2>
                     
-                    <!-- slider foto untuk Wulan (2 slide) -->
+                    <!-- 1 Foto Wulan -->
                     <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
-                        <div class="slider" id="wulanSlider">
-                            <div class="slides" id="wulanSlides">
-                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23b8a28b'/%3E%3Ctext x='120' y='225' font-family='Inter' font-size='34' fill='%23222'%3EWulan : Lingkungan Keraton%3C/text%3E%3C/svg%3E" alt="Wulan budaya"></div>
-                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23a58e77'/%3E%3Ctext x='140' y='225' font-family='Inter' font-size='34' fill='%23222'%3EWulan : Kepemimpinan%3C/text%3E%3C/svg%3E" alt="Wulan kepemimpinan"></div>
-                            </div>
-                            <button class="slider-btn prev" onclick="moveSlide('wulan', -1)"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-btn next" onclick="moveSlide('wulan', 1)"><i class="fas fa-chevron-right"></i></button>
-                            <div class="dots-container" id="wulanDots"></div>
+                        <div class="single-photo">
+                            <img src="wulan1.png" alt="Nawang Wulan">
                         </div>
                     </div>
 
-                    <p class="scroll-animate">Bagi <strong>Nawang Wulan</strong>, atau yang akrab dipanggil Wulan, budaya memiliki pengaruh yang sangat besar ketika seseorang memasuki dunia kerja. Ia menceritakan bahwa sejak kecil dirinya tumbuh di lingkungan keraton yang sangat menekankan tata krama, tanggung jawab, serta cara membawa diri di hadapan banyak orang. Lingkungan tersebut secara tidak langsung membentuk bekal yang ia bawa hingga sekarang dalam berinteraksi dengan orang lain, terutama di lingkungan profesional.</p>
+                    <p class="scroll-animate">Bagi <strong>Raden Ajeng Nawang Wulan</strong>, atau yang akrab dipanggil Wulan, budaya memiliki pengaruh yang sangat besar ketika seseorang memasuki dunia kerja. Ia menceritakan bahwa sejak kecil dirinya tumbuh di lingkungan keraton yang sangat menekankan tata krama, tanggung jawab, serta cara membawa diri di hadapan banyak orang. Lingkungan tersebut secara tidak langsung membentuk bekal yang ia bawa hingga sekarang dalam berinteraksi dengan orang lain, terutama di lingkungan profesional.</p>
 
                     <p class="scroll-animate">Menurut Wulan, interaksi yang baik dalam dunia kerja bukan hanya sekadar proses serah-terima pekerjaan atau penyelesaian tugas. Lebih dari itu, interaksi juga menyangkut bagaimana seseorang saling menghargai, menjaga adab, serta menunjukkan sopan santun dalam berkomunikasi. Baginya, sikap tersebut tidak hanya menunjukkan penghormatan terhadap orang lain, tetapi juga menjadi bentuk penghargaan terhadap diri sendiri.</p>
 
@@ -837,22 +752,15 @@
 
                     <p class="scroll-animate">Pengaruh budaya terhadap karakter kepemimpinan, menurut Wulan, bisa sangat luas dan mendalam. Kebiasaan yang dimiliki seorang pemimpin secara tidak sadar akan menular kepada orang-orang di sekitarnya, termasuk rekan kerja dalam tim. Dari situ, nilai-nilai tersebut perlahan menyebar dan membentuk lingkungan kerja yang lebih besar. Semua itu kembali lagi pada satu hal yang sama: fondasi karakter.</p>
 
-                    <!-- Lanjutan Wulan -->
                     <p class="scroll-animate">Di tengah perkembangan zaman yang bergerak sangat cepat dan serba instan, Wulan juga melihat bahwa menjaga keseimbangan antara peran sosial dan profesional menjadi tantangan tersendiri. Ia menjelaskan bahwa dirinya tumbuh dalam keluarga dengan tradisi yang kuat, di mana adat dan nilai budaya menjadi bagian penting dari kehidupan sehari-hari. Namun di saat yang sama, Wulan juga hidup di era modern yang menuntut profesionalitas, kemampuan beradaptasi, serta keterbukaan terhadap berbagai perubahan.</p>
 
-                    <!-- Beatrix Cecilia (Bece) section + slider -->
+                    <!-- Beatrix Cecilia Section -->
                     <h2 class="scroll-animate">Beatrix Cecilia Atmadja: Kreativitas, Bisnis, dan Kepemimpinan</h2>
                     
-                    <!-- slider foto Bece (2 slide) -->
+                    <!-- 1 Foto Bece -->
                     <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
-                        <div class="slider" id="beceSlider">
-                            <div class="slides" id="beceSlides">
-                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%239a8c7a'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EBece : Kreativitas%3C/text%3E%3C/svg%3E" alt="Bece kreatif"></div>
-                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%238a7c6a'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EBece : Kepemimpinan%3C/text%3E%3C/svg%3E" alt="Bece bisnis"></div>
-                            </div>
-                            <button class="slider-btn prev" onclick="moveSlide('bece', -1)"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-btn next" onclick="moveSlide('bece', 1)"><i class="fas fa-chevron-right"></i></button>
-                            <div class="dots-container" id="beceDots"></div>
+                        <div class="single-photo">
+                            <img src="bece1.png" alt="Beatrix Cecilia Atmadja">
                         </div>
                     </div>
 
@@ -864,19 +772,13 @@
 
                     <p class="scroll-animate">Keberanian mengambil risiko juga menjadi bagian penting dalam perjalanan profesionalnya. Bece percaya bahwa perempuan yang memimpin sering kali didorong untuk bermain aman. Namun menurutnya, perkembangan tidak akan terjadi jika seseorang terlalu takut untuk melangkah. Dengan pertimbangan yang matang serta kombinasi antara perhitungan dan insting, risiko dapat menjadi jalan menuju pembelajaran dan pertumbuhan.</p>
 
-                    <!-- Prudence Claire section + slider -->
+                    <!-- Prudence Claire Section -->
                     <h2 class="scroll-animate">Prudence Claire: Disiplin, Reputasi, dan Empati dalam Kehidupan Sosial</h2>
                     
-                    <!-- slider foto Prudence (2 slide) -->
+                    <!-- 1 Foto Prudence -->
                     <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
-                        <div class="slider" id="prudenceSlider">
-                            <div class="slides" id="prudenceSlides">
-                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23bcb09b'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EPrudence : Disiplin%3C/text%3E%3C/svg%3E" alt="Prudence disiplin"></div>
-                                <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23aba08b'/%3E%3Ctext x='130' y='225' font-family='Inter' font-size='34' fill='%23222'%3EPrudence : Empati%3C/text%3E%3C/svg%3E" alt="Prudence sosial"></div>
-                            </div>
-                            <button class="slider-btn prev" onclick="moveSlide('prudence', -1)"><i class="fas fa-chevron-left"></i></button>
-                            <button class="slider-btn next" onclick="moveSlide('prudence', 1)"><i class="fas fa-chevron-right"></i></button>
-                            <div class="dots-container" id="prudenceDots"></div>
+                        <div class="single-photo">
+                            <img src="prudence1.png" alt="Prudence Claire">
                         </div>
                     </div>
 
@@ -895,7 +797,7 @@
         </div>
     </section>
 
-    <!-- Speaker Section (profil pembicara lebih panjang, pakai png sesuai nama) -->
+    <!-- Speaker Section (profil pembicara tetap) -->
     <section class="speaker-section" id="speakers">
         <div class="container">
             <h2 class="speaker-section-title scroll-animate">Pembicara</h2>
@@ -906,7 +808,7 @@
                     <div class="speaker-avatar">
                         <img src="Wulan.png" alt="Nawang Wulan" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3ENW%3C/text%3E%3C/svg%3E'">
                     </div>
-                    <h3 class="speaker-name">Nawang Wulan</h3>
+                    <h3 class="speaker-name">RA Nawang Wulan</h3>
                     <p class="speaker-role">Pegiat Budaya</p>
                     <p class="speaker-desc">Tumbuh di lingkungan keraton, Nawang Wulan aktif melestarikan nilai-nilai budaya dalam dunia profesional. Ia percaya bahwa tata krama, tanggung jawab, dan kepemimpinan yang mengayomi adalah fondasi perempuan masa kini.</p>
                 </div>
@@ -927,8 +829,8 @@
                         <img src="Prudence.png" alt="Prudence Claire" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23bcb09b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3EPC%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Prudence Claire</h3>
-                    <p class="speaker-role">Aktif dalam kegiatan amal di The Pawsie</p>
-                    <p class="speaker-desc">Menjunjung tinggi disiplin dan integritas, Prudence aktif dalam kegiatan sosial dan fashion. Ia meyakini bahwa reputasi dan empati adalah kunci membangun kepercayaan di era transparan.</p>
+                    <p class="speaker-role">Model Solara International, CEO The Seventeen Carat, dan aktif dalam kegiatan amal di The Pawsie oleh Golden J Group</p>
+                    <p class="speaker-desc">Menjunjung tinggi disiplin dan integritas, Prudence aktif dalam kegiatan sosial. Ia meyakini bahwa reputasi dan empati adalah kunci membangun kepercayaan di era transparan.</p>
                 </div>
             </div>
         </div>
@@ -1037,59 +939,6 @@
                 });
             });
         })();
-
-        // Slider functions
-        let slideIndices = {
-            wulan: 0,
-            bece: 0,
-            prudence: 0
-        };
-
-        function moveSlide(sliderId, direction) {
-            const slides = document.getElementById(sliderId + 'Slides');
-            if (!slides) return;
-            
-            const totalSlides = slides.children.length;
-            slideIndices[sliderId] = (slideIndices[sliderId] + direction + totalSlides) % totalSlides;
-            
-            slides.style.transform = `translateX(-${slideIndices[sliderId] * 100}%)`;
-            
-            // Update dots
-            const dotsContainer = document.getElementById(sliderId + 'Dots');
-            if (dotsContainer) {
-                Array.from(dotsContainer.children).forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === slideIndices[sliderId]);
-                });
-            }
-        }
-
-        function initSliders() {
-            ['wulan', 'bece', 'prudence'].forEach(id => {
-                const slides = document.getElementById(id + 'Slides');
-                const dotsContainer = document.getElementById(id + 'Dots');
-                if (!slides || !dotsContainer) return;
-                
-                slideIndices[id] = 0;
-                slides.style.transform = 'translateX(0)';
-                
-                // Create dots
-                dotsContainer.innerHTML = '';
-                for (let i = 0; i < slides.children.length; i++) {
-                    const dot = document.createElement('span');
-                    dot.className = 'dot' + (i === 0 ? ' active' : '');
-                    dot.onclick = () => {
-                        slideIndices[id] = i;
-                        slides.style.transform = `translateX(-${i * 100}%)`;
-                        Array.from(dotsContainer.children).forEach((d, idx) => {
-                            d.classList.toggle('active', idx === i);
-                        });
-                    };
-                    dotsContainer.appendChild(dot);
-                }
-            });
-        }
-
-        window.onload = initSliders;
     </script>
 </body>
-    </html>
+</html>
