@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Above the Skyline Festival 2026 | KABOOM! Eksklusif</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d3;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            
+            --primary-black: #000000;
+            --secondary-black: #1a1a1a;
+            --accent-black: #333333;
+            --light-black: #444444;
+            --off-white: #f8f8f8;
+            --gray-light: #f0f0f0;
+            --gray-medium: #e0e0e0;
+            
+            --accent: var(--primary-black);
+            --primary: var(--primary-black);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-medium);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideDown {
+            from { 
+                transform: translateY(-100%); 
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0); 
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            flex-wrap: nowrap;
+            gap: 16px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+            transition: var(--transition);
+            max-width: 140px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid var(--primary-black);
+            color: var(--primary-black);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .nav-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+            transition: left 0.7s;
+        }
+
+        .nav-btn:hover:before {
+            left: 100%;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            margin-top: 120px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInHero 1.2s ease-out;
+        }
+
+        @keyframes fadeInHero {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.03));
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            33% { 
+                transform: translateY(-30px) rotate(120deg); 
+            }
+            66% { 
+                transform: translateY(20px) rotate(240deg); 
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: var(--primary-black);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--white);
+            padding: 10px 24px;
+            border-radius: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eaeaea;
+        }
+
+        .hero-title {
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1.5px;
+            position: relative;
+            display: inline-block;
+            color: var(--secondary-black);
+        }
+
+        .title-accent {
+            background: #000;
+            color: #fff;
+            padding: 0 16px 4px 16px;
+            display: inline-block;
+            transform: skew(-3deg) scale(1.02);
+            border-radius: 12px 4px 12px 4px;
+        }
+
+        .hero-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+            animation: expandLine 1s 1s both;
+        }
+
+        @keyframes expandLine {
+            from { width: 0; opacity: 0; }
+            to { width: 120px; opacity: 1; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(20px, 2vw, 24px);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .meta-line {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            color: var(--gray-600);
+            font-weight: 400;
+            flex-wrap: wrap;
+        }
+
+        .meta-line i { 
+            color: var(--primary-black); 
+            margin-right: 6px; 
+        }
+
+        /* ===== ARTICLE MAIN ===== */
+        .article-main {
+            padding: 80px 0;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .lead-paragraph {
+            font-size: clamp(18px, 4vw, 22px);
+            line-height: 1.6;
+            color: #1e1e1e;
+            padding-left: 24px;
+            border-left: 5px solid var(--primary-black);
+            margin-bottom: 50px;
+            font-weight: 450;
+        }
+
+        /* ===== CSS CAROUSEL UNTUK 3 FOTO ===== */
+        .carousel-container {
+            margin: 40px 0 50px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid var(--gray-medium);
+            background: var(--off-white);
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Tombol Navigasi Carousel */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--primary-black);
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .carousel-btn:hover {
+            background: var(--white);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-btn.next {
+            right: 20px;
+        }
+
+        /* Indikator Dot */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--off-white);
+            border-top: 1px solid var(--gray-medium);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray-400);
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            padding: 0;
+        }
+
+        .dot.active {
+            background: var(--primary-black);
+            transform: scale(1.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-caption {
+            padding: 16px 20px;
+            background: var(--off-white);
+            font-size: 14px;
+            color: var(--gray-600);
+            border-top: 1px solid var(--gray-medium);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .body-text p {
+            font-size: 17px;
+            margin-bottom: 28px;
+            color: var(--gray-700);
+        }
+
+        .body-text h2 {
+            font-size: clamp(26px, 5vw, 32px);
+            font-weight: 800;
+            margin: 60px 0 20px;
+            letter-spacing: -0.01em;
+            color: var(--secondary-black);
+        }
+
+        .body-text h2:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--primary-black);
+            margin-top: 10px;
+        }
+
+        .quote-card {
+            background: var(--off-white);
+            padding: 30px 24px;
+            border-radius: 24px;
+            margin: 50px 0;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .quote-text {
+            font-size: clamp(20px, 4vw, 24px);
+            font-weight: 450;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            color: var(--secondary-black);
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        /* ===== INFO CARD FESTIVAL ===== */
+        .festival-card {
+            background: var(--white);
+            border: 1px solid var(--gray-medium);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 50px 0 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .festival-header {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 18px 24px;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .festival-detail {
+            display: flex;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            transition: var(--transition);
+        }
+
+        .festival-detail:hover {
+            background: var(--off-white);
+        }
+
+        .festival-detail:last-child {
+            border-bottom: none;
+        }
+
+        .detail-icon { 
+            color: var(--primary-black); 
+            min-width: 30px; 
+            font-size: 18px;
+        }
+
+        .detail-label { 
+            font-weight: 700; 
+            color: var(--primary-black); 
+            min-width: 100px; 
+        }
+
+        .detail-value { 
+            color: var(--gray-600); 
+            flex: 1; 
+        }
+
+        /* ===== SPEAKER SECTION DENGAN FOTO ===== */
+        .speaker-zone {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-zone:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 6vw, 42px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 45px;
+            color: var(--secondary-black);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speaker-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 24px 36px;
+            text-align: center;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .speaker-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-photo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+
+        .speaker-card:hover .speaker-photo {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .speaker-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .speaker-name {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: var(--secondary-black);
+        }
+
+        .x-handle {
+            display: inline-block;
+            background: var(--off-white);
+            border-radius: 60px;
+            padding: 8px 20px;
+            border: 1px solid var(--primary-black);
+            margin: 16px 0 16px;
+            transition: var(--transition);
+        }
+
+        .x-handle a {
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .x-handle:hover {
+            background: var(--primary-black);
+            border-color: var(--primary-black);
+        }
+
+        .x-handle:hover a { 
+            color: var(--white); 
+        }
+
+        .speaker-role {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin: 10px 0 20px;
+        }
+
+        .profile-btn {
+            background: transparent;
+            border: 2px solid var(--primary-black);
+            border-radius: 30px;
+            padding: 12px 32px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-black);
+        }
+
+        .profile-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.active { display: flex; }
+
+        .modal-card {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 25px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-500);
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            background: var(--off-white);
+            color: var(--primary-black);
+        }
+
+        .modal-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .modal-avatar {
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-black), var(--accent-black));
+        }
+
+        .modal-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-name { 
+            font-size: 26px; 
+            font-weight: 800; 
+            color: var(--secondary-black);
+        }
+
+        .modal-role { 
+            color: var(--gray-600); 
+        }
+
+        .modal-body p {
+            margin-bottom: 16px;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .modal-body a {
+            color: var(--primary-black);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-black);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--gray-medium);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .company-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .company-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .company-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--gray-700);
+        }
+
+        .company-info i {
+            width: 20px;
+            color: var(--primary-black);
+            font-size: 18px;
+        }
+
+        .footer-about h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .footer-about p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-medium);
+            color: var(--primary-black);
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-style: italic;
+            color: var(--primary-black);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-section {
+                margin-top: 100px;
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .article-category {
+                order: 2;
+            }
+            
+            .navigation {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .hero-section {
+                margin-top: 130px;
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                padding: 8px 0;
+            }
+
+            .logo-container {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            #logo {
+                height: 40px;
+            }
+
+            .article-category {
+                font-size: 12px;
+                padding: 5px 16px;
+            }
+
+            .navigation {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .festival-detail {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px 20px;
+            }
+            
+            .detail-icon, .detail-label, .detail-value {
+                width: 100%;
+            }
+            
+            .festival-header {
+                font-size: 18px;
+                padding: 16px 20px;
+            }
+
+            .meta-line {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .company-card {
+                padding: 30px;
+            }
+            
+            .speaker-photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .speaker-name {
+                font-size: 28px;
+            }
+
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+
+            .carousel-btn.prev {
+                left: 10px;
+            }
+
+            .carousel-btn.next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .nav-btn {
+                padding: 6px 16px;
+                font-size: 13px;
+            }
+            .article-category {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan logo KABOOM -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%2244%22%20viewBox%3D%220%200%20120%2044%22%3E%3Crect%20width%3D%22120%22%20height%3D%2244%22%20rx%3D%2222%22%20fill%3D%22%23000%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2232%22%20font-family%3D%22Inter%22%20font-size%3D%2226%22%20font-weight%3D%22900%22%20fill%3D%22%23fff%22%3EK!%3C%2Ftext%3E%3C%2Fsvg%3E');">
+                    <div class="article-category">KABUTZ</div>
+                </div>
+                
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-date">
+                    <i class="fas fa-calendar-alt"></i> 15 Maret 2026 · Eksklusif
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-accent">ABOVE THE SKYLINE</span> 2026
+                </h1>
+                <p class="hero-subtitle">Wawancara eksklusif persiapan festival bersama panitia (Jay) dan idol (Gideon). Siap mengguncang Kia Forum, California!</p>
+                <div class="meta-line">
+                    <span><i class="fas fa-pen"></i> Tim Kaboom</span>
+                    <span><i class="fas fa-headphones"></i> Wawancara Spesial Festival</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article main content -->
+    <section class="article-main">
+        <div class="container">
+            <div class="article-container">
+                <div class="lead-paragraph fade-up revealed">
+                    Tim Kaboom berkesempatan duduk bersama Jay dari tim kreatif festival dan Gideon, salah satu idol yang akan tampil, untuk mengupas tuntas persiapan menuju Above the Skyline Festival yang akan digelar 28 Maret 2026 di Kia Forum, Inglewood, California.
+                </div>
+
+                <!-- CAROUSEL UNTUK 3 FOTO KABUTZ8-1, KABUTZ8-2, KABUTZ8-3 -->
+                <div class="carousel-container fade-up">
+                    <div class="carousel" id="imageCarousel">
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item">
+                                <img src="Kabutz8-1.png" alt="Wawancara dengan Jay - Above the Skyline 1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'30\' fill=\'%23333\'%3EKABUTZ8-1.png%3C/text%3E%3Ctext x=\'50%25\' y=\'55%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'20\' fill=\'%23666\'%3EWawancara dengan Jay%3C/text%3E%3C/svg%3E');">
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <img src="Kabutz8-2.png" alt="Wawancara dengan Gideon - Above the Skyline 2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'30\' fill=\'%23333\'%3EKABUTZ8-2.png%3C/text%3E%3Ctext x=\'50%25\' y=\'55%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'20\' fill=\'%23666\'%3EWawancara dengan Gideon%3C/text%3E%3C/svg%3E');">
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <img src="Kabutz8-3.png" alt="Suasana persiapan festival - Above the Skyline 3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'30\' fill=\'%23333\'%3EKABUTZ8-3.png%3C/text%3E%3Ctext x=\'50%25\' y=\'55%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'20\' fill=\'%23666\'%3ESuasana persiapan festival%3C/text%3E%3C/svg%3E');">
+                            </div>
+                        </div>
+
+                        <!-- Tombol Navigasi -->
+                        <button class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous slide">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="nextSlide()" aria-label="Next slide">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Indikator Dot -->
+                        <div class="carousel-dots" id="carouselDots">
+                            <button class="dot active" onclick="currentSlide(0)"></button>
+                            <button class="dot" onclick="currentSlide(1)"></button>
+                            <button class="dot" onclick="currentSlide(2)"></button>
+                        </div>
+                    </div>
+                    <div class="image-caption">
+                        <i class="fas fa-camera"></i> Dokumentasi eksklusif KABOOM! bersama tim festival dan Gideon. (Foto: Kabutz8-1, Kabutz8-2, Kabutz8-3)
+                    </div>
+                </div>
+
+                <!-- BODY ARTIKEL WAWANCARA -->
+                <div class="body-text">
+
+                    <!-- Pertanyaan 1: Jay -->
+                    <h2 class="fade-up">“Energi Baru dari Berbagai Karakter Musik”</h2>
+                    <p class="fade-up"><strong>Tim Kaboom:</strong> Bagaimana perasaan kamu selama dalam proses persiapan festival ini?</p>
+                    <p class="fade-up"><strong>Jay (Panitia):</strong> Jujur, prosesnya cukup intens, tetapi sangat menyenangkan. Festival Above The Skyline membawa banyak energi baru karena banyak musisi dengan karakter berbeda berkumpul di satu panggung. Tim kami bekerja cukup lama untuk memastikan semuanya siap, mulai dari konsep penampilan sampai produksi panggung. Sebagai bagian dari tim kreatif, saya merasa bangga bisa melihat ide yang awalnya hanya ada di ruang diskusi akhirnya menjadi pertunjukan nyata. Atmosfer kolaborasinya juga kuat, jadi bukan hanya tentang tampil, tetapi juga tentang merayakan musik bersama.</p>
+
+                    <!-- Info Festival Card -->
+                    <div class="festival-card fade-up">
+                        <div class="festival-header">
+                            <i class="fas fa-music"></i> ABOVE THE SKYLINE FESTIVAL 2026
+                        </div>
+                        <div class="festival-detail">
+                            <span class="detail-icon"><i class="fas fa-calendar-day"></i></span>
+                            <span class="detail-label">Tanggal</span>
+                            <span class="detail-value">28 Maret 2026</span>
+                        </div>
+                        <div class="festival-detail">
+                            <span class="detail-icon"><i class="fas fa-map-pin"></i></span>
+                            <span class="detail-label">Lokasi</span>
+                            <span class="detail-value">Kia Forum, Inglewood, California</span>
+                        </div>
+                        <div class="festival-detail">
+                            <span class="detail-icon"><i class="fas fa-users"></i></span>
+                            <span class="detail-label">Konsep</span>
+                            <span class="detail-value">Kolaborasi musisi lintas genre</span>
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan 2: Gideon -->
+                    <h2 class="fade-up">Latihan Vokal dan Stamina</h2>
+                    <p class="fade-up"><strong>Tim Kaboom:</strong> Apa saja yang sudah kamu siapkan secara pribadi untuk tampil di festival ini?</p>
+                    <p class="fade-up"><strong>Gideon:</strong> Kami fokus ke latihan vokal, stamina, dan detail panggung. Setiap hari kami berlatih supaya energi di atas panggung tetap stabil dari awal sampai akhir. Selain itu kami juga berdiskusi dengan tim tentang aransemen live, supaya lagu yang dibawakan terasa lebih hidup dibanding versi rekamannya. Festival besar seperti ini selalu jadi momen penting, jadi kami ingin penonton benar-benar merasakan atmosfer yang kuat ketika penampilan dimulai.</p>
+
+                    <!-- Pertanyaan 3: Gideon -->
+                    <h2 class="fade-up">Membawakan “Trigger” dengan Aransemen Spesial</h2>
+                    <p class="fade-up"><strong>Tim Kaboom:</strong> Lagu apa yang nantinya akan kamu tampilkan?</p>
+                    <p class="fade-up"><strong>Gideon:</strong> Di festival ini aku akan membawakan “Trigger”, salah satu track dari full length album Korea NØVUS yang dirilis tahun lalu. Lagu ini punya energi yang kuat dan cukup cocok untuk panggung festival karena beat dan arrangement-nya memang dibuat untuk performance live. Versi yang akan dibawakan nanti juga sedikit berbeda dari versi album.</p>
+
+                    <!-- Quote Card -->
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Kami ingin penonton benar-benar merasakan atmosfer yang kuat.”</div>
+                        <div class="quote-author">— Gideon, tentang persiapan panggung</div>
+                    </div>
+
+                    <!-- Pertanyaan 4: Jay -->
+                    <h2 class="fade-up">Harapan untuk Industri Entertainment</h2>
+                    <p class="fade-up"><strong>Tim Kaboom:</strong> Apa yang kamu harapkan untuk dunia entertainment ke depannya setelah festival ini?</p>
+                    <p class="fade-up"><strong>Jay:</strong> Saya berharap festival seperti Above The Skyline bisa membuka lebih banyak ruang berekspresi antar artis dan kreator dari berbagai negara. Selain itu saya juga berharap platform seperti festival ini memberi kesempatan lebih besar untuk musisi baru agar bisa tampil dan berkembang di panggung global.</p>
+
+                    <!-- Pertanyaan 5: Pesan bersama -->
+                    <h2 class="fade-up">Pesan untuk Penggemar dan Penonton</h2>
+                    <p class="fade-up"><strong>Jay:</strong> Terima kasih untuk semua orang yang sudah mendukung festival ini. Dukungan kalian membuat event seperti ini bisa terus berkembang dan memberi ruang bagi musik yang beragam. Kami berharap kalian menikmati setiap penampilan yang ada di panggung.</p>
+                    <p class="fade-up"><strong>Gideon:</strong> Dari aku pribadi, terima kasih sudah terus mengikuti perjalanan musikku sampai sekarang. Energi dari penonton selalu jadi alasan terbesar kenapa aku akan terus berkarya. Jadi datang, nikmati musiknya, dan mari kita buat momen yang tidak terlupakan bersama di Above The Skyline.</p>
+
+                    <!-- photo credit line -->
+                    <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid var(--gray-medium); display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+                        <i class="fas fa-camera" style="background:var(--primary-black); color:white; padding:12px; border-radius:50%;"></i>
+                        <span>Foto oleh <strong>Tim KABOOM! / Kabutz</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKER SECTION (Gideon & RamzRecord) -->
+    <section class="speaker-zone" id="speaker">
+        <div class="container">
+            <h2 class="section-title fade-up">▸ wawancara bersama ◂</h2>
+            <div class="speakers-grid">
+                <!-- Speaker 1: Gideon -->
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo">
+                        <img src="Gideom.png" alt="Gideon - Foto Resmi" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Ccircle cx=\'150\' cy=\'150\' r=\'150\' fill=\'%23333\'/%3E%3Ctext x=\'150\' y=\'175\' text-anchor=\'middle\' font-family=\'Inter\' font-size=\'60\' fill=\'%23fff\'%3EG%3C/text%3E%3C/svg%3E');">
+                    </div>
+                    <div class="speaker-name">GIDEON</div>
+                    <div class="x-handle">
+                        <a href="https://x.com/RockerGideon" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i> @RockerGideon
+                        </a>
+                    </div>
+                    <div class="speaker-role">Solois · Penampil Utama</div>
+                    <button class="profile-btn" onclick="openModal('gideon')">
+                        <i class="fas fa-address-card"></i> profil
+                    </button>
+                </div>
+
+                <!-- Speaker 2: RamzRecord -->
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo">
+                        <img src="Ramzrecord.png" alt="RamzRecord - Foto Profil" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Ccircle cx=\'150\' cy=\'150\' r=\'150\' fill=\'%23444\'/%3E%3Ctext x=\'150\' y=\'175\' text-anchor=\'middle\' font-family=\'Inter\' font-size=\'40\' fill=\'%23fff\'%3ER%3C/text%3E%3C/svg%3E');">
+                    </div>
+                    <div class="speaker-name">RAMZRECORD</div>
+                    <div class="x-handle">
+                        <a href="https://x.com/RamzRecords" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i> @RamzRecords
+                        </a>
+                    </div>
+                    <div class="speaker-role">Label · Kreator · Kolaborator</div>
+                    <button class="profile-btn" onclick="openModal('ramz')">
+                        <i class="fas fa-address-card"></i> profil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal untuk profil -->
+    <div class="modal" id="teamModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header" id="modalHeader">
+                <!-- Akan diisi oleh JavaScript -->
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card fade-up">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>@TheKachoo</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Jenderal Sudirman No. 61-62, Jakarta Selatan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-about fade-up">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah kanal berita The Kachoo, menghadirkan wawancara eksklusif dan liputan mendalam seputar musik, pendidikan, dan budaya pop. Wawancara dengan Above the Skyline Festival ini adalah bagian dari seri KABUTZ.</p>
+                </div>
+            </div>
+            <div class="footer-bottom fade-up">
+                <p>&copy; 2026 KABOOM! di bawah The Kachoo. All rights reserved.</p>
+                <p class="disclaimer">Isi wawancara merupakan hasil liputan eksklusif tim KABOOM! dengan narasumber. Akun X yang ditautkan dikelola oleh masing-masing pihak. Foto ilustrasi/roleplay.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== CAROUSEL LOGIC =====
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const dots = document.querySelectorAll('.dot');
+        const carouselInner = document.querySelector('.carousel-inner');
+
+        function updateCarousel() {
+            // Geser carousel
+            if (carouselInner) {
+                carouselInner.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            }
+            
+            // Update dot aktif
+            dots.forEach((dot, index) => {
+                if (index === currentSlideIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        window.prevSlide = function() {
+            currentSlideIndex = (currentSlideIndex > 0) ? currentSlideIndex - 1 : slides.length - 1;
+            updateCarousel();
+        };
+
+        window.nextSlide = function() {
+            currentSlideIndex = (currentSlideIndex < slides.length - 1) ? currentSlideIndex + 1 : 0;
+            updateCarousel();
+        };
+
+        window.currentSlide = function(index) {
+            currentSlideIndex = index;
+            updateCarousel();
+        };
+
+        // Inisialisasi carousel
+        if (slides.length > 0) {
+            updateCarousel();
+        }
+
+        // ===== MODAL LOGIC =====
+        const modal = document.getElementById('teamModal');
+        const modalHeader = document.getElementById('modalHeader');
+        const modalBody = document.getElementById('modalBody');
+
+        window.openModal = function(type) {
+            let content = '';
+            if (type === 'gideon') {
+                modalHeader.innerHTML = `
+                    <div class="modal-avatar">
+                        <img src="Gideom.png" alt="Gideon" onerror="this.style.display='none'; this.parentElement.innerHTML='G';">
+                    </div>
+                    <div>
+                        <div class="modal-name">Gideon</div>
+                        <div class="modal-role">Solois · Penampil Utama</div>
+                    </div>
+                `;
+                modalBody.innerHTML = `
+                    <p><strong>Gideon</strong> adalah solois yang dikenal dengan penampilan panggungnya yang enerjik. Dalam wawancara ini, ia mewakili dirinya sendiri untuk membahas persiapan tampil di Above the Skyline Festival 2026.</p>
+                    <p>Ia akan membawakan lagu "Trigger" dari album <em>NØVUS</em> dengan aransemen spesial yang berbeda dari versi rekaman. Gideon menekankan pentingnya koneksi dengan penonton dan bagaimana festival menjadi ajang untuk merayakan musik bersama.</p>
+                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/RockerGideon" target="_blank" style="color:#000; font-weight:600;">@RockerGideon</a></p>
+                `;
+            } else if (type === 'ramz') {
+                modalHeader.innerHTML = `
+                    <div class="modal-avatar">
+                        <img src="Ramzrecord.png" alt="RamzRecord" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
+                    </div>
+                    <div>
+                        <div class="modal-name">RamzRecord</div>
+                        <div class="modal-role">Label · Kreator</div>
+                    </div>
+                `;
+                modalBody.innerHTML = `
+                    <p><strong>RamzRecord</strong> adalah label dan kolektif kreatif yang terlibat dalam pengembangan musisi. Dalam konteks Above the Skyline Festival, RamzRecord berperan dalam mendukung penampilan Gideon dan memastikan kualitas produksi yang maksimal.</p>
+                    <p>Mereka percaya bahwa festival seperti ini adalah platform penting untuk memperkenalkan musik berkualitas kepada khalayak yang lebih luas dan membuka peluang kolaborasi internasional.</p>
+                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/RamzRecords" target="_blank" style="color:#000; font-weight:600;">@RamzRecords</a></p>
+                `;
+            }
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeModal = function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // ===== LOGO ANIMATION =====
+        const logo = document.getElementById('logo');
+        if (logo) {
+            logo.addEventListener('click', function() {
+                this.classList.add('logo-kachoo');
+                setTimeout(() => this.classList.remove('logo-kachoo'), 800);
+            });
+        }
+
+        // ===== FADE-UP SCROLL OBSERVER =====
+        const faders = document.querySelectorAll('.fade-up');
+        const appearObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+        faders.forEach(el => appearObserver.observe(el));
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
