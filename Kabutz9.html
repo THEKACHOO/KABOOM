@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>ZINE! ACAKADUT Vol 1</title>
+    <title>ZINE! ACAKADUT Vol 1 | KABOOM! Eksklusif</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts Inter -->
@@ -281,9 +281,9 @@
         }
 
         .hero-title {
-            font-size: clamp(42px, 5vw, 68px);
+            font-size: clamp(38px, 5vw, 68px);
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.2;
             margin-bottom: 30px;
             letter-spacing: -1.5px;
             position: relative;
@@ -361,7 +361,7 @@
             font-weight: 450;
         }
 
-        /* Single Image Styling (menggantikan carousel) */
+        /* Single Image Styling */
         .single-image-container {
             margin: 40px 0 50px;
             border-radius: 20px;
@@ -600,6 +600,7 @@
             align-items: center;
             gap: 10px;
             color: var(--primary-black);
+            text-decoration: none;
         }
 
         .profile-btn:hover {
@@ -608,98 +609,10 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
         }
-
-        /* ===== MODAL ===== */
-        .modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .modal.active { display: flex; }
-
-        .modal-card {
-            background: var(--white);
-            max-width: 600px;
-            width: 100%;
-            border-radius: 20px;
-            padding: 35px;
-            position: relative;
-            max-height: 85vh;
-            overflow-y: auto;
-            border: 1px solid var(--gray-medium);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px; right: 25px;
-            font-size: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--gray-500);
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .modal-close:hover {
-            background: var(--off-white);
-            color: var(--primary-black);
-        }
-
-        .modal-header {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .modal-avatar {
-            width: 70px; height: 70px;
-            border-radius: 50%;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--primary-black), var(--accent-black));
-        }
-
-        .modal-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modal-name { 
-            font-size: 26px; 
-            font-weight: 800; 
-            color: var(--secondary-black);
-        }
-
-        .modal-role { 
-            color: var(--gray-600); 
-        }
-
-        .modal-body p {
-            margin-bottom: 16px;
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-
-        .modal-body a {
-            color: var(--primary-black);
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid var(--primary-black);
+        
+        .profile-btn:hover i, 
+        .profile-btn:hover span {
+            color: var(--white);
         }
 
         /* ===== FOOTER ===== */
@@ -816,7 +729,7 @@
             }
             
             .hero-title {
-                font-size: 48px;
+                font-size: 44px;
             }
         }
 
@@ -881,7 +794,7 @@
             }
 
             .hero-title {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .hero-subtitle {
@@ -996,31 +909,65 @@
 
                 <!-- BODY ARTIKEL WAWANCARA ACAKADUT -->
                 <div class="body-text">
-                    <p class="fade-up">Bagi Effendi, momen rilisnya volume pertama ini membawa luapan rasa antusias yang sulit dibendung. "Sangat-sangat excited karena ada banyak sekali karya-karya bagus di zine ini. Gak sabar buat mempertemukan karya esai, cerpen, dan desain grafis ke pembaca," ujarnya dengan mata berbinar. Ia juga mengaku sempat kaget karena antusiasme publik yang melampaui ekspektasi. Senada dengan hal itu, Gilang merasakan kelegaan yang luar biasa. Sebagai sosok di balik tata letak (layout), ia merasa memiliki tanggung jawab besar. "Begitu rilis dan beres juga dapat respon baik, rasanya saya luar biasa lega," ungkap Gilang.</p>
-
-                    <h2 class="fade-up">Proses Kreatif dan Keseruan di Balik Layar</h2>
-                    <p class="fade-up">Proses kreatif pembuatan zine ini pun meninggalkan kesan mendalam bagi para punggawa di baliknya. Gilang menyebutkan bahwa proyek ini telah menjadi ruang belajar baru baginya melalui diskusi intens. Adamsalik menambahkan bahwa pengalaman paling berkesan adalah saat ia bisa menyelami isi pikir manusia lain melalui karya-karya yang masuk. "Ada pertukaran ide dari diskusi-diskusi menarik antara kami, editor, yang tidak jarang jenaka. Saya rasa itu paling berkesan," tambahnya.</p>
-
+                    <p class="fade-up">Bagi Effendi, momen rilisnya volume pertama ini membawa luapan rasa antusias yang sulit dibendung.</p>
+                    
                     <div class="quote-card fade-up">
                         <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
-                        <div class="quote-text">“Keragaman inilah yang jadi kekuatan ACAKADUT. Saya yakin, pembaca akan terbawa menyusuri proses berpikir berbeda dari sebuah karya.”</div>
+                        <div class="quote-text">“Sangat-sangat excited karena ada banyak sekali karya-karya bagus di zine ini. Gak sabar buat mempertemukan karya esai, cerpen, dan desain grafis ke pembaca.”</div>
+                        <div class="quote-author">— Effendi, dengan mata berbinar</div>
+                    </div>
+                    
+                    <p class="fade-up">Ia juga mengaku sempat kaget karena antusiasme publik yang melampaui ekspektasi. Senada dengan hal itu, Gilang merasakan kelegaan yang luar biasa. Sebagai sosok di balik tata letak (layout), ia merasa memiliki tanggung jawab besar.</p>
+                    
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Begitu rilis dan beres juga dapat respon baik, rasanya saya luar biasa lega.”</div>
+                        <div class="quote-author">— Gilang, Layout Designer</div>
+                    </div>
+
+                    <h2 class="fade-up">Proses Kreatif dan Keseruan di Balik Layar</h2>
+                    <p class="fade-up">Proses kreatif pembuatan zine ini pun meninggalkan kesan mendalam bagi para punggawa di baliknya. Gilang menyebutkan bahwa proyek ini telah menjadi ruang belajar baru baginya melalui diskusi intens. Adamsalik menambahkan bahwa pengalaman paling berkesan adalah saat ia bisa menyelami isi pikir manusia lain melalui karya-karya yang masuk.</p>
+                    
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Ada pertukaran ide dari diskusi-diskusi menarik antara kami, editor, yang tidak jarang jenaka. Saya rasa itu paling berkesan.”</div>
                         <div class="quote-author">— Adamsalik, Tim Editor</div>
                     </div>
 
                     <h2 class="fade-up">Membicarakan Kualitas Karya dan Kekuatan Tema</h2>
-                    <p class="fade-up">Membicarakan kualitas karya, Adamsalik dan RJ kompak mengungkapkan kekaguman mereka terhadap cara para kontributor merespons tema. Adamsalik menyoroti bagaimana para penulis mampu menempatkan Akal Imitasi (AI) dengan narasi yang unik. "Bagi saya, keragaman inilah yang jadi kekuatan ACAKADUT. Saya yakin, pembaca akan terbawa menyusuri proses berpikir berbeda dari sebuah karya," tutur Adamsalik bangga. RJ pun merasa tersentuh melihat bagaimana aspirasi dan ideologi tertuang begitu dalam. "Isi kepala manusia itu tak terukur luas dan dalamnya. Kagum, sekaligus bahagia karena jadi salah satu dari yang pertama membaca karya-karya apik mereka," sahut RJ.</p>
-
-                    <h2 class="fade-up">Harapan Menatap Masa Depan</h2>
-                    <p class="fade-up">Menatap masa depan, Tim ZINE! Acakadut menyimpan harapan besar agar proyek ini terus berlanjut dan berdampak luas. RJ memimpikan agar Acakadut bisa menjadi ruang aman bagi para kreator. Sementara itu, Effendi menekankan bahwa zine adalah simbol kebebasan bersuara. "Gak muluk-muluk, semoga bisa terbit volume-volume selanjutnya aja. Semakin menjamur, semakin liar distribusinya, semakin baik," tegas Effendi mengenai visinya untuk Acakadut ke depan.</p>
-
+                    <p class="fade-up">Membicarakan kualitas karya, Adamsalik dan RJ kompak mengungkapkan kekaguman mereka terhadap cara para kontributor merespons tema. Adamsalik menyoroti bagaimana para penulis mampu menempatkan Akal Imitasi (AI) dengan narasi yang unik.</p>
+                    
                     <div class="quote-card fade-up">
                         <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
-                        <div class="quote-text">“Mari kita lahirkan dialog dari ide-ide pikiran mentah dan kusut.”</div>
-                        <div class="quote-author">— Adamsalik, pesan penutup</div>
+                        <div class="quote-text">“Bagi saya, keragaman inilah yang jadi kekuatan ACAKADUT. Saya yakin, pembaca akan terbawa menyusuri proses berpikir berbeda dari sebuah karya.”</div>
+                        <div class="quote-author">— Adamsalik, bangga</div>
+                    </div>
+                    
+                    <p class="fade-up">RJ pun merasa tersentuh melihat bagaimana aspirasi dan ideologi tertuang begitu dalam.</p>
+                    
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Isi kepala manusia itu tak terukur luas dan dalamnya. Kagum, sekaligus bahagia karena jadi salah satu dari yang pertama membaca karya-karya apik mereka.”</div>
+                        <div class="quote-author">— RJ, Kurator</div>
+                    </div>
+
+                    <h2 class="fade-up">Harapan Menatap Masa Depan</h2>
+                    <p class="fade-up">Menatap masa depan, Tim ZINE! Acakadut menyimpan harapan besar agar proyek ini terus berlanjut dan berdampak luas. RJ memimpikan agar Acakadut bisa menjadi ruang aman bagi para kreator. Sementara itu, Effendi menekankan bahwa zine adalah simbol kebebasan bersuara.</p>
+                    
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Gak muluk-muluk, semoga bisa terbit volume-volume selanjutnya aja. Semakin menjamur, semakin liar distribusinya, semakin baik.”</div>
+                        <div class="quote-author">— Effendi, visi Acakadut ke depan</div>
                     </div>
 
                     <h2 class="fade-up">Pesan untuk Khalayak</h2>
-                    <p class="fade-up">Sebagai penutup, tim memberikan pesan kuat bagi khalayak yang belum sempat menyentuh lembaran zine mereka. Gilang menekankan pentingnya membaca agar otak tetap tumbuh di tengah gempuran teknologi. Adamsalik menutup perbincangan dengan sebuah ajakan filosofis untuk tidak sekadar melintas di atas teks, tetapi berani menguliti gagasan. "Mari kita lahirkan dialog dari ide-ide pikiran mentah dan kusut," pungkasnya mengajak pembaca untuk kembali berpikir sebagai manusia seutuhnya.</p>
+                    <p class="fade-up">Sebagai penutup, tim memberikan pesan kuat bagi khalayak yang belum sempat menyentuh lembaran zine mereka. Gilang menekankan pentingnya membaca agar otak tetap tumbuh di tengah gempuran teknologi. Adamsalik menutup perbincangan dengan sebuah ajakan filosofis untuk tidak sekadar melintas di atas teks, tetapi berani menguliti gagasan.</p>
+                    
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Mari kita lahirkan dialog dari ide-ide pikiran mentah dan kusut.”</div>
+                        <div class="quote-author">— Adamsalik, mengajak pembaca</div>
+                    </div>
 
                     <!-- photo credit line -->
                     <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid var(--gray-medium); display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
@@ -1035,7 +982,7 @@
     <!-- SPEAKER SECTION (4 Tim Acakadut) -->
     <section class="speaker-zone" id="speaker">
         <div class="container">
-            <h2 class="section-title fade-up">▸ tim di balik zine ◂</h2>
+            <h2 class="section-title fade-up">Tim Zine Acakadut</h2>
             <div class="speakers-grid">
                 <!-- Effendi -->
                 <div class="speaker-card fade-up">
@@ -1049,9 +996,9 @@
                         </a>
                     </div>
                     <div class="speaker-role">Tim Acakadut</div>
-                    <button class="profile-btn" onclick="openModal('effendi')">
-                        <i class="fas fa-address-card"></i> profil
-                    </button>
+                    <a href="https://x.com/" target="_blank" rel="noopener" class="profile-btn">
+                        <i class="fas fa-external-link-alt"></i> Lihat
+                    </a>
                 </div>
 
                 <!-- Gilang Adhi -->
@@ -1066,9 +1013,9 @@
                         </a>
                     </div>
                     <div class="speaker-role">Tim Acakadut</div>
-                    <button class="profile-btn" onclick="openModal('gilang')">
-                        <i class="fas fa-address-card"></i> profil
-                    </button>
+                    <a href="https://x.com/" target="_blank" rel="noopener" class="profile-btn">
+                        <i class="fas fa-external-link-alt"></i> Lihat
+                    </a>
                 </div>
 
                 <!-- Adamsalik Ar-Rasyid Mattuliang -->
@@ -1083,9 +1030,9 @@
                         </a>
                     </div>
                     <div class="speaker-role">Tim Acakadut</div>
-                    <button class="profile-btn" onclick="openModal('adamsalik')">
-                        <i class="fas fa-address-card"></i> profil
-                    </button>
+                    <a href="https://x.com/" target="_blank" rel="noopener" class="profile-btn">
+                        <i class="fas fa-external-link-alt"></i> Lihat
+                    </a>
                 </div>
 
                 <!-- Rai Jose Winardjo (RJ) -->
@@ -1100,26 +1047,13 @@
                         </a>
                     </div>
                     <div class="speaker-role">Tim Acakadut</div>
-                    <button class="profile-btn" onclick="openModal('rj')">
-                        <i class="fas fa-address-card"></i> profil
-                    </button>
+                    <a href="https://x.com/" target="_blank" rel="noopener" class="profile-btn">
+                        <i class="fas fa-external-link-alt"></i> Lihat
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Modal untuk profil -->
-    <div class="modal" id="teamModal">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
-            <div class="modal-header" id="modalHeader">
-                <!-- Akan diisi oleh JavaScript -->
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Akan diisi oleh JavaScript -->
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -1144,98 +1078,17 @@
                 </div>
                 <div class="footer-about fade-up">
                     <h3>Tentang KABOOM!</h3>
-                    <p>KABOOM! adalah kanal berita The Kachoo, menghadirkan wawancara eksklusif dan liputan mendalam seputar musik, pendidikan, dan budaya pop. Wawancara dengan Tim ZINE! Acakadut ini adalah bagian dari seri KABUTZ.</p>
+                    <p>KABOOM! adalah proyek berita The Kachoo yang menghadirkan wawancara eksklusif. Wawancara dengan Tim ZINE! Acakadut ini adalah bagian dari seri KABUTZ.</p>
                 </div>
             </div>
             <div class="footer-bottom fade-up">
-                <p>&copy; 2026 KABOOM! di bawah The Kachoo. All rights reserved.</p>
-                <p class="disclaimer">Isi wawancara merupakan hasil liputan eksklusif tim KABOOM! dengan narasumber. Akun X yang ditautkan dikelola oleh masing-masing pihak.</p>
+                <p>&copy; 2026 KABOOM! The Kachoo. All rights reserved.</p>
+                <p class="disclaimer">Isi wawancara merupakan hasil liputan eksklusif tim KABOOM! dengan Tim Zine! Acakadut.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // ===== MODAL LOGIC untuk 4 profil =====
-        const modal = document.getElementById('teamModal');
-        const modalHeader = document.getElementById('modalHeader');
-        const modalBody = document.getElementById('modalBody');
-
-        window.openModal = function(type) {
-            let content = '';
-            if (type === 'effendi') {
-                modalHeader.innerHTML = `
-                    <div class="modal-avatar">
-                        <img src="Effendi.png" alt="Effendi" onerror="this.style.display='none'; this.parentElement.innerHTML='E';">
-                    </div>
-                    <div>
-                        <div class="modal-name">Effendi</div>
-                        <div class="modal-role">Tim Acakadut · Inisiator</div>
-                    </div>
-                `;
-                modalBody.innerHTML = `
-                    <p><strong>Effendi</strong> adalah salah satu penggagas utama ZINE! Acakadut. Baginya, zine adalah simbol kebebasan bersuara dan ruang bagi ekspresi liar yang jujur.</p>
-                    <p>Ia sangat antusias dengan volume perdana dan berharap Acakadut bisa terus terbit, semakin menjamur, dan semakin liar distribusinya ke depan.</p>
-                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
-                `;
-            } else if (type === 'gilang') {
-                modalHeader.innerHTML = `
-                    <div class="modal-avatar">
-                        <img src="GilangAdhi.png" alt="Gilang Adhi" onerror="this.style.display='none'; this.parentElement.innerHTML='G';">
-                    </div>
-                    <div>
-                        <div class="modal-name">Gilang Adhi</div>
-                        <div class="modal-role">Tim Acakadut · Layout & Desain</div>
-                    </div>
-                `;
-                modalBody.innerHTML = `
-                    <p><strong>Gilang Adhi</strong> adalah sosok di balik tata letak (layout) ZINE! Acakadut. Ia merasa lega luar biasa karena proyek ini mendapat respon baik dari publik.</p>
-                    <p>Proyek ini menjadi ruang belajar baru baginya melalui diskusi-diskusi intens bersama tim.</p>
-                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
-                `;
-            } else if (type === 'adamsalik') {
-                modalHeader.innerHTML = `
-                    <div class="modal-avatar">
-                        <img src="Adamsalik.png" alt="Adamsalik" onerror="this.style.display='none'; this.parentElement.innerHTML='A';">
-                    </div>
-                    <div>
-                        <div class="modal-name">Adamsalik Ar-Rasyid Mattuliang</div>
-                        <div class="modal-role">Tim Acakadut · Editor</div>
-                    </div>
-                `;
-                modalBody.innerHTML = `
-                    <p><strong>Adamsalik</strong> adalah editor yang sangat menikmati proses menyelami isi pikiran manusia lain melalui karya-karya yang masuk. Baginya, diskusi jenaka antar tim adalah hal paling berkesan.</p>
-                    <p>Ia mengajak pembaca untuk tidak sekadar melintas di atas teks, tetapi berani menguliti gagasan dan melahirkan dialog dari ide-ide mentah.</p>
-                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
-                `;
-            } else if (type === 'rj') {
-                modalHeader.innerHTML = `
-                    <div class="modal-avatar">
-                        <img src="RaiJose.png" alt="Rai Jose Winardjo" onerror="this.style.display='none'; this.parentElement.innerHTML='RJ';">
-                    </div>
-                    <div>
-                        <div class="modal-name">Rai Jose Winardjo</div>
-                        <div class="modal-role">Tim Acakadut · Kurator</div>
-                    </div>
-                `;
-                modalBody.innerHTML = `
-                    <p><strong>Rai Jose Winardjo (RJ)</strong> merasa tersentuh melihat bagaimana aspirasi dan ideologi tertuang begitu dalam dalam setiap karya. Ia kagum dan bahagia menjadi salah satu yang pertama membaca karya-karya apik para kontributor.</p>
-                    <p>RJ memimpikan Acakadut sebagai ruang aman bagi para kreator untuk terus berkarya.</p>
-                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
-                `;
-            }
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-
-        window.closeModal = function() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-
         // ===== LOGO CLICK ANIMATION =====
         const logo = document.getElementById('logo');
         if (logo) {
@@ -1266,4 +1119,4 @@
         });
     </script>
 </body>
-</html>
+    </html>
