@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>ZINE! ACAKADUT Vol 1</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d3;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            
+            --primary-black: #000000;
+            --secondary-black: #1a1a1a;
+            --accent-black: #333333;
+            --light-black: #444444;
+            --off-white: #f8f8f8;
+            --gray-light: #f0f0f0;
+            --gray-medium: #e0e0e0;
+            
+            --accent: var(--primary-black);
+            --primary: var(--primary-black);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-medium);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideDown {
+            from { 
+                transform: translateY(-100%); 
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0); 
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            flex-wrap: nowrap;
+            gap: 16px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+            transition: var(--transition);
+            max-width: 140px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid var(--primary-black);
+            color: var(--primary-black);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .nav-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+            transition: left 0.7s;
+        }
+
+        .nav-btn:hover:before {
+            left: 100%;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            margin-top: 120px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInHero 1.2s ease-out;
+        }
+
+        @keyframes fadeInHero {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.03));
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            33% { 
+                transform: translateY(-30px) rotate(120deg); 
+            }
+            66% { 
+                transform: translateY(20px) rotate(240deg); 
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: var(--primary-black);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--white);
+            padding: 10px 24px;
+            border-radius: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eaeaea;
+        }
+
+        .hero-title {
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1.5px;
+            position: relative;
+            display: inline-block;
+            color: var(--secondary-black);
+        }
+
+        .title-accent {
+            background: #000;
+            color: #fff;
+            padding: 0 16px 4px 16px;
+            display: inline-block;
+            transform: skew(-3deg) scale(1.02);
+            border-radius: 12px 4px 12px 4px;
+        }
+
+        .hero-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+            animation: expandLine 1s 1s both;
+        }
+
+        @keyframes expandLine {
+            from { width: 0; opacity: 0; }
+            to { width: 120px; opacity: 1; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(20px, 2vw, 24px);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .meta-line {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            color: var(--gray-600);
+            font-weight: 400;
+            flex-wrap: wrap;
+        }
+
+        .meta-line i { 
+            color: var(--primary-black); 
+            margin-right: 6px; 
+        }
+
+        /* ===== ARTICLE MAIN ===== */
+        .article-main {
+            padding: 80px 0;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .lead-paragraph {
+            font-size: clamp(18px, 4vw, 22px);
+            line-height: 1.6;
+            color: #1e1e1e;
+            padding-left: 24px;
+            border-left: 5px solid var(--primary-black);
+            margin-bottom: 50px;
+            font-weight: 450;
+        }
+
+        /* Single Image Styling (menggantikan carousel) */
+        .single-image-container {
+            margin: 40px 0 50px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid var(--gray-medium);
+            background: var(--off-white);
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 16px 20px;
+            background: var(--off-white);
+            font-size: 14px;
+            color: var(--gray-600);
+            border-top: 1px solid var(--gray-medium);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .body-text p {
+            font-size: 17px;
+            margin-bottom: 28px;
+            color: var(--gray-700);
+        }
+
+        .body-text h2 {
+            font-size: clamp(26px, 5vw, 32px);
+            font-weight: 800;
+            margin: 60px 0 20px;
+            letter-spacing: -0.01em;
+            color: var(--secondary-black);
+        }
+
+        .body-text h2:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--primary-black);
+            margin-top: 10px;
+        }
+
+        .quote-card {
+            background: var(--off-white);
+            padding: 30px 24px;
+            border-radius: 24px;
+            margin: 50px 0;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .quote-text {
+            font-size: clamp(20px, 4vw, 24px);
+            font-weight: 450;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            color: var(--secondary-black);
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        /* ===== SPEAKER SECTION DENGAN FOTO ===== */
+        .speaker-zone {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-zone:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 6vw, 42px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 45px;
+            color: var(--secondary-black);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speaker-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 24px 36px;
+            text-align: center;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .speaker-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-photo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+
+        .speaker-card:hover .speaker-photo {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .speaker-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .speaker-name {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: var(--secondary-black);
+        }
+
+        .x-handle {
+            display: inline-block;
+            background: var(--off-white);
+            border-radius: 60px;
+            padding: 8px 20px;
+            border: 1px solid var(--primary-black);
+            margin: 16px 0 16px;
+            transition: var(--transition);
+        }
+
+        .x-handle a {
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .x-handle:hover {
+            background: var(--primary-black);
+            border-color: var(--primary-black);
+        }
+
+        .x-handle:hover a { 
+            color: var(--white); 
+        }
+
+        .speaker-role {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin: 10px 0 20px;
+        }
+
+        .profile-btn {
+            background: transparent;
+            border: 2px solid var(--primary-black);
+            border-radius: 30px;
+            padding: 12px 32px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-black);
+        }
+
+        .profile-btn:hover {
+            background: var(--primary-black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.active { display: flex; }
+
+        .modal-card {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 25px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-500);
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            background: var(--off-white);
+            color: var(--primary-black);
+        }
+
+        .modal-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .modal-avatar {
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-black), var(--accent-black));
+        }
+
+        .modal-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-name { 
+            font-size: 26px; 
+            font-weight: 800; 
+            color: var(--secondary-black);
+        }
+
+        .modal-role { 
+            color: var(--gray-600); 
+        }
+
+        .modal-body p {
+            margin-bottom: 16px;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .modal-body a {
+            color: var(--primary-black);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-black);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--off-white), var(--white));
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--gray-medium);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .company-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--gray-medium);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .company-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .company-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--gray-700);
+        }
+
+        .company-info i {
+            width: 20px;
+            color: var(--primary-black);
+            font-size: 18px;
+        }
+
+        .footer-about h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary-black);
+        }
+
+        .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
+            border-radius: 2px;
+        }
+
+        .footer-about p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-medium);
+            color: var(--primary-black);
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-style: italic;
+            color: var(--primary-black);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-section {
+                margin-top: 100px;
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .article-category {
+                order: 2;
+            }
+            
+            .navigation {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .hero-section {
+                margin-top: 130px;
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                padding: 8px 0;
+            }
+
+            .logo-container {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            #logo {
+                height: 40px;
+            }
+
+            .article-category {
+                font-size: 12px;
+                padding: 5px 16px;
+            }
+
+            .navigation {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .meta-line {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .company-card {
+                padding: 30px;
+            }
+            
+            .speaker-photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .speaker-name {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .nav-btn {
+                padding: 6px 16px;
+                font-size: 13px;
+            }
+            .article-category {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan logo KABOOM -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%2244%22%20viewBox%3D%220%200%20120%2044%22%3E%3Crect%20width%3D%22120%22%20height%3D%2244%22%20rx%3D%2222%22%20fill%3D%22%23000%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2232%22%20font-family%3D%22Inter%22%20font-size%3D%2226%22%20font-weight%3D%22900%22%20fill%3D%22%23fff%22%3EK!%3C%2Ftext%3E%3C%2Fsvg%3E');">
+                    <div class="article-category">KABUTZ</div>
+                </div>
+                
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-date">
+                    <i class="fas fa-calendar-alt"></i> 16 April 2026
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-accent">ACAKADUT Vol 1</span> & Kaboom!
+                </h1>
+                <p class="hero-subtitle">Wawancara eksklusif bersama Tim ZINE! Acakadut: obrolan hangat di balik layar, harapan, dan semangat untuk terus berkarya.</p>
+                <div class="meta-line">
+                    <span><i class="fas fa-pen"></i>Tim Kaboom</span>
+                    <span><i class="fas fa-book-open"></i>Wawancara Zine</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article main content -->
+    <section class="article-main">
+        <div class="container">
+            <div class="article-container">
+                <div class="lead-paragraph fade-up revealed">
+                    Setelah sukses meluncurkan volume perdananya, Tim ZINE! Acakadut menyempatkan diri untuk berbincang hangat dengan Tim Kaboom mengenai di balik layar dan harapan mereka ke depan. Suasana penuh semangat menyelimuti obrolan ini, mengingat Acakadut Vol 1 hadir sebagai wadah segar bagi para penulis dan kreator untuk menumpahkan gagasan mereka secara liar dan jujur.
+                </div>
+
+                <!-- SINGLE IMAGE (800x800) -->
+                <div class="single-image-container fade-up">
+                    <img class="featured-image" src="AcakadutVol1.png" alt="Acakadut Vol 1 - Zine" style="width:100%; max-width:800px; height:auto; aspect-ratio:1/1; object-fit:cover; margin:0 auto; display:block;" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'800\' viewBox=\'0 0 800 800\'%3E%3Crect width=\'800\' height=\'800\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'40\' fill=\'%23333\'%3EACAKADUT%3C/text%3E%3Ctext x=\'50%25\' y=\'55%25\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Inter\' font-size=\'28\' fill=\'%23666\'%3EVol 1%3C/text%3E%3C/svg%3E');">
+                    <div class="image-caption">
+                        <i class="fas fa-camera"></i> Suasana hangat Tim ZINE! Acakadut saat berbincang dengan KABOOM!
+                    </div>
+                </div>
+
+                <!-- BODY ARTIKEL WAWANCARA ACAKADUT -->
+                <div class="body-text">
+                    <p class="fade-up">Bagi Effendi, momen rilisnya volume pertama ini membawa luapan rasa antusias yang sulit dibendung. "Sangat-sangat excited karena ada banyak sekali karya-karya bagus di zine ini. Gak sabar buat mempertemukan karya esai, cerpen, dan desain grafis ke pembaca," ujarnya dengan mata berbinar. Ia juga mengaku sempat kaget karena antusiasme publik yang melampaui ekspektasi. Senada dengan hal itu, Gilang merasakan kelegaan yang luar biasa. Sebagai sosok di balik tata letak (layout), ia merasa memiliki tanggung jawab besar. "Begitu rilis dan beres juga dapat respon baik, rasanya saya luar biasa lega," ungkap Gilang.</p>
+
+                    <h2 class="fade-up">Proses Kreatif dan Keseruan di Balik Layar</h2>
+                    <p class="fade-up">Proses kreatif pembuatan zine ini pun meninggalkan kesan mendalam bagi para punggawa di baliknya. Gilang menyebutkan bahwa proyek ini telah menjadi ruang belajar baru baginya melalui diskusi intens. Adamsalik menambahkan bahwa pengalaman paling berkesan adalah saat ia bisa menyelami isi pikir manusia lain melalui karya-karya yang masuk. "Ada pertukaran ide dari diskusi-diskusi menarik antara kami, editor, yang tidak jarang jenaka. Saya rasa itu paling berkesan," tambahnya.</p>
+
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Keragaman inilah yang jadi kekuatan ACAKADUT. Saya yakin, pembaca akan terbawa menyusuri proses berpikir berbeda dari sebuah karya.”</div>
+                        <div class="quote-author">— Adamsalik, Tim Editor</div>
+                    </div>
+
+                    <h2 class="fade-up">Membicarakan Kualitas Karya dan Kekuatan Tema</h2>
+                    <p class="fade-up">Membicarakan kualitas karya, Adamsalik dan RJ kompak mengungkapkan kekaguman mereka terhadap cara para kontributor merespons tema. Adamsalik menyoroti bagaimana para penulis mampu menempatkan Akal Imitasi (AI) dengan narasi yang unik. "Bagi saya, keragaman inilah yang jadi kekuatan ACAKADUT. Saya yakin, pembaca akan terbawa menyusuri proses berpikir berbeda dari sebuah karya," tutur Adamsalik bangga. RJ pun merasa tersentuh melihat bagaimana aspirasi dan ideologi tertuang begitu dalam. "Isi kepala manusia itu tak terukur luas dan dalamnya. Kagum, sekaligus bahagia karena jadi salah satu dari yang pertama membaca karya-karya apik mereka," sahut RJ.</p>
+
+                    <h2 class="fade-up">Harapan Menatap Masa Depan</h2>
+                    <p class="fade-up">Menatap masa depan, Tim ZINE! Acakadut menyimpan harapan besar agar proyek ini terus berlanjut dan berdampak luas. RJ memimpikan agar Acakadut bisa menjadi ruang aman bagi para kreator. Sementara itu, Effendi menekankan bahwa zine adalah simbol kebebasan bersuara. "Gak muluk-muluk, semoga bisa terbit volume-volume selanjutnya aja. Semakin menjamur, semakin liar distribusinya, semakin baik," tegas Effendi mengenai visinya untuk Acakadut ke depan.</p>
+
+                    <div class="quote-card fade-up">
+                        <i class="fas fa-quote-left" style="opacity:0.3; font-size:36px;"></i>
+                        <div class="quote-text">“Mari kita lahirkan dialog dari ide-ide pikiran mentah dan kusut.”</div>
+                        <div class="quote-author">— Adamsalik, pesan penutup</div>
+                    </div>
+
+                    <h2 class="fade-up">Pesan untuk Khalayak</h2>
+                    <p class="fade-up">Sebagai penutup, tim memberikan pesan kuat bagi khalayak yang belum sempat menyentuh lembaran zine mereka. Gilang menekankan pentingnya membaca agar otak tetap tumbuh di tengah gempuran teknologi. Adamsalik menutup perbincangan dengan sebuah ajakan filosofis untuk tidak sekadar melintas di atas teks, tetapi berani menguliti gagasan. "Mari kita lahirkan dialog dari ide-ide pikiran mentah dan kusut," pungkasnya mengajak pembaca untuk kembali berpikir sebagai manusia seutuhnya.</p>
+
+                    <!-- photo credit line -->
+                    <div class="fade-up" style="margin-top:60px; padding:20px 0; border-top:1px solid var(--gray-medium); display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+                        <i class="fas fa-camera" style="background:var(--primary-black); color:white; padding:12px; border-radius:50%;"></i>
+                        <span>Dokumentasi oleh <strong>Tim KABOOM! / Kabutz</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKER SECTION (4 Tim Acakadut) -->
+    <section class="speaker-zone" id="speaker">
+        <div class="container">
+            <h2 class="section-title fade-up">▸ tim di balik zine ◂</h2>
+            <div class="speakers-grid">
+                <!-- Effendi -->
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo">
+                        <img src="Effendi.png" alt="Effendi" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Ccircle cx=\'150\' cy=\'150\' r=\'150\' fill=\'%23333\'/%3E%3Ctext x=\'150\' y=\'175\' text-anchor=\'middle\' font-family=\'Inter\' font-size=\'48\' fill=\'%23fff\'%3EE%3C/text%3E%3C/svg%3E');">
+                    </div>
+                    <div class="speaker-name">Effendi</div>
+                    <div class="x-handle">
+                        <a href="https://x.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i> X.com
+                        </a>
+                    </div>
+                    <div class="speaker-role">Tim Acakadut</div>
+                    <button class="profile-btn" onclick="openModal('effendi')">
+                        <i class="fas fa-address-card"></i> profil
+                    </button>
+                </div>
+
+                <!-- Gilang Adhi -->
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo">
+                        <img src="GilangAdhi.png" alt="Gilang Adhi" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Ccircle cx=\'150\' cy=\'150\' r=\'150\' fill=\'%23444\'/%3E%3Ctext x=\'150\' y=\'175\' text-anchor=\'middle\' font-family=\'Inter\' font-size=\'48\' fill=\'%23fff\'%3EG%3C/text%3E%3C/svg%3E');">
+                    </div>
+                    <div class="speaker-name">Gilang Adhi</div>
+                    <div class="x-handle">
+                        <a href="https://x.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i> X.com
+                        </a>
+                    </div>
+                    <div class="speaker-role">Tim Acakadut</div>
+                    <button class="profile-btn" onclick="openModal('gilang')">
+                        <i class="fas fa-address-card"></i> profil
+                    </button>
+                </div>
+
+                <!-- Adamsalik Ar-Rasyid Mattuliang -->
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo">
+                        <img src="Adamsalik.png" alt="Adamsalik Ar-Rasyid Mattuliang" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Ccircle cx=\'150\' cy=\'150\' r=\'150\' fill=\'%23555\'/%3E%3Ctext x=\'150\' y=\'175\' text-anchor=\'middle\' font-family=\'Inter\' font-size=\'44\' fill=\'%23fff\'%3EA%3C/text%3E%3C/svg%3E');">
+                    </div>
+                    <div class="speaker-name">Adamsalik Ar-Rasyid Mattuliang</div>
+                    <div class="x-handle">
+                        <a href="https://x.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i> X.com
+                        </a>
+                    </div>
+                    <div class="speaker-role">Tim Acakadut</div>
+                    <button class="profile-btn" onclick="openModal('adamsalik')">
+                        <i class="fas fa-address-card"></i> profil
+                    </button>
+                </div>
+
+                <!-- Rai Jose Winardjo (RJ) -->
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo">
+                        <img src="RaiJose.png" alt="Rai Jose Winardjo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Ccircle cx=\'150\' cy=\'150\' r=\'150\' fill=\'%23666\'/%3E%3Ctext x=\'150\' y=\'175\' text-anchor=\'middle\' font-family=\'Inter\' font-size=\'48\' fill=\'%23fff\'%3ERJ%3C/text%3E%3C/svg%3E');">
+                    </div>
+                    <div class="speaker-name">Rai Jose Winardjo</div>
+                    <div class="x-handle">
+                        <a href="https://x.com/" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i> X.com
+                        </a>
+                    </div>
+                    <div class="speaker-role">Tim Acakadut</div>
+                    <button class="profile-btn" onclick="openModal('rj')">
+                        <i class="fas fa-address-card"></i> profil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal untuk profil -->
+    <div class="modal" id="teamModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header" id="modalHeader">
+                <!-- Akan diisi oleh JavaScript -->
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card fade-up">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>@TheKachoo</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Jenderal Sudirman No. 61-62, Jakarta Selatan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-about fade-up">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah kanal berita The Kachoo, menghadirkan wawancara eksklusif dan liputan mendalam seputar musik, pendidikan, dan budaya pop. Wawancara dengan Tim ZINE! Acakadut ini adalah bagian dari seri KABUTZ.</p>
+                </div>
+            </div>
+            <div class="footer-bottom fade-up">
+                <p>&copy; 2026 KABOOM! di bawah The Kachoo. All rights reserved.</p>
+                <p class="disclaimer">Isi wawancara merupakan hasil liputan eksklusif tim KABOOM! dengan narasumber. Akun X yang ditautkan dikelola oleh masing-masing pihak.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== MODAL LOGIC untuk 4 profil =====
+        const modal = document.getElementById('teamModal');
+        const modalHeader = document.getElementById('modalHeader');
+        const modalBody = document.getElementById('modalBody');
+
+        window.openModal = function(type) {
+            let content = '';
+            if (type === 'effendi') {
+                modalHeader.innerHTML = `
+                    <div class="modal-avatar">
+                        <img src="Effendi.png" alt="Effendi" onerror="this.style.display='none'; this.parentElement.innerHTML='E';">
+                    </div>
+                    <div>
+                        <div class="modal-name">Effendi</div>
+                        <div class="modal-role">Tim Acakadut · Inisiator</div>
+                    </div>
+                `;
+                modalBody.innerHTML = `
+                    <p><strong>Effendi</strong> adalah salah satu penggagas utama ZINE! Acakadut. Baginya, zine adalah simbol kebebasan bersuara dan ruang bagi ekspresi liar yang jujur.</p>
+                    <p>Ia sangat antusias dengan volume perdana dan berharap Acakadut bisa terus terbit, semakin menjamur, dan semakin liar distribusinya ke depan.</p>
+                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
+                `;
+            } else if (type === 'gilang') {
+                modalHeader.innerHTML = `
+                    <div class="modal-avatar">
+                        <img src="GilangAdhi.png" alt="Gilang Adhi" onerror="this.style.display='none'; this.parentElement.innerHTML='G';">
+                    </div>
+                    <div>
+                        <div class="modal-name">Gilang Adhi</div>
+                        <div class="modal-role">Tim Acakadut · Layout & Desain</div>
+                    </div>
+                `;
+                modalBody.innerHTML = `
+                    <p><strong>Gilang Adhi</strong> adalah sosok di balik tata letak (layout) ZINE! Acakadut. Ia merasa lega luar biasa karena proyek ini mendapat respon baik dari publik.</p>
+                    <p>Proyek ini menjadi ruang belajar baru baginya melalui diskusi-diskusi intens bersama tim.</p>
+                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
+                `;
+            } else if (type === 'adamsalik') {
+                modalHeader.innerHTML = `
+                    <div class="modal-avatar">
+                        <img src="Adamsalik.png" alt="Adamsalik" onerror="this.style.display='none'; this.parentElement.innerHTML='A';">
+                    </div>
+                    <div>
+                        <div class="modal-name">Adamsalik Ar-Rasyid Mattuliang</div>
+                        <div class="modal-role">Tim Acakadut · Editor</div>
+                    </div>
+                `;
+                modalBody.innerHTML = `
+                    <p><strong>Adamsalik</strong> adalah editor yang sangat menikmati proses menyelami isi pikiran manusia lain melalui karya-karya yang masuk. Baginya, diskusi jenaka antar tim adalah hal paling berkesan.</p>
+                    <p>Ia mengajak pembaca untuk tidak sekadar melintas di atas teks, tetapi berani menguliti gagasan dan melahirkan dialog dari ide-ide mentah.</p>
+                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
+                `;
+            } else if (type === 'rj') {
+                modalHeader.innerHTML = `
+                    <div class="modal-avatar">
+                        <img src="RaiJose.png" alt="Rai Jose Winardjo" onerror="this.style.display='none'; this.parentElement.innerHTML='RJ';">
+                    </div>
+                    <div>
+                        <div class="modal-name">Rai Jose Winardjo</div>
+                        <div class="modal-role">Tim Acakadut · Kurator</div>
+                    </div>
+                `;
+                modalBody.innerHTML = `
+                    <p><strong>Rai Jose Winardjo (RJ)</strong> merasa tersentuh melihat bagaimana aspirasi dan ideologi tertuang begitu dalam dalam setiap karya. Ia kagum dan bahagia menjadi salah satu yang pertama membaca karya-karya apik para kontributor.</p>
+                    <p>RJ memimpikan Acakadut sebagai ruang aman bagi para kreator untuk terus berkarya.</p>
+                    <p><i class="fab fa-x-twitter"></i> X: <a href="https://x.com/" target="_blank" style="color:#000; font-weight:600;">Kunjungi profil</a></p>
+                `;
+            }
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeModal = function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // ===== LOGO CLICK ANIMATION =====
+        const logo = document.getElementById('logo');
+        if (logo) {
+            logo.addEventListener('click', function() {
+                this.classList.add('logo-kachoo');
+                setTimeout(() => this.classList.remove('logo-kachoo'), 800);
+            });
+        }
+
+        // ===== FADE-UP SCROLL OBSERVER =====
+        const faders = document.querySelectorAll('.fade-up');
+        const appearObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+        faders.forEach(el => appearObserver.observe(el));
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
