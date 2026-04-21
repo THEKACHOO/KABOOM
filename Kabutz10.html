@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>OUR DREAM Comeback: Break The Rules | KABOOM!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            border-bottom: 1px solid #E0E0E0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: #000000;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            margin-top: 120px;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #1A1A1A;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #000, #444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #616161;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #000;
+            margin: 25px auto;
+        }
+
+        /* SLIDER SECTION - 800x900px */
+        .slider-section {
+            padding: 40px 0;
+            background: #FFFFFF;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            cursor: grab;
+        }
+
+        .slider-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .slider-wrapper::-webkit-scrollbar-track {
+            background: #E0E0E0;
+            border-radius: 10px;
+        }
+
+        .slider-wrapper::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        .slider-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            width: 100%;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 800 / 900;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Arrow Navigation */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0,0,0,0.9);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .arrow-left {
+            left: 16px;
+        }
+
+        .arrow-right {
+            right: 16px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #BDBDBD;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #000000;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* MEMBER SECTION */
+        .member-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+            border-top: 1px solid #EEEEEE;
+        }
+
+        .member-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .member-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            text-align: center;
+            min-width: 100px;
+            padding: 8px 16px;
+            background: #F8F8F8;
+            border-radius: 40px;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* PROFILE CARD (BOY GROUP) */
+        .profile-section {
+            padding: 40px 0;
+            background: #FFFFFF;
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid #000;
+            background: #F0F0F0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: #616161;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: #000;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-content {
+            padding: 40px 0 60px;
+            background: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #424242;
+        }
+
+        .article-body p {
+            margin-bottom: 28px;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 20px;
+            color: #000;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #000;
+        }
+
+        .highlight-box {
+            background: #F5F5F5;
+            border-left: 4px solid #000;
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .schedule-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .schedule-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #E0E0E0;
+            font-weight: 500;
+        }
+
+        .schedule-date {
+            min-width: 110px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .track-badge {
+            background: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .track-badge-light {
+            background: #EEEEEE;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+
+        .quote-block {
+            background: linear-gradient(135deg, #FAFAFA, #F0F0F0);
+            padding: 32px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 22px;
+            font-style: italic;
+            font-weight: 500;
+            color: #1A1A1A;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #F8F8F8;
+            padding: 60px 0 30px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .company-card, .footer-about {
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid #EAEAEA;
+        }
+
+        .company-card h3, .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .company-card h3:after, .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #000;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #616161;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #E0E0E0;
+            font-size: 13px;
+            color: #757575;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: center;
+            }
+            .hero-section {
+                margin-top: 140px;
+            }
+            .slider-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+            .member-grid {
+                gap: 12px;
+            }
+            .member-card {
+                min-width: 80px;
+                padding: 6px 12px;
+            }
+            .member-name {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
+                    <div class="article-category">KABUTZ</div>
+                </div>
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-date">EXCLUSIVE COMEBACK NEWS</span>
+                <h1 class="hero-title">OUR DREAM <span>Break The Rules</span></h1>
+                <p class="hero-subtitle">Boy group fenomenal OUR DREAM siap mengguncang industri musik April ini dengan full album pertama "Break The Rules". Sembilan track penuh energi dan emosi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDER FOTO (4 gambar, non-loop, mentok kiri/kanan) -->
+    <section class="slider-section">
+        <div class="container">
+            <div class="slider-container">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="slider-slide"><img src="Kabutz10-1.png" alt="Comeback teaser 1"></div>
+                    <div class="slider-slide"><img src="Kabutz10-2.png" alt="Comeback teaser 2"></div>
+                    <div class="slider-slide"><img src="Kabutz10-3.png" alt="Comeback teaser 3"></div>
+                </div>
+                <button class="slider-arrow arrow-left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-arrow arrow-right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </section>
+
+    <!-- PROFILE: BOY GROUP (OUR DREAM) -> klik pindah ke x.com -->
+    <section class="profile-section">
+        <div class="container">
+            <a href="https://x.com" target="_blank" class="profile-card" id="profileLink">
+                <div class="profile-avatar">
+                    <img src="Ourdream.png" alt="OUR DREAM Profile">
+                </div>
+                <h2 class="profile-name">OUR DREAM</h2>
+                <p class="profile-role">Boy Group</p>
+                <div class="profile-badge"><i class="fab fa-twitter"></i>Official</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- MEMBER LIST -->
+    <section class="member-section">
+        <div class="container">
+            <h3 class="member-title">✦ MEMBERS ✦</h3>
+            <div class="member-grid">
+                <div class="member-card"><span class="member-name">Georgio</span></div>
+                <div class="member-card"><span class="member-name">Hein</span></div>
+                <div class="member-card"><span class="member-name">Hegra</span></div>
+                <div class="member-card"><span class="member-name">Owen</span></div>
+                <div class="member-card"><span class="member-name">Leo</span></div>
+                <div class="member-card"><span class="member-name">Jinan</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTIKEL BERITA COMEBACK -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate"><strong>Jakarta, 8 April 2026</strong> — Kabar gembira untuk para penggemar K-Pop dan industri musik tanah air! Boy group <strong>OUR DREAM</strong> secara resmi mengumumkan comeback mereka dengan full album pertama yang bertajuk <strong>"Break The Rules"</strong>. Setelah sekian lama dinanti, grup beranggotakan enam personel ini siap meledakkan panggung dengan konsep yang lebih dewasa, berani, dan penuh kejutan.</p>
+                    
+                    <p class="scroll-animate">OUR DREAM yang terdiri dari <strong>Georgio, Hein, Hegra, Owen, Leo, dan Jinan</strong> telah memantapkan posisi mereka sebagai salah satu grup dengan penggemar paling loyal. Kembali dengan "Break The Rules", mereka mengajak pendengar untuk melepaskan batasan, mengejar kebebasan, dan mengekspresikan diri tanpa rasa takut. Album ini memuat sembilan trek yang menggabungkan genre hip-hop, R&B, pop-rock, dan balada emosional.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; margin-bottom: 12px;">Dua Pre-release Single yang Sudah Dirilis:</p>
+                        <div class="track-list">
+                            <span class="track-badge">Butterflies</span> <span style="color:#555;">— Vocal Unit (melodi lembut, harmoni memikat)</span>
+                        </div>
+                        <div class="track-list">
+                            <span class="track-badge-light">Tempo</span> <span style="color:#555;">— Rap Unit (beat agresif, lirik penuh guncangan)</span>
+                        </div>
+                        <p style="margin-top: 16px;">Kedua lagu ini telah sukses menggaet perhatian pendengar dan menjadi trending di berbagai platform musik, membangun hype yang luar biasa jelang perilisan album penuh.</p>
+                    </div>
+
+                    <h2 class="scroll-animate">Jadwal Lengkap Comeback April 2026</h2>
+                    <p class="scroll-animate">Agensi OUR DREAM merilis jadwal padat meriah sepanjang bulan April. Mulai dari pre-order album fisik hingga puncaknya showcase megah. Berikut rincian tanggal penting yang wajib dicatat oleh para penggemar:</p>
+                    
+                    <div class="highlight-box scroll-animate">
+                        <ul class="schedule-list">
+                            <li><span class="schedule-date">📅 10 April</span> <span>Penjualan album fisik dimulai (Pre-order versi Standar & Limited)</span></li>
+                            <li><span class="schedule-date">📅 17 April</span> <span>Penjualan tiket showcase offline + streaming online dibuka</span></li>
+                            <li><span class="schedule-date">📅 21 April</span> <span>Highlight Medley — cuplikan seluruh track album "Break The Rules"</span></li>
+                            <li><span class="schedule-date">📅 22 April</span> <span>Teaser MV (Music Video) title track "Break The Rules"</span></li>
+                            <li><span class="schedule-date">📅 24 April</span> <span>MV & Audio resmi dirilis! <strong>Full album + title track</strong> tersedia di seluruh platform digital</span></li>
+                            <li><span class="schedule-date">📅 25 April</span> <span>✨ <strong>SHOWCASE "Break The Rules"</strong> — Penampilan perdana dihadiri oleh 6 member</span></li>
+                        </ul>
+                    </div>
+
+                    <p class="scroll-animate">Dengan interval yang padat, OUR DREAM memastikan bahwa penggemar akan dimanjakan dengan konten-konten eksklusif setiap pekannya. Highlight medley pada 21 April diprediksi akan menjadi trending topic global, mengingat kualitas produksi album ini digarap oleh produser kenamaan internasional serta kolaborasi dengan penulis lagu papan atas.</p>
+
+                    <div class="quote-block scroll-animate">
+                        <div class="quote-text">“Break the Rules bukan sekadar album, ini adalah pernyataan. Bahwa mimpi tidak punya batasan, dan kami siap melompat lebih tinggi bersama OUR DREAM.”</div>
+                        <div style="margin-top: 15px; font-weight: 600;">— Georgio (Leader OUR DREAM)</div>
+                    </div>
+
+                    <h2 class="scroll-animate">Antusiasme Meledak: Siap Catat Sejarah</h2>
+                    <p class="scroll-animate">Setelah merilis "Butterflies by Vocal Unit" dan "Tempo by Rap Unit", kedua lagu tersebut langsung menduduki puncak tangga lagu real-time di berbagai negara. Banyak pengamat musik memprediksi bahwa "Break The Rules" akan menjadi titik balik karier OUR DREAM, membawa mereka ke panggung internasional yang lebih besar. Pre-order album fisik yang dimulai 10 April diprediksi akan mencapai rekor penjualan hari pertama tertinggi untuk boy group di tahun 2026.</p>
+               
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 800; margin-bottom: 8px;">Informasi Showcase (25 April 2026)</p>
+                        <p>📍 Lokasi: Jakarta International Expo (JIExpo) Hall B<br>
+                        Waktu: 19:00 WIB (Offline) & 20:00 WIB (Livestream)<br>
+                        Tiket mulai dijual 17 April melalui platform resmi.<br>
+                        <span style="font-size: 14px;">Catatan: Benefit pembelian tiket offline termasuk photocard eksklusif dan akses soundcheck.</span></p>
+                    </div>
+
+                    <p class="scroll-animate">Tak hanya itu, OUR DREAM juga akan menggelar fan meeting online setelah showcase untuk menjawab pertanyaan penggemar dari seluruh dunia. Dengan semangat "Break The Rules", mereka ingin mendobrak batasan antara artis dan penggemar, menciptakan koneksi yang lebih intim dan autentik.</p>
+
+                    <p class="scroll-animate">Pantau terus akun media sosial resmi OUR DREAM dan jangan sampai ketinggalan update terbaru jelang comeback yang paling dinantikan tahun ini. Bersiaplah untuk menyaksikan gebrakan baru yang akan mengubah aturan main industri musik. <strong>24 April 2026</strong> adalah hari dimana "Break The Rules" akan mengguncang dunia — tandai kalendermu!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
+                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif kategori Kabutz. Edisi kali ini membahas comeback penuh energi dari boy group OUR DREAM: "Break The Rules".</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh informasi jadwal comeback bersifat resmi dari agensi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // SLIDER non-loop (mentok kiri/kanan)
+            const wrapper = document.getElementById('sliderWrapper');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.slider-slide');
+            const dotsContainer = document.getElementById('sliderDots');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Create dots
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        scrollToSlide(currentIndex);
+                        updateDots();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function scrollToSlide(index) {
+                const slideWidth = wrapper.clientWidth;
+                wrapper.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+                currentIndex = index;
+                updateDots();
+            }
+
+            function updateDots() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+                // Arrow disable state (mentok)
+                if (currentIndex === 0) {
+                    prevBtn.style.opacity = '0.5';
+                    prevBtn.style.cursor = 'default';
+                } else {
+                    prevBtn.style.opacity = '1';
+                    prevBtn.style.cursor = 'pointer';
+                }
+                if (currentIndex === totalSlides - 1) {
+                    nextBtn.style.opacity = '0.5';
+                    nextBtn.style.cursor = 'default';
+                } else {
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.cursor = 'pointer';
+                }
+            }
+
+            function nextSlide() {
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                    scrollToSlide(currentIndex);
+                }
+            }
+
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    scrollToSlide(currentIndex);
+                }
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Update index saat scroll manual (biar dot sinkron & batas mentok)
+            wrapper.addEventListener('scroll', () => {
+                const scrollPos = wrapper.scrollLeft;
+                const slideWidth = wrapper.clientWidth;
+                let newIndex = Math.round(scrollPos / slideWidth);
+                if (newIndex < 0) newIndex = 0;
+                if (newIndex >= totalSlides) newIndex = totalSlides - 1;
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateDots();
+                }
+            });
+
+            // resize handler untuk update posisi
+            window.addEventListener('resize', () => {
+                scrollToSlide(currentIndex);
+            });
+
+            createDots();
+            updateDots();
+            // Pastikan awal di slide 0
+            wrapper.scrollLeft = 0;
+
+            // Scroll animation
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el) => el.getBoundingClientRect().top <= window.innerHeight * 0.85;
+            const handleScroll = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+
+            // Profile klik pindah ke x.com (sudah pakai a href)
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.style.background = 'rgba(255,255,255,0.99)';
+                else header.style.background = 'rgba(255,255,255,0.98)';
+            });
+        })();
+    </script>
+</body>
+</html>
