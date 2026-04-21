@@ -264,116 +264,6 @@
             border-radius: 10px;
         }
 
-        /* MEMBER SECTION */
-        .member-section {
-            padding: 40px 0 20px;
-            background: #FFFFFF;
-            border-top: 1px solid #EEEEEE;
-        }
-
-        .member-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #000;
-        }
-
-        .member-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .member-card {
-            text-align: center;
-            min-width: 100px;
-            padding: 8px 16px;
-            background: #F8F8F8;
-            border-radius: 40px;
-            border: 1px solid #E0E0E0;
-            transition: all 0.3s;
-        }
-
-        .member-card:hover {
-            transform: translateY(-3px);
-            background: #000;
-            color: #fff;
-            border-color: #000;
-        }
-
-        .member-name {
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        /* PROFILE CARD (BOY GROUP) */
-        .profile-section {
-            padding: 40px 0;
-            background: #FFFFFF;
-        }
-
-        .profile-card {
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-            display: block;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .profile-avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 3px solid #000;
-            background: #F0F0F0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 900;
-            margin-bottom: 8px;
-            color: #000;
-        }
-
-        .profile-role {
-            font-size: 16px;
-            color: #616161;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .profile-badge {
-            display: inline-block;
-            margin-top: 12px;
-            background: #000;
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
         /* ARTICLE CONTENT */
         .article-content {
             padding: 40px 0 60px;
@@ -465,19 +355,114 @@
             border: 1px solid #ccc;
         }
 
-        .quote-block {
-            background: linear-gradient(135deg, #FAFAFA, #F0F0F0);
-            padding: 32px;
-            border-radius: 20px;
-            margin: 40px 0;
-            text-align: center;
+        /* MEMBER SECTION - DIPINDAHKAN KE SETELAH ARTIKEL */
+        .member-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+            border-top: 1px solid #EEEEEE;
         }
 
-        .quote-text {
-            font-size: 22px;
-            font-style: italic;
+        .member-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .member-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            text-align: center;
+            min-width: 100px;
+            padding: 8px 16px;
+            background: #F8F8F8;
+            border-radius: 40px;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* PROFILE CARD (BOY GROUP) - DIPINDAHKAN KE SETELAH ARTIKEL */
+        .profile-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid #000;
+            background: #F0F0F0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: #616161;
             font-weight: 500;
-            color: #1A1A1A;
+            letter-spacing: 1px;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: #000;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         /* FOOTER */
@@ -590,9 +575,9 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-date">EXCLUSIVE COMEBACK NEWS</span>
+                <span class="hero-date">KABUTZ</span>
                 <h1 class="hero-title">OUR DREAM <span>Break The Rules</span></h1>
-                <p class="hero-subtitle">Boy group fenomenal OUR DREAM siap mengguncang industri musik April ini dengan full album pertama "Break The Rules". Sembilan track penuh energi dan emosi.</p>
+                <p class="hero-subtitle">OUR DREAM siap mengguncang industri musik April ini dengan full album pertama "Break The Rules".</p>
             </div>
         </div>
     </section>
@@ -603,8 +588,8 @@
             <div class="slider-container">
                 <div class="slider-wrapper" id="sliderWrapper">
                     <div class="slider-slide"><img src="Kabutz10-1.png" alt="Comeback teaser 1"></div>
-                    <div class="slider-slide"><img src="Kabutz10-2.png" alt="Comeback teaser 2"></div>
-                    <div class="slider-slide"><img src="Kabutz10-3.png" alt="Comeback teaser 3"></div>
+                    <div class="slider-slide"><img src="Kabutz10-2.jpg" alt="Comeback teaser 2"></div>
+                    <div class="slider-slide"><img src="Kabutz10-3.jpg" alt="Comeback teaser 3"></div>
                 </div>
                 <button class="slider-arrow arrow-left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                 <button class="slider-arrow arrow-right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -613,24 +598,69 @@
         </div>
     </section>
 
-    <!-- PROFILE: BOY GROUP (OUR DREAM) -> klik pindah ke x.com -->
+    <!-- ARTIKEL BERITA COMEBACK -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate">Kabar gembira untuk para penggemar K-Pop! Boy group <strong>OUR DREAM</strong> secara resmi mengumumkan comeback mereka dengan full album pertama yang bertajuk <strong>"Break The Rules"</strong>. Setelah sekian lama dinanti, grup beranggotakan enam personel ini siap meledakkan panggung dengan konsep yang lebih dewasa, berani, dan penuh kejutan.</p>
+                    
+                    <p class="scroll-animate">OUR DREAM yang terdiri dari <strong>Georgio, Hein, Hegra, Owen, Leo, dan Jinan</strong> telah memantapkan posisi mereka sebagai salah satu grup dengan penggemar paling loyal. Kembali dengan "Break The Rules", mereka mengajak pendengar untuk melepaskan batasan, mengejar kebebasan, dan mengekspresikan diri tanpa rasa takut.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; margin-bottom: 12px;">Dua Pre-release Single yang Sudah Dirilis sebelumnya yaitu Butterflies dan Tempo, akhirnya Our Dream comeback dengan Break The Rules.</p>
+                    </div>
+
+                    <h2 class="scroll-animate">Jadwal Lengkap Comeback April 2026</h2>
+                    <p class="scroll-animate">Agensi OUR DREAM merilis jadwal padat meriah sepanjang bulan April. Mulai dari pre-order album fisik hingga puncaknya showcase. Berikut rincian tanggal penting yang wajib dicatat oleh para penggemar:</p>
+                    
+                    <div class="highlight-box scroll-animate">
+                        <ul class="schedule-list">
+                            <li><span class="schedule-date">10 April</span> <span>Penjualan album fisik dimulai (Pre-order versi Standar & Limited)</span></li>
+                            <li><span class="schedule-date">17 April</span> <span>Penjualan tiket showcase offline + streaming online dibuka</span></li>
+                            <li><span class="schedule-date">21 April</span> <span>Highlight Medley — cuplikan seluruh track album "Break The Rules"</span></li>
+                            <li><span class="schedule-date">22 April</span> <span>Teaser MV (Music Video) title track "Break The Rules"</span></li>
+                            <li><span class="schedule-date">24 April</span> <span>MV & Audio resmi dirilis! <strong>Full album + title track</strong> tersedia di seluruh platform digital</span></li>
+                            <li><span class="schedule-date">25 April</span> <span><strong>SHOWCASE "Break The Rules"</strong> — Penampilan perdana dihadiri oleh 6 member</span></li>
+                        </ul>
+                    </div>
+
+                    <p class="scroll-animate">Dengan interval yang padat, OUR DREAM memastikan bahwa penggemar akan dimanjakan dengan konten-konten eksklusif setiap pekannya. Highlight medley pada 21 April diprediksi akan menjadi trending topic global.</p>
+
+                    <h2 class="scroll-animate">Antusiasme Meledak: Siap Catat Sejarah</h2>
+                    <p class="scroll-animate">Setelah merilis "Butterflies by Vocal Unit" dan "Tempo by Rap Unit", kedua lagu tersebut langsung menduduki puncak tangga lagu real-time di berbagai negara. Banyak pengamat musik memprediksi bahwa "Break The Rules" akan menjadi titik balik karier OUR DREAM, membawa mereka ke panggung internasional yang lebih besar. Pre-order album fisik yang dimulai 10 April diprediksi akan mencapai rekor penjualan hari pertama tertinggi untuk boy group di tahun 2026.</p>
+               
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 800; margin-bottom: 8px;">Informasi Showcase (25 April 2026)</p>
+                        <p>Lokasi: Jakarta International Expo (JIExpo) Hall B<br>
+                        Waktu: 19:00 WIB (Offline) & 20:00 WIB (Livestream)<br>
+                        Tiket mulai dijual 17 April melalui platform resmi.</p>
+                    </div>
+
+                    <p class="scroll-animate">Pantau terus akun media sosial resmi OUR DREAM dan jangan sampai ketinggalan update terbaru jelang comeback yang paling dinantikan tahun ini. Bersiaplah untuk menyaksikan gebrakan baru yang akan mengubah aturan main industri musik. <strong>24 April 2026</strong> adalah hari dimana "Break The Rules" akan mengguncang dunia — tandai kalendermu!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE: BOY GROUP (OUR DREAM) - DIPINDAHKAN KE SETELAH ARTIKEL -->
     <section class="profile-section">
         <div class="container">
-            <a href="https://x.com" target="_blank" class="profile-card" id="profileLink">
+            <a href="https://x.com/OURDREAM_twt" target="_blank" class="profile-card" id="profileLink">
                 <div class="profile-avatar">
                     <img src="Ourdream.png" alt="OUR DREAM Profile">
                 </div>
                 <h2 class="profile-name">OUR DREAM</h2>
                 <p class="profile-role">Boy Group</p>
-                <div class="profile-badge"><i class="fab fa-twitter"></i>Official</div>
+                <div class="profile-badge"><i class="fab fa-twitter"></i> Official</div>
             </a>
         </div>
     </section>
 
-    <!-- MEMBER LIST -->
+    <!-- MEMBER LIST - DIPINDAHKAN KE SETELAH ARTIKEL -->
     <section class="member-section">
         <div class="container">
-            <h3 class="member-title">✦ MEMBERS ✦</h3>
+            <h3 class="member-title">MEMBERS</h3>
             <div class="member-grid">
                 <div class="member-card"><span class="member-name">Georgio</span></div>
                 <div class="member-card"><span class="member-name">Hein</span></div>
@@ -642,66 +672,6 @@
         </div>
     </section>
 
-    <!-- ARTIKEL BERITA COMEBACK -->
-    <section class="article-content">
-        <div class="container">
-            <div class="content-container">
-                <div class="article-body">
-                    <p class="scroll-animate"><strong>Jakarta, 8 April 2026</strong> — Kabar gembira untuk para penggemar K-Pop dan industri musik tanah air! Boy group <strong>OUR DREAM</strong> secara resmi mengumumkan comeback mereka dengan full album pertama yang bertajuk <strong>"Break The Rules"</strong>. Setelah sekian lama dinanti, grup beranggotakan enam personel ini siap meledakkan panggung dengan konsep yang lebih dewasa, berani, dan penuh kejutan.</p>
-                    
-                    <p class="scroll-animate">OUR DREAM yang terdiri dari <strong>Georgio, Hein, Hegra, Owen, Leo, dan Jinan</strong> telah memantapkan posisi mereka sebagai salah satu grup dengan penggemar paling loyal. Kembali dengan "Break The Rules", mereka mengajak pendengar untuk melepaskan batasan, mengejar kebebasan, dan mengekspresikan diri tanpa rasa takut. Album ini memuat sembilan trek yang menggabungkan genre hip-hop, R&B, pop-rock, dan balada emosional.</p>
-
-                    <div class="highlight-box scroll-animate">
-                        <p style="font-weight: 700; margin-bottom: 12px;">Dua Pre-release Single yang Sudah Dirilis:</p>
-                        <div class="track-list">
-                            <span class="track-badge">Butterflies</span> <span style="color:#555;">— Vocal Unit (melodi lembut, harmoni memikat)</span>
-                        </div>
-                        <div class="track-list">
-                            <span class="track-badge-light">Tempo</span> <span style="color:#555;">— Rap Unit (beat agresif, lirik penuh guncangan)</span>
-                        </div>
-                        <p style="margin-top: 16px;">Kedua lagu ini telah sukses menggaet perhatian pendengar dan menjadi trending di berbagai platform musik, membangun hype yang luar biasa jelang perilisan album penuh.</p>
-                    </div>
-
-                    <h2 class="scroll-animate">Jadwal Lengkap Comeback April 2026</h2>
-                    <p class="scroll-animate">Agensi OUR DREAM merilis jadwal padat meriah sepanjang bulan April. Mulai dari pre-order album fisik hingga puncaknya showcase megah. Berikut rincian tanggal penting yang wajib dicatat oleh para penggemar:</p>
-                    
-                    <div class="highlight-box scroll-animate">
-                        <ul class="schedule-list">
-                            <li><span class="schedule-date">📅 10 April</span> <span>Penjualan album fisik dimulai (Pre-order versi Standar & Limited)</span></li>
-                            <li><span class="schedule-date">📅 17 April</span> <span>Penjualan tiket showcase offline + streaming online dibuka</span></li>
-                            <li><span class="schedule-date">📅 21 April</span> <span>Highlight Medley — cuplikan seluruh track album "Break The Rules"</span></li>
-                            <li><span class="schedule-date">📅 22 April</span> <span>Teaser MV (Music Video) title track "Break The Rules"</span></li>
-                            <li><span class="schedule-date">📅 24 April</span> <span>MV & Audio resmi dirilis! <strong>Full album + title track</strong> tersedia di seluruh platform digital</span></li>
-                            <li><span class="schedule-date">📅 25 April</span> <span>✨ <strong>SHOWCASE "Break The Rules"</strong> — Penampilan perdana dihadiri oleh 6 member</span></li>
-                        </ul>
-                    </div>
-
-                    <p class="scroll-animate">Dengan interval yang padat, OUR DREAM memastikan bahwa penggemar akan dimanjakan dengan konten-konten eksklusif setiap pekannya. Highlight medley pada 21 April diprediksi akan menjadi trending topic global, mengingat kualitas produksi album ini digarap oleh produser kenamaan internasional serta kolaborasi dengan penulis lagu papan atas.</p>
-
-                    <div class="quote-block scroll-animate">
-                        <div class="quote-text">“Break the Rules bukan sekadar album, ini adalah pernyataan. Bahwa mimpi tidak punya batasan, dan kami siap melompat lebih tinggi bersama OUR DREAM.”</div>
-                        <div style="margin-top: 15px; font-weight: 600;">— Georgio (Leader OUR DREAM)</div>
-                    </div>
-
-                    <h2 class="scroll-animate">Antusiasme Meledak: Siap Catat Sejarah</h2>
-                    <p class="scroll-animate">Setelah merilis "Butterflies by Vocal Unit" dan "Tempo by Rap Unit", kedua lagu tersebut langsung menduduki puncak tangga lagu real-time di berbagai negara. Banyak pengamat musik memprediksi bahwa "Break The Rules" akan menjadi titik balik karier OUR DREAM, membawa mereka ke panggung internasional yang lebih besar. Pre-order album fisik yang dimulai 10 April diprediksi akan mencapai rekor penjualan hari pertama tertinggi untuk boy group di tahun 2026.</p>
-               
-                    <div class="highlight-box scroll-animate">
-                        <p style="font-weight: 800; margin-bottom: 8px;">Informasi Showcase (25 April 2026)</p>
-                        <p>📍 Lokasi: Jakarta International Expo (JIExpo) Hall B<br>
-                        Waktu: 19:00 WIB (Offline) & 20:00 WIB (Livestream)<br>
-                        Tiket mulai dijual 17 April melalui platform resmi.<br>
-                        <span style="font-size: 14px;">Catatan: Benefit pembelian tiket offline termasuk photocard eksklusif dan akses soundcheck.</span></p>
-                    </div>
-
-                    <p class="scroll-animate">Tak hanya itu, OUR DREAM juga akan menggelar fan meeting online setelah showcase untuk menjawab pertanyaan penggemar dari seluruh dunia. Dengan semangat "Break The Rules", mereka ingin mendobrak batasan antara artis dan penggemar, menciptakan koneksi yang lebih intim dan autentik.</p>
-
-                    <p class="scroll-animate">Pantau terus akun media sosial resmi OUR DREAM dan jangan sampai ketinggalan update terbaru jelang comeback yang paling dinantikan tahun ini. Bersiaplah untuk menyaksikan gebrakan baru yang akan mengubah aturan main industri musik. <strong>24 April 2026</strong> adalah hari dimana "Break The Rules" akan mengguncang dunia — tandai kalendermu!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer>
         <div class="container">
@@ -709,6 +679,7 @@
                 <div class="company-card">
                     <h3>The Kachoo</h3>
                     <div class="company-info">
+                        <div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span></div>
                         <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
                         <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
                     </div>
@@ -719,7 +690,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 KABOOM! — The Kachoo. Seluruh informasi jadwal comeback bersifat resmi dari agensi.</p>
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten hanya untuk keperluan roleplay.</p>
             </div>
         </div>
     </footer>
@@ -843,4 +814,4 @@
         })();
     </script>
 </body>
-</html>
+    </html>
