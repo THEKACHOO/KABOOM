@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Hari Musik Sedunia 2026 | KABOOM! Kabutz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            width: 100%;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.98);
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+        #logo {
+            height: 40px;
+            width: auto;
+            max-width: 140px;
+            object-fit: contain;
+        }
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #000;
+            color: #fff;
+            padding: 6px 15px;
+            border-radius: 20px;
+        }
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #000;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+        .lang-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .hero-section {
+            margin-top: 100px;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+            text-align: center;
+        }
+        .hero-date {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: #fff;
+            padding: 8px 24px;
+            border-radius: 60px;
+            display: inline-block;
+            border: 1px solid #eaeaea;
+            margin-bottom: 20px;
+        }
+        .hero-title {
+            font-size: clamp(32px, 6vw, 58px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #525252;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .article-toggle-btn {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 0;
+        }
+        .btn-isi-artikel {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-isi-artikel:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+        .topic-nav {
+            background: #f5f5f5;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+            border-top: 1px solid #e0e0e0;
+            display: none;
+        }
+        .topic-nav.show {
+            display: block;
+        }
+        .nav-links-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .nav-links-vertical a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            transition: 0.2s;
+            background: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+            display: block;
+        }
+        .nav-links-vertical a:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+        .article-main {
+            padding: 50px 0 70px;
+        }
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .lead-paragraph {
+            font-size: 20px;
+            margin: 30px 0 40px;
+            font-weight: 450;
+        }
+        .body-text p {
+            font-size: 17px;
+            margin-bottom: 28px;
+            color: #262626;
+        }
+        .body-text h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 15px;
+            color: #000;
+            scroll-margin-top: 80px;
+        }
+        .interview-sub {
+            margin: 70px 0 60px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .interview-sub.revealed-sub {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sub-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            padding-left: 0;
+            color: #000;
+        }
+        .video-container {
+            margin: 0 0 24px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .interview-text {
+            background: #fafafa;
+            padding: 24px 28px;
+            border-radius: 20px;
+            line-height: 1.7;
+            color: #2c2c2c;
+            font-size: 16px;
+        }
+        .speaker-zone {
+            padding: 70px 0;
+            background: #f8f8f8;
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #000;
+            margin: 15px auto 0;
+        }
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .speaker-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: 0.25s;
+        }
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+        .speaker-photo {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+        }
+        .speaker-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .speaker-name {
+            font-size: 22px;
+            font-weight: 800;
+        }
+        .speaker-role {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+        footer {
+            background: #f8f8f8;
+            padding: 50px 0 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: #4a4a4a;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .header-content {
+                gap: 12px;
+            }
+            .hero-section {
+                margin-top: 120px;
+                padding: 40px 0 30px;
+            }
+            .nav-links-vertical {
+                max-width: 90%;
+                gap: 10px;
+            }
+            .lead-paragraph {
+                font-size: 18px;
+            }
+            .sub-title {
+                font-size: 22px;
+            }
+            .interview-text {
+                padding: 18px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        img.hero-img {
+            max-width: 100%;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+                <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2244%22 viewBox=%220 0 120 44%22%3E%3Crect width=%22120%22 height=%2244%22 rx=%2222%22 fill=%22%23000%22/%3E%3Ctext x=%2220%22 y=%2232%22 font-family=%22Inter%22 font-size=%2226%22 font-weight=%22900%22 fill=%22%23fff%22%3EK!%3C/text%3E%3C/svg%3E');">
+                <div class="article-category">KABUTZ</div>
+            </div>
+            <div class="navigation">
+                <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn" id="homeBtn"><i class="fas fa-home"></i> <span id="homeText">Beranda</span></a>
+                <button id="langToggleBtn" class="lang-btn"><i class="fas fa-language"></i> <span id="langText">English</span></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Versi Indonesia -->
+<div id="indonesiaVersion">
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-date"><i class="fas fa-calendar-alt"></i> 21 Juni 2026</div>
+                <img src="June21.png" alt="Hari Musik Sedunia" class="hero-img" onerror="this.style.display='none'">
+                <h1 class="hero-title">Spesial Hari Musik Sedunia:<br>Suara dari Balik Industri Musik dan Perkembangannya</h1>
+                <p class="hero-subtitle">Musik adalah bahasa universal yang terus berevolusi dari tradisi hingga digital, dari panggung lokal hingga global.</p>
+                <div class="article-toggle-btn">
+                    <button class="btn-isi-artikel" id="toggleNavIndo">Isi Artikel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="topic-nav" id="topicNavIndo">
+        <div class="nav-links-vertical">
+            <a href="#sejarah-musik">Sejarah tentang musik</a>
+            <a href="#agust-alban">Agust Alban, Produser</a>
+            <a href="#jennifer-nora">Jennifer Nora, Produser</a>
+            <a href="#aurisya">Aurisya Koswara Kwando, Soloist</a>
+            <a href="#celeste">Celeste Vivienne, Soloist</a>
+            <a href="#ourdream">Our Dream, Boy Group</a>
+        </div>
+    </div>
+
+    <section class="article-main">
+        <div class="container">
+            <div class="article-container">
+              <div class="body-text"> <p class="fade-up"> Musik merupakan salah satu bentuk seni yang paling dekat dengan kehidupan manusia.Melalui irama, melodi, dan lirik, musik mampu menjadi media untuk mengekspresikan emosi, menyampaikan pesan, hingga membangun hubungan antarmanusia tanpa batas bahasa maupun budaya. Dari musik tradisional hingga karya modern berbasis teknologi digital, musik terus berkembang mengikuti zaman dan menjadi bagian penting dalam kehidupan sehari-hari. </p>
+
+                    <p class="fade-up">Setiap tanggal 21 Juni, dunia memperingati Hari Musik Sedunia atau World Music Day yang pertama kali dipopulerkan di Prancis pada tahun 1982 dengan nama Fete de la Musique. Peringatan ini hadir sebagai bentuk apresiasi terhadap musik dan seluruh pelaku industri kreatif di dalamnya. Hari Musik Sedunia juga menjadi momentum untuk mengajak masyarakat menikmati musik secara bebas, sekaligus mendukung para musisi agar terus berkarya dan menyebarkan inspirasi melalui lagu-lagu mereka.</p>
+                    
+                    <h2 id="sejarah-musik" class="fade-up">Sejarah tentang musik</h2>
+                    <p class="fade-up">Sejarah musik telah dimulai sejak ribuan tahun lalu, jauh sebelum manusia mengenal tulisan. Pada masa prasejarah, manusia menggunakan suara alam, tepukan tangan, serta alat sederhana dari batu dan kayu untuk menciptakan ritme. Musik pada masa itu umumnya digunakan dalam ritual adat, komunikasi, maupun upacara keagamaan. Seiring berkembangnya peradaban, alat musik mulai dibuat lebih kompleks dan beragam.</p>
+                    <p class="fade-up">Di era peradaban kuno seperti Mesir, Yunani, dan Tiongkok, musik mulai memiliki aturan serta teori tersendiri. Bangsa Yunani bahkan menganggap musik sebagai bagian penting dalam pendidikan dan kehidupan sosial. Instrumen seperti harpa, seruling, dan kecapi menjadi simbol perkembangan budaya pada masa tersebut. Musik tidak hanya berfungsi sebagai hiburan, tetapi juga dipercaya mampu memengaruhi emosi dan karakter manusia.</p>
+                    <p class="fade-up">Memasuki Abad Pertengahan hingga era Renaisans di Eropa, musik berkembang pesat melalui munculnya notasi musik dan pertunjukan orkestra. Komposer mulai menciptakan karya-karya yang lebih terstruktur dan artistik. Pada periode ini, musik klasik mulai dikenal luas dan menjadi fondasi bagi perkembangan musik modern di masa depan. Nama-nama besar seperti Mozart dan Beethoven kemudian menjadi simbol penting dalam sejarah musik dunia.</p>
+                    <p class="fade-up">Perkembangan teknologi pada abad ke-20 membawa perubahan besar dalam industri musik. Kehadiran radio, piringan hitam, kaset, hingga platform digital membuat musik semakin mudah diakses oleh masyarakat global. Berbagai genre seperti jazz, rock, pop, hip hop, hingga elektronik lahir dan berkembang dengan karakteristiknya masing-masing. Musik kini tidak hanya menjadi hiburan, tetapi juga industri besar yang melibatkan kreativitas, teknologi, dan bisnis.</p>
+                    <p class="fade-up">Di era modern saat ini, musik terus mengalami transformasi seiring berkembangnya media sosial dan platform streaming digital. Musisi dapat membagikan karya mereka secara lebih luas dan cepat kepada pendengar di seluruh dunia. Kolaborasi lintas negara dan budaya juga semakin sering terjadi, menciptakan warna baru dalam industri musik global yang semakin dinamis dan beragam.</p>
+                    <p class="fade-up">Dalam rangka memperingati Hari Musik Sedunia, berbagai produser musik, solois, hingga idol grup dari berbagai negara turut membagikan pandangan mereka mengenai arti musik dalam kehidupan dan proses kreatif di balik karya-karya mereka. Melalui wawancara dan diskusi, mereka menceritakan bagaimana musik menjadi media untuk menyampaikan cerita, emosi, serta pengalaman pribadi kepada para pendengar. Tidak hanya itu, mereka juga membagikan proses produksi lagu di tengah perkembangan industri musik modern yang semakin kompetitif dan dipengaruhi oleh teknologi digital.</p>
+                    
+                    <div id="agust-alban" class="interview-sub">
+                        <div class="sub-title">Agust Alban, Produser</div>
+                        <div class="video-container"><video controls preload="metadata"><source src="August.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">Dalam proses wawancara</div>
+                    </div>
+                    
+                    <div id="jennifer-nora" class="interview-sub">
+                        <div class="sub-title">Jennifer Nora, Produser</div>
+                        <div class="video-container"><video controls preload="metadata"><source src="Jennifer.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">Dalam proses wawancara</div>
+                    </div>
+                    
+                    <div id="aurisya" class="interview-sub">
+                        <div class="sub-title">Aurisya Koswara Kwando, Soloist</div>
+                        <div class="video-container"><video controls preload="metadata"><source src="Aurisya.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">Dalam proses wawancara</div>
+                    </div>
+                    
+                    <div id="celeste" class="interview-sub">
+                        <div class="sub-title">Celeste Vivienne, Soloist</div>
+                        <div class="video-container"><video controls preload="metadata"><source src="Celeste.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">Dalam proses wawancara</div>
+                    </div>
+                    
+                    <div id="ourdream" class="interview-sub">
+                        <div class="sub-title">Our Dream, Boy Group</div>
+                        <div class="video-container"><video controls preload="metadata"><source src="Ourdream.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">Dalam proses wawancara</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Versi Inggris -->
+<div id="englishVersion" style="display: none;">
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-date"><i class="fas fa-calendar-alt"></i> June 21, 2026</div>
+                <img src="June21.png" alt="World Music Day" class="hero-img" onerror="this.style.display='none'">
+                <h1 class="hero-title">World Music Day Special:<br>Voices Behind the Industry Speak Out</h1>
+                <p class="hero-subtitle">Music is a universal language that keeps evolving from tradition to digital, from local stages to global audiences.</p>
+                <div class="article-toggle-btn">
+                    <button class="btn-isi-artikel" id="toggleNavEng">Article Index</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="topic-nav" id="topicNavEng">
+        <div class="nav-links-vertical">
+            <a href="#eng-sejarah">History of music</a>
+            <a href="#eng-agust">Agust Alban, Producer</a>
+            <a href="#eng-jennifer">Jennifer Nora, Producer</a>
+            <a href="#eng-aurisya">Aurisya Koswara Kwando, Soloist</a>
+            <a href="#eng-celeste">Celeste Vivienne, Soloist</a>
+            <a href="#eng-ourdream">Our Dream, Boy Group</a>
+        </div>
+    </div>
+    
+    <section class="article-main">
+        <div class="container">
+            <div class="article-container">
+                <div class="body-text"> <p class= "fade-up"> Music is one of the art forms closest to human life. Through rhythm, melody, and lyrics, music becomes a medium for expressing emotions, delivering messages, and building connections between people beyond language and cultural barriers. From traditional melodies to modern digital productions, music continues to evolve alongside society and remains an important part of everyday life. </p>
+         
+                    <p class="fade-up">Every year on June 21, people around the world celebrate World Music Day, also known as Fete de la Musique, which was first introduced in France in 1982. The celebration was created as a way to appreciate music and everyone involved in the creative industry behind it. World Music Day also encourages people to enjoy music freely while supporting musicians and artists who continue to inspire audiences through their work.</p>
+                    
+                    <h2 id="eng-sejarah" class="fade-up">History of music</h2>
+                    <p class="fade-up">The history of music dates back thousands of years, long before written language. Prehistoric people used natural sounds, hand claps, and simple stone or wood instruments to create rhythm. Music evolved through ancient civilizations like Egypt, Greece, and China, where instruments like harps and flutes symbolized cultural growth. The Middle Ages and Renaissance brought musical notation and orchestral performances, leading to classical masters like Mozart and Beethoven.</p>
+                    <p class="fade-up">In ancient civilizations such as Egypt, Greece, and China, music began to develop its own systems and theories. The ancient Greeks considered music an essential part of education and social life. Instruments such as harps, flutes, and lyres became symbols of cultural development at the time. Music was not only seen as entertainment, but also believed to influence human emotions and character.</p>
+                    <p class="fade-up">Entering the Middle Ages and the Renaissance period in Europe, music developed rapidly with the introduction of musical notation and orchestral performances. Composers began creating works that were more structured and artistic. During this period, classical music gained widespread recognition and became the foundation for the development of modern music in the future. Legendary composers such as Wolfgang Amadeus Mozart and Ludwig van Beethoven later became iconic figures in world music history.</p>
+                    <p class="fade-up">Technological advancements in the 20th century brought major changes to the music industry. The rise of radio, vinyl records, cassette tapes, and eventually digital platforms made music more accessible to global audiences. Various genres such as jazz, rock, pop, hip hop, and electronic music emerged and developed with their own unique characteristics. Music eventually became not only a form of entertainment, but also a massive industry driven by creativity, technology, and business.</p>
+                    <p class="fade-up">In today's modern era, music continues to transform alongside the growth of social media and digital streaming platforms. Artists are now able to share their work with worldwide audiences more quickly and easily than ever before. Cross-cultural and international collaborations have also become increasingly common, creating new colors and diversity within the global music industry.</p>
+                    <p class="fade-up">To celebrate World Music Day, many producers, soloists, and idol groups from around the world have shared their perspectives on what music means to them and how they create their work behind the scenes. Through interviews and discussions, they explain how music becomes a way to express stories, emotions, and personal experiences to listeners. They also share insights into the creative and production process of making music in today's fast-moving and highly competitive digital industry.</p>
+                    
+                    <div id="eng-agust" class="interview-sub">
+                        <div class="sub-title">Agust Alban, Producer</div>
+                        <div class="video-container"><video controls><source src="August.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">In discussion and interview</div>
+                    </div>
+                    <div id="eng-jennifer" class="interview-sub">
+                        <div class="sub-title">Jennifer Nora, Producer</div>
+                        <div class="video-container"><video controls><source src="Jennifer.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">In discussion and interview</div>
+                    </div>
+                    <div id="eng-aurisya" class="interview-sub">
+                        <div class="sub-title">Aurisya Koswara Kwando, Soloist</div>
+                        <div class="video-container"><video controls><source src="Aurisya.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">In discussion and interview</div>
+                    </div>
+                    <div id="eng-celeste" class="interview-sub">
+                        <div class="sub-title">Celeste Vivienne, Soloist</div>
+                        <div class="video-container"><video controls><source src="Celeste.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">In discussion and interview</div>
+                    </div>
+                    <div id="eng-ourdream" class="interview-sub">
+                        <div class="sub-title">Our Dream, Boy Group</div>
+                        <div class="video-container"><video controls><source src="Ourdream.mp4" type="video/mp4"></video></div>
+                        <div class="interview-text">In discussion and interview</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- SPEAKER SECTION dengan 6 profil sesuai perintah -->
+<section class="speaker-zone" id="speakerSection">
+    <div class="container">
+        <h2 class="section-title fade-up" id="speakerTitle">Pembicara</h2>
+        <div class="speakers-grid" id="speakersGrid"></div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <p id="footerText">&copy; 2026 KABOOM! di bawah The Kachoo. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const speakersData = [
+        { name: "Agust Alban", role: "Produser", img: "August.png", nameEn: "Agust Alban", roleEn: "Producer" },
+        { name: "Jennifer Nora", role: "Produser", img: "Jenora.png", nameEn: "Jennifer Nora", roleEn: "Producer" },
+        { name: "Aurisya Koswara Kwando", role: "Soloist", img: "Aurisya.png", nameEn: "Aurisya Koswara Kwando", roleEn: "Soloist" },
+        { name: "Celeste Vivienne", role: "Soloist", img: "Celeste.png", nameEn: "Celeste Vivienne", roleEn: "Soloist" },
+        { name: "Leonardo Nicholas Wang", role: "Our Dream (Member)", img: "leo.png", nameEn: "Leonardo Nicholas Wang", roleEn: "Our Dream (Member)" },
+        { name: "Our Dream", role: "Boy Group", img: "Ourdream.png", nameEn: "Our Dream", roleEn: "Boy Group" }
+    ];
+    
+    function renderSpeakers(lang) {
+        const grid = document.getElementById('speakersGrid');
+        if(lang === 'id') {
+            grid.innerHTML = speakersData.map(s => `
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo"><img src="${s.img}" alt="${s.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2240%22%3E${s.name.charAt(0)}%3C/text%3E%3C/svg%3E'"></div>
+                    <div class="speaker-name">${s.name}</div>
+                    <div class="speaker-role">${s.role}</div>
+                </div>
+            `).join('');
+        } else {
+            grid.innerHTML = speakersData.map(s => `
+                <div class="speaker-card fade-up">
+                    <div class="speaker-photo"><img src="${s.img}" alt="${s.nameEn}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2240%22%3E${s.nameEn.charAt(0)}%3C/text%3E%3C/svg%3E'"></div>
+                    <div class="speaker-name">${s.nameEn}</div>
+                    <div class="speaker-role">${s.roleEn}</div>
+                </div>
+            `).join('');
+        }
+    }
+    
+    const indoDiv = document.getElementById('indonesiaVersion');
+    const engDiv = document.getElementById('englishVersion');
+    const toggleBtn = document.getElementById('langToggleBtn');
+    const langText = document.getElementById('langText');
+    const homeText = document.getElementById('homeText');
+    const speakerTitle = document.getElementById('speakerTitle');
+    const footerText = document.getElementById('footerText');
+    let currentLang = 'id';
+    
+    const topicNavIndo = document.getElementById('topicNavIndo');
+    const topicNavEng = document.getElementById('topicNavEng');
+    const toggleNavIndo = document.getElementById('toggleNavIndo');
+    const toggleNavEng = document.getElementById('toggleNavEng');
+    
+    if(toggleNavIndo) {
+        toggleNavIndo.addEventListener('click', () => {
+            topicNavIndo.classList.toggle('show');
+        });
+    }
+    if(toggleNavEng) {
+        toggleNavEng.addEventListener('click', () => {
+            topicNavEng.classList.toggle('show');
+        });
+    }
+    
+    function setLanguage(lang) {
+        if(lang === 'id') {
+            indoDiv.style.display = 'block';
+            engDiv.style.display = 'none';
+            langText.innerText = 'English';
+            homeText.innerText = 'Beranda';
+            speakerTitle.innerText = 'Pembicara';
+            footerText.innerHTML = '&copy; 2026 KABOOM! di bawah The Kachoo. All rights reserved.';
+            renderSpeakers('id');
+        } else {
+            indoDiv.style.display = 'none';
+            engDiv.style.display = 'block';
+            langText.innerText = 'Indonesia';
+            homeText.innerText = 'Home';
+            speakerTitle.innerText = 'Speakers';
+            footerText.innerHTML = '&copy; 2026 KABOOM! under The Kachoo. All rights reserved.';
+            renderSpeakers('en');
+        }
+        currentLang = lang;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    toggleBtn.addEventListener('click', () => currentLang === 'id' ? setLanguage('en') : setLanguage('id'));
+    
+    document.querySelectorAll('.nav-links-vertical a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetEl = document.getElementById(targetId);
+            if(targetEl) {
+                const offset = 80;
+                window.scrollTo({ top: targetEl.offsetTop - offset, behavior: 'smooth' });
+            }
+        });
+    });
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                if(entry.target.classList.contains('interview-sub')) entry.target.classList.add('revealed-sub');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-up, .interview-sub').forEach(el => observer.observe(el));
+    
+    renderSpeakers('id');
+</script>
+</body>
+</html>
