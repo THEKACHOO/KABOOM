@@ -232,7 +232,7 @@
             margin-bottom: 12px;
         }
 
-        /* PROFILE SECTION - NEW SPEAKER */
+        /* PROFILE SECTION - TWO SPEAKERS */
         .profile-section {
             padding: 40px 0 30px;
             background: #FFFFFF;
@@ -241,29 +241,44 @@
             margin-bottom: 20px;
         }
 
-        .profile-card {
-            max-width: 400px;
+        .profile-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .profile-card {
+            max-width: 320px;
+            min-width: 240px;
+            flex: 1 1 0;
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s ease;
             text-decoration: none;
             display: block;
+            padding: 20px;
+            border-radius: 24px;
+            background: #F9F9F9;
+            border: 1px solid #EEEEEE;
         }
 
         .profile-card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
         }
 
         .profile-avatar {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
             overflow: hidden;
             border: 3px solid #000;
             background: #F0F0F0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
         .profile-avatar img {
@@ -274,28 +289,32 @@
 
         .profile-name {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 26px;
             font-weight: 900;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: #000;
         }
 
         .profile-role {
-            font-size: 16px;
+            font-size: 15px;
             color: #616161;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
         }
 
         .profile-badge {
             display: inline-block;
-            margin-top: 12px;
             background: #000;
             color: #fff;
-            padding: 6px 18px;
+            padding: 5px 16px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
+        }
+
+        .profile-badge i {
+            margin-right: 4px;
         }
 
         /* MEMBER SECTION */
@@ -428,6 +447,20 @@
             .member-name {
                 font-size: 14px;
             }
+            .profile-grid {
+                gap: 24px;
+            }
+            .profile-card {
+                min-width: 200px;
+                padding: 16px;
+            }
+            .profile-avatar {
+                width: 110px;
+                height: 110px;
+            }
+            .profile-name {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
@@ -505,17 +538,30 @@
         </div>
     </section>
 
-    <!-- SPEAKER PROFILE - BARU (sebelum footer) -->
+    <!-- SPEAKER PROFILE - DUA ORANG (sebelum footer) -->
     <section class="profile-section">
         <div class="container">
-            <a href="https://x.com/txntang" target="_blank" class="profile-card">
-                <div class="profile-avatar">
-                    <img src="Hein.png" alt="Hein Dewantara" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;font-weight:900;color:#000;background:#f0f0f0;\'>HD</div>';">
-                </div>
-                <div class="profile-name">Hein Dewantara</div>
-                <div class="profile-role">Member OUR DREAM</div>
-                <span class="profile-badge"><i class="fab fa-twitter"></i> @txntang</span>
-            </a>
+            <div class="profile-grid">
+                <!-- Caleb Matthias Müller -->
+                <a href="https://x.com/reinbowns" target="_blank" class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="Caleb.jpg" alt="Caleb Matthias Müller" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900;color:#000;background:#f0f0f0;\'>CM</div>';">
+                    </div>
+                    <div class="profile-name">Caleb Matthias Müller</div>
+                    <div class="profile-role">Member Tomorrow Stay Together</div>
+                    <span class="profile-badge"><i class="fab fa-twitter"></i> @reinbowns</span>
+                </a>
+
+                <!-- Hein Dewantara -->
+                <a href="https://x.com/txntang" target="_blank" class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="Hein.jpg" alt="Hein Dewantara" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900;color:#000;background:#f0f0f0;\'>HD</div>';">
+                    </div>
+                    <div class="profile-name">Hein Dewantara</div>
+                    <div class="profile-role">Member OUR DREAM</div>
+                    <span class="profile-badge"><i class="fab fa-twitter"></i> @txntang</span>
+                </a>
+            </div>
         </div>
     </section>
 
