@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>HEIN Rilis "Si Lemah" | KABOOM!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            border-bottom: 1px solid #E0E0E0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: #000000;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            margin-top: 120px;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #1A1A1A;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #000, #444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #616161;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #000;
+            margin: 25px auto;
+        }
+
+        /* VIDEO SECTION - Twitter Embed */
+        .video-section {
+            padding: 40px 0;
+            background: #FFFFFF;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background: #FFFFFF;
+            padding: 20px;
+        }
+
+        .video-container .twitter-tweet {
+            margin: 0 auto !important;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-content {
+            padding: 40px 0 60px;
+            background: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #424242;
+        }
+
+        .article-body p {
+            margin-bottom: 28px;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 20px;
+            color: #000;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #000;
+        }
+
+        .highlight-box {
+            background: #F5F5F5;
+            border-left: 4px solid #000;
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .article-body .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .article-body .highlight-box p:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        /* PROFILE SECTION */
+        .profile-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid #000;
+            background: #F0F0F0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: #616161;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: #000;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* MEMBER SECTION */
+        .member-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+            border-top: 1px solid #EEEEEE;
+        }
+
+        .member-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .member-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            text-align: center;
+            min-width: 100px;
+            padding: 8px 16px;
+            background: #F8F8F8;
+            border-radius: 40px;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #F8F8F8;
+            padding: 60px 0 30px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .company-card, .footer-about {
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid #EAEAEA;
+        }
+
+        .company-card h3, .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .company-card h3:after, .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #000;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #616161;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #E0E0E0;
+            font-size: 13px;
+            color: #757575;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: center;
+            }
+            .hero-section {
+                margin-top: 140px;
+            }
+            .member-grid {
+                gap: 12px;
+            }
+            .member-card {
+                min-width: 80px;
+                padding: 6px 12px;
+            }
+            .member-name {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM/'">
+                    <img src="https://thekachoo.github.io/KABOOM/kaboom-logo.png" alt="KABOOM Logo" id="logo">
+                    <div class="article-category">KABUTZ</div>
+                </div>
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/KABOOM" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-date">KABUTZ</span>
+                <h1 class="hero-title">HEIN Rilis <span>"Si Lemah"</span></h1>
+                <p class="hero-subtitle">Sebuah Pelukan untuk Anak Muda yang Lelah</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO - Twitter Embed -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <blockquote class="twitter-tweet" data-media-max-width="560">
+                    <a href="https://x.com/OURDREAM_twt/status/2087496620283920453"></a>
+                </blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTIKEL -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate">Bertepatan dengan peringatan <strong>International Youth Day pada 12 Agustus 2026</strong>, HEIN Dewantara atau HEIN resmi membuka perjalanan menuju album penuhnya, <em>Inklusivitas Diri</em>, melalui single pre-release pertama bertajuk <strong>"Si Lemah"</strong> bersama Caleb TST dan Gama.</p>
+                    
+                    <p class="scroll-animate">Lebih dari sekadar lagu pembuka, "Si Lemah" menjadi pintu pertama menuju sebuah perjalanan emosional yang akan dibangun HEIN sepanjang satu tahun ke depan. Mengangkat tema tentang kerentanan, ekspektasi, dan keberanian untuk menerima diri sendiri, lagu ini hadir di tengah realitas anak muda yang kerap dituntut untuk selalu kuat, produktif, dan mampu memenuhi standar yang datang dari berbagai arah.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700;">"Pemilihan International Youth Day sebagai momentum perilisan pun membawa makna tersendiri."</p>
+                        <p>Ketika perayaan tentang anak muda sering kali berbicara mengenai prestasi, perubahan, dan keberanian untuk menaklukkan dunia, "Si Lemah" justru menawarkan perspektif yang berbeda: <strong>tidak apa-apa untuk berhenti sejenak, merasa lelah, bahkan mengakui bahwa kita tidak selalu mampu menjadi sosok yang diharapkan orang lain.</strong></p>
+                    </div>
+
+                    <p class="scroll-animate">Melalui "Si Lemah", HEIN ingin memberikan validasi bahwa kelemahan bukanlah sesuatu yang harus disembunyikan. Benturan antara keinginan diri sendiri dan ekspektasi dunia luar menjadi inti cerita lagu ini, sekaligus menjadi pengingat bahwa menerima keterbatasan diri merupakan bagian dari proses untuk benar-benar mengenal dan berdamai dengan diri sendiri.</p>
+
+                    <h2 class="scroll-animate">THE MIRRORING: Babak Baru Inklusivitas Diri</h2>
+                    <p class="scroll-animate">"Si Lemah" juga menjadi bagian dari babak <strong>THE MIRRORING</strong>, fase inti dalam <em>Inklusivitas Diri</em>. Setelah sebelumnya dihadapkan pada berbagai bentuk keresahan dan kekacauan dalam <em>THE OVERWHELM</em>, babak ini mengajak pendengar untuk berhenti melarikan diri dan mulai melihat luka secara langsung. Di sinilah pertanyaan tentang siapa diri kita, apa yang kita inginkan, dan mengapa kita terus berusaha memenuhi ekspektasi orang lain mulai menemukan ruangnya.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; font-size: 20px;">"Si Lemah bukan tentang menjadi lemah selamanya, melainkan tentang memberikan diri sendiri izin untuk menjadi manusia sebelum kembali menemukan kekuatan."</p>
+                    </div>
+
+                    <p class="scroll-animate">Lewat musik dan visualnya, HEIN membawa pesan tersebut ke dalam sebuah cerita yang lebih personal. <strong>"Si Lemah" bukan tentang menjadi lemah selamanya, melainkan tentang memberikan diri sendiri izin untuk menjadi manusia sebelum kembali menemukan kekuatan.</strong></p>
+
+                    <p class="scroll-animate">Kini, perjalanan <em>Inklusivitas Diri</em> resmi dimulai. Saksikan <strong>music video "Si Lemah" — HEIN ft. Caleb TST, Gama</strong>, dan temukan bagaimana sebuah lagu dapat menjadi ruang untuk berhenti sejenak, menatap diri sendiri, serta mengatakan: tidak apa-apa jika hari ini kita belum baik-baik saja.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; text-align: center; font-size: 18px;">Tonton music video "Si Lemah" sekarang dan ikuti langkah pertama HEIN menuju inklusivitas diri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE: HEIN -->
+    <section class="profile-section">
+        <div class="container">
+            <a href="https://x.com/HEIN_my" target="_blank" class="profile-card">
+                <div class="profile-avatar">
+                    <img src="hein-profile.png" alt="HEIN Profile">
+                </div>
+                <h2 class="profile-name">HEIN</h2>
+                <p class="profile-role">Singer-Songwriter</p>
+                <div class="profile-badge"><i class="fab fa-twitter"></i>Official</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- MEMBER LIST - FEATURING -->
+    <section class="member-section">
+        <div class="container">
+            <h3 class="member-title">FEATURING</h3>
+            <div class="member-grid">
+                <div class="member-card"><span class="member-name">Caleb TST</span></div>
+                <div class="member-card"><span class="member-name">Gama</span></div>
+                <div class="member-card"><span class="member-name">Gantara</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span></div>
+                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
+                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif kategori Kabutz. Edisi kali ini membahas tentang single terbaru HEIN berjudul "Si Lemah", sebuah pelukan untuk anak muda yang lelah.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten hanya untuk keperluan roleplay.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Scroll animation
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el) => el.getBoundingClientRect().top <= window.innerHeight * 0.85;
+            const handleScroll = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.style.background = 'rgba(255,255,255,0.99)';
+                else header.style.background = 'rgba(255,255,255,0.98)';
+            });
+        })();
+    </script>
+</body>
+</html>
