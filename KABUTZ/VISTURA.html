@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Modern Woman Have a Problem | KABOOM!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            border-bottom: 1px solid #E0E0E0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: #000000;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            margin-top: 120px;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #1A1A1A;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #000, #444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #616161;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #000;
+            margin: 25px auto;
+        }
+
+        /* POSTER SECTION - 1 FOTO AWAL */
+        .poster-section {
+            padding: 40px 0;
+            background: #FFFFFF;
+        }
+
+        .poster-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .poster-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* SLIDER SECTION - 7 FOTO SETELAH SYNOPSIS */
+        .slider-section {
+            padding: 40px 0;
+            background: #FFFFFF;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            cursor: grab;
+        }
+
+        .slider-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .slider-wrapper::-webkit-scrollbar-track {
+            background: #E0E0E0;
+            border-radius: 10px;
+        }
+
+        .slider-wrapper::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        .slider-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            width: 100%;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Arrow Navigation */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0,0,0,0.9);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .arrow-left {
+            left: 16px;
+        }
+
+        .arrow-right {
+            right: 16px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #BDBDBD;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #000000;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-content {
+            padding: 40px 0 60px;
+            background: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #424242;
+        }
+
+        .article-body p {
+            margin-bottom: 28px;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 20px;
+            color: #000;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #000;
+        }
+
+        .highlight-box {
+            background: #F5F5F5;
+            border-left: 4px solid #000;
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .schedule-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .schedule-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #E0E0E0;
+            font-weight: 500;
+        }
+
+        .schedule-date {
+            min-width: 110px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .track-badge {
+            background: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .track-badge-light {
+            background: #EEEEEE;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+
+        /* MEMBER SECTION - DIPINDAHKAN KE SETELAH ARTIKEL */
+        .member-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+            border-top: 1px solid #EEEEEE;
+        }
+
+        .member-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .member-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            text-align: center;
+            min-width: 100px;
+            padding: 8px 16px;
+            background: #F8F8F8;
+            border-radius: 40px;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* PROFILE CARD (BOY GROUP) - DIPINDAHKAN KE SETELAH ARTIKEL */
+        .profile-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid #000;
+            background: #F0F0F0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: #616161;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: #000;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #F8F8F8;
+            padding: 60px 0 30px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .company-card, .footer-about {
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid #EAEAEA;
+        }
+
+        .company-card h3, .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .company-card h3:after, .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #000;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #616161;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #E0E0E0;
+            font-size: 13px;
+            color: #757575;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: center;
+            }
+            .hero-section {
+                margin-top: 140px;
+            }
+            .slider-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+            .member-grid {
+                gap: 12px;
+            }
+            .member-card {
+                min-width: 80px;
+                padding: 6px 12px;
+            }
+            .member-name {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
+                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
+                    <div class="article-category">KABUTZ</div>
+                </div>
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-date">KABUTZ</span>
+                <h1 class="hero-title">Modern Woman <span>Have a Problem</span></h1>
+                <p class="hero-subtitle">Exploring the Complexities of Womanhood in Modern London</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSTER - 1 FOTO AWAL -->
+    <section class="poster-section">
+        <div class="container">
+            <div class="poster-container">
+                <img src="postervistura1.png" alt="Modern Woman Have a Problem Poster">
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTIKEL BERITA - ENGLISH -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate">The anthology series <strong>Modern Woman Have a Problem</strong> explores the personal struggles, social pressures, and emotional challenges faced by women in contemporary society through seven individual yet interconnected stories set against the backdrop of modern London.</p>
+                    
+                    <p class="scroll-animate">The series centres on <strong>Diana</strong>, the owner of an independent nail salon that becomes a refuge for people seeking a place to process their personal struggles. Rather than serving solely as a place of business, the salon functions as a quiet sanctuary where its visitors can confront experiences that are often difficult to discuss elsewhere.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; margin-bottom: 12px;">Across seven episodes, each running approximately 45 to 55 minutes, <em>Modern Woman Have a Problem</em> combines elements of slice-of-life, social drama, psychological drama, and women-centric storytelling.</p>
+                    </div>
+
+                    <p class="scroll-animate">The series addresses a range of sensitive subjects, including emotional abuse, gender-based violence, child loss, grief, manipulation, and the pressures of societal expectations. The narrative follows women from different backgrounds as they confront circumstances that challenge their relationships, identities, and sense of self.</p>
+
+                    <h2 class="scroll-animate">Synopsis</h2>
+                    <p class="scroll-animate">Among them is a corporate strategist dealing with her partner's fragile ego, a mother confronting a patriarchal family following a tragic loss, and a student attempting to rebuild her life after experiencing gender-based violence.</p>
+                    
+                    <p class="scroll-animate">Other storylines follow a young woman seeking to dismantle a romance scam, a model who reassesses her self-worth through the development of genuine skills, and an artist attempting to escape the damaging effects of her father's favoritism. The series concludes by shifting its perspective to a devoted businessman whose experience of grief and unconditional love challenges conventional assumptions surrounding masculinity and emotional vulnerability.</p>
+
+                    <!-- SLIDER 7 FOTO DISELIPKAN DI SINI -->
+                    <section class="slider-section" style="padding: 40px 0;">
+                        <div class="slider-container">
+                            <div class="slider-wrapper" id="sliderWrapper">
+                                <div class="slider-slide"><img src="Vistura1.png" alt="Modern Woman Have a Problem 1"></div>
+                                <div class="slider-slide"><img src="Vistura2.png" alt="Modern Woman Have a Problem 2"></div>
+                                <div class="slider-slide"><img src="Vistura3.png" alt="Modern Woman Have a Problem 3"></div>
+                                <div class="slider-slide"><img src="Vistura4.png" alt="Modern Woman Have a Problem 4"></div>
+                                <div class="slider-slide"><img src="Vistura5.png" alt="Modern Woman Have a Problem 5"></div>
+                                <div class="slider-slide"><img src="Vistura6.png" alt="Modern Woman Have a Problem 6"></div>
+                                <div class="slider-slide"><img src="Vistura7.png" alt="Modern Woman Have a Problem 7"></div>
+                            </div>
+                            <button class="slider-arrow arrow-left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-arrow arrow-right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="slider-dots" id="sliderDots"></div>
+                    </section>
+
+                    <h2 class="scroll-animate">The Cast & Creative Team</h2>
+                    <p class="scroll-animate">The ensemble cast features <strong>Rachel Hearst, Cindy Lou, Asmara Wening Danudiharja, Adiratna Danudiharja, Bunga Asmara, Nona Rengganis, Aurisya Koswara Kwando, and Alex Miller</strong>.</p>
+                    
+                    <p class="scroll-animate">Directed by <strong>Noah Vale</strong> and produced by <strong>Dean Ardana</strong>, the series features Tobias Rhoades as Director of Photography and Felix Sterling as editor. <em>Modern Woman Have a Problem</em> is produced by Vistura Studio and distributed by Vistura Studio and Netflix.</p>
+
+                    <h2 class="scroll-animate">A Powerful Exploration of Womanhood</h2>
+                    <p class="scroll-animate">Through its character-driven narratives, <em>Modern Woman Have a Problem</em> examines experiences of loss, trauma, relationships, and social expectations, while exploring the different ways individuals respond to adversity.</p>
+
+                    <p class="scroll-animate">With its compelling stories and emotionally grounded characters, <em>Modern Woman Have a Problem</em> invites audiences to look beyond the surface and experience the realities behind the lives of those navigating the complexities of the modern world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE: VISTURA STUDIO -->
+    <section class="profile-section">
+        <div class="container">
+            <a href="https://x.com/visturacorp" target="_blank" class="profile-card" id="profileLink">
+                <div class="profile-avatar">
+                    <img src="visturalogo.png" alt="Vistura Studio">
+                </div>
+                <h2 class="profile-name">Vistura Studios</h2>
+                <p class="profile-role">Production House</p>
+                <div class="profile-badge"><i class="fab fa-twitter"></i>Official</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- MEMBER LIST - CAST -->
+    <section class="member-section">
+        <div class="container">
+            <h3 class="member-title">CAST</h3>
+            <div class="member-grid">
+                <div class="member-card"><span class="member-name">Rachel Hearst</span></div>
+                <div class="member-card"><span class="member-name">Cindy Lou</span></div>
+                <div class="member-card"><span class="member-name">Asmara Wening</span></div>
+                <div class="member-card"><span class="member-name">Adiratna</span></div>
+                <div class="member-card"><span class="member-name">Bunga Asmara</span></div>
+                <div class="member-card"><span class="member-name">Nona Rengganis</span></div>
+                <div class="member-card"><span class="member-name">Aurisya Kwando</span></div>
+                <div class="member-card"><span class="member-name">Alex Miller</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span></div>
+                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
+                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif kategori Kabutz. Edisi kali ini membahas tentang serial <em>Modern Woman Have a Problem</em>, antologi terbaru yang diproduksi oleh Vistura Studio.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten hanya untuk keperluan roleplay.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // SLIDER non-loop (mentok kiri/kanan)
+            const wrapper = document.getElementById('sliderWrapper');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.slider-slide');
+            const dotsContainer = document.getElementById('sliderDots');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Create dots
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        scrollToSlide(currentIndex);
+                        updateDots();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function scrollToSlide(index) {
+                const slideWidth = wrapper.clientWidth;
+                wrapper.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+                currentIndex = index;
+                updateDots();
+            }
+
+            function updateDots() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+                // Arrow disable state (mentok)
+                if (currentIndex === 0) {
+                    prevBtn.style.opacity = '0.5';
+                    prevBtn.style.cursor = 'default';
+                } else {
+                    prevBtn.style.opacity = '1';
+                    prevBtn.style.cursor = 'pointer';
+                }
+                if (currentIndex === totalSlides - 1) {
+                    nextBtn.style.opacity = '0.5';
+                    nextBtn.style.cursor = 'default';
+                } else {
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.cursor = 'pointer';
+                }
+            }
+
+            function nextSlide() {
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                    scrollToSlide(currentIndex);
+                }
+            }
+
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    scrollToSlide(currentIndex);
+                }
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Update index saat scroll manual (biar dot sinkron & batas mentok)
+            wrapper.addEventListener('scroll', () => {
+                const scrollPos = wrapper.scrollLeft;
+                const slideWidth = wrapper.clientWidth;
+                let newIndex = Math.round(scrollPos / slideWidth);
+                if (newIndex < 0) newIndex = 0;
+                if (newIndex >= totalSlides) newIndex = totalSlides - 1;
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateDots();
+                }
+            });
+
+            // resize handler untuk update posisi
+            window.addEventListener('resize', () => {
+                scrollToSlide(currentIndex);
+            });
+
+            createDots();
+            updateDots();
+            // Pastikan awal di slide 0
+            wrapper.scrollLeft = 0;
+
+            // Scroll animation
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el) => el.getBoundingClientRect().top <= window.innerHeight * 0.85;
+            const handleScroll = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.style.background = 'rgba(255,255,255,0.99)';
+                else header.style.background = 'rgba(255,255,255,0.98)';
+            });
+        })();
+    </script>
+</body>
+  </html>
