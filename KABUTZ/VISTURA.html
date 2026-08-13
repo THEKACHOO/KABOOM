@@ -101,7 +101,7 @@
         /* HERO SECTION */
         .hero-section {
             margin-top: 120px;
-            padding: 60px 0 40px;
+            padding: 50px 0 30px;
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
             position: relative;
         }
@@ -112,52 +112,57 @@
             margin: 0 auto;
         }
 
-        .hero-date {
-            font-size: 14px;
-            color: #000000;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: block;
-        }
-
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(42px, 5vw, 68px);
+            font-size: clamp(34px, 4.2vw, 54px);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.15;
             color: #1A1A1A;
         }
 
-        .hero-title span {
-            background: linear-gradient(135deg, #000, #444);
+        .hero-title .sub {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.35em;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .hero-title .main {
+            display: block;
+            background: linear-gradient(135deg, #1a1a1a, #444);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            line-height: 1.1;
         }
 
-        .hero-subtitle {
-            font-size: 18px;
-            color: #616161;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 400;
+        .hero-title .date {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.3em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: 6px;
         }
 
         .hero-title::after {
             content: '';
             display: block;
-            width: 100px;
+            width: 80px;
             height: 3px;
             background: #000;
-            margin: 25px auto;
+            margin: 18px auto 0;
         }
 
         /* POSTER SECTION - 1 FOTO AWAL */
         .poster-section {
-            padding: 40px 0;
+            padding: 30px 0;
             background: #FFFFFF;
         }
 
@@ -555,6 +560,7 @@
             }
             .hero-section {
                 margin-top: 140px;
+                padding: 30px 0 20px;
             }
             .slider-arrow {
                 width: 36px;
@@ -593,9 +599,11 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-date">KABUTZ</span>
-                <h1 class="hero-title">Modern Woman <span>Have a Problem</span></h1>
-                <p class="hero-subtitle">Exploring the Complexities of Womanhood in Modern London</p>
+                <h1 class="hero-title">
+                    <span class="sub">A Bold Series Amid the Feminist Uproar</span>
+                    <span class="main">Modern Woman Have a Problem</span>
+                    <span class="date">Premieres August 20</span>
+                </h1>
             </div>
         </div>
     </section>
@@ -640,7 +648,6 @@
                                 <div class="slider-slide"><img src="Vistura5.jpg" alt="Modern Woman Have a Problem 5"></div>
                                 <div class="slider-slide"><img src="Vistura6.jpg" alt="Modern Woman Have a Problem 6"></div>
                                 <div class="slider-slide"><img src="Vistura7.jpg" alt="Modern Woman Have a Problem 7"></div>
-                                <div class="slider-slide"><img src="Vistura8.jpg" alt="Modern Woman Have a Problem 7"></div>
                             </div>
                             <button class="slider-arrow arrow-left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                             <button class="slider-arrow arrow-right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -684,7 +691,7 @@
                 <div class="member-card"><span class="member-name">Rachel Hearst</span></div>
                 <div class="member-card"><span class="member-name">Cindy Lou</span></div>
                 <div class="member-card"><span class="member-name">Asmara Wening</span></div>
-                <div class="member-card"><span class="member-name">Adiratna</span></div>
+                <div class="member-card"><span class="member-name">Adiratna Danudiharja</span></div>
                 <div class="member-card"><span class="member-name">Bunga Asmara</span></div>
                 <div class="member-card"><span class="member-name">Nona Rengganis</span></div>
                 <div class="member-card"><span class="member-name">Aurisya Kwando</span></div>
@@ -834,4 +841,4 @@
         })();
     </script>
 </body>
-  </html>
+    </html>
