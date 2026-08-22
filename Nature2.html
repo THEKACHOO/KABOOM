@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Kalimantan Membara — KABOOM!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO ===== */
+        .hero-section {
+            margin-top: 120px;
+            padding: 40px 0 10px;
+            background: #ffffff;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .hero-title .sub {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.3em;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .hero-title .main {
+            display: block;
+            color: #000;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #000;
+            margin: 16px auto 0;
+        }
+
+        /* ===== HERO IMAGE ===== */
+        .hero-image {
+            margin: 20px 0 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== SLIDER ===== */
+        .slider-container {
+            position: relative;
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        .slider-wrapper img {
+            width: 100%;
+            flex-shrink: 0;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            font-size: 28px;
+            padding: 12px 16px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            transition: background 0.3s;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .slider-btn.prev {
+            left: 12px;
+        }
+        .slider-btn.next {
+            right: 12px;
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 0 6px;
+        }
+        .slider-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .slider-dots span.active {
+            background: #000;
+        }
+
+        /* ===== ARTIKEL ===== */
+        .article-content {
+            padding: 10px 0 60px;
+            background: #ffffff;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #1a1a1a;
+            text-align: justify;
+        }
+
+        .article-body p {
+            margin-bottom: 16px;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 800;
+            margin: 28px 0 12px;
+            color: #000;
+            text-align: left;
+        }
+
+        /* ===== SUMBER ===== */
+        .sumber {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .sumber p {
+            margin-bottom: 4px;
+        }
+
+        .sumber .sumber-judul {
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .sumber .sumber-item {
+            padding-left: 28px;
+            text-indent: -28px;
+            margin-left: 0;
+        }
+        .sumber .sumber-item a {
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .sumber .sumber-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #f8f8f8;
+            padding: 50px 0 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .company-card,
+        .footer-about {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #eaeaea;
+        }
+
+        .company-card h3,
+        .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #000;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #757575;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: center;
+            }
+            .hero-section {
+                margin-top: 140px;
+                padding: 20px 0 10px;
+            }
+            .article-body {
+                font-size: 17px;
+            }
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =============================== -->
+    <!-- HEADER -->
+    <!-- =============================== -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM/'">
+                    <img src="https://thekachoo.github.io/KABOOM/kaboom-logo.png" alt="KABOOM Logo" id="logo" />
+                    <div class="article-category">NATURE</div>
+                </div>
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/KABOOM" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =============================== -->
+    <!-- HERO -->
+    <!-- =============================== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="sub">KARHUTLA</span>
+                    <span class="main">Kalimantan Membara: Ketika Karhutla Bukan Sekadar Bencana Musiman</span>
+                </h1>
+            </div>
+            <!-- FOTO 1 DI BAWAH JUDUL -->
+            <div class="hero-image">
+                <img src="nature2.1.jpg" alt="Karhutla Kalimantan" />
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- ARTIKEL -->
+    <!-- =============================== -->
+    <section class="article-content">
+        <div class="container">
+            <div class="article-body">
+
+                <p>Kebakaran hutan dan lahan di Kalimantan kembali memperlihatkan persoalan yang selama bertahun-tahun belum benar-benar selesai. Setiap musim kering, titik panas mulai muncul, lahan mengering, api merambat, dan masyarakat kembali menghadapi ancaman kabut asap. Namun menyebut peristiwa ini sebagai bencana musiman semata justru berisiko menyederhanakan masalah. Karhutla di Kalimantan bukan hanya persoalan cuaca panas atau kurangnya hujan, melainkan hasil dari pertemuan antara kondisi iklim, kerusakan ekosistem, pengeringan gambut, perubahan tata guna lahan, serta lemahnya pencegahan di wilayah-wilayah yang telah diketahui sebagai daerah rawan.</p>
+
+                <p>Data menunjukkan bahwa Kalimantan masih menjadi salah satu wilayah yang sangat rentan terhadap kebakaran hutan dan lahan. Sebuah penelitian yang diterbitkan oleh BRIN dan Universitas Pertahanan mencatat bahwa sepanjang Januari hingga Juni 2024, luas karhutla di Pulau Kalimantan mencapai 15.575,36 hektare. Kalimantan Timur menjadi wilayah dengan angka tertinggi, mencapai 13.225,13 hektare atau sekitar 84,91 persen dari total luas kebakaran yang tercatat di Kalimantan pada periode tersebut.</p>
+
+                <p>Angka tersebut memperlihatkan bahwa kebakaran tidak selalu harus menunggu puncak musim kemarau untuk terjadi. Penelitian mengenai Kalimantan Timur menemukan bahwa jumlah titik panas tertinggi pada awal 2024 terkonsentrasi di Kutai Timur, Kutai Kartanegara, dan Kutai Barat. Peningkatan kejadian tersebut berkaitan dengan penurunan curah hujan yang signifikan pada periode Februari hingga April.</p>
+
+                <p>Sementara itu, di Kalimantan Barat, ancaman kebakaran juga terlihat dari tingginya jumlah titik panas. BMKG mencatat sebanyak 4.521 titik panas di Kabupaten Ketapang sepanjang September 2024. Kondisi cuaca yang didominasi cerah hingga berawan menjadi salah satu faktor yang meningkatkan potensi kemunculan titik panas.</p>
+
+                <p>Data tersebut menunjukkan satu hal penting. Karhutla bukanlah kejadian yang muncul secara tiba-tiba. Risiko kebakaran sebenarnya dapat dipantau melalui perubahan curah hujan, tingkat kekeringan, kondisi lahan, serta distribusi titik panas. Persoalannya adalah apakah informasi tersebut benar-benar digunakan untuk mencegah kebakaran sebelum api muncul.</p>
+
+                <!-- ===== SLIDER 3 FOTO ===== -->
+                <div class="slider-container" id="slider">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <img src="nature2.2.jpg" alt="Karhutla 1" />
+                        <img src="nature2.3.jpg" alt="Karhutla 2" />
+                        <img src="nature2.4.jpg" alt="Karhutla 3" />
+                    </div>
+                    <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    <div class="slider-dots" id="dotsContainer"></div>
+                </div>
+
+                <h2>Cuaca Memperparah, Tetapi Bukan Satu-Satunya Penyebab</h2>
+
+                <p>Musim kemarau memang menciptakan kondisi yang ideal bagi api untuk menyebar. Ketika curah hujan menurun, kelembapan tanah berkurang dan vegetasi menjadi lebih mudah terbakar. BMKG bahkan memasukkan sebagian wilayah Kalimantan ke dalam daerah dengan risiko menengah hingga tinggi terhadap munculnya titik panas pada periode musim kering.</p>
+
+                <p>Namun menyalahkan cuaca saja berarti mengabaikan faktor yang lebih mendasar.</p>
+
+                <p>Penelitian tentang faktor dominan penyebab karhutla di kawasan gambut tropis menunjukkan bahwa kebakaran dipengaruhi oleh berbagai variabel, termasuk tutupan lahan, jarak dari jalan dan permukiman, kepadatan penduduk, kondisi kelembapan tanah, kedalaman gambut, hingga keberadaan konsesi perkebunan.</p>
+
+                <p>Artinya, api tidak muncul dalam ruang kosong. Aktivitas manusia dan perubahan lanskap ikut menentukan seberapa mudah suatu wilayah terbakar.</p>
+
+                <p>Pembukaan lahan, pembangunan kanal yang mengeringkan gambut, perubahan kawasan berhutan menjadi area produksi, serta lemahnya pengawasan dapat menciptakan kondisi yang jauh lebih rentan. Ketika musim kering datang, lahan yang telah kehilangan kemampuan menyimpan air menjadi bahan bakar bagi api.</p>
+
+                <p>Lahan gambut memiliki persoalan tersendiri. Api tidak selalu hanya membakar permukaan. Dalam kondisi gambut yang kering, api dapat merambat di bawah tanah dan sulit dideteksi maupun dipadamkan. Karena itu, pencegahan menjadi jauh lebih penting daripada sekadar mengandalkan operasi pemadaman setelah kebakaran membesar.</p>
+
+                <p>BRIN mencatat bahwa pendekatan pengendalian karhutla mulai bergeser setelah kebakaran besar 2015. Teknologi modifikasi cuaca, misalnya, tidak lagi hanya digunakan ketika kebakaran telah meluas, tetapi juga untuk membantu pembasahan lahan gambut sebelum kondisi ekstrem terjadi.</p>
+
+                <p>Pendekatan tersebut memperlihatkan bahwa pencegahan sebenarnya memungkinkan. Persoalannya kemudian bukan hanya apakah pemerintah memiliki teknologi atau data, tetapi apakah pencegahan dilakukan secara konsisten sebelum situasi berubah menjadi bencana.</p>
+
+                <h2>Dampaknya Tidak Berhenti Ketika Api Padam</h2>
+
+                <p>Kebakaran hutan dan lahan sering kali diukur berdasarkan jumlah hektare yang terbakar. Padahal angka luas hanyalah salah satu bagian dari kerusakan.</p>
+
+                <p>Ketika hutan dan lahan terbakar, asap dapat mengganggu aktivitas masyarakat, mengurangi jarak pandang, menghambat transportasi darat, laut, dan udara, serta memperburuk kualitas lingkungan. BMKG juga mencatat bahwa musim kering dan peningkatan kejadian kebakaran dapat berdampak terhadap polusi udara, ketersediaan air, sektor pertanian, hingga risiko bencana hidrometeorologis kering.</p>
+
+                <p>Dalam kasus kebakaran gambut, dampaknya bahkan dapat berlangsung lebih lama. Selain asap, kebakaran juga melepaskan emisi karbon dalam jumlah besar dan menghilangkan fungsi ekologis lahan gambut sebagai penyimpan air dan karbon.</p>
+
+                <p>Kebakaran yang terus berulang juga menciptakan lingkaran kerusakan. Hutan yang terbakar kehilangan kemampuan ekologisnya. Tanah menjadi lebih rentan, vegetasi berubah, dan kawasan yang sebelumnya mampu menyimpan air dapat semakin mudah mengering. Dengan kata lain, kebakaran hari ini dapat meningkatkan risiko kebakaran berikutnya.</p>
+
+                <p>Inilah alasan mengapa karhutla tidak bisa terus diperlakukan sebagai persoalan tahunan yang selesai setelah hujan turun.</p>
+
+                <h2>Ketika Titik Panas Sudah Terdeteksi, Apa yang Sebenarnya Terlambat?</h2>
+
+                <p>Indonesia sebenarnya telah memiliki berbagai sistem pemantauan karhutla. Data titik panas dapat diperoleh melalui satelit, sementara pemerintah juga melakukan pemetaan area terbakar menggunakan citra spasial. Bahkan KLHK melalui sistem pemantauan karhutla terus melakukan penghitungan luas area terbakar sebagai bagian dari pengendalian kebakaran dan perhitungan emisi.</p>
+
+                <p>Namun keberadaan data tidak otomatis menghasilkan pencegahan yang efektif.</p>
+
+                <p>Titik panas yang terus muncul dari tahun ke tahun seharusnya menjadi pertanyaan bagi sistem pengawasan. Jika suatu wilayah berulang kali mengalami kebakaran, maka masalahnya tidak cukup diselesaikan dengan memadamkan api setiap kali musim kering datang. Perlu ada evaluasi mengenai kondisi lahannya, pola pembukaan wilayah, pihak yang bertanggung jawab terhadap pengelolaan kawasan, serta efektivitas penegakan hukum.</p>
+
+                <p>Pemerintah sendiri telah mengakui bahwa sebagian besar area karhutla tidak berada di kawasan hutan. Dalam pernyataan pada Maret 2024, Menteri Lingkungan Hidup dan Kehutanan saat itu menyebut hanya sekitar 11 persen dari area karhutla yang terjadi di kawasan hutan, sementara sisanya berada di berbagai areal non-hutan dan kawasan masyarakat.</p>
+
+                <p>Data tersebut penting karena memperlihatkan bahwa persoalan karhutla tidak dapat diselesaikan hanya melalui kebijakan perlindungan hutan. Tata kelola lahan secara keseluruhan juga menjadi bagian dari masalah.</p>
+
+                <p>Masyarakat memang memiliki peran dalam mencegah pembakaran. Namun pendekatan yang hanya menempatkan masyarakat sebagai pihak yang harus bertanggung jawab juga tidak cukup. Negara dan perusahaan yang memiliki penguasaan, izin, atau kepentingan ekonomi atas wilayah tertentu juga harus berada dalam sistem pengawasan dan pertanggungjawaban yang jelas.</p>
+
+                <h2>Kalimantan Tidak Bisa Terus Menunggu Hujan</h2>
+
+                <p>Pemerintah pada 2024 telah meningkatkan langkah pencegahan di sejumlah wilayah Kalimantan menjelang puncak musim kemarau. Di Kalimantan Tengah, misalnya, pemerintah melakukan supervisi dan koordinasi dengan pemerintah daerah serta aparat untuk mengantisipasi peningkatan risiko kebakaran pada September dan Oktober.</p>
+
+                <p>Langkah seperti ini penting, tetapi tantangan sebenarnya adalah memastikan bahwa pencegahan tidak hanya dilakukan ketika prakiraan menunjukkan musim kemarau akan datang.</p>
+
+                <p>Kalimantan membutuhkan pengelolaan karhutla yang berbasis pada pemulihan ekosistem, terutama gambut, pengawasan tata guna lahan, transparansi data, serta penegakan hukum yang tidak berhenti pada pelaku di tingkat paling bawah.</p>
+
+                <p>Karhutla juga perlu dilihat sebagai persoalan keadilan. Masyarakat yang tinggal di sekitar kawasan terdampak sering menjadi pihak pertama yang menghirup asap dan kehilangan kualitas lingkungan, sementara manfaat ekonomi dari perubahan penggunaan lahan tidak selalu mereka nikmati.</p>
+
+                <p>Selama kebakaran masih dianggap sebagai peristiwa yang wajar terjadi setiap musim kemarau, penyelesaian yang dilakukan akan terus bersifat reaktif. Api dipadamkan, kabut asap hilang, hujan turun, lalu perhatian publik perlahan berpindah.</p>
+
+                <p>Padahal hutan yang terbakar tidak selalu pulih ketika musim hujan tiba.</p>
+
+                <p>Kalimantan tidak hanya membutuhkan lebih banyak mobil pemadam atau operasi darurat ketika api telah menyebar. Yang lebih mendesak adalah memastikan bahwa kebakaran tidak terus diproduksi oleh lanskap yang sengaja atau tidak sengaja dibiarkan menjadi semakin kering, terbuka, dan rentan.</p>
+
+                <p>Sebab ketika titik panas kembali muncul, pertanyaannya bukan lagi sekadar mengapa api bisa terjadi.</p>
+
+                <p>Pertanyaan yang lebih kritis adalah mengapa, setelah bertahun-tahun memiliki data, teknologi, pengalaman, dan peringatan yang sama, kita masih terus membiarkan Kalimantan terbakar.</p>
+
+
+                <!-- ===== SUMBER ===== -->
+                <div class="sumber">
+                    <p class="sumber-judul">Daftar Pustaka</p>
+                    <p class="sumber-item">Badan Meteorologi, Klimatologi, dan Geofisika. 2024. Buletin Cuaca Kabupaten Ketapang dan Kabupaten Kayong Utara, Oktober 2024. <a href="https://kalbar.bmkg.go.id/buletin/pdf/Buletin%20Ketapang%20Oktober%202024.pdf?utm_source=chatgpt.com" target="_blank">Dokumen BMKG Kalimantan Barat</a></p>
+                    <p class="sumber-item">Badan Meteorologi, Klimatologi, dan Geofisika. 2024. Buletin Informasi Iklim, Prediksi Indeks Kesesuaian Iklim untuk Kejadian Hotspot Kebakaran Hutan dan Lahan. <a href="https://cews.bmkg.go.id/tempatikl/reports/sourcebukuSLI/Buletin%20IKL_update.pdf?utm_source=chatgpt.com" target="_blank">Dokumen BMKG</a></p>
+                    <p class="sumber-item">Fitriano, Lutfi, Aris Poniman, dan Gentio Harsono. 2024. Analisis Spasial Kebakaran Hutan dan Lahan Berdasarkan Data Hotspot di Kalimantan Timur Periode Januari–Juni 2024. Jurnal Sains & Teknologi Modifikasi Cuaca. <a href="https://ejournal.brin.go.id/JSTMC/article/view/8566?articlesBySimilarityPage=4&utm_source=chatgpt.com" target="_blank">Jurnal BRIN</a></p>
+                    <p class="sumber-item">Harsoyo, Budi dan Ibnu Athoillah. 2024. Paradigma Baru Pemanfaatan Teknologi Modifikasi Cuaca dalam Upaya Penanganan Bencana Kebakaran Hutan dan Lahan di Indonesia. Jurnal Sains & Teknologi Modifikasi Cuaca. <a href="https://ejournal.brin.go.id/JSTMC/article/view/1177?utm_source=chatgpt.com" target="_blank">Jurnal BRIN</a></p>
+                    <p class="sumber-item">Kementerian Lingkungan Hidup dan Kehutanan. 2024. Menteri LHK Ajak Semua Pihak Kerjasama Mengendalikan Karhutla. Sistem Pemantauan Karhutla. <a href="https://sipongi.menlhk.go.id/berita/481-menteri-lhk-ajak-semua-pihak-kerjasama-mengendalikan-karhutla?utm_source=chatgpt.com" target="_blank">SIPONGI KLHK</a></p>
+                    <p class="sumber-item">Kementerian Lingkungan Hidup dan Kehutanan. 2024. Tim Supervisi Pengendalian Karhutla KLHK untuk Kalteng Ambil Langkah Preventif. Sistem Pemantauan Karhutla. <a href="https://sipongi.menlhk.go.id/berita/534-tim-supervisi-pengendalian-karhutla-klhk-untuk-kalteng-ambil-langkah-preventif?utm_source=chatgpt.com" target="_blank">SIPONGI KLHK</a></p>
+                    <p class="sumber-item">Kementerian Lingkungan Hidup dan Kehutanan. 2024. Direktorat PKHL Gelar Bimtek Perhitungan Luas Karhutla di Kalbar. Sistem Pemantauan Karhutla. <a href="https://sipongi.menlhk.go.id/berita/506-direktorat-pkhl-gelar-bimtek-perhitungan-luas-karhutla-di-kalbar?utm_source=chatgpt.com" target="_blank">SIPONGI KLHK</a></p>
+                    <p class="sumber-item">Nababan, Cornelius, Djati Mardiatno, dan Retnadi Heru Jatmiko. 2024. Identifikasi Faktor Dominan Penyebab Karhutla di Gambut Tropis. Jurnal Sains & Teknologi Modifikasi Cuaca. <a href="https://ejournal.brin.go.id/JSTMC/article/view/4111?utm_source=chatgpt.com" target="_blank">Jurnal BRIN</a></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- FOOTER -->
+    <!-- =============================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span></div>
+                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
+                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif kategori HUMAN.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten hanya untuk keperluan roleplay.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SLIDER SCRIPT ===== -->
+    <script>
+        (function() {
+            const wrapper = document.getElementById('sliderWrapper');
+            const slides = wrapper.querySelectorAll('img');
+            const total = slides.length;
+            let current = 0;
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('dotsContainer');
+
+            // Buat dots
+            for (let i = 0; i < total; i++) {
+                const dot = document.createElement('span');
+                dot.dataset.index = i;
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', function() {
+                    goTo(parseInt(this.dataset.index));
+                });
+                dotsContainer.appendChild(dot);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function updateSlider() {
+                wrapper.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === current);
+                });
+            }
+
+            function goTo(index) {
+                if (index < 0) index = total - 1;
+                if (index >= total) index = 0;
+                current = index;
+                updateSlider();
+            }
+
+            prevBtn.addEventListener('click', function() {
+                goTo(current - 1);
+            });
+            nextBtn.addEventListener('click', function() {
+                goTo(current + 1);
+            });
+
+            // Swipe support
+            let startX = 0;
+            let isDragging = false;
+            const container = document.getElementById('slider');
+            container.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            }, { passive: true });
+            container.addEventListener('touchend', function(e) {
+                if (!isDragging) return;
+                const endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) goTo(current + 1);
+                    else goTo(current - 1);
+                }
+                isDragging = false;
+            }, { passive: true });
+
+            // Keyboard support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') goTo(current - 1);
+                else if (e.key === 'ArrowRight') goTo(current + 1);
+            });
+
+            updateSlider();
+        })();
+    </script>
+
+</body>
+  </html>
