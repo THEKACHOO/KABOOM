@@ -41,14 +41,14 @@ header {
 }
 
 .article-category {
-    font-size: 14px;          /* disamakan dengan nav-btn */
-    font-weight: 600;         /* disamakan dengan nav-btn */
+    font-size: 14px;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     background: #000000;
     color: #FFFFFF;
-    padding: 10px 20px;       /* disamakan dengan nav-btn */
-    border-radius: 30px;      /* disamakan dengan nav-btn */
+    padding: 10px 20px; 
+    border-radius: 30px;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
@@ -134,7 +134,6 @@ footer {
     color: #757575;
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .header-content {
         justify-content: space-between;
@@ -160,7 +159,6 @@ footer {
         font-size: 13px;
     }
 
-    /* Sembunyikan teks "Home" di HP, sisakan icon rumah saja */
     .nav-btn .btn-text {
         display: none;
     }
