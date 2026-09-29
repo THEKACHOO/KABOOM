@@ -24,6 +24,7 @@ header {
     padding: 16px 0;
     min-height: 80px;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .logo-container {
@@ -159,38 +160,8 @@ footer {
         font-size: 13px;
     }
 
-    /* Sembunyikan teks "Home" di mobile, sisakan icon rumah saja */
+    /* Sembunyikan teks "Home" di HP, sisakan icon rumah saja */
     .nav-btn .btn-text {
         display: none;
-    }
-
-    /* Footer jadi 2 kolom kiri-kanan, bukan ke bawah */
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-    }
-
-    .company-card,
-    .footer-about {
-        padding: 16px;
-    }
-
-    .company-card h3,
-    .footer-about h3 {
-        font-size: 16px;
-        margin-bottom: 14px;
-        padding-bottom: 10px;
-    }
-
-    .company-card h3:after,
-    .footer-about h3:after {
-        width: 35px;
-        height: 2px;
-    }
-
-    .company-info div {
-        font-size: 13px;
-        gap: 8px;
-        margin-bottom: 10px;
     }
 }
