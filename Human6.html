@@ -6,7 +6,6 @@
     <title>Sudah Merdekakah Kita?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="header-footer.css">
     <style>
         * {
             margin: 0;
@@ -29,6 +28,77 @@
             width: 100%;
         }
 
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            min-height: 80px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .article-category {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO ===== */
         .hero-section {
             margin-top: 120px;
             padding: 40px 0 20px;
@@ -42,7 +112,7 @@
         }
 
         .hero-title {
-            font-family: 'Poppins', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: clamp(32px, 4vw, 48px);
             font-weight: 900;
             line-height: 1.2;
@@ -74,6 +144,7 @@
             margin: 16px auto 0;
         }
 
+        /* ===== ARTIKEL ===== */
         .article-content {
             padding: 30px 0 60px;
             background: #ffffff;
@@ -91,7 +162,7 @@
         }
 
         .article-body h2 {
-            font-family: 'Poppins', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 28px;
             font-weight: 800;
             margin: 44px 0 20px;
@@ -124,6 +195,75 @@
             margin-left: 0;
         }
 
+        /* ===== FOOTER ===== */
+        footer {
+            background: #f8f8f8;
+            padding: 60px 0 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .company-card,
+        .footer-about {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid #eaeaea;
+        }
+
+        .company-card h3,
+        .footer-about h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .company-card h3:after,
+        .footer-about h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #000;
+        }
+
+        .company-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #616161;
+        }
+
+        .company-info i {
+            width: 20px;
+            color: #000;
+        }
+
+        .footer-about p {
+            color: #616161;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #757575;
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 justify-content: center;
@@ -139,6 +279,21 @@
     </style>
 </head>
 <body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM/'">
+                    <img src="https://thekachoo.github.io/KABOOM/kaboom-logo.png" alt="KABOOM Logo" id="logo" />
+                    <div class="article-category">HUMANS</div>
+                </div>
+                <div class="navigation">
+                    <a href="https://thekachoo.github.io/KABOOM" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -176,9 +331,32 @@
                     <p class="sumber-item">Kamus Besar Bahasa Indonesia. (n.d.). Merdeka. Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan Dasar dan Menengah Republik Indonesia. KBBI Daring</p>
                     <p class="sumber-item">Kementerian Pendidikan Dasar dan Menengah Republik Indonesia. (2026). Kemendikdasmen perkuat data Anak Tidak Sekolah. Pusat Layanan Pembiayaan Pendidikan. Sumber resmi Kemendikdasmen</p>
                 </div>
+
             </div>
         </div>
     </section>
-<script src="header-footer.js"></script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-card">
+                    <h3>The Kachoo</h3>
+                    <div class="company-info">
+                        <div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span></div>
+                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
+                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <h3>Tentang KABOOM!</h3>
+                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif kategori HUMAN.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten hanya untuk keperluan roleplay.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
