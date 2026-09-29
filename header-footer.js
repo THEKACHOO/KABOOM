@@ -1,7 +1,7 @@
 (function() {
     const headerHTML = `
     <header>
-        <div class="container">
+        <div class="hf-container">
             <div class="header-content">
                 <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM/'">
                     <img src="https://thekachoo.github.io/KABOOM/kaboom-logo.png" alt="KABOOM Logo" id="logo" />
@@ -17,7 +17,7 @@
 
     const footerHTML = `
     <footer>
-        <div class="container">
+        <div class="hf-container">
             <div class="footer-content">
                 <div class="company-card">
                     <h3>The Kachoo</h3>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 KABOOM! Seluruh konten hanya untuk keperluan roleplay.</p>
+                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten hanya untuk keperluan roleplay.</p>
             </div>
         </div>
     </footer>
