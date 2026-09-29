@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>World Music Day 2026 | KABOOM!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header-footer.css">
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #ffffff;
             color: #000000;
             line-height: 1.6;
@@ -27,79 +28,6 @@
             margin: 0 auto;
             padding: 0 24px;
             width: 100%;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.98);
-            z-index: 1000;
-            border-bottom: 1px solid #e0e0e0;
-            backdrop-filter: blur(10px);
-            padding: 12px 0;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            flex-wrap: wrap;
-        }
-        #logo {
-            height: 40px;
-            width: auto;
-            max-width: 140px;
-            object-fit: contain;
-        }
-        .article-category {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: #000;
-            color: #fff;
-            padding: 6px 15px;
-            border-radius: 20px;
-        }
-        .navigation {
-            display: flex;
-            gap: 12px;
-        }
-        .nav-btn {
-            background: transparent;
-            border: 2px solid #000;
-            color: #000;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .nav-btn:hover {
-            background: #000;
-            color: #fff;
-        }
-        .lang-btn {
-            background: #000;
-            color: #fff;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
         }
         .hero-section {
             margin-top: 100px;
@@ -151,6 +79,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
         }
         .btn-isi-artikel:hover {
             opacity: 0.85;
@@ -219,27 +148,6 @@
             margin-bottom: 18px;
             color: #000;
         }
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 0 0 24px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        }
-        .video-container video,
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            height: 100% !important;
-            border: none;
-            display: block;
-            object-fit: cover;
-        }
         .interview-text {
             background: #fafafa;
             padding: 24px 28px;
@@ -276,6 +184,7 @@
             margin-top: 20px;
             transition: all 0.2s;
             display: inline-block;
+            font-family: 'Poppins', sans-serif;
         }
         .read-more-btn:hover {
             background: #000;
@@ -343,144 +252,21 @@
             color: #666;
             margin-top: 8px;
         }
-        footer {
-            background: linear-gradient(135deg, #fafafa, #ffffff);
-            padding: 80px 0 40px;
-            border-top: 1px solid #e0e0e0;
-            position: relative;
-            margin-top: auto;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-        .company-card {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .company-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .company-card h3 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 15px;
-            color: #1a1a1a;
-        }
-        .company-card h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #000000, #333333);
-            border-radius: 2px;
-        }
-        .company-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .company-info div {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: #404040;
-            font-size: 15px;
-        }
-        .company-info i {
-            width: 20px;
-            color: #000000;
-            font-size: 18px;
-        }
-        .footer-about h3 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-            color: #1a1a1a;
-        }
-        .footer-about h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #000000, #333333);
-            border-radius: 2px;
-        }
-        .footer-about p {
-            color: #525252;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid #e0e0e0;
-            color: #000000;
-            font-size: 14px;
-        }
-        .disclaimer {
-            max-width: 800px;
-            margin: 20px auto 0;
-            font-style: italic;
-            color: #000000;
-            opacity: 0.8;
-            line-height: 1.6;
-        }
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            .header-content { flex-direction: column; align-items: center; }
             .hero-section { margin-top: 130px; padding: 40px 0 30px; }
             .nav-links-vertical { max-width: 90%; }
-            .footer-content { gap: 40px; }
-            .company-card { padding: 30px; }
-            .company-card h3, .footer-about h3 { font-size: 24px; }
-            .video-container { aspect-ratio: 16 / 9; }
         }
         @media (max-width: 480px) {
             .hero-section { margin-top: 140px; }
             .btn-isi-artikel { padding: 10px 24px; font-size: 14px; }
             .interview-text { padding: 18px; }
-            footer { padding: 50px 0 30px; }
-            .company-card { padding: 25px; }
         }
         a { text-decoration: none; color: inherit; }
-        .social-link:hover { opacity: 0.7; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="header-content">
-            <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM'">
-                <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2244%22 viewBox=%220 0 120 44%22%3E%3Crect width=%22120%22 height=%2244%22 rx=%2222%22 fill=%22%23000%22/%3E%3Ctext x=%2220%22 y=%2232%22 font-family=%22Inter%22 font-size=%2226%22 font-weight=%22900%22 fill=%22%23fff%22%3EK!%3C/text%3E%3C/svg%3E');">
-                <div class="article-category">KABUTZ</div>
-            </div>
-            <div class="navigation">
-                <a href="https://thekachoo.github.io/KABOOM" class="nav-btn" id="homeBtn"><i class="fas fa-home"></i> <span id="homeText">Home</span></a>
-                <button id="langToggleBtn" class="lang-btn"><i class="fas fa-language"></i> <span id="langText">Indonesia</span></button>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- ENGLISH VERSION (DEFAULT) -->
 <div id="englishVersion">
     <section class="hero-section">
         <div class="container">
@@ -518,11 +304,9 @@
                     <p>Technological advancements in the 20th century brought major changes to the music industry. The rise of radio, vinyl records, cassette tapes, and eventually digital platforms made music more accessible to global audiences. Various genres such as jazz, rock, pop, hip hop, and electronic music emerged and developed with their own unique characteristics. Music eventually became not only a form of entertainment, but also a massive industry driven by creativity, technology, and business.</p>
                     <p>In today's modern era, music continues to transform alongside the growth of social media and digital streaming platforms. Artists are now able to share their work with worldwide audiences more quickly and easily than ever before. Cross-cultural and international collaborations have also become increasingly common, creating new colors and diversity within the global music industry.</p>
                     <p>To celebrate World Music Day, many producers, soloists, and idol groups from around the world have shared their perspectives on what music means to them and how they create their work behind the scenes. Through interviews and discussions, they explain how music becomes a way to express stories, emotions, and personal experiences to listeners. They also share insights into the creative and production process of making music in today's fast-moving and highly competitive digital industry.</p>
-                    
-                    <!-- AUGUST ALBAN -->
+
                     <div id="eng-agust" class="interview-sub">
                         <div class="sub-title">August Alban, Producer</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/yW6I3NzmWP4YzfSb49xd?hideTitle=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text" id="eng-august-text">
                             <p>In celebration of World Music Day, various figures from the music industry have begun sharing their perspectives on creativity, artistic identity, and the challenges of surviving in today's rapidly evolving digital era. One of them is August Alban, a producer known for his reflective approach to music production and creative process.</p>
                             <div class="interview-extra" id="eng-august-extra">
@@ -542,10 +326,8 @@
                         </div>
                     </div>
 
-                    <!-- JENIFFER NORA -->
                     <div id="eng-jennifer" class="interview-sub">
                         <div class="sub-title">Jeniffer Nora, Producer</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/E6cqYU3ZiLTpw88Hck2N?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text" id="eng-jeniffer-text">
                             <p>In another interview session with Kaboom, Jeniffer Nora shared her perspective on balancing artistic idealism with the demands of today's music industry trends. According to her, every production process should begin with personal instinct and genuine artistic vision before considering anything beyond the music itself.</p>
                             <div class="interview-extra" id="eng-jeniffer-extra">
@@ -566,10 +348,8 @@
                         </div>
                     </div>
 
-                    <!-- AURISYA - with interview location -->
                     <div id="eng-aurisya" class="interview-sub">
                         <div class="sub-title">Aurisya Koswara Kwando, Soloist</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/4tNIEBQPKHhJzVMxubA0?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text" id="eng-aurisya-text">
                             <p>Continuing the World Music Day special interview series with Kaboom, Aurisya Koswara Kwando shared her thoughts on artistic identity, creative storytelling, and the emotional responsibility of performing as a soloist in today's music industry. This interview took place at Aurisya Private Studio, Central Jakarta.</p>
                             <div class="interview-extra" id="eng-aurisya-extra">
@@ -586,7 +366,7 @@
                                 <p>Beyond discussing creativity and artistic identity, Aurisya Koswara Kwando also spoke openly about the emotional pressure that often comes with performing alone on stage. According to her, despite occasionally performing alongside dancers, the attention of the audience ultimately remains focused on the solo performer.</p>
                                 <p>"The pressure is definitely always there, especially as a soloist who has to stand alone on stage. Even when dancers are performing with me, people's eyes will still naturally focus on me," she explained.</p>
                                 <p>To prepare mentally before performances, Aurisya shared that she tries to transform fear into trust rather than allowing pressure to overwhelm her. Instead of focusing on possible mistakes, she reminds herself why she chose to stand on stage and share her stories with others in the first place.</p>
-                                <p>"Not everyone has the courage and opportunity to stand on stage and be heard. The reason I'm still here today is alsoembedbelieving in me," she said.</p>
+                                <p>"Not everyone has the courage and opportunity to stand on stage and be heard. The reason I'm still here today is also believing in me," she said.</p>
                                 <p>Emotionally, Aurisya admitted that managing nervousness remains one of the biggest challenges she faces before stepping onto the stage. However, instead of rejecting those emotions, she chooses to embrace them as part of the performance itself.</p>
                                 <p>"Nervousness is natural. That means I truly enjoy and embrace every mixed feeling before stepping onto the stage," she shared.</p>
                                 <p>According to Aurisya, emotions can easily be reflected through facial expressions and stage presence, which is why she tries to channel those feelings into energy that helps create a more transparent and emotionally connected performance for the audience.</p>
@@ -598,10 +378,8 @@
                         </div>
                     </div>
 
-                    <!-- CELESTE VIVIENNE - with interview location -->
                     <div id="eng-celeste" class="interview-sub">
                         <div class="sub-title">Celeste Vivienne, Soloist</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/xpFwX0TgNZSn3ng41IvE?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text" id="eng-celeste-text">
                             <p>Celeste Vivienne shared her perspective on the relationship between artists and social media, as well as the growing challenges faced by solo performers in today's music industry. The interview session took place at Lunaria Studio Record alongside Kaboom.</p>
                             <div class="interview-extra" id="eng-celeste-extra">
@@ -624,10 +402,8 @@
                         </div>
                     </div>
 
-                    <!-- OUR DREAM - with interview location -->
                     <div id="eng-ourdream" class="interview-sub">
                         <div class="sub-title">Our Dream, Boy Group</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/7XHnRgC2YteU87k8CbDC?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text" id="eng-ourdream-text">
                             <p>Leonardo Nicholas Wang, also known as Leo from Our Dream, shared his thoughts on teamwork, group chemistry, and the challenge of maintaining a strong musical identity in today's rapidly evolving music industry. The interview session took place at Kadio Space, The Kachoo Office Building, South Jakarta alongside Kaboom.</p>
                             <div class="interview-extra" id="eng-ourdream-extra">
@@ -659,7 +435,6 @@
     </section>
 </div>
 
-<!-- INDONESIAN VERSION (with interview locations added) -->
 <div id="indonesiaVersion" style="display: none;">
     <section class="hero-section">
         <div class="container">
@@ -697,11 +472,9 @@
                     <p>Perkembangan teknologi pada abad ke-20 membawa perubahan besar dalam industri musik. Kehadiran radio, piringan hitam, kaset, hingga platform digital membuat musik semakin mudah diakses oleh masyarakat global. Berbagai genre seperti jazz, rock, pop, hip hop, hingga elektronik lahir dan berkembang dengan karakteristiknya masing-masing. Musik kini tidak hanya menjadi hiburan, tetapi juga industri besar yang melibatkan kreativitas, teknologi, dan bisnis.</p>
                     <p>Di era modern saat ini, musik terus mengalami transformasi seiring berkembangnya media sosial dan platform streaming digital. Musisi dapat membagikan karya mereka secara lebih luas dan cepat kepada pendengar di seluruh dunia. Kolaborasi lintas negara dan budaya juga semakin sering terjadi, menciptakan warna baru dalam industri musik global yang semakin dinamis dan beragam.</p>
                     <p>Dalam rangka memperingati Hari Musik Sedunia, berbagai produser musik, solois, hingga idol grup dari berbagai negara turut membagikan pandangan mereka mengenai arti musik dalam kehidupan dan proses kreatif di balik karya-karya mereka. Melalui wawancara dan diskusi, mereka menceritakan bagaimana musik menjadi media untuk menyampaikan cerita, emosi, serta pengalaman pribadi kepada para pendengar. Tidak hanya itu, mereka juga membagikan proses produksi lagu di tengah perkembangan industri musik modern yang semakin kompetitif dan dipengaruhi oleh teknologi digital.</p>
-                    
-                    <!-- Indonesian version - August Alban -->
+
                     <div id="agust-alban" class="interview-sub">
                         <div class="sub-title">August Alban, Produser</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/yW6I3NzmWP4YzfSb49xd?hideTitle=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text">
                             <p>Dalam rangka memperingati Hari Musik Sedunia, berbagai figur di industri musik mulai membagikan pandangan mereka mengenai kreativitas, identitas artistik, serta tantangan bertahan di era digital yang terus berubah dengan cepat. Salah satunya adalah August Alban, seorang produser yang dikenal dengan pendekatan reflektifnya dalam produksi musik dan proses kreatif.</p>
                             <div class="interview-extra" id="indo-august-extra">
@@ -715,11 +488,9 @@
                             <button class="read-more-btn" onclick="toggleExtra('indo-august-extra', this)">Baca Selengkapnya</button>
                         </div>
                     </div>
-                    
-                    <!-- Indonesian version - Jeniffer Nora -->
+
                     <div id="jennifer-nora" class="interview-sub">
                         <div class="sub-title">Jeniffer Nora, Produser</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/E6cqYU3ZiLTpw88Hck2N?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text">
                             <p>Dalam sesi wawancara lainnya bersama Kaboom, Jeniffer Nora membagikan pandangannya tentang menyeimbangkan idealisme artistik dengan tuntutan tren industri musik saat ini. Menurutnya, setiap proses produksi harus dimulai dengan naluri pribadi dan visi artistik yang tulus sebelum mempertimbangkan hal lain di luar musik itu sendiri.</p>
                             <div class="interview-extra" id="indo-jeniffer-extra">
@@ -732,11 +503,9 @@
                             <button class="read-more-btn" onclick="toggleExtra('indo-jeniffer-extra', this)">Baca Selengkapnya</button>
                         </div>
                     </div>
-                    
-                    <!-- Indonesian version - Aurisya with location -->
+
                     <div id="aurisya" class="interview-sub">
                         <div class="sub-title">Aurisya Koswara Kwando, Soloist</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/4tNIEBQPKHhJzVMxubA0?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text">
                             <p>Melanjutkan rangkaian wawancara spesial Hari Musik Sedunia bersama Kaboom, Aurisya Koswara Kwando membagikan pandangannya mengenai identitas artistik, penceritaan kreatif, dan tanggung jawab emosional sebagai seorang solois di industri musik saat ini. Wawancara ini berlangsung di Aurisya Private Studio, Jakarta Pusat.</p>
                             <div class="interview-extra" id="indo-aurisya-extra">
@@ -749,11 +518,9 @@
                             <button class="read-more-btn" onclick="toggleExtra('indo-aurisya-extra', this)">Baca Selengkapnya</button>
                         </div>
                     </div>
-                    
-                    <!-- Indonesian version - Celeste with location -->
+
                     <div id="celeste" class="interview-sub">
                         <div class="sub-title">Celeste Vivienne, Soloist</div>
-                        <<div class="video-container"><iframe src="https://jumpshare.com/embed/xpFwX0TgNZSn3ng41IvE?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text">
                             <p>Celeste Vivienne turut membagikan pandangannya mengenai hubungan antara musisi dan media sosial, serta tantangan yang dihadapi para penampil solo di industri musik saat ini. Sesi wawancara berlangsung di Lunaria Studio Record bersama Kaboom.</p>
                             <div class="interview-extra" id="indo-celeste-extra">
@@ -766,11 +533,9 @@
                             <button class="read-more-btn" onclick="toggleExtra('indo-celeste-extra', this)">Baca Selengkapnya</button>
                         </div>
                     </div>
-                    
-                    <!-- Indonesian version - Our Dream with location -->
+
                     <div id="ourdream" class="interview-sub">
                         <div class="sub-title">Our Dream, Boy Group</div>
-                        <div class="video-container"><iframe src="https://jumpshare.com/embed/7XHnRgC2YteU87k8CbDC?autoplay=true" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                         <div class="interview-text">
                             <p>Leonardo Nicholas Wang atau yang akrab dikenal sebagai Leo dari Our Dream turut membagikan pandangannya mengenai kerja sama tim, chemistry grup, dan tantangan mempertahankan identitas musik yang kuat di tengah industri yang terus berubah dengan cepat. Sesi wawancara berlangsung di Kadio Space, kantor pusat The Kachoo, Jakarta Selatan bersama Kaboom.</p>
                             <div class="interview-extra" id="indo-ourdream-extra">
@@ -797,15 +562,7 @@
     </div>
 </section>
 
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="company-card"><h3>The Kachoo</h3><div class="company-info"><div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div><div><i class="fab fa-twitter"></i><span>@TheKachoo</span></div><div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta Selatan</span></div></div></div>
-            <div class="footer-about"><h3>About KABOOM!</h3><p>KABOOM! is a creative platform under The Kachoo delivering deep coverage of music and the creative industry. This special World Music Day edition features exclusive interviews with producers, soloists, and idol groups from around the world.</p></div>
-        </div>
-        <div class="footer-bottom"><p>&copy; 2026 KABOOM! The Kachoo. All rights reserved.</p><p class="disclaimer">The content in this article is the result of exclusive interviews and documentation for the World Music Day 2026 celebration.</p></div>
-    </div>
-</footer>
+<script src="header-footer.js"></script>
 
 <script>
     function toggleExtra(extraId, btn) {
@@ -822,8 +579,7 @@
             }
         }
     }
-    
-    // Data pembicara dengan username Twitter (tidak ditampilkan di card)
+
     const speakersData = [
         { name: "August Alban", role: "Produser", img: "August.jpeg", nameEn: "August Alban", roleEn: "Producer", username: "augustkidies" },
         { name: "Jeniffer Nora", role: "Produser", img: "Jeniffer.jpeg", nameEn: "Jeniffer Nora", roleEn: "Producer", username: "sincerelyjen" },
@@ -832,7 +588,7 @@
         { name: "Leonardo N. Wang", role: "Our Dream (Member)", img: "Leonardo.jpg", nameEn: "Leonardo Nicholas Wang", roleEn: "Our Dream (Member)", username: "pengikutlele" },
         { name: "Our Dream", role: "Boy Group", img: "Ourdream.jpg", nameEn: "Our Dream", roleEn: "Boy Group", username: "OURDREAM_twt" }
     ];
-    
+
     function renderSpeakers(lang) {
         const grid = document.getElementById('speakersGrid');
         if(!grid) return;
@@ -842,35 +598,27 @@
             grid.innerHTML = speakersData.map(s => `<div class="speaker-card" onclick="window.open('https://twitter.com/${s.username}', '_blank')"><div class="speaker-photo"><img src="${s.img}" alt="${s.nameEn}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2240%22%3E${s.nameEn.charAt(0)}%3C/text%3E%3C/svg%3E'"></div><div class="speaker-name">${s.nameEn}</div><div class="speaker-role">${s.roleEn}</div></div>`).join('');
         }
     }
-    
+
     const indoDiv = document.getElementById('indonesiaVersion');
     const engDiv = document.getElementById('englishVersion');
-    const toggleBtn = document.getElementById('langToggleBtn');
-    const langText = document.getElementById('langText');
     let currentLang = 'en';
-    
+
     function setLanguage(lang) {
         if(lang === 'id') {
             engDiv.style.display = 'none';
             indoDiv.style.display = 'block';
-            langText.innerText = 'English';
             renderSpeakers('id');
             document.getElementById('speakerTitle').innerText = 'Pembicara';
-            document.getElementById('homeText').innerText = 'Beranda';
         } else {
             indoDiv.style.display = 'none';
             engDiv.style.display = 'block';
-            langText.innerText = 'Indonesia';
             renderSpeakers('en');
             document.getElementById('speakerTitle').innerText = 'Speakers';
-            document.getElementById('homeText').innerText = 'Home';
         }
         currentLang = lang;
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    
-    toggleBtn.addEventListener('click', () => currentLang === 'en' ? setLanguage('id') : setLanguage('en'));
-    
+
     document.querySelectorAll('.nav-links-vertical a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -879,14 +627,14 @@
             if(targetEl) window.scrollTo({ top: targetEl.offsetTop - 80, behavior: 'smooth' });
         });
     });
-    
+
     renderSpeakers('en');
     setLanguage('en');
-    
+
     const toggleNavEng = document.getElementById('toggleNavEng');
     if(toggleNavEng) toggleNavEng.addEventListener('click', () => document.getElementById('topicNavEng').classList.toggle('show'));
     const toggleNavIndo = document.getElementById('toggleNavIndo');
     if(toggleNavIndo) toggleNavIndo.addEventListener('click', () => document.getElementById('topicNavIndo').classList.toggle('show'));
 </script>
 </body>
-    </html>
+</html>
