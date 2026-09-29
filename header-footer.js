@@ -8,7 +8,7 @@
                     <div class="article-category">KABOOM</div>
                 </div>
                 <div class="navigation">
-                    <a href="https://thekachoo.github.io/KABOOM" class="nav-btn"><i class="fas fa-home"></i> Beranda</a>
+                    <a href="https://thekachoo.github.io/KABOOM" class="nav-btn"><i class="fas fa-home"></i> Home</a>
                 </div>
             </div>
         </div>
