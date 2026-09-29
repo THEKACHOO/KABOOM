@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Rachel Hearst in KABOOM!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header-footer.css">
     <style>
         :root {
             --white: #FFFFFF;
@@ -26,11 +27,10 @@
             --off-white: #F8F8F8;
             --gray-medium: #E0E0E0;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--white);
             color: var(--black);
             line-height: 1.6;
@@ -43,101 +43,6 @@
             padding: 0 24px;
             width: 100%;
         }
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(255,255,255,0.98);
-            z-index: 1000;
-            border-bottom: 1px solid var(--gray-medium);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,.05);
-            animation: slideDown .8s cubic-bezier(.34,1.56,.64,1);
-        }
-        @keyframes slideDown {
-            0% { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            min-height: 80px;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex-wrap: wrap;
-        }
-        .logo-container:hover { transform: translateY(-2px); }
-        #logo {
-            height: 40px;
-            width: auto;
-            background: #000;
-            color: #fff;
-            font-weight: 800;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 18px;
-        }
-        .article-category {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 6px 15px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-        .navigation {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .nav-btn {
-            background: transparent;
-            border: 2px solid var(--primary-black);
-            color: var(--primary-black);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .nav-btn:before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,.1), transparent);
-            transition: left .7s;
-        }
-        .nav-btn:hover:before { left: 100%; }
-        .nav-btn:hover {
-            background: var(--primary-black);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,.3);
-        }
-        /* HERO */
         .article-hero-section {
             margin-top: 120px;
             padding: 80px 0 40px;
@@ -175,7 +80,7 @@
             display: block;
         }
         .article-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: clamp(42px, 5vw, 68px);
             font-weight: 900;
             line-height: 1.1;
@@ -213,7 +118,6 @@
             font-size: 14px;
         }
         .meta-item i { font-size: 16px; color: var(--black); }
-        /* PHOTO DISPLAY */
         .photo-display-section {
             padding: 40px 0;
             background: var(--white);
@@ -235,7 +139,6 @@
             object-fit: cover;
             background: #ddd;
         }
-        /* ARTICLE CONTENT */
         .article-content {
             padding: 60px 0;
             background: var(--white);
@@ -248,7 +151,7 @@
         }
         .article-body p { margin-bottom: 30px; }
         .article-body h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 32px;
             font-weight: 800;
             margin: 60px 0 30px;
@@ -289,7 +192,6 @@
             gap: 10px;
         }
         .quote-author::before { content: '—'; }
-        /* SPEAKER SECTION (only Rachel) */
         .speaker-section {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
@@ -298,7 +200,7 @@
             border-bottom: 1px solid var(--gray-medium);
         }
         .speaker-section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 36px;
             font-weight: 800;
             text-align: center;
@@ -340,7 +242,7 @@
             object-fit: cover;
         }
         .speaker-name {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 26px;
             font-weight: 800;
             margin-bottom: 8px;
@@ -371,65 +273,6 @@
             font-weight: 600;
             border: 1px solid var(--gray-medium);
         }
-        /* FOOTER */
-        footer {
-            background: linear-gradient(135deg, var(--off-white), var(--white));
-            padding: 80px 0 40px;
-            border-top: 1px solid var(--gray-medium);
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        .company-card, .footer-about {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--gray-medium);
-            box-shadow: 0 10px 30px rgba(0,0,0,.05);
-            transition: all 0.3s ease;
-        }
-        .company-card:hover, .footer-about:hover { transform: translateY(-5px); }
-        .company-card h3, .footer-about h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-            color: var(--secondary-black);
-        }
-        .company-card h3:after, .footer-about h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 50px; height: 4px;
-            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
-            border-radius: 2px;
-        }
-        .company-info div {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--gray-700);
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-        .company-info i { width: 20px; color: var(--primary-black); font-size: 18px; }
-        .footer-about p { color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; font-size: 16px; }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid var(--gray-medium);
-            color: var(--primary-black);
-            font-size: 14px;
-        }
-        .disclaimer {
-            max-width: 800px; margin: 20px auto 0; font-style: italic;
-            color: var(--gray-600); opacity: 0.8; line-height: 1.6; padding: 0 20px;
-        }
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
@@ -437,35 +280,18 @@
         }
         .scroll-animate.visible { opacity: 1; transform: translateY(0); }
         @media (max-width: 768px) {
-            .header-content { justify-content: center; }
             .article-hero-section { margin-top: 140px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-<header>
-    <div class="container">
-            <div class="header-content">
-                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
-                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
-                    <div class="article-category">KABUTZ</div>
-                </div>
-            <div class="navigation">
-                <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-                <a href="#speaker" class="nav-btn"><i class="fas fa-user"></i> Speaker</a>
-            </div>
-        </div>
-    </div>
-</header>
 
-    <!-- Hero : Rachel Hearst -->
     <section class="article-hero-section">
         <div class="hero-pattern"></div>
         <div class="container">
             <div class="article-hero">
                 <span class="article-date">March 12, 2026</span>
-                <h1 class="article-title">Rachel Hearst Reflects on Her Journey as Kachoo’s Brand Ambassador</h1>
+                <h1 class="article-title">Rachel Hearst Reflects on Her Journey as Kachoo's Brand Ambassador</h1>
                 <p class="article-subtitle">Brand Ambassador for Kazine Volume 1 Issue 1 & Issue 2 reflects on collaboration, storytelling, and meaningful impact.</p>
                 <div class="article-meta">
                     <div class="meta-item"><i class="fas fa-calendar-alt"></i><span>March 2026</span></div>
@@ -476,20 +302,18 @@
         </div>
     </section>
 
-    <!-- Main Photo Rachel -->
     <section class="photo-display-section">
         <div class="container">
             <div class="photo-display-container">
                 <div class="photo-display scroll-animate">
                     <div class="single-photo">
-                        <img src="rachel1.png" alt="Rachel Hearst interview with Kaboom" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'200\' y=\'240\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3ERachel Hearst%3C/text%3E%3C/svg%3E'">
+                        <img src="rachel1.png" alt="Rachel Hearst interview with Kaboom" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'200\' y=\'240\' font-family=\'Poppins\' font-size=\'40\' fill=\'%23222\'%3ERachel Hearst%3C/text%3E%3C/svg%3E'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Article body (Rachel ONLY) -->
     <section class="article-content">
         <div class="container">
             <div class="content-container">
@@ -503,10 +327,9 @@
 
                     <p class="scroll-animate">When asked how it felt to represent Kachoo, Rachel said she felt incredibly grateful for the opportunity. According to her, the role allowed her to be part of a platform that truly values creativity and the power of storytelling. For Rachel, Kachoo is more than just a media platform, it is a space where ideas, visuals, and stories come together to reach and inspire a wider audience.</p>
 
-                    <!-- sub photo Rachel (second) -->
                     <div class="photo-display-container scroll-animate" style="margin:40px 0;">
                         <div class="single-photo">
-                            <img src="rachel2.png" alt="Rachel with Kazine" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'200\' y=\'240\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3EKazine Ambassador%3C/text%3E%3C/svg%3E'">
+                            <img src="rachel2.png" alt="Rachel with Kazine" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' viewBox=\'0 0 800 450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'200\' y=\'240\' font-family=\'Poppins\' font-size=\'40\' fill=\'%23222\'%3EKazine Ambassador%3C/text%3E%3C/svg%3E'">
                         </div>
                     </div>
 
@@ -528,14 +351,13 @@
         </div>
     </section>
 
-    <!-- Speaker section: ONLY RACHEL, with description: Model from Cadence Agency, Brand Ambassador Kazine Vol1 Iss1&2 -->
     <section class="speaker-section" id="speaker">
         <div class="container">
             <h2 class="speaker-section-title scroll-animate">Speaker</h2>
             <div class="speaker-grid">
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="rachel.png" alt="Rachel Theodora Hearst" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'40\' y=\'120\' font-family=\'Inter\' font-size=\'30\' fill=\'%23222\'%3ERH%3C/text%3E%3C/svg%3E'">
+                        <img src="rachel.png" alt="Rachel Theodora Hearst" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'40\' y=\'120\' font-family=\'Poppins\' font-size=\'30\' fill=\'%23222\'%3ERH%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Rachel Hearst</h3>
                     <p class="speaker-role">Brand Ambassador Kazine Volume 1 Issue 1 & Issue 2</p>
@@ -546,30 +368,7 @@
         </div>
     </section>
 
-    <!-- Footer (The Kachoo / Kaboom!) -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="company-card scroll-animate">
-                    <h3>The Kachoo</h3>
-                    <div class="company-info">
-                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
-                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
-                        <div><i class="fas fa-map-marker-alt"></i><span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span></div>
-                    </div>
-                </div>
-                <div class="footer-about scroll-animate">
-                    <h3>About KABOOM!</h3>
-                    <p>KABOOM! is The Kachoo's news platform featuring exclusive content in the Kabutz category. This edition presents an interview with Rachel Hearst, Brand Ambassador for Kazine.</p>
-                    <p>Delivering honest, in-depth perspectives from the creative world.</p>
-                </div>
-            </div>
-            <div class="footer-bottom scroll-animate">
-                <p>© 2026 KABOOM! — The Kachoo. All interview content is for roleplay purposes.</p>
-                <p class="disclaimer">Information may change as needed.</p>
-            </div>
-        </div>
-    </footer>
+    <script src="header-footer.js"></script>
 
     <script>
         (function() {
@@ -580,7 +379,7 @@
             };
             const displayScrollElement = (element) => element.classList.add('visible');
             const hideScrollElement = (element) => element.classList.remove('visible');
-            
+
             const handleScrollAnimation = () => {
                 scrollElements.forEach((el) => {
                     if (elementInView(el, 1.25)) displayScrollElement(el);
@@ -599,6 +398,7 @@
 
             const header = document.querySelector('header');
             window.addEventListener('scroll', function() {
+                if (!header) return;
                 if (window.scrollY > 50) {
                     header.style.background = 'rgba(255,255,255,0.99)';
                     header.style.boxShadow = '0 4px 25px rgba(0,0,0,.1)';
@@ -618,4 +418,4 @@
         })();
     </script>
 </body>
-  </html>
+</html>
