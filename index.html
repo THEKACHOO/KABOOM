@@ -5,26 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KABOOM!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-       @font-face {
-    font-family: 'Cocogoose';
-    src: url('fonts/Cocogoose-Pro-Regular-trial.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Cocogoose';
-    src: url('fonts/Cocogoose-Pro-Bold-trial.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
+        @font-face {
+            font-family: 'TT Interphases Pro';
+            src: url('fonts/TT Interphases Pro Trial Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Interphases Pro';
+            src: url('fonts/TT Interphases Pro Trial Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Interphases Pro';
+            src: url('fonts/TT Interphases Pro Trial DemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Interphases Pro';
+            src: url('fonts/TT Interphases Pro Trial Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Interphases Pro';
+            src: url('fonts/TT Interphases Pro Trial ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Interphases Pro';
+            src: url('fonts/TT Interphases Pro Trial Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         :root {
             --black: #000000;
             --white: #ffffff;
@@ -40,9 +63,8 @@
             --gray-900: #171717;
             --accent: #000000;
         }
-        
         body {
-            font-family: 'Cocogoose', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'TT Interphases Pro', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--white);
             color: var(--black);
             line-height: 1.6;
@@ -50,14 +72,12 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
             width: 100%;
         }
-        
         header {
             position: fixed;
             top: 0;
@@ -69,7 +89,6 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
-        
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -78,33 +97,27 @@
             min-height: 80px;
             gap: 20px;
         }
-        
         .logo-container {
             flex: 0 0 auto;
             cursor: pointer;
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        
         .logo-container:hover {
             transform: translateY(-2px);
         }
-        
         #logo {
             height: 40px;
             width: auto;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        
         .logo-kaboom {
             animation: kaboomEffect 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        
         @keyframes kaboomEffect {
             0% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.3) rotate(5deg); opacity: 0.8; }
             100% { transform: scale(1); opacity: 1; }
         }
-        
         .hotline-today {
             flex: 1;
             display: flex;
@@ -112,7 +125,6 @@
             min-width: 0;
             padding: 0 15px;
         }
-        
         .hotline-text {
             font-size: 20px;
             font-weight: 900;
@@ -130,57 +142,14 @@
             max-width: 100%;
             text-align: center;
         }
-        
         @keyframes hotlinePulse {
             0% { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
             100% { box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
         }
-        
         .menu-container {
             position: relative;
             flex: 0 0 auto;
         }
-        
-        .menu-button {
-            background: transparent;
-            border: 2px solid var(--black);
-            color: var(--black);
-            padding: 10px 22px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .menu-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
-            transition: left 0.7s;
-        }
-        
-        .menu-button:hover:before {
-            left: 100%;
-        }
-        
-        .menu-button:hover {
-            background: var(--black);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
-        }
-        
         .menu-button-icon {
             background: transparent;
             border: 2px solid var(--black);
@@ -197,7 +166,6 @@
             overflow: hidden;
             font-size: 20px;
         }
-        
         .menu-button-icon:before {
             content: '';
             position: absolute;
@@ -208,18 +176,13 @@
             background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
             transition: left 0.7s;
         }
-        
-        .menu-button-icon:hover:before {
-            left: 100%;
-        }
-        
+        .menu-button-icon:hover:before { left: 100%; }
         .menu-button-icon:hover {
             background: var(--black);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(0,0,0,0.2);
         }
-        
         .dropdown-menu {
             position: absolute;
             top: calc(100% + 10px);
@@ -236,13 +199,11 @@
             z-index: 1000;
             border: 1px solid var(--gray-200);
         }
-        
         .dropdown-menu.active {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
         .menu-item {
             padding: 14px 24px;
             display: flex;
@@ -256,7 +217,6 @@
             overflow: hidden;
             font-size: 15px;
         }
-        
         .menu-item:after {
             content: '';
             position: absolute;
@@ -267,28 +227,17 @@
             background: var(--gray-300);
             transition: left 0.4s ease;
         }
-        
-        .menu-item:hover:after {
-            left: 0;
-        }
-        
+        .menu-item:hover:after { left: 0; }
         .menu-item:hover {
             background: var(--gray-50);
             border-left: 4px solid var(--black);
             padding-left: 28px;
         }
-        
         .menu-icon {
             font-size: 16px;
             width: 22px;
             text-align: center;
         }
-        
-        .year-badge {
-            display: none;
-        }
-        
-        /* Hero Section - IMPROVED */
         .hero {
             padding: 140px 0 60px;
             background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
@@ -296,14 +245,12 @@
             overflow: hidden;
             margin-top: 80px;
         }
-        
         .hero-content {
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
         .hero-title {
             font-size: clamp(36px, 6vw, 68px);
             font-weight: 900;
@@ -313,7 +260,6 @@
             position: relative;
             display: inline-block;
         }
-        
         .hero-title:after {
             content: '';
             position: absolute;
@@ -325,7 +271,6 @@
             background: var(--black);
             border-radius: 2px;
         }
-        
         .hero-subtitle {
             font-size: clamp(16px, 2vw, 22px);
             color: var(--gray-600);
@@ -335,8 +280,6 @@
             line-height: 1.6;
             padding: 0 10px;
         }
-        
-        /* Filter Buttons - IMPROVED */
         .filter-container {
             display: flex;
             justify-content: center;
@@ -345,7 +288,6 @@
             flex-wrap: wrap;
             padding: 0 10px;
         }
-        
         .filter-btn {
             padding: 12px 24px;
             background: transparent;
@@ -360,7 +302,6 @@
             overflow: hidden;
             white-space: nowrap;
         }
-        
         .filter-btn:before {
             content: '';
             position: absolute;
@@ -371,36 +312,27 @@
             background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
             transition: left 0.6s;
         }
-        
-        .filter-btn:hover:before {
-            left: 100%;
-        }
-        
+        .filter-btn:hover:before { left: 100%; }
         .filter-btn:hover {
             border-color: var(--black);
             color: var(--black);
             transform: translateY(-3px);
         }
-        
         .filter-btn.active {
             background: var(--black);
             color: var(--white);
             border-color: var(--black);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
-        
-        /* News Grid - IMPROVED */
         .news-section {
             padding: 40px 0 80px;
         }
-        
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
-        
         .news-card {
             background: var(--white);
             border-radius: 18px;
@@ -412,33 +344,25 @@
             transform: translateY(30px);
             animation: cardAppear 0.6s forwards;
         }
-        
         @keyframes cardAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
         .news-card:nth-child(2) { animation-delay: 0.1s; }
         .news-card:nth-child(3) { animation-delay: 0.2s; }
         .news-card:nth-child(4) { animation-delay: 0.3s; }
         .news-card:nth-child(5) { animation-delay: 0.4s; }
         .news-card:nth-child(6) { animation-delay: 0.5s; }
-        
         .news-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 20px 40px rgba(0,0,0,0.12);
             border-color: transparent;
         }
-        
         .card-img {
             height: 220px;
             background: var(--gray-900);
             position: relative;
             overflow: hidden;
         }
-        
         .card-img:before {
             content: '';
             position: absolute;
@@ -449,7 +373,6 @@
             background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
             z-index: 1;
         }
-        
         .img-placeholder {
             position: absolute;
             top: 0;
@@ -468,7 +391,6 @@
             padding: 20px;
             text-align: center;
         }
-        
         .card-tag {
             position: absolute;
             top: 18px;
@@ -484,11 +406,9 @@
             color: var(--black);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        
         .card-content {
             padding: 24px;
         }
-        
         .card-title {
             font-size: clamp(18px, 2vw, 22px);
             font-weight: 700;
@@ -497,18 +417,15 @@
             color: var(--black);
             transition: color 0.3s ease;
         }
-        
         .news-card:hover .card-title {
             color: var(--gray-800);
         }
-        
         .card-excerpt {
             color: var(--gray-600);
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        
         .card-meta {
             display: flex;
             justify-content: space-between;
@@ -516,13 +433,11 @@
             padding-top: 18px;
             border-top: 1px solid var(--gray-200);
         }
-        
         .card-date {
             color: var(--gray-500);
             font-size: 13px;
             font-weight: 500;
         }
-        
         .card-btn {
             background: transparent;
             border: 2px solid var(--black);
@@ -537,7 +452,6 @@
             overflow: hidden;
             white-space: nowrap;
         }
-        
         .card-btn:before {
             content: '';
             position: absolute;
@@ -548,19 +462,13 @@
             background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
             transition: left 0.7s;
         }
-        
-        .card-btn:hover:before {
-            left: 100%;
-        }
-        
+        .card-btn:hover:before { left: 100%; }
         .card-btn:hover {
             background: var(--black);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
-        
-        /* Featured Article - IMPROVED */
         .featured-article {
             grid-column: 1 / -1;
             display: grid;
@@ -575,7 +483,6 @@
             transform: translateY(30px);
             animation: cardAppear 0.8s forwards 0.6s;
         }
-        
         .featured-img {
             height: 300px;
             background: var(--gray-900);
@@ -583,11 +490,9 @@
             background-size: cover;
             background-position: center;
         }
-        
         .featured-content {
             padding: 36px;
         }
-        
         .featured-tag {
             display: inline-block;
             background: var(--black);
@@ -600,7 +505,6 @@
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-        
         .featured-title {
             font-size: clamp(28px, 4vw, 40px);
             font-weight: 900;
@@ -608,28 +512,23 @@
             margin-bottom: 20px;
             letter-spacing: -0.5px;
         }
-        
         .featured-excerpt {
             font-size: clamp(16px, 1.8vw, 18px);
             color: var(--gray-600);
             line-height: 1.7;
             margin-bottom: 28px;
         }
-        
-        /* Footer - IMPROVED */
         footer {
             background: var(--gray-50);
             padding: 60px 0 30px;
             border-top: 1px solid var(--gray-200);
         }
-        
         .footer-content {
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
             margin-bottom: 40px;
         }
-        
         .company-card {
             background: var(--white);
             padding: 30px;
@@ -637,7 +536,6 @@
             border: 1px solid var(--gray-200);
             box-shadow: 0 8px 25px rgba(0,0,0,0.05);
         }
-        
         .company-card h3 {
             font-size: clamp(22px, 3vw, 26px);
             font-weight: 900;
@@ -645,7 +543,6 @@
             position: relative;
             padding-bottom: 12px;
         }
-        
         .company-card h3:after {
             content: '';
             position: absolute;
@@ -656,13 +553,11 @@
             background: var(--black);
             border-radius: 2px;
         }
-        
         .company-info {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
-        
         .company-info div {
             display: flex;
             align-items: flex-start;
@@ -671,7 +566,6 @@
             font-size: 15px;
             line-height: 1.5;
         }
-        
         .company-info i {
             width: 18px;
             color: var(--black);
@@ -679,7 +573,6 @@
             margin-top: 2px;
             flex-shrink: 0;
         }
-        
         .footer-about h3 {
             font-size: clamp(22px, 3vw, 26px);
             font-weight: 900;
@@ -687,7 +580,6 @@
             position: relative;
             padding-bottom: 12px;
         }
-        
         .footer-about h3:after {
             content: '';
             position: absolute;
@@ -698,14 +590,12 @@
             background: var(--black);
             border-radius: 2px;
         }
-        
         .footer-about p {
             color: var(--gray-600);
             line-height: 1.7;
             margin-bottom: 16px;
             font-size: 15px;
         }
-        
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -713,7 +603,6 @@
             color: var(--gray-500);
             font-size: 14px;
         }
-        
         .disclaimer {
             max-width: 800px;
             margin: 16px auto 0;
@@ -722,136 +611,50 @@
             line-height: 1.6;
             font-size: 13px;
         }
-        
-        /* ==================== */
-        /* RESPONSIVE BREAKPOINTS */
-        /* ==================== */
-        
-        /* Tablet (768px - 991px) */
         @media (min-width: 768px) {
-            .container {
-                padding: 0 32px;
-            }
-            
-            .header-content {
-                padding: 18px 0;
-            }
-            
-            .hotline-text {
-                font-size: 22px;
-                padding: 14px 32px;
-            }
-            
-            #logo {
-                height: 45px;
-            }
-            
-            .menu-button {
-                padding: 12px 24px;
-            }
-            
-            .hero {
-                padding: 150px 0 70px;
-            }
-            
-            .hero-title:after {
-                bottom: -14px;
-            }
-            
+            .container { padding: 0 32px; }
+            .header-content { padding: 18px 0; }
+            .hotline-text { font-size: 22px; padding: 14px 32px; }
+            #logo { height: 45px; }
+            .hero { padding: 150px 0 70px; }
+            .hero-title:after { bottom: -14px; }
             .news-grid {
                 grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
                 gap: 35px;
             }
-            
             .featured-article {
                 grid-template-columns: 1.5fr 1fr;
                 gap: 0;
             }
-            
             .featured-img {
                 height: 100%;
                 min-height: 350px;
             }
-            
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 50px;
             }
         }
-        
-        /* Desktop (992px and up) */
         @media (min-width: 992px) {
-            .container {
-                padding: 0 40px;
-            }
-            
-            .header-content {
-                padding: 20px 0;
-            }
-            
-            .hotline-text {
-                font-size: 24px;
-                padding: 16px 36px;
-            }
-            
-            #logo {
-                height: 50px;
-            }
-            
-            .hero {
-                padding: 160px 0 80px;
-            }
-            
-            .hero-title {
-                font-size: 68px;
-            }
-            
-            .hero-title:after {
-                bottom: -16px;
-            }
-            
-            .hero-subtitle {
-                font-size: 22px;
-                margin-bottom: 50px;
-            }
-            
-            .news-grid {
-                gap: 40px;
-            }
-            
-            .news-card:hover {
-                transform: translateY(-12px) scale(1.02);
-            }
-            
-            .featured-article {
-                grid-template-columns: 2fr 1fr;
-            }
-            
-            .featured-title {
-                font-size: 42px;
-            }
-            
-            .featured-excerpt {
-                font-size: 18px;
-            }
+            .container { padding: 0 40px; }
+            .header-content { padding: 20px 0; }
+            .hotline-text { font-size: 24px; padding: 16px 36px; }
+            #logo { height: 50px; }
+            .hero { padding: 160px 0 80px; }
+            .hero-title { font-size: 68px; }
+            .hero-title:after { bottom: -16px; }
+            .hero-subtitle { font-size: 22px; margin-bottom: 50px; }
+            .news-grid { gap: 40px; }
+            .news-card:hover { transform: translateY(-12px) scale(1.02); }
+            .featured-article { grid-template-columns: 2fr 1fr; }
+            .featured-title { font-size: 42px; }
+            .featured-excerpt { font-size: 18px; }
         }
-        
-        /* Large Desktop (1200px and up) */
         @media (min-width: 1200px) {
-            .featured-article {
-                grid-template-columns: 2.5fr 1fr;
-            }
-            
-            .featured-img {
-                min-height: 400px;
-            }
-            
-            .featured-content {
-                padding: 50px;
-            }
+            .featured-article { grid-template-columns: 2.5fr 1fr; }
+            .featured-img { min-height: 400px; }
+            .featured-content { padding: 50px; }
         }
-        
-        /* Mobile-specific fixes */
         @media (max-width: 767px) {
             .header-content {
                 display: flex;
@@ -861,16 +664,8 @@
                 min-height: 70px;
                 padding: 12px 0;
             }
-            
-            .logo-container {
-                order: 1;
-                flex: 0 0 auto;
-            }
-            
-            #logo {
-                height: 42px; /* Logo lebih besar di mobile */
-            }
-            
+            .logo-container { order: 1; flex: 0 0 auto; }
+            #logo { height: 42px; }
             .hotline-today {
                 order: 2;
                 flex: 1;
@@ -879,7 +674,6 @@
                 min-width: 0;
                 padding: 0 10px;
             }
-            
             .hotline-text {
                 font-size: 16px;
                 padding: 10px 20px;
@@ -889,18 +683,9 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-            
-            .menu-container {
-                order: 3;
-                flex: 0 0 auto;
-            }
-            
-            .menu-button {
-                display: none; /* Sembunyikan tombol dengan teks "MENU" */
-            }
-            
+            .menu-container { order: 3; flex: 0 0 auto; }
             .menu-button-icon {
-                display: flex; /* Tampilkan tombol ikon saja */
+                display: flex;
                 width: 46px;
                 height: 46px;
                 border: 2px solid var(--black);
@@ -913,14 +698,12 @@
                 cursor: pointer;
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
-            
             .menu-button-icon:hover {
                 background: var(--black);
                 color: var(--white);
                 transform: translateY(-2px);
                 box-shadow: 0 6px 25px rgba(0,0,0,0.2);
             }
-            
             .dropdown-menu {
                 position: fixed;
                 top: 70px;
@@ -929,111 +712,38 @@
                 width: 260px;
                 box-shadow: 0 15px 50px rgba(0,0,0,0.2);
             }
-            
             .hero {
                 margin-top: 70px;
                 padding: 100px 0 40px;
             }
-            
-            .filter-container {
-                gap: 8px;
-                margin: 30px 0 40px;
-            }
-            
-            .filter-btn {
-                padding: 10px 18px;
-                font-size: 13px;
-            }
-            
-            .news-grid {
-                gap: 25px;
-            }
-            
-            .card-img {
-                height: 200px;
-            }
-            
-            .featured-img {
-                height: 250px;
-            }
-            
-            .featured-content {
-                padding: 28px;
-            }
-            
-            .footer-content {
-                gap: 30px;
-            }
-            
-            .company-card {
-                padding: 25px;
-            }
-            
-            footer {
-                padding: 50px 0 25px;
-            }
+            .filter-container { gap: 8px; margin: 30px 0 40px; }
+            .filter-btn { padding: 10px 18px; font-size: 13px; }
+            .news-grid { gap: 25px; }
+            .card-img { height: 200px; }
+            .featured-img { height: 250px; }
+            .featured-content { padding: 28px; }
+            .footer-content { gap: 30px; }
+            .company-card { padding: 25px; }
+            footer { padding: 50px 0 25px; }
         }
-        
-        /* Extra small devices */
         @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-            
-            .hotline-text {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-            
-            #logo {
-                height: 38px; /* Logo lebih besar untuk visibilitas lebih baik */
-            }
-            
-            .menu-button-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 18px;
-            }
-            
-            .hero-title {
-                font-size: 32px;
-            }
-            
-            .hero-subtitle {
-                font-size: 16px;
-                margin-bottom: 30px;
-            }
-            
-            .filter-btn {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-            
-            .card-content {
-                padding: 20px;
-            }
-            
-            .featured-content {
-                padding: 24px;
-            }
-            
-            .company-card {
-                padding: 22px;
-            }
-            
-            .dropdown-menu {
-                right: 16px;
-                width: 240px;
-            }
+            .container { padding: 0 16px; }
+            .hotline-text { font-size: 14px; padding: 8px 16px; }
+            #logo { height: 38px; }
+            .menu-button-icon { width: 42px; height: 42px; font-size: 18px; }
+            .hero-title { font-size: 32px; }
+            .hero-subtitle { font-size: 16px; margin-bottom: 30px; }
+            .filter-btn { padding: 8px 16px; font-size: 12px; }
+            .card-content { padding: 20px; }
+            .featured-content { padding: 24px; }
+            .company-card { padding: 22px; }
+            .dropdown-menu { right: 16px; width: 240px; }
         }
-        
-        /* Scroll animations */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
         .scroll-animate.visible {
             opacity: 1;
             transform: translateY(0);
@@ -1041,26 +751,19 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <!-- Logo di pojok kiri atas -->
                 <div class="logo-container" id="logoContainer">
                     <img src="kaboom-logo.png" alt="The Kaboom! Logo" id="logo">
                 </div>
-                
-                <!-- Hotline TODAY di tengah -->
                 <div class="hotline-today">
                     <div class="hotline-text">HOTLINE TODAY</div>
                 </div>
-                
-                <!-- Menu di pojok kanan atas (hanya ikon) -->
                 <div class="menu-container">
                     <button class="menu-button-icon" id="menuButton">
                         <i class="fas fa-bars"></i>
                     </button>
-                    
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="#animals" class="menu-item">
                             <i class="fas fa-paw menu-icon"></i>
@@ -1083,8 +786,7 @@
             </div>
         </div>
     </header>
-    
-    <!-- Hero Section -->
+
     <section class="hero">
         <div class="container">
             <div class="hero-content scroll-animate">
@@ -1093,10 +795,8 @@
             </div>
         </div>
     </section>
-    
-    <!-- Main Content -->
+
     <main class="container">
-        <!-- Filter Buttons -->
         <div class="filter-container scroll-animate">
             <button class="filter-btn active" data-filter="all">All Stories</button>
             <button class="filter-btn" data-filter="nature">Nature</button>
@@ -1104,8 +804,7 @@
             <button class="filter-btn" data-filter="humans">Humans</button>
             <button class="filter-btn" data-filter="kabutz">Kabutz</button>
         </div>
-        
-        <!-- Featured Article -->
+
         <article class="featured-article scroll-animate" data-category="kabutz">
             <div class="featured-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('kachoooffice.png') center/cover;">
                 <div class="card-tag">EXCLUSIVE</div>
@@ -1117,12 +816,10 @@
                 <button class="card-btn" onclick="window.location.href='kabutz4.html'">Read More</button>
             </div>
         </article>
-        
-        <!-- News Grid -->
+
         <section class="news-section">
             <div class="news-grid">
 
-                <!-- Card 20 - Nature -->
                 <article class="news-card scroll-animate" data-category="nature">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('Nature2.1.png') center/cover;">
                         <div class="card-tag">Nature</div>
@@ -1137,7 +834,6 @@
                     </div>
                 </article>
 
-                <!-- Card 19 - VISTURA-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('VisturaPoster.jpg') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1151,8 +847,7 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 18 - KEMERDEKAAN-->
+
                 <article class="news-card scroll-animate" data-category="humans">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Human6.jpg') center/cover;">
                         <div class="card-tag">HUMANS</div>
@@ -1167,14 +862,13 @@
                     </div>
                 </article>
 
-                <!-- Card 17 - SI LEMAH-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('SILEMAH.jpg') center/cover;">
                         <div class="card-tag">Kabutz</div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Hein Rilis "Si Lemah"</h3>
-                        <p class="card-excerpt"> Bertepatan dengan peringatan International Youth Day pada 12 Agustus 2026, Hein Dewantara atau Hein resmi membuka perjalanan menuju album penuhnya, Inklusivitas Diri, melalui single pre-release pertama bertajuk "Si Lemah" bersama Caleb TST, Gama PRIIZE, dan Gantara Xdinary Hours.</p>
+                        <p class="card-excerpt">Bertepatan dengan peringatan International Youth Day pada 12 Agustus 2026, Hein Dewantara atau Hein resmi membuka perjalanan menuju album penuhnya, Inklusivitas Diri, melalui single pre-release pertama bertajuk "Si Lemah" bersama Caleb TST, Gama PRIIZE, dan Gantara Xdinary Hours.</p>
                         <div class="card-meta">
                             <span class="card-date">August 12, 2026</span>
                             <button class="card-btn" onclick="window.location.href='https://thekachoo.github.io/KABOOM/KABUTZ/SILEMAH.html'">Read More</button>
@@ -1182,7 +876,6 @@
                     </div>
                 </article>
 
-                <!-- Card 16 - Hari Musik Sedunia 2026-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Kabutz11.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1197,7 +890,6 @@
                     </div>
                 </article>
 
-                <!-- Card 15 - Hari Lahirnya Pancasila-->
                 <article class="news-card scroll-animate" data-category="humans">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Humans5.png') center/cover;">
                         <div class="card-tag">HUMANS</div>
@@ -1212,7 +904,6 @@
                     </div>
                 </article>
 
-                <!-- Card 14 - Zine-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Kabutz9.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1227,7 +918,6 @@
                     </div>
                 </article>
 
-                <!-- Card 13 - OUR DREAM-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Kabutz10.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1241,8 +931,7 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 12 - KARTINI-->
+
                 <article class="news-card scroll-animate" data-category="humans">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Humans4.1.jpg') center/cover;">
                         <div class="card-tag">HUMANS</div>
@@ -1256,14 +945,13 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 9 - Kabutz 7 Hari Perempuan-->
+
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Kabutz7.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Rachel Hearst Reflects on Her Journey as Kachoo’s Brand Ambassador</h3>
+                        <h3 class="card-title">Rachel Hearst Reflects on Her Journey as Kachoo's Brand Ambassador</h3>
                         <p class="card-excerpt">An exclusive interview with the Kaboom team, Rachel Theodora Hearst as Brand Ambassador for Kazine Volume 1 Issue 1 and Issue 2</p>
                         <div class="card-meta">
                             <span class="card-date">March 12, 2026</span>
@@ -1272,7 +960,6 @@
                     </div>
                 </article>
 
-                <!-- Card 8 - Kabutz 6 Hari Perempuan-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Kabutz6.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1287,7 +974,6 @@
                     </div>
                 </article>
 
-                <!-- Card 7 - Kabutz 3 Tarissa-->
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('kabutz3.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1301,8 +987,7 @@
                         </div>
                     </div>
                 </article>
-                
-<!-- Card 6 - Humans-->
+
                 <article class="news-card scroll-animate" data-category="humans">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('Humans3.jpg') center/cover;">
                         <div class="card-tag">Humans</div>
@@ -1316,8 +1001,7 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 1 - Nature -->
+
                 <article class="news-card scroll-animate" data-category="nature">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('nature1.png') center/cover;">
                         <div class="card-tag">Nature</div>
@@ -1331,8 +1015,7 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 2 - Animals -->
+
                 <article class="news-card scroll-animate" data-category="animals">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('animal1.png') center/cover;">
                         <div class="card-tag">Animals</div>
@@ -1346,8 +1029,7 @@
                         </div>
                     </div>
                 </article>
-            
-                <!-- Card 4 - Kabutz -->
+
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('taskit.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1361,24 +1043,22 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 5 - Humans (Rumah Bulan) -->
-<article class="news-card scroll-animate" data-category="humans">
-    <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('rumahbulan.png') center/cover;">
-        <div class="card-tag">Humans</div>
-        <div class="img-placeholder">RUMAH BULAN</div>
-    </div>
-    <div class="card-content">
-        <h3 class="card-title">Rumah Bulan: Cancer Support Foundation</h3>
-        <p class="card-excerpt">Dibangun dari jeda, dijaga oleh malam, dan dihidupi oleh mereka yang masih setia genggam harapan.</p>
-        <div class="card-meta">
-            <span class="card-date">January 11, 2026</span>
-            <button class="card-btn" onclick="window.location.href='rumahbulan.html'">Read More</button>
-        </div>
-    </div>
-</article>
 
-                <!-- Card 1 - Kabutz -->
+                <article class="news-card scroll-animate" data-category="humans">
+                    <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('rumahbulan.png') center/cover;">
+                        <div class="card-tag">Humans</div>
+                        <div class="img-placeholder">RUMAH BULAN</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Rumah Bulan: Cancer Support Foundation</h3>
+                        <p class="card-excerpt">Dibangun dari jeda, dijaga oleh malam, dan dihidupi oleh mereka yang masih setia genggam harapan.</p>
+                        <div class="card-meta">
+                            <span class="card-date">January 11, 2026</span>
+                            <button class="card-btn" onclick="window.location.href='rumahbulan.html'">Read More</button>
+                        </div>
+                    </div>
+                </article>
+
                 <article class="news-card scroll-animate" data-category="kabutz">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('kantorkachoo.png') center/cover;">
                         <div class="card-tag">Kabutz</div>
@@ -1392,12 +1072,11 @@
                         </div>
                     </div>
                 </article>
-                
+
             </div>
         </section>
     </main>
-    
-    <!-- Footer -->
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1418,7 +1097,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="footer-about scroll-animate">
                     <h3>About Us</h3>
                     <p>The Kaboom! Under The Kachoo is a revolutionary tabloid founded in 2026 that explores the intersection of nature, animals, humans, and lighthearted gossip.</p>
@@ -1426,7 +1104,6 @@
                     <p>The HOTLINE TODAY section is updated round-the-clock with breaking stories that matter.</p>
                 </div>
             </div>
-            
             <div class="footer-bottom scroll-animate">
                 <p>&copy; 2026 The Kaboom! Under The Kachoo. All rights reserved.</p>
                 <p class="disclaimer">All content on this site is for roleplay purposes and fictional. Any resemblance to actual events or persons is purely coincidental.</p>
@@ -1435,54 +1112,41 @@
     </footer>
 
     <script>
-        // Logo animation
         const logoContainer = document.getElementById('logoContainer');
         const logo = document.getElementById('logo');
-        
         logoContainer.addEventListener('click', function() {
             logo.classList.remove('logo-kaboom');
             void logo.offsetWidth;
             logo.classList.add('logo-kaboom');
         });
-        
-        // Dropdown menu toggle
+
         const menuButton = document.getElementById('menuButton');
         const dropdownMenu = document.getElementById('dropdownMenu');
-        
         menuButton.addEventListener('click', function(e) {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
         });
-        
         document.addEventListener('click', function(e) {
             if (!menuButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
                 dropdownMenu.classList.remove('active');
             }
         });
-        
-        // Filter functionality
+
         const filterButtons = document.querySelectorAll('.filter-btn');
         const newsCards = document.querySelectorAll('.news-card, .featured-article');
-        
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
-                
                 const filterValue = this.getAttribute('data-filter');
-                
-                // Animate cards out
                 newsCards.forEach(card => {
                     card.style.opacity = '0';
                     card.style.transform = 'translateY(20px)';
                     card.style.transition = 'all 0.4s ease';
                 });
-                
-                // Show filtered cards after delay
                 setTimeout(() => {
                     newsCards.forEach(card => {
                         const cardCategory = card.getAttribute('data-category');
-                        
                         if (filterValue === 'all' || cardCategory === filterValue) {
                             card.style.display = 'block';
                             setTimeout(() => {
@@ -1496,49 +1160,29 @@
                 }, 300);
             });
         });
-        
-        // Scroll animations
+
         const scrollElements = document.querySelectorAll('.scroll-animate');
-        
         const elementInView = (el, dividend = 1) => {
             const elementTop = el.getBoundingClientRect().top;
-            return (
-                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-            );
+            return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
         };
-        
-        const displayScrollElement = (element) => {
-            element.classList.add('visible');
-        };
-        
+        const displayScrollElement = (element) => element.classList.add('visible');
         const handleScrollAnimation = () => {
             scrollElements.forEach((el) => {
-                if (elementInView(el, 1.2)) {
-                    displayScrollElement(el);
-                }
+                if (elementInView(el, 1.2)) displayScrollElement(el);
             });
         };
-        
-        window.addEventListener('scroll', () => {
-            handleScrollAnimation();
-        });
-        
-        // Initialize scroll animations
+        window.addEventListener('scroll', () => handleScrollAnimation());
         handleScrollAnimation();
-        
-        // Menu item clicks
+
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', function(e) {
                 e.preventDefault();
                 const category = this.getAttribute('href').substring(1);
-                
                 dropdownMenu.classList.remove('active');
-                
                 filterButtons.forEach(btn => {
                     if (btn.getAttribute('data-filter') === category) {
                         btn.click();
-                        
-                        // Scroll to news section
                         setTimeout(() => {
                             document.querySelector('.news-section').scrollIntoView({
                                 behavior: 'smooth',
@@ -1549,22 +1193,19 @@
                 });
             });
         });
-        
-        // Button clicks
+
         document.querySelectorAll('.card-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const originalText = this.innerHTML;
                 this.innerHTML = 'Opening...';
                 this.style.background = 'var(--gray-800)';
-                
                 setTimeout(() => {
                     this.innerHTML = originalText;
                     this.style.background = '';
                 }, 1500);
             });
         });
-        
-        // Close dropdown on mobile when clicking outside
+
         window.addEventListener('resize', function() {
             if (window.innerWidth > 767) {
                 dropdownMenu.classList.remove('active');
