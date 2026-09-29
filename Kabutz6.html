@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Perempuan Hebat | KABOOM!</title>
+    <title>Perempuan Hebat di KABOOM!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header-footer.css">
     <style>
         :root {
             --white: #FFFFFF;
@@ -29,19 +30,10 @@
             --gray-medium: #E0E0E0;
             --border-light: #EAEAEA;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--white);
             color: var(--black);
             line-height: 1.6;
@@ -49,129 +41,12 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
             width: 100%;
         }
-
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            z-index: 1000;
-            border-bottom: 1px solid var(--gray-medium);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,.05);
-            animation: slideDown .8s cubic-bezier(.34,1.56,.64,1);
-        }
-
-        @keyframes slideDown {
-            0% { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            min-height: 80px;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex-wrap: wrap;
-        }
-
-        .logo-container:hover {
-            transform: translateY(-2px);
-        }
-
-        #logo {
-            height: 40px;
-            width: auto;
-        }
-
-        .article-category {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 6px 15px;
-            border-radius: 20px;
-            animation: pulseCategory 2s infinite alternate;
-            white-space: nowrap;
-        }
-
-        @keyframes pulseCategory {
-            0% { box-shadow: 0 4px 15px rgba(0,0,0,.2); }
-            to { box-shadow: 0 4px 20px rgba(0,0,0,.4); }
-        }
-
-        .navigation {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .nav-btn {
-            background: transparent;
-            border: 2px solid var(--primary-black);
-            color: var(--primary-black);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .nav-btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,.1), transparent);
-            transition: left .7s;
-        }
-
-        .nav-btn:hover:before {
-            left: 100%;
-        }
-
-        .nav-btn:hover {
-            background: var(--primary-black);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,.3);
-        }
-
-        /* HERO SECTION */
         .article-hero-section {
             margin-top: 120px;
             padding: 80px 0 40px;
@@ -180,23 +55,17 @@
             overflow: hidden;
             animation: fadeInHero 1.2s ease-out;
         }
-
         @keyframes fadeInHero {
             0% { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .hero-pattern {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             opacity: 0.03;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             z-index: 0;
         }
-
         .article-hero {
             text-align: center;
             max-width: 900px;
@@ -205,7 +74,6 @@
             position: relative;
             z-index: 1;
         }
-
         .article-date {
             font-size: 14px;
             color: var(--primary-black);
@@ -216,21 +84,18 @@
             display: block;
             animation: fadeInUp .8s .2s both;
         }
-
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .article-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: clamp(42px, 5vw, 68px);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 25px;
             color: var(--secondary-black);
         }
-
         .article-title::after {
             content: '';
             display: block;
@@ -239,7 +104,6 @@
             background: linear-gradient(to right, var(--black), var(--gray-600));
             margin: 25px auto;
         }
-
         .article-subtitle {
             font-size: clamp(18px, 2vw, 22px);
             color: var(--gray-700);
@@ -249,7 +113,6 @@
             line-height: 1.6;
             animation: fadeInUp .8s .4s both;
         }
-
         .article-meta {
             display: flex;
             justify-content: center;
@@ -258,7 +121,6 @@
             margin-top: 40px;
             animation: fadeInUp .8s .6s both;
         }
-
         .meta-item {
             display: flex;
             align-items: center;
@@ -266,29 +128,20 @@
             color: var(--gray-700);
             font-size: 14px;
         }
-
-        .meta-item i {
-            font-size: 16px;
-            color: var(--black);
-        }
-
-        /* PHOTO DISPLAY */
+        .meta-item i { font-size: 16px; color: var(--black); }
         .photo-display-section {
             padding: 40px 0;
             background: var(--white);
         }
-
         .photo-display-container {
             max-width: 900px;
             margin: 0 auto;
         }
-
         .single-photo {
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,.1);
         }
-
         .single-photo img {
             width: 100%;
             height: auto;
@@ -296,30 +149,19 @@
             aspect-ratio: 16/9;
             object-fit: cover;
         }
-
-        /* ARTICLE CONTENT */
         .article-content {
             padding: 60px 0;
             background: var(--white);
         }
-
-        .content-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .content-container { max-width: 800px; margin: 0 auto; }
         .article-body {
             font-size: 18px;
             line-height: 1.8;
             color: var(--gray-800);
         }
-
-        .article-body p {
-            margin-bottom: 30px;
-        }
-
+        .article-body p { margin-bottom: 30px; }
         .article-body h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 32px;
             font-weight: 800;
             margin: 60px 0 30px;
@@ -327,7 +169,6 @@
             position: relative;
             padding-bottom: 15px;
         }
-
         .article-body h2::after {
             content: '';
             position: absolute;
@@ -337,7 +178,6 @@
             height: 2px;
             background: linear-gradient(to right, var(--black), var(--gray-500));
         }
-
         .quote-block {
             margin: 50px 0;
             padding: 40px;
@@ -345,7 +185,6 @@
             background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
             border-radius: 0 10px 10px 0;
         }
-
         .quote-text {
             font-size: 24px;
             line-height: 1.6;
@@ -354,7 +193,6 @@
             margin-bottom: 20px;
             font-weight: 500;
         }
-
         .quote-author {
             font-size: 16px;
             color: var(--gray-700);
@@ -363,12 +201,7 @@
             align-items: center;
             gap: 10px;
         }
-
-        .quote-author::before {
-            content: '—';
-        }
-
-        /* SPEAKER SECTION */
+        .quote-author::before { content: '—'; }
         .speaker-section {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
@@ -376,16 +209,14 @@
             border-top: 1px solid var(--gray-medium);
             border-bottom: 1px solid var(--gray-medium);
         }
-
         .speaker-section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 36px;
             font-weight: 800;
             text-align: center;
             margin-bottom: 50px;
             color: var(--black);
         }
-
         .speaker-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -393,7 +224,6 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .speaker-card {
             text-align: center;
             background: var(--white);
@@ -403,12 +233,10 @@
             box-shadow: 0 10px 30px rgba(0,0,0,.05);
             transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
         }
-
         .speaker-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,.1);
         }
-
         .speaker-avatar {
             width: 150px;
             height: 150px;
@@ -421,28 +249,24 @@
             border: 3px solid var(--black);
             background: var(--gray-100);
         }
-
         .speaker-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
         .speaker-name {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 26px;
             font-weight: 800;
             margin-bottom: 8px;
             color: var(--black);
         }
-
         .speaker-role {
             font-size: 15px;
             color: var(--gray-700);
             margin-bottom: 15px;
             font-weight: 500;
         }
-
         .speaker-desc {
             font-size: 15px;
             color: var(--gray-600);
@@ -452,7 +276,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .speaker-tag {
             display: inline-block;
             background: var(--gray-100);
@@ -463,217 +286,34 @@
             font-weight: 600;
             border: 1px solid var(--gray-medium);
         }
-
-        /* FOOTER */
-        footer {
-            background: linear-gradient(135deg, var(--off-white), var(--white));
-            padding: 80px 0 40px;
-            border-top: 1px solid var(--gray-medium);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .company-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--gray-medium);
-            box-shadow: 0 10px 30px rgba(0,0,0,.05);
-            transition: all 0.3s ease;
-        }
-
-        .company-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .company-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-            color: var(--secondary-black);
-        }
-
-        .company-card h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
-            border-radius: 2px;
-        }
-
-        .company-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .company-info div {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--gray-700);
-            font-size: 15px;
-        }
-
-        .company-info i {
-            width: 20px;
-            color: var(--primary-black);
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        .footer-about h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-            color: var(--secondary-black);
-        }
-
-        .footer-about h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-black), var(--accent-black));
-            border-radius: 2px;
-        }
-
-        .footer-about p {
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid var(--gray-medium);
-            color: var(--primary-black);
-            font-size: 14px;
-        }
-
-        .disclaimer {
-            max-width: 800px;
-            margin: 20px auto 0;
-            font-style: italic;
-            color: var(--gray-600);
-            opacity: 0.8;
-            line-height: 1.6;
-            padding: 0 20px;
-        }
-
-        /* Scroll animation */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-
         .scroll-animate.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .header-content {
-                justify-content: center;
-                gap: 12px;
-            }
-            
-            .logo-container {
-                justify-content: center;
-                width: 100%;
-            }
-            
-            .article-category {
-                order: 2;
-            }
-            
-            .navigation {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                margin-top: 5px;
-            }
-            
             .article-hero-section {
                 margin-top: 140px;
                 padding: 60px 0 30px;
             }
-            
-            .speaker-section-title {
-                font-size: 32px;
-            }
-            
-            .quote-text {
-                font-size: 20px;
-            }
-            
-            .article-body h2 {
-                font-size: 28px;
-            }
+            .speaker-section-title { font-size: 32px; }
+            .quote-text { font-size: 20px; }
+            .article-body h2 { font-size: 28px; }
         }
-
         @media (max-width: 576px) {
-            .article-title {
-                font-size: 36px;
-            }
-            
-            .article-subtitle {
-                font-size: 18px;
-            }
-            
-            .speaker-section-title {
-                font-size: 28px;
-            }
-            
-            .speaker-name {
-                font-size: 24px;
-            }
+            .article-title { font-size: 36px; }
+            .article-subtitle { font-size: 18px; }
+            .speaker-section-title { font-size: 28px; }
+            .speaker-name { font-size: 24px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/Home/kaboom.html'">
-                    <img src="kaboom-logo.png" alt="KABOOM Logo" id="logo">
-                    <div class="article-category">KABUTZ</div>
-                </div>
-                
-                <div class="navigation">
-                    <a href="https://thekachoo.github.io/Home/kaboom.html" class="nav-btn">
-                        <i class="fas fa-home"></i> Beranda
-                    </a>
-                    <a href="#speakers" class="nav-btn">
-                        <i class="fas fa-user"></i> Pembicara
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Article Hero -->
     <section class="article-hero-section">
         <div class="hero-pattern"></div>
         <div class="container">
@@ -681,26 +321,15 @@
                 <span class="article-date">Maret 2026</span>
                 <h1 class="article-title">Perempuan Hebat: Makna di Balik Setiap Peran Profesional</h1>
                 <p class="article-subtitle">Tim Kaboom berbincang dengan Nawang Wulan, Beatrix Cecilia Atmadja, dan Prudence Claire tentang profesionalitas, kepemimpinan, dan dampak yang berarti.</p>
-                
                 <div class="article-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>8 Maret 2026</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jakarta</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-tag"></i>
-                        <span>#HariPerempuan</span>
-                    </div>
+                    <div class="meta-item"><i class="fas fa-calendar-alt"></i><span>8 Maret 2026</span></div>
+                    <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Jakarta</span></div>
+                    <div class="meta-item"><i class="fas fa-tag"></i><span>#HariPerempuan</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 1 Foto Utama -->
     <section class="photo-display-section">
         <div class="container">
             <div class="photo-display-container">
@@ -713,20 +342,16 @@
         </div>
     </section>
 
-    <!-- Article Content -->
     <section class="article-content">
         <div class="container">
             <div class="content-container">
                 <div class="article-body">
-                    <!-- Opening paragraphs -->
                     <p class="scroll-animate">Dalam rangka memperingati <strong>Hari Perempuan Internasional</strong>, Tim Kaboom berbincang dengan sejumlah perempuan inspiratif mengenai sudut pandang mereka tentang makna di balik setiap peran profesional. Melalui perspektif yang berbeda—dari budaya, dunia kreatif, hingga kehidupan sosial—muncul berbagai refleksi mengenai bagaimana perempuan memaknai tanggung jawab, kepemimpinan, dan perjalanan karier yang tidak hanya mengejar kesuksesan, tetapi juga dampak yang bermakna.</p>
 
                     <p class="scroll-animate">Bersama <strong>Nawang Wulan</strong>, <strong>Beatrix Cecilia Atmadja</strong>, dan <strong>Prudence Claire</strong>, Kaboom mencoba melihat bagaimana nilai-nilai yang membentuk seseorang sejak awal kehidupan dapat memengaruhi cara mereka memimpin, bekerja, dan berinteraksi dengan dunia di sekitarnya.</p>
 
-                    <!-- Nawang Wulan Section -->
                     <h2 class="scroll-animate">R.A Nawang Wulan: Budaya sebagai Fondasi Profesionalitas</h2>
-                    
-                    <!-- 1 Foto Wulan -->
+
                     <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
                         <div class="single-photo">
                             <img src="wulan1.png" alt="Nawang Wulan">
@@ -754,10 +379,8 @@
 
                     <p class="scroll-animate">Di tengah perkembangan zaman yang bergerak sangat cepat dan serba instan, Wulan juga melihat bahwa menjaga keseimbangan antara peran sosial dan profesional menjadi tantangan tersendiri. Ia menjelaskan bahwa dirinya tumbuh dalam keluarga dengan tradisi yang kuat, di mana adat dan nilai budaya menjadi bagian penting dari kehidupan sehari-hari. Namun di saat yang sama, Wulan juga hidup di era modern yang menuntut profesionalitas, kemampuan beradaptasi, serta keterbukaan terhadap berbagai perubahan.</p>
 
-                    <!-- Beatrix Cecilia Section -->
                     <h2 class="scroll-animate">Beatrix Cecilia Atmadja: Kreativitas, Bisnis, dan Kepemimpinan</h2>
-                    
-                    <!-- 1 Foto Bece -->
+
                     <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
                         <div class="single-photo">
                             <img src="bece1.png" alt="Beatrix Cecilia Atmadja">
@@ -777,10 +400,8 @@
 
                     <p class="scroll-animate">Keberanian mengambil risiko juga menjadi bagian penting dalam perjalanan profesionalnya. Bece percaya bahwa perempuan yang memimpin sering kali didorong untuk bermain aman. Namun menurutnya, perkembangan tidak akan terjadi jika seseorang terlalu takut untuk melangkah. Dengan pertimbangan yang matang serta kombinasi antara perhitungan dan insting, risiko dapat menjadi jalan menuju pembelajaran dan pertumbuhan.</p>
 
-                    <!-- Prudence Claire Section -->
                     <h2 class="scroll-animate">Prudence Claire: Disiplin, Reputasi, dan Empati dalam Kehidupan Sosial</h2>
-                    
-                    <!-- 1 Foto Prudence -->
+
                     <div class="photo-display-container scroll-animate" style="margin-bottom:30px">
                         <div class="single-photo">
                             <img src="prudence1.png" alt="Prudence Claire">
@@ -800,7 +421,6 @@
 
                     <p class="scroll-animate">Menurutnya, perempuan tidak perlu memilih antara menjadi kuat atau menjadi lembut—keduanya dapat hadir dalam satu karakter yang utuh.</p>
 
-                    <!-- Closing -->
                     <p class="scroll-animate">Melalui pandangan <strong>R.A Nawang Wulan, Beatrix Cecilia Atmadja, dan Prudence Claire</strong>, terlihat bahwa makna menjadi perempuan profesional tidak hanya terletak pada pencapaian karier semata. Lebih dari itu, perjalanan tersebut juga berkaitan dengan nilai-nilai yang membentuk karakter: budaya, integritas, empati, keberanian, serta kemampuan membangun hubungan yang sehat dengan orang lain.</p>
 
                     <p class="scroll-animate">Di tengah dunia yang terus berubah, ketiganya menunjukkan bahwa kekuatan perempuan tidak hanya berada pada kemampuan untuk bertahan, tetapi juga pada kemampuan untuk memimpin, menginspirasi, dan membawa dampak positif bagi lingkungan sekitarnya.</p>
@@ -809,36 +429,31 @@
         </div>
     </section>
 
-    <!-- Speaker Section (profil pembicara tetap) -->
     <section class="speaker-section" id="speakers">
         <div class="container">
             <h2 class="speaker-section-title scroll-animate">Pembicara</h2>
-            
             <div class="speaker-grid">
-                <!-- Nawang Wulan -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="Wulan.png" alt="Nawang Wulan" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3ENW%3C/text%3E%3C/svg%3E'">
+                        <img src="Wulan.png" alt="Nawang Wulan" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23b8a28b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Poppins\' font-size=\'40\' fill=\'%23222\'%3ENW%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">R.A Nawang Wulan</h3>
                     <p class="speaker-role">Pegiat Budaya</p>
                     <p class="speaker-desc">Tumbuh di lingkungan keraton, Wulan aktif melestarikan nilai-nilai budaya dalam dunia profesional. Ia percaya bahwa tata krama, tanggung jawab, dan kepemimpinan yang mengayomi adalah fondasi perempuan masa kini.</p>
                 </div>
 
-                <!-- Beatrix Cecilia Atmadja -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="Bece.png" alt="Beatrix Cecilia Atmadja" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%239a8c7a\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3EBE%3C/text%3E%3C/svg%3E'">
+                        <img src="Bece.png" alt="Beatrix Cecilia Atmadja" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%239a8c7a\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Poppins\' font-size=\'40\' fill=\'%23222\'%3EBE%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Beatrix C. Atmadja</h3>
                     <p class="speaker-role">CEO & Pendiri Agensi Cadence</p>
                     <p class="speaker-desc">Memimpin dengan empati dan keberanian mengambil risiko. Bece percaya bahwa kreativitas harus berjalan seiring profesionalitas, dan kesuksesan sejati adalah ketika bisa memberi dampak positif.</p>
                 </div>
 
-                <!-- Prudence Claire -->
                 <div class="speaker-card scroll-animate">
                     <div class="speaker-avatar">
-                        <img src="Prudence.png" alt="Prudence Claire" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23bcb09b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Inter\' font-size=\'40\' fill=\'%23222\'%3EPC%3C/text%3E%3C/svg%3E'">
+                        <img src="Prudence.png" alt="Prudence Claire" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23bcb09b\'/%3E%3Ctext x=\'35\' y=\'120\' font-family=\'Poppins\' font-size=\'40\' fill=\'%23222\'%3EPC%3C/text%3E%3C/svg%3E'">
                     </div>
                     <h3 class="speaker-name">Prudence Claire</h3>
                     <p class="speaker-role">Aktif dalam kegiatan amal di The Pawsie oleh Golden J Group</p>
@@ -848,86 +463,35 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="company-card scroll-animate">
-                    <h3>The Kachoo</h3>
-                    <div class="company-info">
-                        <div>
-                            <i class="fas fa-envelope"></i>
-                            <span>ohkachoo@gmail.com</span>
-                        </div>
-                        <div>
-                            <i class="fab fa-twitter"></i>
-                            <span>@TheKachoo @HaiKachoo</span>
-                        </div>
-                        <div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Jl. Jenderal Sudirman No. 61-62, Jakarta</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-about scroll-animate">
-                    <h3>Tentang KABOOM!</h3>
-                    <p>KABOOM! adalah platform berita dari The Kachoo yang menyajikan konten eksklusif dalam kategori Kabutz. Edisi ini merupakan wawancara khusus Hari Perempuan Internasional bersama tiga tokoh inspiratif.</p>
-                    <p>Mengedepankan perspektif jujur dan mendalam dari dunia kreatif, bisnis, dan sosial.</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom scroll-animate">
-                <p>© 2026 KABOOM! — The Kachoo. Seluruh konten wawancara adalah untuk keperluan roleplay.</p>
-                <p class="disclaimer">Tidak dipungut biaya. Informasi dapat berubah sesuai kebutuhan.</p>
-            </div>
-        </div>
-    </footer>
+    <script src="header-footer.js"></script>
 
     <script>
         (function() {
-            // Scroll animation
             const scrollElements = document.querySelectorAll('.scroll-animate');
-            
             const elementInView = (el, dividend = 1) => {
                 const elementTop = el.getBoundingClientRect().top;
                 return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
             };
-
-            const displayScrollElement = (element) => {
-                element.classList.add('visible');
-            };
-
-            const hideScrollElement = (element) => {
-                element.classList.remove('visible');
-            };
-
+            const displayScrollElement = (element) => element.classList.add('visible');
+            const hideScrollElement = (element) => element.classList.remove('visible');
             const handleScrollAnimation = () => {
                 scrollElements.forEach((el) => {
-                    if (elementInView(el, 1.25)) {
-                        displayScrollElement(el);
-                    } else {
-                        hideScrollElement(el);
-                    }
+                    if (elementInView(el, 1.25)) displayScrollElement(el);
+                    else hideScrollElement(el);
                 });
             };
-
             let ticking = false;
             window.addEventListener('scroll', () => {
                 if (!ticking) {
                     ticking = true;
-                    setTimeout(() => {
-                        handleScrollAnimation();
-                        ticking = false;
-                    }, 80);
+                    setTimeout(() => { handleScrollAnimation(); ticking = false; }, 80);
                 }
             });
-
             handleScrollAnimation();
 
-            // Header scroll effect
             const header = document.querySelector('header');
             window.addEventListener('scroll', function() {
+                if (!header) return;
                 if (window.scrollY > 50) {
                     header.style.background = 'rgba(255, 255, 255, 0.99)';
                     header.style.boxShadow = '0 4px 25px rgba(0,0,0,.1)';
@@ -937,16 +501,12 @@
                 }
             });
 
-            // Smooth scroll for navigation
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
+                        window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
                     }
                 });
             });
