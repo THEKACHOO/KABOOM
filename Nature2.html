@@ -3,11 +3,220 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Pray For Kalimantan — KABOOM!</title>
+    <title>Pray For Kalimantan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="header-footer.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+        .hero-section {
+            margin-top: 120px;
+            padding: 40px 0 10px;
+            background: #ffffff;
+        }
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+        .hero-title .sub {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.3em;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+        .hero-title .main {
+            display: block;
+            color: #000;
+        }
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #000;
+            margin: 16px auto 0;
+        }
+        .hero-image {
+            margin: 20px 0 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .slider-container {
+            position: relative;
+            margin: 32px 0 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        .slider-wrapper img {
+            width: 100%;
+            flex-shrink: 0;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #ffffff;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 28px;
+            padding: 12px 16px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            transition: background 0.3s;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .slider-btn.prev {
+            left: 12px;
+        }
+        .slider-btn.next {
+            right: 12px;
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 0 6px;
+        }
+        .slider-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .slider-dots span.active {
+            background: #000;
+        }
+        .slider-caption {
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+            margin-top: 2px;
+            margin-bottom: 16px;
+        }
+        .slider-caption span {
+            margin: 0 10px;
+        }
+        .article-content {
+            padding: 10px 0 60px;
+            background: #ffffff;
+        }
+        .article-body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #1a1a1a;
+            text-align: justify;
+        }
+        .article-body p {
+            margin-bottom: 16px;
+        }
+        .article-body h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            margin: 28px 0 12px;
+            color: #000;
+            text-align: left;
+        }
+        .sumber {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+            text-align: justify;
+        }
+        .sumber p {
+            margin-bottom: 4px;
+        }
+        .sumber .sumber-judul {
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .sumber .sumber-item {
+            padding-left: 28px;
+            text-indent: -28px;
+            margin-left: 0;
+        }
+        .sumber .sumber-item a {
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .sumber .sumber-item a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-top: 140px;
+                padding: 20px 0 10px;
+            }
+            .article-body {
+                font-size: 17px;
+            }
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -20,7 +229,7 @@
                 </h1>
             </div>
             <div class="hero-image">
-                <img src="#.png" alt="Karhutla Kalimantan" />
+                <img src="Nature2.1.png" alt="Karhutla Kalimantan" />
             </div>
         </div>
     </section>
@@ -38,8 +247,8 @@
 
                 <div class="slider-container" id="slider">
                     <div class="slider-wrapper" id="sliderWrapper">
-                        <img src="#.png" alt="Karhutla 1" />
-                        <img src="#.png" alt="Karhutla 2" />
+                        <img src="Nature2.2.jpeg" alt="Karhutla 1" />
+                        <img src="Nature2.3.jpeg" alt="Karhutla 2" />
                     </div>
                     <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                     <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -107,7 +316,68 @@
     </section>
 
     <script src="header-footer.js"></script>
-    <script src="slider.js"></script>
+
+    <script>
+        (function() {
+            const wrapper = document.getElementById('sliderWrapper');
+            const slides = wrapper.querySelectorAll('img');
+            const total = slides.length;
+            let current = 0;
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('dotsContainer');
+            for (let i = 0; i < total; i++) {
+                const dot = document.createElement('span');
+                dot.dataset.index = i;
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', function() {
+                    goTo(parseInt(this.dataset.index));
+                });
+                dotsContainer.appendChild(dot);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+            function updateSlider() {
+                wrapper.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === current);
+                });
+            }
+            function goTo(index) {
+                if (index < 0) index = total - 1;
+                if (index >= total) index = 0;
+                current = index;
+                updateSlider();
+            }
+            prevBtn.addEventListener('click', function() {
+                goTo(current - 1);
+            });
+            nextBtn.addEventListener('click', function() {
+                goTo(current + 1);
+            });
+            let startX = 0;
+            let isDragging = false;
+            const container = document.getElementById('slider');
+            container.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            }, { passive: true });
+            container.addEventListener('touchend', function(e) {
+                if (!isDragging) return;
+                const endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) goTo(current + 1);
+                    else goTo(current - 1);
+                }
+                isDragging = false;
+            }, { passive: true });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') goTo(current - 1);
+                else if (e.key === 'ArrowRight') goTo(current + 1);
+            });
+            updateSlider();
+        })();
+    </script>
 
 </body>
 </html>
