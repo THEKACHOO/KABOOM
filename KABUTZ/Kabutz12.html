@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Nararya Mengenang Dua Bulan Bersama Kazine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header-footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .hero-section {
+            margin-top: 80px;
+            padding: 50px 0 30px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(34px, 4.2vw, 54px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #1A1A1A;
+        }
+
+        .hero-title .sub {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.35em;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .hero-title .main {
+            display: block;
+            background: linear-gradient(135deg, #1a1a1a, #444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-title .date {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.3em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: 6px;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #000;
+            margin: 18px auto 0;
+        }
+
+        .poster-section {
+            padding: 30px 0;
+            background: #FFFFFF;
+        }
+
+        .poster-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .poster-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slider-section {
+            padding: 40px 0;
+            background: #FFFFFF;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            cursor: grab;
+        }
+
+        .slider-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .slider-wrapper::-webkit-scrollbar-track {
+            background: #E0E0E0;
+            border-radius: 10px;
+        }
+
+        .slider-wrapper::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        .slider-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            width: 100%;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0,0,0,0.9);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .arrow-left { left: 16px; }
+        .arrow-right { right: 16px; }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #BDBDBD;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #000000;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        .article-content {
+            padding: 40px 0 60px;
+            background: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #424242;
+        }
+
+        .article-body p {
+            margin-bottom: 28px;
+        }
+
+        .article-body h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 20px;
+            color: #000;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #000;
+        }
+
+        .highlight-box {
+            background: #F5F5F5;
+            border-left: 4px solid #000;
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .schedule-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .schedule-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #E0E0E0;
+            font-weight: 500;
+        }
+
+        .schedule-date {
+            min-width: 110px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .track-badge {
+            background: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .track-badge-light {
+            background: #EEEEEE;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+
+        .member-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+            border-top: 1px solid #EEEEEE;
+        }
+
+        .member-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .member-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            text-align: center;
+            min-width: 100px;
+            padding: 8px 16px;
+            background: #F8F8F8;
+            border-radius: 40px;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .profile-section {
+            padding: 40px 0 20px;
+            background: #FFFFFF;
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid #000;
+            background: #F0F0F0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: #616161;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: #000;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-top: 140px;
+                padding: 30px 0 20px;
+            }
+            .slider-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+            .member-grid {
+                gap: 12px;
+            }
+            .member-card {
+                min-width: 80px;
+                padding: 6px 12px;
+            }
+            .member-name {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="sub">Brand Ambassador Kazine</span>
+                    <span class="main">Di Balik Kolaborasi Nararya Bersama Kazine</span>
+                    <span class="date">Vol. 1 Issue 3</span>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="poster-section">
+        <div class="container">
+            <div class="poster-container">
+                <img src="Kabutz12.png" alt="Nararya bersama Kazine">
+            </div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate">Menjadi Brand Ambassador Kazine adalah pengalaman baru yang menyenangkan bagi Nararya. Meski ini merupakan kali pertamanya mengemban peran sebagai ambassador tersebut, Nararya mengaku dapat menikmati setiap proses yang dijalaninya selama dua bulan bersama Kazine.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; margin-bottom: 0;">“Tim Kazine sendiri enak diajak kerja sama. Komunikasinya juga santai, jadi selama prosesnya saya tidak pernah merasa seperti sedang mengerjakan sesuatu yang terlalu formal atau kaku. Banyak bercanda juga, jadi mungkin itu yang membuat semuanya terasa lebih ringan dan menyenangkan.” -Nararya, dalam wawancara dengan tim Kaboom</p>
+                    </div>
+
+                    <p class="scroll-animate">Seiring berjalannya waktu, Nararya mulai menemukan banyak hal yang bisa dinikmati dari kolaborasi tersebut. Menurutnya, ide dan gagasan yang diangkat Kazine kali ini dekat dengan kesehariannya, sehingga ia merasa lebih mudah untuk ikut menyampaikan pesan yang ingin dibawa.</p>
+
+                    <p class="scroll-animate">Bahkan, beberapa proses kreatif yang dijalaninya justru memberinya sudut pandang baru terhadap hal-hal yang sebelumnya terasa sederhana. Salah satu hal yang paling berkesan bagi Nararya adalah konsep Kazine Vol. 1 Issue 3 yang mengangkat tema hidup sehat, kembali dekat dengan alam, serta pentingnya healing dan beristirahat.</p>
+
+                    <h2 class="scroll-animate">Satu Momen Favorit Nararya dengan Tim Kazine</h2>
+                    <p class="scroll-animate">Baginya, tema-tema tersebut mungkin terdengar sederhana, tetapi memiliki makna yang cukup dekat dengan kehidupan sehari-hari. Meski begitu, ketika diminta memilih satu momen favorit selama proses kolaborasi, Nararya mengaku cukup kesulitan karena justru keseluruhan proses itulah yang meninggalkan kesan tersendiri baginya.</p>
+
+                    <p class="scroll-animate">Bukan hanya konsep yang menarik, orang-orang di balik Vol. 1 Issue 3 juga menjadi bagian penting dari pengalaman tersebut. Nararya menyampaikan bahwa tim Kazine sangat menyenangkan untuk diajak bekerja sama. Komunikasi yang santai dan suasana kerja yang jauh dari kesan formal atau kaku membuat setiap proses terasa lebih ringan.</p>
+
+                    <section class="slider-section" style="padding: 40px 0;">
+                        <div class="slider-container">
+                            <div class="slider-wrapper" id="sliderWrapper">
+                                <div class="slider-slide"><img src="Nararya1.jpg" alt="Nararya"></div>
+                                <div class="slider-slide"><img src="Nararya2.jpg" alt="Nararya"></div>
+                            </div>
+                            <button class="slider-arrow arrow-left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-arrow arrow-right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="slider-dots" id="sliderDots"></div>
+                    </section>
+
+                    <h2 class="scroll-animate">Kata Nararya untuk Tim Kazine</h2>
+                    <p class="scroll-animate">Candaan yang hadir di sela-sela pekerjaan pun menjadi salah satu hal yang membuat kolaborasi ini semakin menyenangkan. Nararya juga menyampaikan apresiasinya kepada seluruh tim yang telah terlibat dalam proyek tersebut.</p>
+
+                    <p class="scroll-animate">Baginya, bekerja bersama orang-orang yang mampu menciptakan suasana nyaman merupakan hal sederhana yang dapat memberikan pengaruh besar terhadap keseluruhan pengalaman kolaborasi. Dukungan dan kerja sama yang terjalin sejak awal hingga akhir membuatnya merasa beruntung telah menjadi bagian dari perjalanan Kazine kali ini.</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-style: italic; font-weight: 600;">“Saya ingin panjatkan doa semua hal terbaik untuk Kazine, semoga selalu sukses dengan gebrakan dan idenya.”</p>
+                    </div>
+
+                    <p class="scroll-animate">Dua bulan tersebut menjadi pengalaman yang bukan hanya memperkenalkan Nararya pada proses kreatif di balik sebuah majalah, tetapi juga memberinya kesempatan untuk bertemu dengan orang-orang baru dan menikmati kolaborasi dalam suasana yang hangat.</p>
+
+                    <p class="scroll-animate">Melalui Vol. 1 Issue 3, Nararya menjadi bagian dari pesan Kazine tentang keseimbangan hidup, kedekatan dengan alam, dan pentingnya memberi ruang bagi diri sendiri untuk beristirahat. Sebuah kolaborasi yang meninggalkan kesan baik sekaligus harapan bagi langkah-langkah Kazine berikutnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-section">
+    <div class="container">
+        <a href="https://x.com/merungkup" target="_blank" class="profile-card" id="profileLink">
+            <div class="profile-avatar">
+                <img src="Nararya.jpg" alt="Alta Nararya Wiyasa">
+            </div>
+            <h2 class="profile-name">Alta Nararya Wiyasa</h2>
+            <p class="profile-role">Model from MODEX</p>
+        </a>
+    </div>
+</section>
+
+    <script src="../header-footer.js"></script>
+
+    <script>
+        (function() {
+            const wrapper = document.getElementById('sliderWrapper');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.slider-slide');
+            const dotsContainer = document.getElementById('sliderDots');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        scrollToSlide(currentIndex);
+                        updateDots();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function scrollToSlide(index) {
+                const slideWidth = wrapper.clientWidth;
+                wrapper.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+                currentIndex = index;
+                updateDots();
+            }
+
+            function updateDots() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+                if (currentIndex === 0) {
+                    prevBtn.style.opacity = '0.5';
+                    prevBtn.style.cursor = 'default';
+                } else {
+                    prevBtn.style.opacity = '1';
+                    prevBtn.style.cursor = 'pointer';
+                }
+                if (currentIndex === totalSlides - 1) {
+                    nextBtn.style.opacity = '0.5';
+                    nextBtn.style.cursor = 'default';
+                } else {
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.cursor = 'pointer';
+                }
+            }
+
+            function nextSlide() {
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                    scrollToSlide(currentIndex);
+                }
+            }
+
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    scrollToSlide(currentIndex);
+                }
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            wrapper.addEventListener('scroll', () => {
+                const scrollPos = wrapper.scrollLeft;
+                const slideWidth = wrapper.clientWidth;
+                let newIndex = Math.round(scrollPos / slideWidth);
+                if (newIndex < 0) newIndex = 0;
+                if (newIndex >= totalSlides) newIndex = totalSlides - 1;
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateDots();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                scrollToSlide(currentIndex);
+            });
+
+            createDots();
+            updateDots();
+            wrapper.scrollLeft = 0;
+
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el) => el.getBoundingClientRect().top <= window.innerHeight * 0.85;
+            const handleScroll = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        })();
+    </script>
+</body>
+</html>
