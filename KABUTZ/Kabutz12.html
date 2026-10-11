@@ -346,8 +346,25 @@
         }
 
         .profile-section {
-            padding: 40px 0 20px;
+            padding: 0 0 60px;
             background: #FFFFFF;
+        }
+
+        .profile-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 1px solid #E0E0E0;
+            padding-top: 36px;
+        }
+
+        .profile-label {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 24px;
         }
 
         .profile-card {
@@ -365,10 +382,10 @@
         }
 
         .profile-avatar {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
             overflow: hidden;
             border: 3px solid #000;
             background: #F0F0F0;
@@ -383,14 +400,15 @@
 
         .profile-name {
             font-family: 'Poppins', sans-serif;
-            font-size: 32px;
-            font-weight: 900;
-            margin-bottom: 8px;
+            font-size: clamp(20px, 5vw, 28px);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 6px;
             color: #000;
         }
 
         .profile-role {
-            font-size: 16px;
+            font-size: 14px;
             color: #616161;
             font-weight: 500;
             letter-spacing: 1px;
@@ -437,6 +455,19 @@
             }
             .member-name {
                 font-size: 14px;
+            }
+            .profile-wrap {
+                padding-top: 28px;
+            }
+            .profile-avatar {
+                width: 110px;
+                height: 110px;
+            }
+            .profile-name {
+                font-size: 20px;
+            }
+            .profile-role {
+                font-size: 13px;
             }
         }
     </style>
@@ -512,16 +543,19 @@
     </section>
 
     <section class="profile-section">
-    <div class="container">
-        <a href="https://x.com/merungkup" target="_blank" class="profile-card" id="profileLink">
-            <div class="profile-avatar">
-                <img src="Nararya.jpg" alt="Alta Nararya Wiyasa">
+        <div class="container">
+            <div class="profile-wrap">
+                <p class="profile-label">Profil Pembicara</p>
+                <a href="https://x.com/merungkup" target="_blank" class="profile-card" id="profileLink">
+                    <div class="profile-avatar">
+                        <img src="Nararya.jpg" alt="Alta Nararya Wiyasa">
+                    </div>
+                    <h2 class="profile-name">Alta Nararya Wiyasa</h2>
+                    <p class="profile-role">Model from MODEX</p>
+                </a>
             </div>
-            <h2 class="profile-name">Alta Nararya Wiyasa</h2>
-            <p class="profile-role">Model from MODEX</p>
-        </a>
-    </div>
-</section>
+        </div>
+    </section>
 
     <script src="../header-footer.js"></script>
 
