@@ -5,6 +5,7 @@
     width: 100%;
 }
 
+/* Font face untuk Colona Rounded */
 @font-face {
     font-family: 'Colona Rounded';
     src: url('Colona-Rounded.ttf') format('truetype');
@@ -47,6 +48,10 @@ header {
     width: auto;
 }
 
+/* ============================================
+   KABOOM! - Font Colona Rounded
+   Border-radius 30px, sama dengan nav-btn
+   ============================================ */
 .article-category {
     font-family: 'Colona Rounded', 'Poppins', sans-serif;
     font-size: 14px;
@@ -63,38 +68,51 @@ header {
     gap: 6px;
 }
 
+/* ============================================
+   TOMBOL HOME - HANYA ICON, TANPA TEKS
+   ============================================ */
 .nav-btn {
     background: transparent;
     border: 2px solid #000000;
     color: #000000;
-    padding: 10px 20px;
+    padding: 10px 14px;
     border-radius: 30px;
     font-weight: 600;
-    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
     text-decoration: none;
+    /* Trik: font-size 0 agar teks apapun hilang */
+    font-size: 0 !important;
+    line-height: 0 !important;
+}
+
+/* Icon tetap tampil dengan ukuran normal */
+.nav-btn i,
+.nav-btn svg,
+.nav-btn img {
+    font-size: 18px !important;
+    line-height: 1 !important;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sembunyikan semua teks/span di dalam tombol */
+.nav-btn span,
+.nav-btn .btn-text,
+.nav-btn text {
+    display: none !important;
 }
 
 .nav-btn:hover {
     background: #000000;
     color: #FFFFFF;
     transform: translateY(-2px);
-}
-
-.nav-btn .btn-text {
-    display: none;
-}
-
-.nav-btn i,
-.nav-btn svg {
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 footer {
@@ -169,7 +187,6 @@ footer {
     }
 
     .article-category {
-        font-family: 'Colona Rounded', 'Poppins', sans-serif;
         font-size: 11px;
         padding: 6px 12px;
         letter-spacing: 0.5px;
@@ -177,12 +194,14 @@ footer {
     }
 
     .nav-btn {
-        padding: 8px 14px;
-        font-size: 13px;
+        padding: 8px 12px;
         border-radius: 30px;
     }
 
-    .nav-btn .btn-text {
-        display: none;
+    .nav-btn i,
+    .nav-btn svg {
+        font-size: 16px !important;
+        width: 16px;
+        height: 16px;
     }
 }
