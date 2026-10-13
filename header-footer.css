@@ -5,7 +5,6 @@
     width: 100%;
 }
 
-/* Font face untuk Colona Rounded */
 @font-face {
     font-family: 'Colona Rounded';
     src: url('Colona-Rounded.ttf') format('truetype');
@@ -68,9 +67,6 @@ header {
     gap: 6px;
 }
 
-/* ============================================
-   TOMBOL HOME - HANYA ICON, TANPA TEKS
-   ============================================ */
 .nav-btn {
     background: transparent;
     border: 2px solid #000000;
@@ -84,12 +80,10 @@ header {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    /* Trik: font-size 0 agar teks apapun hilang */
     font-size: 0 !important;
     line-height: 0 !important;
 }
 
-/* Icon tetap tampil dengan ukuran normal */
 .nav-btn i,
 .nav-btn svg,
 .nav-btn img {
@@ -102,7 +96,6 @@ header {
     justify-content: center;
 }
 
-/* Sembunyikan semua teks/span di dalam tombol */
 .nav-btn span,
 .nav-btn .btn-text,
 .nav-btn text {
