@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'Colona Rounded';
-    src: url('Colona-Rounded.ttf') format('truetype');
+    src: url('Colona-Rounded.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -47,10 +47,6 @@ header {
     width: auto;
 }
 
-/* ============================================
-   KABOOM! - Font Colona Rounded
-   Border-radius 30px, sama dengan nav-btn
-   ============================================ */
 .article-category {
     font-family: 'Colona Rounded', 'Poppins', sans-serif;
     font-size: 14px;
@@ -131,7 +127,7 @@ footer {
 
 .company-card h3,
 .footer-about h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Colona Rounded', 'Poppins', sans-serif;
     font-size: 22px;
     margin-bottom: 20px;
     position: relative;
