@@ -1,13 +1,273 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Judul Berita Kaboom</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header-footer.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>JUDUL WEB DISINI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header-footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .hero-section {
+            margin-top: 80px;
+            padding: 50px 0 30px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(34px, 4.2vw, 54px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #1A1A1A;
+        }
+
+        .hero-title .sub {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.35em;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .hero-title .main {
+            display: block;
+            background: linear-gradient(135deg, #1a1a1a, #444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-title .date {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.3em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: 6px;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #000;
+            margin: 18px auto 0;
+        }
+
+        .poster-section {
+            padding: 30px 0;
+            background: #FFFFFF;
+        }
+
+        .poster-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .poster-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-content {
+            padding: 40px 0 60px;
+            background: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #424242;
+        }
+
+        .article-body p {
+            margin-bottom: 28px;
+        }
+
+        .article-body h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 20px;
+            color: #000;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #000;
+        }
+
+        .highlight-box {
+            background: #F5F5F5;
+            border-left: 4px solid #000;
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .profile-section {
+            padding: 0 0 60px;
+            background: #FFFFFF;
+        }
+
+        .profile-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 1px solid #E0E0E0;
+            padding-top: 36px;
+        }
+
+        .profile-label {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            border: 3px solid #000;
+            background: #F0F0F0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(20px, 5vw, 28px);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 6px;
+            color: #000;
+        }
+
+        .profile-role {
+            font-size: 14px;
+            color: #616161;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: #000;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-top: 140px;
+                padding: 30px 0 20px;
+            }
+            .profile-wrap {
+                padding-top: 28px;
+            }
+            .profile-avatar {
+                width: 110px;
+                height: 110px;
+            }
+            .profile-name {
+                font-size: 20px;
+            }
+            .profile-role {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,53 +275,87 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="sub">#Tagline</span>
-                    <span class="main">Judul Berita Utama</span>
+                    <span class="sub">SUB ATAS(optional)</span>
+                    <span class="main">JUDUL UTAMA</span>
+                    <span class="date">SUB BAWAH</span>
                 </h1>
             </div>
-            <div class="hero-image">
-                <img src="#.png" alt="Judul Berita" />
+        </div>
+    </section>
+
+    <section class="poster-section">
+        <div class="container">
+            <div class="poster-container">
+                <img src="media.png" alt="(empty)">
             </div>
         </div>
     </section>
 
     <section class="article-content">
         <div class="container">
-            <div class="article-body">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate">(empty)</p>
 
-                <p>Isi berita paragraf pertama.</p>
-
-                <p>Isi berita paragraf kedua.</p>
-
-                <div class="slider-container" id="slider">
-                    <div class="slider-wrapper" id="sliderWrapper">
-                        <img src="#.png" alt="Foto 1" />
-                        <img src="#.png" alt="Foto 2" />
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-weight: 700; margin-bottom: 0;">(empty)</p>
                     </div>
-                    <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-                    <div class="slider-dots" id="dotsContainer"></div>
+
+                    <p class="scroll-animate">(empty)</p>
+
+                    <p class="scroll-animate">(empty)</p>
+
+                    <h2 class="scroll-animate">(empty)</h2>
+                    <p class="scroll-animate">(empty)</p>
+
+                    <p class="scroll-animate">(empty)</p>
+
+                    <h2 class="scroll-animate">(empty)</h2>
+                    <p class="scroll-animate">(empty)</p>
+
+                    <p class="scroll-animate">(empty)</p>
+
+                    <div class="highlight-box scroll-animate">
+                        <p style="font-style: italic; font-weight: 600;">(empty)</p>
+                    </div>
+
+                    <p class="scroll-animate">(empty)</p>
+
+                    <p class="scroll-animate">(empty)</p>
                 </div>
-                <div class="slider-caption">
-                    <span>Sumber: ...</span>
-                </div>
-
-                <h2>Sub Judul</h2>
-
-                <p>Isi berita selanjutnya.</p>
-
-                <div class="sumber">
-                    <p class="sumber-judul">Daftar Pustaka</p>
-                    <p class="sumber-item">Sumber 1.</p>
-                    <p class="sumber-item">Sumber 2.</p>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <script src="header-footer.js"></script>
-    <script src="slider.js"></script>
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-wrap">
+                <p class="profile-label">(empty)</p>
+                <a href="#" target="_blank" class="profile-card" id="profileLink">
+                    <div class="profile-avatar">
+                        <img src="media.png" alt="(empty)">
+                    </div>
+                    <h2 class="profile-name">(empty)</h2>
+                    <p class="profile-role">(empty)</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <script src="../header-footer.js"></script>
+
+    <script>
+        (function() {
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el) => el.getBoundingClientRect().top <= window.innerHeight * 0.85;
+            const handleScroll = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        })();
+    </script>
 </body>
 </html>
