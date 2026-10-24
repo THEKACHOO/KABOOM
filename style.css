@@ -5,44 +5,45 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #ffffff;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #FFFFFF;
     color: #000000;
-    line-height: 1.7;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
     width: 100%;
 }
 
 .hero-section {
-    margin-top: 120px;
-    padding: 40px 0 10px;
-    background: #ffffff;
+    margin-top: 80px;
+    padding: 40px 0 30px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+    position: relative;
 }
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .hero-title {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(34px, 4.2vw, 54px);
     font-weight: 900;
-    line-height: 1.2;
-    color: #1a1a1a;
+    line-height: 1.15;
+    color: #1A1A1A;
 }
 
 .hero-title .sub {
     display: block;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.3em;
+    font-size: 0.35em;
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -52,190 +53,410 @@ body {
 
 .hero-title .main {
     display: block;
-    color: #000;
+    background: linear-gradient(135deg, #1a1a1a, #444);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.1;
+}
+
+.hero-title .date {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.3em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 6px;
 }
 
 .hero-title::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 2px;
+    width: 80px;
+    height: 3px;
     background: #000;
-    margin: 16px auto 0;
+    margin: 18px auto 0;
 }
 
-.hero-image {
-    margin: 20px 0 0;
-    border-radius: 12px;
+.poster-section {
+    padding: 30px 0;
+    background: #FFFFFF;
+}
+
+.poster-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
     overflow: hidden;
-    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.hero-image img {
+.poster-container img {
     width: 100%;
     height: auto;
     display: block;
 }
 
+.slider-section {
+    padding: 40px 0;
+    background: #FFFFFF;
+}
+
 .slider-container {
+    max-width: 800px;
+    margin: 0 auto;
     position: relative;
-    margin: 32px 0 8px;
-    border-radius: 12px;
     overflow: hidden;
-    background: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .slider-wrapper {
     display: flex;
-    transition: transform 0.4s ease;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    cursor: grab;
 }
 
-.slider-wrapper img {
+.slider-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.slider-wrapper::-webkit-scrollbar-track {
+    background: #E0E0E0;
+    border-radius: 10px;
+}
+
+.slider-wrapper::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 10px;
+}
+
+.slider-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     width: 100%;
-    flex-shrink: 0;
-    display: block;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    background: #ffffff;
 }
 
-.slider-btn {
+.slider-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slider-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    width: 44px;
+    height: 44px;
+    background: rgba(0,0,0,0.6);
+    color: white;
     border: none;
-    font-size: 28px;
-    padding: 12px 16px;
-    cursor: pointer;
-    z-index: 10;
     border-radius: 50%;
-    transition: background 0.3s;
-    width: 52px;
-    height: 52px;
+    cursor: pointer;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s;
+    z-index: 10;
+    backdrop-filter: blur(4px);
 }
 
-.slider-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+.slider-arrow:hover {
+    background: rgba(0,0,0,0.9);
+    transform: translateY(-50%) scale(1.05);
 }
 
-.slider-btn.prev {
-    left: 12px;
-}
-
-.slider-btn.next {
-    right: 12px;
-}
+.arrow-left { left: 16px; }
+.arrow-right { right: 16px; }
 
 .slider-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    padding: 14px 0 6px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.slider-dots span {
+.dot {
     width: 10px;
     height: 10px;
+    background: #BDBDBD;
     border-radius: 50%;
-    background: #ccc;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
-.slider-dots span.active {
-    background: #000;
-}
-
-.slider-caption {
-    text-align: center;
-    font-size: 13px;
-    color: #777;
-    margin-top: 2px;
-    margin-bottom: 16px;
-}
-
-.slider-caption span {
-    margin: 0 10px;
+.dot.active {
+    background: #000000;
+    width: 24px;
+    border-radius: 10px;
 }
 
 .article-content {
-    padding: 10px 0 60px;
-    background: #ffffff;
+    padding: 40px 0 60px;
+    background: #FFFFFF;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .article-body {
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    line-height: 1.9;
-    color: #1a1a1a;
-    text-align: justify;
+    line-height: 1.8;
+    color: #424242;
 }
 
 .article-body p {
-    margin-bottom: 16px;
+    margin-bottom: 28px;
 }
 
 .article-body h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 800;
-    margin: 28px 0 12px;
+    margin: 50px 0 20px;
     color: #000;
-    text-align: left;
+    position: relative;
+    padding-bottom: 12px;
 }
 
-.sumber {
-    margin-top: 32px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+.article-body h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #000;
+}
+
+.highlight-box {
+    background: #F5F5F5;
+    border-left: 4px solid #000;
+    padding: 24px 28px;
+    margin: 40px 0;
+    border-radius: 0 16px 16px 0;
+}
+
+.schedule-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.schedule-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #E0E0E0;
+    font-weight: 500;
+}
+
+.schedule-date {
+    min-width: 110px;
+    font-weight: 800;
+    color: #000;
+}
+
+.track-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.track-badge {
+    background: #000;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 30px;
     font-size: 14px;
-    color: #555;
-    text-align: justify;
-}
-
-.sumber p {
-    margin-bottom: 4px;
-}
-
-.sumber .sumber-judul {
-    text-align: left;
     font-weight: 600;
-    margin-bottom: 6px;
 }
 
-.sumber .sumber-item {
-    padding-left: 28px;
-    text-indent: -28px;
-    margin-left: 0;
+.track-badge-light {
+    background: #EEEEEE;
+    color: #000;
+    border: 1px solid #ccc;
 }
 
-.sumber .sumber-item a {
-    color: #0066cc;
+.member-section {
+    padding: 40px 0 20px;
+    background: #FFFFFF;
+    border-top: 1px solid #EEEEEE;
+}
+
+.member-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.member-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.member-card {
+    text-align: center;
+    min-width: 100px;
+    padding: 8px 16px;
+    background: #F8F8F8;
+    border-radius: 40px;
+    border: 1px solid #E0E0E0;
+    transition: all 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.member-name {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.profile-section {
+    padding: 0 0 60px;
+    background: #FFFFFF;
+}
+
+.profile-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 36px;
+}
+
+.profile-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 24px;
+}
+
+.profile-card {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
     text-decoration: none;
-    word-break: break-all;
+    display: block;
 }
 
-.sumber .sumber-item a:hover {
-    text-decoration: underline;
+.profile-card:hover {
+    transform: translateY(-8px);
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    overflow: hidden;
+    border: 3px solid #000;
+    background: #F0F0F0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.profile-role {
+    font-size: 14px;
+    color: #616161;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.profile-badge {
+    display: inline-block;
+    margin-top: 12px;
+    background: #000;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s ease;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 768px) {
     .hero-section {
-        margin-top: 140px;
-        padding: 20px 0 10px;
+        margin-top: 80px;
+        padding: 30px 0 20px;
     }
-    .article-body {
-        font-size: 17px;
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
     }
-    .slider-btn {
-        width: 40px;
-        height: 40px;
+    .member-grid {
+        gap: 12px;
+    }
+    .member-card {
+        min-width: 80px;
+        padding: 6px 12px;
+    }
+    .member-name {
+        font-size: 14px;
+    }
+    .profile-wrap {
+        padding-top: 28px;
+    }
+    .profile-avatar {
+        width: 110px;
+        height: 110px;
+    }
+    .profile-name {
         font-size: 20px;
-        padding: 8px 10px;
     }
-}
+    .profile-role {
+        font-size: 13px;
+    }
+    }
