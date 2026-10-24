@@ -5,10 +5,14 @@
             <div class="header-content">
                 <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM/'">
                     <img src="https://thekachoo.github.io/KABOOM/kaboom-logo.png" alt="KABOOM Logo" id="logo" />
-                    <div class="article-category">KABOOM</div>
                 </div>
-                <div class="navigation">
-                    <a href="https://thekachoo.github.io/KABOOM" class="nav-btn"><i class="fas fa-home"></i></a>
+                <div class="hotline-today">
+                    <div class="hotline-text">KABOOM</div>
+                </div>
+                <div class="menu-container">
+                    <a href="https://thekachoo.github.io/KABOOM" class="menu-button-icon" title="Home">
+                        <i class="fas fa-home"></i>
+                    </a>
                 </div>
             </div>
         </div>
