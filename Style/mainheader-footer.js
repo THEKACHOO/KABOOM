@@ -77,5 +77,6 @@ function renderFooter() {
     });
     revealFooterEls();
 }
+
 renderHeader();
 renderFooter();
