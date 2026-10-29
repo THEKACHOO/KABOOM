@@ -7,7 +7,7 @@ function renderHeader() {
         <div class="container">
             <div class="header-content">
                 <div class="logo-container" id="logoContainer">
-                    <img src="Logo/Kaboom.png" alt="The Kaboom!" id="logo">
+                    <img src="Logo/Kaboom.png" alt="The Kaboom!" id="logo" class="logo-kaboom">
                 </div>
             </div>
         </div>
@@ -77,5 +77,6 @@ function renderFooter() {
     });
     revealFooterEls();
 }
+
 renderHeader();
 renderFooter();
