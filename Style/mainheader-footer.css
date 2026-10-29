@@ -28,7 +28,7 @@
     width: auto;
     max-width: 100vw;
     display: block;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .logo-kaboom { 
     animation: rubberBand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
@@ -153,9 +153,15 @@ footer {
     transform: translateY(0);
 }
 @media (max-width: 767px) {
-    #logo { height: 120px; }
-    .site-header { padding: 24px 0 14px; }
-    .header-content { height: 40px; }
+    #logo { 
+        height: 120px; 
+        margin-top: 15px;
+    }
+    .site-header { 
+        padding: 24px 0 14px; 
+    }
+    .header-content { 
+        height: 40px; 
     footer { padding: 50px 0 25px; }
     .footer-content {
         grid-template-columns: 1fr;
@@ -172,7 +178,9 @@ footer {
     .footer-about p { font-size: 12px; }
 }
 @media (max-width: 480px) {
-    #logo { height: 90px; }
+    #logo { 
+        height: 90px; 
+        margin-top: 10px;
     .footer-content {
         grid-template-columns: 1fr;
         gap: 12px;
