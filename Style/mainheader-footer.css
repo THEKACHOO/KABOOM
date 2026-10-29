@@ -1,5 +1,5 @@
 .site-header {
-    padding: 32px 0 18px;
+    padding: 30px 0 18px;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
     position: relative; 
@@ -50,9 +50,6 @@
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
 footer {
     background: var(--gray-50);
     padding: 60px 0 30px;
@@ -165,7 +162,7 @@ footer {
 }
 
 @media (max-width: 767px) {
-    #logo { height: 120px; } 
+    #logo { height: 160px; } 
     .site-header { padding: 24px 0 14px; }
     .header-content { height: 40px; }
     
@@ -186,7 +183,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    #logo { height: 90px; }
+    #logo { height: 120px; }
     .footer-content {
         grid-template-columns: 1fr;
         gap: 12px;
