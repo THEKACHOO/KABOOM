@@ -1,48 +1,82 @@
-(function() {
-    const headerHTML = `
-    <header>
-        <div class="hf-container">
+function renderHeader() {
+    const target = document.getElementById('site-header');
+    if (!target) return;
+
+    target.innerHTML = `
+    <header class="site-header">
+        <div class="container">
             <div class="header-content">
-                <div class="logo-container" onclick="window.location.href='https://thekachoo.github.io/KABOOM/'">
-                    <img src="https://thekachoo.github.io/KABOOM/kaboom-logo.png" alt="KABOOM Logo" id="logo" />
-                </div>
-                <div class="hotline-today">
-                    <div class="hotline-text">KABOOM</div>
-                </div>
-                <div class="menu-container">
-                    <a href="https://thekachoo.github.io/KABOOM" class="menu-button-icon" title="Home">
-                        <i class="fas fa-home"></i>
-                    </a>
+                <div class="logo-container" id="logoContainer">
+                    <img src="..Logo/Kaboom.png" alt="The Kaboom!" id="logo" class="logo-kaboom">
                 </div>
             </div>
         </div>
-    </header>
-    `;
+    </header>`;
 
-    const footerHTML = `
+    const logoContainer = document.getElementById('logoContainer');
+    const logo = document.getElementById('logo');
+    if (logoContainer && logo) {
+        logoContainer.addEventListener('click', function() {
+            logo.classList.remove('logo-kaboom');
+            void logo.offsetWidth;
+            logo.classList.add('logo-kaboom');
+        });
+    }
+}
+
+function renderFooter() {
+    const target = document.getElementById('site-footer');
+    if (!target) return;
+
+    target.innerHTML = `
     <footer>
-        <div class="hf-container">
+        <div class="container">
             <div class="footer-content">
-                <div class="company-card">
+                <div class="footer-about scroll-animate">
+                    <h3>About Us</h3>
+                    <p>The Kaboom! Under The Kachoo is a revolutionary tabloid founded in 2026 that explores the intersection of nature, animals, humans, and gossip. From the depths of the ocean to the latest celebrity eco-venture, we cover it all with style and substance.</p>
+                </div>
+                <div class="company-card scroll-animate">
                     <h3>The Kachoo</h3>
                     <div class="company-info">
-                        <div><i class="fas fa-map-marker-alt"></i><span>Jenderal Sudirman Avenue, No. 61-62, South Jakarta</span></div>
-                        <div><i class="fas fa-envelope"></i><span>ohkachoo@gmail.com</span></div>
-                        <div><i class="fab fa-twitter"></i><span>@TheKachoo @HaiKachoo</span></div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: ohkachoo@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fab fa-twitter"></i>
+                            <span>Official Account (X): <a href="https://x.com/thekachoo" target="_blank" class="x-link">@thekachoo</a></span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jenderal Sudirman Avenue, Lots 61–62, South Jakarta 12930, Indonesia</span>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-about">
-                    <h3>About Kaboom!</h3>
-                    <p>The Kaboom by The Kachoo is a tabloid founded in 2026 that explores the intersection of nature, animals, humans, and lighthearted gossip. From the depths of the ocean to the latest celebrity eco-venture, we cover it all with style and substance.</p>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 KABOOM! by The Kachoo. All the content in this article is for roleplay purposes only.</p>
+            <div class="footer-bottom scroll-animate">
+                <p>&copy; 2026 Kaboom! For roleplay purposes only. Any resemblance to actual events or persons is purely coincidental.</p>
             </div>
         </div>
-    </footer>
-    `;
+    </footer>`;
 
-    document.body.insertAdjacentHTML('afterbegin', headerHTML);
-    document.body.insertAdjacentHTML('beforeend', footerHTML);
-})();
+    const footerScrollEls = target.querySelectorAll('.scroll-animate');
+    const footerInView = (el, dividend = 1) => {
+        const top = el.getBoundingClientRect().top;
+        return top <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+    };
+    const revealFooterEls = () => {
+        footerScrollEls.forEach(el => {
+            if (footerInView(el, 1.2)) el.classList.add('visible');
+        });
+    };
+    window.addEventListener('scroll', revealFooterEls);
+    window.addEventListener('load', () => {
+        revealFooterEls();
+        target.querySelectorAll('.footer-bottom.scroll-animate').forEach(el => el.classList.add('visible'));
+    });
+    revealFooterEls();
+}
+
+renderHeader();
+renderFooter();
