@@ -2,50 +2,30 @@
     padding: 32px 0 18px;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
-    position: relative; 
-    z-index: 10;
-    min-height: 200px;      
-    display: flex;
-    align-items: center;
-}
-.site-header .container {
-    max-width: 1400px; 
-    margin: 0 auto;
-    width: 100%;
 }
 .header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 56px;
-    position: relative; 
-    width: 100%;
+    gap: 14px;
 }
 .logo-container {
-    position: absolute; 
-    top: 50%;
-    transform: translateY(-50%); 
     cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+.logo-container:hover { transform: translateY(-2px); }
 #logo {
-    height: 200px; 
+    height: 200px;
     width: auto;
-    max-width: 100vw;
     display: block;
-    margin: 0;              
+    margin: -12px 0;          
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.logo-kaboom { 
-    animation: rubberBand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
-}
-@keyframes rubberBand {
-    0% { transform: translateY(-50%) scale(1, 1); opacity: 0; }
-    30% { transform: translateY(-50%) scale(1.25, 0.75); opacity: 1; }
-    40% { transform: translateY(-50%) scale(0.75, 1.25); }
-    50% { transform: translateY(-50%) scale(1.15, 0.85); }
-    65% { transform: translateY(-50%) scale(0.95, 1.05); }
-    75% { transform: translateY(-50%) scale(1.05, 0.95); }
-    100% { transform: translateY(-50%) scale(1, 1); opacity: 1; }
+.logo-kaboom { animation: kaboomEffect 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes kaboomEffect {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3) rotate(5deg); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 footer {
@@ -148,6 +128,7 @@ footer {
     color: inherit;
     text-decoration: none;
 }
+
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
@@ -159,16 +140,8 @@ footer {
 }
 
 @media (max-width: 767px) {
-    #logo { 
-        height: 150px; 
-    }
-    .site-header { 
-        padding: 24px 0 14px; 
-        min-height: 150px;
-    }
-    .header-content { 
-        height: 40px; 
-    }                        
+    #logo { height: 46px; }
+    .site-header { padding: 24px 0 14px; }
     footer { padding: 50px 0 25px; }
     .footer-content {
         grid-template-columns: 1fr;
@@ -184,14 +157,8 @@ footer {
     .company-info i { font-size: 13px; width: 15px; }
     .footer-about p { font-size: 12px; }
 }
-
 @media (max-width: 480px) {
-    #logo { 
-        height: 120px; 
-    }                       
-    .site-header {
-        min-height: 120px;
-    }
+    #logo { height: 40px; }
     .footer-content {
         grid-template-columns: 1fr;
         gap: 12px;
