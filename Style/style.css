@@ -20,7 +20,7 @@ body {
 }
 
 .hero-section {
-    margin-top: 80px;
+    margin-top: 60px;
     padding: 40px 0 30px;
     background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
     position: relative;
@@ -428,7 +428,7 @@ body {
 
 @media (max-width: 768px) {
     .hero-section {
-        margin-top: 80px;
+        margin-top: 60px;
         padding: 30px 0 20px;
     }
     .slider-arrow {
@@ -459,4 +459,4 @@ body {
     .profile-role {
         font-size: 13px;
     }
-  }
+    }
