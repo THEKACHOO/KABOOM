@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>YUK BUAT SKANDAL DI KABOOM!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/header-footer.css">
+    <link rel="stylesheet" href="../Style/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .hero-section {
+            margin-top: 120px;
+            padding: 40px 0 20px;
+            background: #ffffff;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .hero-title .sub {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.3em;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .hero-title .main {
+            display: block;
+            color: #000;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #000;
+            margin: 16px auto 0;
+        }
+
+        .article-content {
+            padding: 30px 0 60px;
+            background: #ffffff;
+        }
+
+        .article-body {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #1a1a1a;
+            text-align: justify;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+        }
+
+        .form-section {
+            padding: 40px 0 80px;
+            background: #ffffff;
+            border-top: 2px solid #000;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(26px, 3.5vw, 38px);
+            font-weight: 900;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .form-group label .required {
+            color: #000;
+            font-weight: 800;
+        }
+
+        .form-group label .optional {
+            font-weight: 400;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #000;
+            background: #fff;
+            border: 2px solid #d0d0d0;
+            border-radius: 14px;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-control:focus {
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 160px;
+            line-height: 1.6;
+        }
+
+        textarea.form-control#isiBerita {
+            min-height: 200px;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 12px;
+            color: #000;
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .select-wrapper select {
+            cursor: pointer;
+            padding-right: 44px;
+        }
+
+        .upload-area {
+            border: 2px dashed #c0c0c0;
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            background: #fafafa;
+        }
+
+        .upload-area:hover {
+            border-color: #000;
+            background: #f4f4f4;
+        }
+
+        .upload-area i {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .upload-area p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .upload-area span {
+            font-weight: 600;
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .upload-area input[type="file"] {
+            display: none;
+        }
+
+        .info-box {
+            background: #f5f5f5;
+            border-left: 4px solid #000;
+            border-radius: 0 14px 14px 0;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .info-box strong {
+            color: #000;
+        }
+
+        .link-karakter {
+            color: #000;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .form-karakter {
+            display: none;
+            background: #fafafa;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 24px 22px;
+            margin-top: 16px;
+        }
+
+        .form-karakter.active {
+            display: block;
+        }
+
+        .form-karakter .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox-group {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            border: 2px solid #000;
+            border-radius: 7px;
+            margin-top: 1px;
+            cursor: pointer;
+            position: relative;
+            background: #fff;
+            transition: background 0.15s ease;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked {
+            background: #000;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 11px;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .form-notice {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            background: #f0f0f0;
+            border: 2px solid #000;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-top: 32px;
+            line-height: 1.6;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 18px 32px;
+            margin-top: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            background: #000;
+            border: 2px solid #000;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+        }
+
+        .btn-submit:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            padding: 10px 18px;
+            border: 2px solid #d0d0d0;
+            border-radius: 999px;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .radio-item:hover {
+            border-color: #000;
+        }
+
+        .radio-item input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .radio-item input[type="radio"]:checked {
+            background: #000;
+            box-shadow: inset 0 0 0 3px #fff;
+        }
+
+        .radio-item:has(input[type="radio"]:checked) {
+            border-color: #000;
+            background: #f0f0f0;
+        }
+
+        .berita-method-content {
+            margin-top: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-top: 140px;
+                padding: 20px 0 10px;
+            }
+            .article-body {
+                font-size: 17px;
+            }
+            .form-section {
+                padding: 30px 0 60px;
+            }
+            .radio-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="sub">Rilis Beritamu Yuk!</span>
+                    <span class="main">Kalau ada bahan, terbitin di Kaboom!</span>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <div class="article-body">
+                <p>Kami lagi mencari bahan berita untuk terbit di Kaboom dalam kategori Kabutz. Buat kamu yang belum kenal, Kaboom adalah tabloid berita berbasis digital yang merilis beberapa artikel berita dalam kategori Human, Animals, dan Kabutz.</p>
+                <p>Kabutz adalah kategori khusus untuk berita tentang selebriti mencakup gosip dan kehidupan selebriti, skandal dan kontroversi, tren hiburan dan budaya populer, kehidupan influencer dan tokoh publik, isu viral dan fenomena sosial.</p>
+                <p>Kami menerima berita untuk skandal seperti kencan, pernikahan, perceraian, pencucian uang, korupsi, isu keluarga, kasus pidana atau perdata, kecelakaan (tanpa dokumentasi atau visual korban jiwa), berkenaan dengan reputasi atau citra publik, atau lainnya. Dapat menyertakan dokumentasi visual berupa gambar, dapat diedit terlebih dahulu atau mengikuti gaya editing Kaboom.</p>
+                <p>Sebagai intruksi dari kami sebelum mengisi formulir submit beritamu, <strong> kami tidak akan merilis berita yang bertema atau mengandung unsur pelecehan, kekerasan, kejadian yang menghilangkan nyawa, ancaman, politik yang menyebutkan kasus atau nama tokoh politik nyata, SARA, membuat skandal atau masalah untuk karakter lain, bukan karakter yang dibuat sendiri, tanpa izin dari penulis (Godmod).</strong></p>
+                <p>Mohon untuk hanya menyebutkan inisial karakter apabila bersifat gosip, skandal, atau kontroversi. Diperbolehkan menyebutkan nama karakter apabila berita yang dimaksud sudah dikonfirmasi atau diklarifikasi oleh agensi, karakter, atau melalui media lain.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="formRilis">
+        <div class="container">
+            <div class="form-header">
+                <h2>RILIS DI KABOOM</h2>
+            </div>
+
+            <form id="rilisForm">
+
+                <div class="form-group">
+                    <label for="judulBerita">Judul Berita <span class="required">*</span></label>
+                    <input type="text" id="judulBerita" name="judulBerita" class="form-control" placeholder="Tulis judul berita utama..." required />
+                </div>
+
+                <div class="form-group">
+                    <label for="opsiJudul">Opsi Judul <span class="optional">(optional)</span></label>
+                    <input type="text" id="opsiJudul" name="opsiJudul" class="form-control" placeholder="Alternatif judul, jika ada..." />
+                </div>
+
+                <div class="form-group">
+                    <label for="sender">Sender <span class="required">*</span></label>
+                    <input type="text" id="sender" name="sender" class="form-control" placeholder="Nama kamu (wajib pakai nama)" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="usernameSender">Username Sender <span class="required">*</span></label>
+                    <input type="text" id="usernameSender" name="usernameSender" class="form-control" placeholder="@username" required />
+                </div>
+
+                <div class="info-box">
+                    <strong>Sender tidak akan dibuka untuk publik dan bersifat anonim.</strong> Sender hanya akan dijadikan narahubung atau kontak supaya memudahkan tim Kaboom untuk mengkonfirmasi. Namun apabila ingin menerbitkan dengan karakter, mohon klik <span class="link-karakter" id="toggleKarakter">ini</span>.
+                </div>
+
+                <div class="form-karakter" id="formKarakter">
+                    <div class="form-group">
+                        <label for="namaKarakter">Nama Karakter</label>
+                        <input type="text" id="namaKarakter" name="namaKarakter" class="form-control" placeholder="Nama karakter kamu..." />
+                    </div>
+                    <div class="form-group">
+                        <label for="pekerjaanKarakter">Pekerjaan Karakter</label>
+                        <input type="text" id="pekerjaanKarakter" name="pekerjaanKarakter" class="form-control" placeholder="Pekerjaan karakter kamu..." />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bahasa">Bahasa <span class="required">*</span></label>
+                    <div class="select-wrapper">
+                        <select id="bahasa" name="bahasa" class="form-control" required>
+                            <option value="" disabled selected>Pilih bahasa...</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Inggris">Inggris</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tagar">Tagar <span class="optional">(maksimal 10)</span></label>
+                    <input type="text" id="tagar" name="tagar" class="form-control" placeholder="#contoh #tagar #berita" maxlength="100" />
+                </div>
+
+                <div class="form-group">
+                    <label>Metode Isi Berita <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="metodeBerita" value="tulis" checked />
+                            <span>Tulis Langsung</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="metodeBerita" value="upload" />
+                            <span>Upload File (DOCX / PDF)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group berita-method-content" id="methodTulis">
+                    <label for="isiBerita">Isi Berita <span class="required">*</span> <span class="optional">(1000-6000 kata)</span></label>
+                    <textarea id="isiBerita" name="isiBerita" class="form-control" placeholder="Tulis isi berita kamu di sini (minimal 1000 kata, maksimal 6000 kata)..." maxlength="40000"></textarea>
+                    <small id="wordCount" style="display:block; text-align:right; font-size:12px; color:#999; margin-top:6px;">0 / 6000 kata (min. 1000)</small>
+                </div>
+
+                <div class="form-group berita-method-content" id="methodUpload" style="display:none;">
+                    <label>Upload Isi Berita <span class="required">*</span> <span class="optional">(format DOCX atau PDF)</span></label>
+                    <label for="fileBerita" class="upload-area">
+                        <i class="fas fa-file-upload"></i>
+                        <p><span>Klik untuk upload</span> file berita (DOCX / PDF)</p>
+                        <input type="file" id="fileBerita" name="fileBerita" accept=".docx,.pdf,.doc,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>Dokumentasi <span class="optional">(optional)</span></label>
+                    <label for="dokumentasi" class="upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p><span>Klik untuk upload</span></p>
+                        <input type="file" id="dokumentasi" name="dokumentasi" accept="image/*" />
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggalTerbit">Tanggal Perkiraan Terbit <span class="required">*</span></label>
+                    <input type="date" id="tanggalTerbit" name="tanggalTerbit" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="batasTerbit">Batas Terbit <span class="optional">(optional)</span></label>
+                    <div class="select-wrapper">
+                        <select id="batasTerbit" name="batasTerbit" class="form-control">
+                            <option value="kapan_saja" selected>Kapan saja</option>
+                            <option value="tanggal">Pilih tanggal...</option>
+                        </select>
+                    </div>
+                    <input type="date" id="batasTerbitTanggal" name="batasTerbitTanggal" class="form-control" style="display:none; margin-top:12px;" />
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="syarat1" required />
+                        <span>Berita ini kami terbitkan dengan izin penulis</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="syarat2" required />
+                        <span>Kaboom berhak mengedit naskah atau visual tanpa mengubah informasinya</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="syarat3" required />
+                        <span>Apabila tidak memenuhi syarat, Kaboom berhak untuk tidak menerbitkan atau membatalkan perilisan.</span>
+                    </label>
+                </div>
+
+                <div class="form-notice">
+                    Formulir akan ditutup pada tanggal 1 Januari 2027.
+                </div>
+
+                <button type="submit" class="btn-submit" id="btnKirim">Kirim Rilis</button>
+                <p id="statusMsg" style="text-align:center; font-size:14px; font-weight:600; margin-top:16px; display:none;"></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="../Style/header-footer.js"></script>
+
+    <script>
+        var SCRIPT_URL = 'https://script.google.com/macros/s/GANTI_DENGAN_URL_APPS_SCRIPT_KAMU/exec';
+
+        var toggleLink = document.getElementById('toggleKarakter');
+        var formKarakter = document.getElementById('formKarakter');
+
+        toggleLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            formKarakter.classList.toggle('active');
+            if (formKarakter.classList.contains('active')) {
+                formKarakter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+        var batasTerbitSelect = document.getElementById('batasTerbit');
+        var batasTerbitTanggal = document.getElementById('batasTerbitTanggal');
+
+        batasTerbitSelect.addEventListener('change', function () {
+            if (this.value === 'tanggal') {
+                batasTerbitTanggal.style.display = 'block';
+                batasTerbitTanggal.focus();
+            } else {
+                batasTerbitTanggal.style.display = 'none';
+                batasTerbitTanggal.value = '';
+            }
+        });
+
+        var dokumentasiInput = document.getElementById('dokumentasi');
+        dokumentasiInput.addEventListener('change', function () {
+            var file = this.files[0];
+            var parent = this.closest('.upload-area');
+            var p = parent.querySelector('p');
+            if (file) {
+                p.innerHTML = '<span>' + file.name + '</span> siap diunggah';
+            } else {
+                p.innerHTML = '<span>Klik untuk upload</span> foto dokumentasi';
+            }
+        });
+
+        var fileBeritaInput = document.getElementById('fileBerita');
+        fileBeritaInput.addEventListener('change', function () {
+            var file = this.files[0];
+            var parent = this.closest('.upload-area');
+            var p = parent.querySelector('p');
+            if (file) {
+                p.innerHTML = '<span>' + file.name + '</span> siap diunggah';
+            } else {
+                p.innerHTML = '<span>Klik untuk upload</span> file berita (DOCX / PDF)';
+            }
+        });
+
+        var isiBerita = document.getElementById('isiBerita');
+        var wordCount = document.getElementById('wordCount');
+
+        function countWords(str) {
+            var trimmed = str.trim();
+            if (trimmed === '') return 0;
+            return trimmed.split(/\s+/).length;
+        }
+
+        isiBerita.addEventListener('input', function () {
+            var words = countWords(this.value);
+            wordCount.textContent = words + ' / 6000 kata (min. 1000)';
+            if (words > 6000) {
+                wordCount.style.color = '#cc0000';
+            } else if (words > 0 && words < 1000) {
+                wordCount.style.color = '#cc0000';
+            } else {
+                wordCount.style.color = '#999';
+            }
+        });
+
+        var radioMethods = document.querySelectorAll('input[name="metodeBerita"]');
+        var methodTulis = document.getElementById('methodTulis');
+        var methodUpload = document.getElementById('methodUpload');
+
+        radioMethods.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.value === 'tulis') {
+                    methodTulis.style.display = 'block';
+                    methodUpload.style.display = 'none';
+                    isiBerita.setAttribute('required', 'required');
+                    fileBeritaInput.removeAttribute('required');
+                } else {
+                    methodTulis.style.display = 'none';
+                    methodUpload.style.display = 'block';
+                    isiBerita.removeAttribute('required');
+                    fileBeritaInput.setAttribute('required', 'required');
+                }
+            });
+        });
+
+        isiBerita.setAttribute('required', 'required');
+
+        function fileToBase64(file) {
+            return new Promise(function (resolve, reject) {
+                if (!file) { resolve(null); return; }
+                var reader = new FileReader();
+                reader.onload = function () { resolve(reader.result); };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        var rilisForm = document.getElementById('rilisForm');
+        var btnKirim = document.getElementById('btnKirim');
+        var statusMsg = document.getElementById('statusMsg');
+
+        rilisForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            var metode = document.querySelector('input[name="metodeBerita"]:checked').value;
+
+            if (metode === 'tulis') {
+                var words = countWords(isiBerita.value);
+                if (words === 0) {
+                    alert('Isi berita tidak boleh kosong.');
+                    return;
+                }
+                if (words < 1000) {
+                    alert('Isi berita minimal 1000 kata. Saat ini: ' + words + ' kata.');
+                    return;
+                }
+                if (words > 6000) {
+                    alert('Isi berita melebihi batas maksimal 6000 kata. Saat ini: ' + words + ' kata.');
+                    return;
+                }
+            } else {
+                if (!fileBeritaInput.files[0]) {
+                    alert('Silakan upload file berita (DOCX / PDF).');
+                    return;
+                }
+            }
+
+            btnKirim.disabled = true;
+            btnKirim.textContent = 'Mengirim...';
+            statusMsg.style.display = 'none';
+
+            try {
+                var fileBeritaBase64 = null;
+                var fileBeritaName = '';
+                var fileDokBase64 = null;
+                var fileDokName = '';
+
+                if (metode === 'upload' && fileBeritaInput.files[0]) {
+                    fileBeritaBase64 = await fileToBase64(fileBeritaInput.files[0]);
+                    fileBeritaName = fileBeritaInput.files[0].name;
+                }
+
+                if (dokumentasiInput.files[0]) {
+                    fileDokBase64 = await fileToBase64(dokumentasiInput.files[0]);
+                    fileDokName = dokumentasiInput.files[0].name;
+                }
+
+                var formData = {
+                    judulBerita: document.getElementById('judulBerita').value,
+                    opsiJudul: document.getElementById('opsiJudul').value,
+                    sender: document.getElementById('sender').value,
+                    usernameSender: document.getElementById('usernameSender').value,
+                    namaKarakter: document.getElementById('namaKarakter').value,
+                    pekerjaanKarakter: document.getElementById('pekerjaanKarakter').value,
+                    bahasa: document.getElementById('bahasa').value,
+                    tagar: document.getElementById('tagar').value,
+                    metodeBerita: metode,
+                    isiBerita: metode === 'tulis' ? isiBerita.value : '',
+                    jumlahKata: metode === 'tulis' ? countWords(isiBerita.value) : '',
+                    fileBeritaName: fileBeritaName,
+                    fileBeritaData: fileBeritaBase64,
+                    dokumentasiName: fileDokName,
+                    dokumentasiData: fileDokBase64,
+                    tanggalTerbit: document.getElementById('tanggalTerbit').value,
+                    batasTerbit: batasTerbitSelect.value,
+                    batasTerbitTanggal: batasTerbitTanggal.value,
+                    syarat1: document.querySelector('input[name="syarat1"]').checked,
+                    syarat2: document.querySelector('input[name="syarat2"]').checked,
+                    syarat3: document.querySelector('input[name="syarat3"]').checked
+                };
+
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(formData)
+                });
+
+                statusMsg.textContent = 'Rilis berhasil dikirim! Terima kasih.';
+                statusMsg.style.color = '#000';
+                statusMsg.style.display = 'block';
+                rilisForm.reset();
+                wordCount.textContent = '0 / 6000 kata (min. 1000)';
+                wordCount.style.color = '#999';
+                methodTulis.style.display = 'block';
+                methodUpload.style.display = 'none';
+                formKarakter.classList.remove('active');
+                batasTerbitTanggal.style.display = 'none';
+                document.querySelector('#methodTulis .upload-area p').innerHTML = '<span>Klik untuk upload</span> foto dokumentasi';
+                document.querySelector('#methodUpload .upload-area p').innerHTML = '<span>Klik untuk upload</span> file berita (DOCX / PDF)';
+                btnKirim.disabled = false;
+                btnKirim.textContent = 'Kirim Rilis';
+            } catch (err) {
+                statusMsg.textContent = 'Terjadi kesalahan. Silakan coba lagi.';
+                statusMsg.style.color = '#cc0000';
+                statusMsg.style.display = 'block';
+                btnKirim.disabled = false;
+                btnKirim.textContent = 'Kirim Rilis';
+            }
+        });
+    </script>
+</body>
+</html>
