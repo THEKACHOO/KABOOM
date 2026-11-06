@@ -672,7 +672,7 @@
                         </label>
                         <label class="radio-item">
                             <input type="radio" name="metodeBerita" value="upload" />
-                            <span>Upload File (DOCX / PDF)</span>
+                            <span>Upload File</span>
                         </label>
                     </div>
                 </div>
@@ -684,10 +684,10 @@
                 </div>
 
                 <div class="form-group berita-method-content" id="methodUpload" style="display:none;">
-                    <label>Upload Isi Berita <span class="required">*</span> <span class="optional">(format DOCX atau PDF)</span></label>
+                    <label>Upload Isi Berita <span class="required">*</span> <span class="optional">(PDF)</span></label>
                     <label for="fileBerita" class="upload-area">
                         <i class="fas fa-file-upload"></i>
-                        <p><span>Klik untuk upload</span> file berita (DOCX / PDF)</p>
+                        <p><span>Klik untuk upload</span></p>
                         <input type="file" id="fileBerita" name="fileBerita" accept=".docx,.pdf,.doc,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                     </label>
                 </div>
@@ -815,7 +815,7 @@
             if (file) {
                 p.innerHTML = '<span>' + file.name + '</span> siap diunggah';
             } else {
-                p.innerHTML = '<span>Klik untuk upload</span> (Format PDF)';
+                p.innerHTML = '<span>Klik untuk upload</span> (PDF)';
             }
         });
 
