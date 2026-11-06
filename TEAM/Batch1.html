@@ -576,9 +576,9 @@
                 </div>
 
                 <div class="form-group berita-method-content" id="methodTulis">
-                    <label for="isiBerita">Isi Berita <span class="required">*</span> <span class="optional">(1000-6000 kata)</span></label>
-                    <textarea id="isiBerita" name="isiBerita" class="form-control" placeholder="Tulis isi berita kamu di sini (minimal 1000 kata, maksimal 6000 kata)..." maxlength="40000"></textarea>
-                    <small id="wordCount" style="display:block; text-align:right; font-size:12px; color:#999; margin-top:6px;">0 / 6000 kata (min. 1000)</small>
+                    <label for="isiBerita">Isi Berita <span class="required">*</span> <span class="optional">(200-5000 kata)</span></label>
+                    <textarea id="isiBerita" name="isiBerita" class="form-control" placeholder="Tulis isi berita kamu di sini (minimal 200 kata, maksimal 5000 kata)..." maxlength="40000"></textarea>
+                    <small id="wordCount" style="display:block; text-align:right; font-size:12px; color:#999; margin-top:6px;">0 / 5000 kata (min. 200)</small>
                 </div>
 
                 <div class="form-group berita-method-content" id="methodUpload" style="display:none;">
@@ -691,7 +691,7 @@
             if (file) {
                 p.innerHTML = '<span>' + file.name + '</span> siap diunggah';
             } else {
-                p.innerHTML = '<span>Klik untuk upload</span> foto dokumentasi';
+                p.innerHTML = '<span>Klik untuk upload</span>';
             }
         });
 
@@ -703,7 +703,7 @@
             if (file) {
                 p.innerHTML = '<span>' + file.name + '</span> siap diunggah';
             } else {
-                p.innerHTML = '<span>Klik untuk upload</span> file berita (DOCX / PDF)';
+                p.innerHTML = '<span>Klik untuk upload</span> (Format PDF)';
             }
         });
 
@@ -718,10 +718,10 @@
 
         isiBerita.addEventListener('input', function () {
             var words = countWords(this.value);
-            wordCount.textContent = words + ' / 6000 kata (min. 1000)';
+            wordCount.textContent = words + ' / 5000 kata (min. 200)';
             if (words > 6000) {
                 wordCount.style.color = '#cc0000';
-            } else if (words > 0 && words < 1000) {
+            } else if (words > 0 && words < 200) {
                 wordCount.style.color = '#cc0000';
             } else {
                 wordCount.style.color = '#999';
@@ -785,7 +785,7 @@
                 }
             } else {
                 if (!fileBeritaInput.files[0]) {
-                    alert('Silakan upload file berita (DOCX / PDF).');
+                    alert('Silakan upload file berita (PDF).');
                     return;
                 }
             }
@@ -845,22 +845,22 @@
                     body: JSON.stringify(formData)
                 });
 
-                statusMsg.textContent = 'Rilis berhasil dikirim! Terima kasih.';
+                statusMsg.textContent = 'Terima kasih. Akan segera kami review.';
                 statusMsg.style.color = '#000';
                 statusMsg.style.display = 'block';
                 rilisForm.reset();
-                wordCount.textContent = '0 / 6000 kata (min. 1000)';
+                wordCount.textContent = '0 / 5000 kata (min. 200)';
                 wordCount.style.color = '#999';
                 methodTulis.style.display = 'block';
                 methodUpload.style.display = 'none';
                 formKarakter.classList.remove('active');
                 batasTerbitTanggal.style.display = 'none';
-                document.querySelector('#methodTulis .upload-area p').innerHTML = '<span>Klik untuk upload</span> foto dokumentasi';
-                document.querySelector('#methodUpload .upload-area p').innerHTML = '<span>Klik untuk upload</span> file berita (DOCX / PDF)';
+                document.querySelector('#methodTulis .upload-area p').innerHTML = '<span>Klik untuk upload</span>';
+                document.querySelector('#methodUpload .upload-area p').innerHTML = '<span>Klik untuk upload</span> (PDF)';
                 btnKirim.disabled = false;
                 btnKirim.textContent = 'Kirim Rilis';
             } catch (err) {
-                statusMsg.textContent = 'Terjadi kesalahan. Silakan coba lagi.';
+                statusMsg.textContent = 'Mohon maaf, terjadi kesalahan. Mohon periksa kembali.';
                 statusMsg.style.color = '#cc0000';
                 statusMsg.style.display = 'block';
                 btnKirim.disabled = false;
