@@ -405,6 +405,54 @@
             background: #f0f0f0;
         }
 
+        .status-berita-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .status-berita-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            padding: 14px 22px;
+            border: 2px solid #d0d0d0;
+            border-radius: 14px;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .status-berita-item:hover {
+            border-color: #000;
+        }
+
+        .status-berita-item input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .status-berita-item input[type="radio"]:checked {
+            background: #000;
+            box-shadow: inset 0 0 0 4px #fff;
+        }
+
+        .status-berita-item:has(input[type="radio"]:checked) {
+            border-color: #000;
+            background: #f0f0f0;
+        }
+
         .berita-method-content {
             margin-top: 14px;
         }
@@ -421,6 +469,9 @@
                 padding: 30px 0 60px;
             }
             .radio-group {
+                flex-direction: column;
+            }
+            .status-berita-group {
                 flex-direction: column;
             }
         }
@@ -546,6 +597,20 @@
                         <p><span>Klik untuk upload</span></p>
                         <input type="file" id="dokumentasi" name="dokumentasi" accept="image/*" />
                     </label>
+                </div>
+
+                <div class="form-group">
+                    <label>Status Dokumentasi <span class="optional">(optional)</span></label>
+                    <div class="status-berita-group">
+                        <label class="status-berita-item">
+                            <input type="radio" name="statusDokumentasi" value="sudah_diedit" />
+                            <span>Sudah diedit</span>
+                        </label>
+                        <label class="status-berita-item">
+                            <input type="radio" name="statusDokumentasi" value="perlu_diedit" />
+                            <span>Perlu diedit oleh Tim Kaboom</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -745,6 +810,9 @@
                     fileDokName = dokumentasiInput.files[0].name;
                 }
 
+                var statusDokumenEl = document.querySelector('input[name="statusDokumentasi"]:checked');
+                var statusDokumen = statusDokumenEl ? statusDokumenEl.value : '';
+
                 var formData = {
                     judulBerita: document.getElementById('judulBerita').value,
                     opsiJudul: document.getElementById('opsiJudul').value,
@@ -761,6 +829,7 @@
                     fileBeritaData: fileBeritaBase64,
                     dokumentasiName: fileDokName,
                     dokumentasiData: fileDokBase64,
+                    statusDokumentasi: statusDokumen,
                     tanggalTerbit: document.getElementById('tanggalTerbit').value,
                     batasTerbit: batasTerbitSelect.value,
                     batasTerbitTanggal: batasTerbitTanggal.value,
