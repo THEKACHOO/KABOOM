@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>YUK TERBITIN BERITA DI KABOOM!</title>
+    <title>YUK TERBITIN BERITAMU DI KABOOM!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Style/header-footer.css">
@@ -457,6 +457,108 @@
             margin-top: 14px;
         }
 
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            color: #000;
+            width: 100%;
+            max-width: 420px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            padding: 32px 26px 26px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            transform: scale(0.92);
+            transition: transform 0.25s ease;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .modal-icon {
+            font-size: 46px;
+            color: #000;
+            margin-bottom: 14px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .modal-text {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: 13px 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            background: #000;
+            border: 2px solid #000;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .modal-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
         @media (max-width: 768px) {
             .hero-section {
                 margin-top: 120px;
@@ -654,6 +756,20 @@
         </div>
     </section>
 
+    <div class="modal-overlay" id="modalSukses">
+        <div class="modal-box">
+            <button type="button" class="modal-close" id="modalCloseX" aria-label="Tutup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="modal-title">Rilis Berhasil Dikirim!</div>
+            <div class="modal-text">Terima kasih, beritamu sudah masuk ke tim Kaboom. Kami akan segera me-review dan menghubungimu lewat kontak yang kamu cantumkan.</div>
+            <button type="button" class="modal-btn" id="modalCloseBtn">Tutup</button>
+        </div>
+    </div>
+
     <script src="../Style/header-footer.js"></script>
 
     <script>
@@ -719,7 +835,7 @@
         isiBerita.addEventListener('input', function () {
             var words = countWords(this.value);
             wordCount.textContent = words + ' / 5000 kata (min. 200)';
-            if (words > 6000) {
+            if (words > 5000) {
                 wordCount.style.color = '#cc0000';
             } else if (words > 0 && words < 200) {
                 wordCount.style.color = '#cc0000';
@@ -763,6 +879,58 @@
         var rilisForm = document.getElementById('rilisForm');
         var btnKirim = document.getElementById('btnKirim');
         var statusMsg = document.getElementById('statusMsg');
+
+        var modalSukses = document.getElementById('modalSukses');
+        var modalCloseX = document.getElementById('modalCloseX');
+        var modalCloseBtn = document.getElementById('modalCloseBtn');
+
+        function bukaModal() {
+            modalSukses.classList.add('active');
+        }
+
+        function tutupModal() {
+            modalSukses.classList.remove('active');
+        }
+
+        modalCloseX.addEventListener('click', tutupModal);
+        modalCloseBtn.addEventListener('click', tutupModal);
+        modalSukses.addEventListener('click', function (e) {
+            if (e.target === modalSukses) tutupModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modalSukses.classList.contains('active')) tutupModal();
+        });
+
+        function resetForm() {
+            try {
+                rilisForm.reset();
+            } catch (err) {}
+            try {
+                wordCount.textContent = '0 / 5000 kata (min. 200)';
+                wordCount.style.color = '#999';
+            } catch (err) {}
+            try {
+                methodTulis.style.display = 'block';
+                methodUpload.style.display = 'none';
+            } catch (err) {}
+            try {
+                formKarakter.classList.remove('active');
+            } catch (err) {}
+            try {
+                batasTerbitTanggal.style.display = 'none';
+                batasTerbitTanggal.value = '';
+            } catch (err) {}
+            try {
+                dokumentasiInput.value = '';
+                var pDok = dokumentasiInput.closest('.upload-area').querySelector('p');
+                if (pDok) pDok.innerHTML = '<span>Klik untuk upload</span>';
+            } catch (err) {}
+            try {
+                fileBeritaInput.value = '';
+                var pFile = fileBeritaInput.closest('.upload-area').querySelector('p');
+                if (pFile) pFile.innerHTML = '<span>Klik untuk upload</span> file berita (DOCX / PDF)';
+            } catch (err) {}
+        }
 
         rilisForm.addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -845,26 +1013,16 @@
                     body: JSON.stringify(formData)
                 });
 
-                statusMsg.textContent = 'Terima kasih. Akan segera kami review.';
-                statusMsg.style.color = '#000';
-                statusMsg.style.display = 'block';
-                rilisForm.reset();
-                wordCount.textContent = '0 / 5000 kata (min. 200)';
-                wordCount.style.color = '#999';
-                methodTulis.style.display = 'block';
-                methodUpload.style.display = 'none';
-                formKarakter.classList.remove('active');
-                batasTerbitTanggal.style.display = 'none';
-                document.querySelector('#methodTulis .upload-area p').innerHTML = '<span>Klik untuk upload</span>';
-                document.querySelector('#methodUpload .upload-area p').innerHTML = '<span>Klik untuk upload</span> (PDF)';
+                resetForm();
                 btnKirim.disabled = false;
                 btnKirim.textContent = 'Kirim Rilis';
+                bukaModal();
             } catch (err) {
-                statusMsg.textContent = 'Mohon maaf, terjadi kesalahan. Mohon periksa kembali.';
+                btnKirim.disabled = false;
+                btnKirim.textContent = 'Kirim Rilis';
+                statusMsg.textContent = 'Mohon maaf, koneksi bermasalah. Silakan coba lagi.';
                 statusMsg.style.color = '#cc0000';
                 statusMsg.style.display = 'block';
-                btnKirim.disabled = false;
-                btnKirim.textContent = 'Kirim Rilis';
             }
         });
     </script>
