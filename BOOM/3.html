@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>BOOM!3!</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/header-footer.css">
+    <link rel="stylesheet" href="../Style/style.css">
+
+    <style>
+        .hero-title .main .couple-name {
+            white-space: nowrap;
+            display: inline;
+        }
+
+        .hashtags {
+            margin-top: 24px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #888;
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+        }
+        .hashtags span {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="sub">Trending di KABOOM!</span>
+                    <span class="main">Beredar Video Diduga <span class="couple-name">Baskara Atmojo dan Alyssa Haque</span> di Hotel, Isu Perselingkuhan Kembali Mencuat!</span>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="poster-section">
+        <div class="container">
+            <div class="poster-container">
+                <img src="AlyssaHaque.png" alt="Baskara Atmojo dan Alyssa Haque">
+            </div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <div class="content-container">
+                <div class="article-body">
+                    <p class="scroll-animate"><strong>JAKARTA</strong> – Jagat hiburan Tanah Air kembali diguncang prahara besar menjelang penghujung November.</p>
+
+                    <p class="scroll-animate">Sebuah rekaman video yang diduga berasal dari kamera pengawas (CCTV) salah satu hotel berbintang mendadak bocor dan viral di berbagai platform media sosial. Dalam rekaman berdurasi singkat tersebut, tampak sosok pria yang diduga kuat adalah aktor ternama, Baskara, tengah berjalan di koridor hotel.</p>
+
+                    <p class="scroll-animate">Namun, bukan sosok sang istri Evelyn Atmojo, yang terlihat mendampinginya, melainkan seorang wanita berambut panjang yang perawakannya sangat menyerupai aktris muda, Alyssa.</p>
+
+                    <p class="scroll-animate">Bocornya video tersebut sontak memicu kembali rumor lama mengenai kedekatan spesial di antara Baskara dan Alyssa. Isu perselingkuhan keduanya sebenarnya bukan barang baru. Pada pertengahan tahun 2025 lalu, publik sempat dihebohkan dengan beredarnya foto-foto kebersamaan mereka di luar lokasi syuting.</p>
+
+                    <p class="scroll-animate">Kala itu, badai gosip berhasil diredam setelah pihak manajemen dan keduanya kompak memberikan klarifikasi bahwa kedekatan tersebut murni sebatas membangun chemistry profesional demi mendalami peran dalam proyek film layar lebar mereka, TITIK BALIK.</p>
+
+                    <p class="scroll-animate">Kini, rekaman koridor hotel tersebut seolah membantah dalih profesionalisme yang selama ini mereka bangun. Hingga berita ini diturunkan, belum diketahui secara pasti siapa pihak yang pertama kali menyebarkan rekaman privat tersebut ke ruang publik maupun motif di baliknya.</p>
+
+                    <p class="scroll-animate">Situasi menjadi kian pelik dan memicu gelombang simpati sekaligus amarah warganet lantaran skandal ini mencuat di momen yang sangat sensitif. Baru beberapa bulan lalu, publik dikejutkan dengan kabar duka mengenai Evelyn yang baru saja mengalami keguguran.</p>
+
+                    <p class="scroll-animate">Kontrasnya situasi di mana Evelyn tengah berjuang memulihkan kondisi fisik dan psikis pasca-kehilangan calon buah hati, sementara sang suami justru terseret pusaran video skandal bersama lawan mainnya membuat kolom komentar media sosial ketiganya dibanjiri reaksi keras dari publik.</p>
+
+                    <p class="scroll-animate">Pihak Baskara, Evelyn, maupun Alyssa hingga kini masih memilih bungkam dan belum memberikan pernyataan resmi terkait keaslian video yang beredar.</p>
+
+                    <div class="hashtags scroll-animate">
+                        <span>#SkandalArtis</span>
+                        <span>#ViralHariIni</span>
+                        <span>#BaskaraAlyssa</span>
+                        <span>#TITIKBALIK</span>
+                        <span>#Evelyn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../Style/header-footer.js"></script>
+
+    <script>
+        (function() {
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el) => el.getBoundingClientRect().top <= window.innerHeight * 0.85;
+            const handleScroll = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        })();
+    </script>
+</body>
+  </html>
