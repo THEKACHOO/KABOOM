@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KABOOM! - Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Style/mainheader-footer.css">
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <section class="admin-hero">
+        <div class="container">
+            <div class="admin-hero-content">
+                <div class="admin-label"><i class="fa-solid fa-lock"></i> ADMIN</div>
+                <h1 class="admin-title">News Manager</h1>
+                <p class="admin-subtitle">Tambahkan berita baru ke halaman utama. Berita yang sudah ada tetap aman.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="admin-section">
+        <div class="container">
+            <form class="form-card" id="newsForm" autocomplete="off">
+                <div class="form-group">
+                    <label for="judul">Judul Berita <span class="req">(card-title)</span></label>
+                    <input type="text" class="form-control" id="judul" placeholder="Tulis judul berita" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="excerpt">Card Excerpt</label>
+                    <textarea class="form-control" id="excerpt" placeholder="Ringkasan singkat berita" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tag">Card Tag <span class="req">(kategori)</span></label>
+                        <select class="form-control" id="tag" required>
+                            <option value="">Pilih tag</option>
+                            <option value="Nature">Nature</option>
+                            <option value="Animals">Animals</option>
+                            <option value="Human">Human</option>
+                            <option value="Sport">Sport</option>
+                            <option value="Boom">Boom</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Card Date</label>
+                        <input type="text" class="form-control" id="tanggal" placeholder="Contoh: November 10, 2026" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Foto <span class="req">(jpg / png)</span></label>
+                    <input type="file" class="form-control" id="foto" accept="image/png, image/jpeg">
+                    <div class="preview-wrap">
+                        <img class="preview-img" id="previewImg" alt="Preview">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="link">Button Link</label>
+                    <input type="url" class="form-control" id="link" placeholder="https://..." required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Publish</button>
+                    <button type="button" class="btn btn-secondary" id="resetBtn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+
+                <div class="msg" id="msg"></div>
+            </form>
+        </div>
+    </main>
+
+    <section class="list-section">
+        <div class="container">
+            <div class="list-header">
+                <h2 class="list-title">Berita dari Form</h2>
+                <span class="list-count" id="listCount">0 berita</span>
+            </div>
+            <div class="admin-list" id="adminList"></div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="Style/mainheader-footer.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
