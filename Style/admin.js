@@ -1,6 +1,6 @@
 (function () {
     const STORAGE_KEY = 'kaboom_form_news';
-    const API_URL = 'https://script.google.com/macros/s/AKfycbwkrgwNQcJxVXq0GSEY7RL-TBi-ZCnBOcxQcTUI1xNgqpc3zkjkcHrXIFOR6rBCyKQ/exec';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbz4xuBh8RhaRLstzoEnWsgwNVAimNRncpq_11wBrOu1q2rktnL4g13IxnoE1RIrkblY/exec';
     const form = document.getElementById('newsForm');
     const msg = document.getElementById('msg');
     const fotoInput = document.getElementById('foto');
