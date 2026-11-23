@@ -135,7 +135,7 @@
             method: 'POST',
             mode: 'no-cors',
             headers: {'Content-Type':'text/plain'},
-            body: JSON.stringify({ id, title, excerpt, tag, date, link, image })
+            body: JSON.stringify({ __source: 'admin', id, title, excerpt, tag, date, link, image })
         }).catch(() => {});
 
         form.reset();
