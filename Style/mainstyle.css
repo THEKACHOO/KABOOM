@@ -97,9 +97,9 @@ body {
     .filter-container { 
         display: flex;
         flex-wrap: wrap;
-        gap: 6px; 
+        gap: 4px; 
         margin: 15px 0 40px; 
-        padding: 0 4px;
+        padding: 0 2px;
         justify-content: center;
     }
     .filter-btn[data-filter="all"] { 
@@ -110,8 +110,8 @@ body {
     .filter-btn:not([data-filter="all"]) {
         flex: 1 1 0;
         min-width: 0;
-        padding: 8px 2px;
-        font-size: 10px;
+        padding: 8px 4px;
+        font-size: 12px;
         text-align: center;
         white-space: nowrap;
         overflow: hidden;
@@ -126,7 +126,7 @@ body {
     .container { padding: 0 16px; }
     .hero-title { font-size: 32px; }
     .hero-subtitle { font-size: 16px; margin-bottom: 30px; }
-    .filter-btn:not([data-filter="all"]) { font-size: 9px; padding: 7px 1px; }
+    .filter-btn:not([data-filter="all"]) { font-size: 11px; padding: 7px 3px; }
     .card-content { padding: 20px; }
     .featured-content { padding: 24px; }
 }
