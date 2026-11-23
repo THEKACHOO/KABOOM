@@ -1,5 +1,6 @@
 (function () {
     const STORAGE_KEY = 'kaboom_form_news';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbzKATz7Z8fS2IKrw1gz5G-z1iFKZrQLei43OumAj3tBmmh74-Dve_odT499p4d3cW2b/exec';
     const form = document.getElementById('newsForm');
     const msg = document.getElementById('msg');
     const fotoInput = document.getElementById('foto');
@@ -125,12 +126,17 @@
             image = await readFileAsDataURL(file);
         }
 
+        const id = 'n_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
         const items = getNews();
-        items.push({
-            id: 'n_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
-            title, excerpt, tag, date, link, image
-        });
+        items.push({ id, title, excerpt, tag, date, link, image });
         saveNews(items);
+
+        fetch(API_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {'Content-Type':'text/plain'},
+            body: JSON.stringify({ id, title, excerpt, tag, date, link, image })
+        }).catch(() => {});
 
         form.reset();
         previewImg.classList.remove('visible');
