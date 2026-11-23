@@ -1,6 +1,6 @@
 (function () {
     const STORAGE_KEY = 'kaboom_form_news';
-    const API_URL = 'https://script.google.com/macros/s/AKfycbwkrgwNQcJxVXq0GSEY7RL-TBi-ZCnBOcxQcTUI1xNgqpc3zkjkcHrXIFOR6rBCyKQ/exec';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbw7nOiWCpD1xmK5o-bMF50z8zrbwmJBxgF6pUPp3RFxGpm7I1W7dqf1Ei4mU8_0kP9E/exec';
     const form = document.getElementById('newsForm');
     const msg = document.getElementById('msg');
     const adminList = document.getElementById('adminList');
