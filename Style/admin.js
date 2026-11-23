@@ -1,10 +1,8 @@
 (function () {
     const STORAGE_KEY = 'kaboom_form_news';
-    const API_URL = 'https://script.google.com/macros/s/AKfycbz4xuBh8RhaRLstzoEnWsgwNVAimNRncpq_11wBrOu1q2rktnL4g13IxnoE1RIrkblY/exec';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwkrgwNQcJxVXq0GSEY7RL-TBi-ZCnBOcxQcTUI1xNgqpc3zkjkcHrXIFOR6rBCyKQ/exec';
     const form = document.getElementById('newsForm');
     const msg = document.getElementById('msg');
-    const fotoInput = document.getElementById('foto');
-    const previewImg = document.getElementById('previewImg');
     const adminList = document.getElementById('adminList');
     const listCount = document.getElementById('listCount');
     const resetBtn = document.getElementById('resetBtn');
@@ -27,15 +25,6 @@
         setTimeout(() => {
             msg.className = 'msg';
         }, 4000);
-    }
-
-    function readFileAsDataURL(file) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = e => resolve(e.target.result);
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
-        });
     }
 
     function escapeHtml(str) {
@@ -82,28 +71,8 @@
         });
     }
 
-    fotoInput.addEventListener('change', async () => {
-        const file = fotoInput.files[0];
-        if (!file) {
-            previewImg.classList.remove('visible');
-            previewImg.src = '';
-            return;
-        }
-        if (!/^image\/(png|jpeg|jpg)$/.test(file.type)) {
-            showMsg('Format foto harus JPG atau PNG.', 'error');
-            fotoInput.value = '';
-            previewImg.classList.remove('visible');
-            return;
-        }
-        const dataUrl = await readFileAsDataURL(file);
-        previewImg.src = dataUrl;
-        previewImg.classList.add('visible');
-    });
-
     resetBtn.addEventListener('click', () => {
         form.reset();
-        previewImg.classList.remove('visible');
-        previewImg.src = '';
     });
 
     form.addEventListener('submit', async (e) => {
@@ -113,17 +82,12 @@
         const excerpt = document.getElementById('excerpt').value.trim();
         const tag = document.getElementById('tag').value.trim();
         const date = document.getElementById('tanggal').value.trim();
+        const image = document.getElementById('foto').value.trim();
         const link = document.getElementById('link').value.trim();
-        const file = fotoInput.files[0];
 
         if (!title || !excerpt || !tag || !date || !link) {
             showMsg('Semua field wajib diisi (kecuali foto).', 'error');
             return;
-        }
-
-        let image = '';
-        if (file) {
-            image = await readFileAsDataURL(file);
         }
 
         const id = 'n_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
@@ -139,8 +103,6 @@
         }).catch(() => {});
 
         form.reset();
-        previewImg.classList.remove('visible');
-        previewImg.src = '';
         renderList();
         showMsg('Berita berhasil ditambahkan ke halaman utama.', 'success');
     });
