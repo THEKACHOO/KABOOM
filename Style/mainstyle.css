@@ -95,26 +95,27 @@ body {
 @media (max-width: 767px) {
     .hero { padding: 50px 0 15px; }
     .filter-container { 
+        display: flex;
+        flex-wrap: wrap;
         gap: 6px; 
         margin: 15px 0 40px; 
-        flex-wrap: nowrap; 
-        overflow-x: auto;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding-bottom: 4px;
+        padding: 0 4px;
+        justify-content: center;
     }
-    .filter-container::-webkit-scrollbar { display: none; }
     .filter-btn[data-filter="all"] { 
         flex: 0 0 100%; 
         order: -1; 
-        margin-bottom: 10px;
+        margin-bottom: 6px;
     }
-    .filter-btn { 
-        padding: 10px 14px; 
-        font-size: 12px; 
-        flex: 0 0 auto; 
+    .filter-btn:not([data-filter="all"]) {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 8px 2px;
+        font-size: 10px;
+        text-align: center;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .news-grid { gap: 25px; }
     .card-img { height: 200px; }
@@ -125,7 +126,7 @@ body {
     .container { padding: 0 16px; }
     .hero-title { font-size: 32px; }
     .hero-subtitle { font-size: 16px; margin-bottom: 30px; }
-    .filter-btn { padding: 8px 16px; font-size: 12px; }
+    .filter-btn:not([data-filter="all"]) { font-size: 9px; padding: 7px 1px; }
     .card-content { padding: 20px; }
     .featured-content { padding: 24px; }
 }
