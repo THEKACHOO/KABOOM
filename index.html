@@ -45,9 +45,6 @@
         <section class="news-section">
             <div class="news-grid">
 
-                <article class="news-card" data-category="sport">
-                </article>
-
                 <article class="news-card" data-category="human">
                     <div class="card-img" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('Human7.png') center/cover;">
                         <div class="card-tag">Human</div>
@@ -338,7 +335,7 @@
 
     <script>
     (function () {
-        const API_URL = 'https://script.google.com/macros/s/AKfycbz4xuBh8RhaRLstzoEnWsgwNVAimNRncpq_11wBrOu1q2rktnL4g13IxnoE1RIrkblY/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbwkrgwNQcJxVXq0GSEY7RL-TBi-ZCnBOcxQcTUI1xNgqpc3zkjkcHrXIFOR6rBCyKQ/exec';
         const grid = document.querySelector('.news-grid');
         if (!grid) return;
 
@@ -349,13 +346,7 @@
         fetch(API_URL)
             .then(res => res.json())
             .then(items => {
-                if (!items || !items.length) return;
-
-                const hasSportFromForm = items.some(i => (i.tag || '').toLowerCase() === 'sport');
-                if (hasSportFromForm) {
-                    const emptySport = grid.querySelector('.news-card[data-category="sport"]:empty');
-                    if (emptySport) emptySport.remove();
-                }
+                if (!Array.isArray(items) || !items.length) return;
 
                 const frag = document.createDocumentFragment();
                 items.slice().reverse().forEach(item => {
@@ -387,12 +378,12 @@
 
     <script>
         const filterButtons = document.querySelectorAll('.filter-btn');
-        const newsCards = document.querySelectorAll('.news-card, .featured-article');
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
                 const filterValue = this.getAttribute('data-filter');
+                const newsCards = document.querySelectorAll('.news-card, .featured-article');
                 newsCards.forEach(card => {
                     card.style.opacity = '0';
                     card.style.transform = 'translateY(20px)';
